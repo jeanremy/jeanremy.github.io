@@ -1,0 +1,25 @@
+// VARIABLES
+
+// Colors
+$bg: #1e1e1e; // Gris mega foncé
+$primary: #7c7a7a; // gris clair
+$secondary: #ededed; // gris clair
+
+// Breakpoints
+$large: 960px;
+$medium: 768px;
+$small: 480px;
+
+// Fonts
+$montserrat: 'montserratregular', sans-serif;
+$lato: 'latolight', sans-serif;
+
+:selection {
+  color: #fff;
+  background-color: #dd5b6a;
+}
+
+::-moz-selection {
+	color:#fff;
+	background-color: $primary;
+}

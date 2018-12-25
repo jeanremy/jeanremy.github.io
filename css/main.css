@@ -1,0 +1,378 @@
+/*
+	Kickstart files for html/css project. Based on Kaelig documentation (blog.kaelig.fr) and on sass
+*/
+
+:selection {
+	color: #fff;
+	background-color: #dd5b6a;
+}
+
+::-moz-selection {
+	color: #fff;
+	background-color: #7c7a7a;
+}
+
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+p {
+	-webkit-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+
+/*  RESET
+    =====  */
+
+/*Based on Eric Meyer's reset.css. */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
+html {
+	line-height: 1.5;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+caption,
+th,
+td {
+	text-align: left;
+	font-weight: normal;
+	vertical-align: middle;
+}
+
+q,
+blockquote {
+	quotes: none;
+}
+
+q:before,
+q:after,
+blockquote:before,
+blockquote:after {
+	content: "";
+	content: none;
+}
+
+a img {
+	border: none;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary {
+	display: block;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/*
+	COMMONS
+	=======
+*/
+
+.btn,
+.btn--black,
+.btn--big {
+	font-weight: 700;
+	font-family: "montserratregular", sans-serif;
+	text-transform: uppercase;
+	background-color: #7c7a7a;
+	color: #fff;
+	font-size: 1.07143em;
+}
+
+.btn--black {
+	background-color: #fff;
+	color: #7c7a7a;
+}
+
+.btn--big {
+	display: block;
+	font-size: 2.14286em;
+	text-align: center;
+}
+
+/* Sprite */
+
+.sprite {
+	background: url(../img/sprite.svg); /* IE 9+ & Android 3+ */
+}
+
+.no-svg .sprite {
+	background: url(../img/sprite.png);
+}
+
+/* Grid 
+.row {
+	@include mixed-grid(1 2 3 4 5 6 7 8 9 10 11 12, 15px)
+}
+*/
+
+@font-face {
+	font-family: 'montserratregular';
+	src: url("fonts/montserrat-regular.eot");
+	src: url("fonts/montserrat-regular.eot?#iefix") format("embedded-opentype"), url("fonts/montserrat-regular.woff2") format("woff2"), url("fonts/montserrat-regular.woff") format("woff"), url("fonts/montserrat-regular.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'latolight';
+	src: url("fonts/lato-light.eot");
+	src: url("fonts/lato-light.eot?#iefix") format("embedded-opentype"), url("fonts/lato-light.woff2") format("woff2"), url("fonts/lato-light.woff") format("woff"), url("fonts/lato-light.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+/*  TYPOGRAPHY
+	==========  */
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 1.4em; /* equiv 14px */
+}
+
+.title {
+	text-transform: uppercase;
+	font-family: "montserratregular", sans-serif;
+	color: #ededed;
+}
+
+.title.level1 {
+	display: inline-block;
+	font-size: 1.42857em;
+}
+
+.title.level1::after {
+	content: "";
+	display: block;
+	height: 4px;
+	width: 25px;
+	margin: 15px 0;
+	background-color: #ededed;
+	-webkit-transition: width 200ms ease;
+	transition: width 200ms ease;
+}
+
+.title.level1:hover::after {
+	width: 100%;
+}
+
+/*  GLOBAL
+	======  */
+
+body {
+	color: #7c7a7a;
+}
+
+/*  HEADER
+	======  */
+
+/*  MAIN
+	====  */
+
+.main {
+	background-color: #1e1e1e;
+	width: 100%;
+}
+
+.main__title {
+	position: absolute;
+	top: 30%;
+	left: 5.35714em;
+}
+
+.desc {
+	font-family: "latolight", sans-serif;
+	font-size: 1.28571em;
+}
+
+.folio {
+	font-family: $lato;
+	font-size: em(14);
+}
+.folio a {color: #fff;}
+
+/*  FOOTER
+	======  */
+
+.footer {
+	position: absolute;
+	bottom: 20px;
+	left: 0;
+	right: 0;
+}
+
+.icons {
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.icons .twitter {
+	margin-right: 10px;
+}
+
+.icons .social path {
+	-webkit-transition: fill 200ms ease;
+	transition: fill 200ms ease;
+}
+
+.icons .social:hover path,
+.icons .social:focus path {
+	fill: #7c7a7a;
+}
+
+.no-svg .icons .social {
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	background: url(../img/sprite.png) 0 0 no-repeat;
+}
+
+.no-svg .icons .social.github {
+	background-position: -30px 0;
+}
+
+.email {
+	display: block;
+	text-align: center;
+	font-size: 1em;
+	font-family: "latolight", sans-serif;
+	-webkit-transition: color 200ms ease;
+	transition: color 200ms ease;
+	color: #ededed;
+}
+
+.email:hover,
+.email:focus {
+	color: #7c7a7a;
+}
+
+/*  PRINT
+	=====  */
+
+p {
+	font-size: 13px;
+	font-size: 0.8125rem;
+}
+
