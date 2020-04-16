@@ -1,0 +1,44 @@
+{
+  "name": "jnrmprd",
+  "version": "2.0.0",
+  "main": "index.js",
+  "author": "JR <contact@jeanremypraud.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "webpack-dev-server --config ./webpack.config.js --host 0.0.0.0",
+    "build": "rm -rf public && mkdir public && yarn start",
+    "start": "NODE_ENV=production webpack --config ./webpack.config.js --mode=production",
+    "deploy": "git subtree push --prefix public origin master"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.7.4",
+    "camera-controls": "^1.20.2",
+    "copy-webpack-plugin": "^5.1.1",
+    "css-loader": "^3.4.2",
+    "extract-loader": "^4.0.3",
+    "file-loader": "^5.0.2",
+    "html-loader": "^0.5.5",
+    "html-minifier-webpack-plugin": "^2.2.3",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.13.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-pixels-to-rem": "^0.8.0",
+    "sass-loader": "^8.0.2",
+    "socket.io": "^2.3.0",
+    "socket.io-client": "^2.3.0",
+    "svg-url-loader": "^4.0.0",
+    "three": "^0.113.2",
+    "topojson-client": "3",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.2"
+  },
+  "devDependencies": {},
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "printWidth": 160,
+    "close-empty-jsx-elements": true
+  }
+}

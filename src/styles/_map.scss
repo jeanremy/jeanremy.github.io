@@ -1,0 +1,33 @@
+.map {
+  display: flex;
+  flex-direction: column;
+  &__content {
+    flex-grow: 1;
+  }
+  &__message {
+    font-weight: 300;
+    line-height: 1;
+  }
+}
+
+canvas {
+  width: 100%;
+  outline: none;
+}
+
+.marker__infos {
+  position: absolute;
+  background: var(--black);
+  padding: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s;
+
+  &__city {
+    font-size: 18px;
+  }
+
+  &__country {
+    font-weight: 300;
+  }
+}
