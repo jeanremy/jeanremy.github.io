@@ -15,6 +15,7 @@
     "camera-controls": "^1.20.2",
     "copy-webpack-plugin": "^5.1.1",
     "css-loader": "^3.4.2",
+    "dotenv-webpack": "^1.7.0",
     "extract-loader": "^4.0.3",
     "file-loader": "^5.0.2",
     "html-loader": "^0.5.5",

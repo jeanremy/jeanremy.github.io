@@ -8,21 +8,22 @@ const autoprefixer = require('autoprefixer')
 const svgUrlLoader = require('svg-url-loader')
 const pxToRem = require('postcss-pixels-to-rem')
 const htmlLoader = require('html-loader')
+const Dotenv = require('dotenv-webpack')
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
 module.exports = {
   entry: {
-    index: './src/index.js'
+    index: './src/index.js',
   },
   output: {
     path: path.resolve(__dirname, './public'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   // externals: ['tls', 'net', 'fs'],
   devtool: isDevelopment && 'source-map',
   devServer: {
     port: 3000,
-    contentBase: path.join(__dirname, './src')
+    contentBase: path.join(__dirname, './src'),
   },
   module: {
     rules: [
@@ -34,33 +35,33 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              sourceMap: isDevelopment
-            }
+              sourceMap: isDevelopment,
+            },
           },
           {
             loader: 'postcss-loader',
             options: {
               autoprefixer: {
-                browsers: ['last 2 versions']
+                browsers: ['last 2 versions'],
               },
               sourceMap: isDevelopment,
-              plugins: () => [autoprefixer, pxToRem]
-            }
+              plugins: () => [autoprefixer, pxToRem],
+            },
           },
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: isDevelopment
-            }
-          }
-        ]
+              sourceMap: isDevelopment,
+            },
+          },
+        ],
       },
       {
         test: /\.svg/,
         use: {
           loader: 'svg-url-loader',
-          options: {}
-        }
+          options: {},
+        },
       },
       {
         test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
@@ -70,24 +71,26 @@ module.exports = {
             options: {
               name: '[name].[ext]',
               outputPath: './fonts/',
-              useRelativePath: true
-            }
-          }
-        ]
-      }
-    ]
+              useRelativePath: true,
+            },
+          },
+        ],
+      },
+    ],
   },
   plugins: [
+    new Dotenv(),
+
     new MiniCssExtractPlugin({
       filename: '[name].css',
-      chunkFilename: '[id].css'
+      chunkFilename: '[id].css',
     }),
 
     new HtmlMinifierPlugin({
       // HTMLMinifier options
       collapseWhitespace: true,
       removeRedundantAttributes: true,
-      useShortDoctype: true
+      useShortDoctype: true,
     }),
 
     new HtmlWebpackPlugin({
@@ -98,8 +101,8 @@ module.exports = {
         collapseWhitespace: true,
         caseSensitive: true,
         removeComments: true,
-        removeEmptyElements: true
-      }
-    })
-  ]
+        removeEmptyElements: true,
+      },
+    }),
+  ],
 }
