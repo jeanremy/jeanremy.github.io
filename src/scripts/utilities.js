@@ -61,13 +61,16 @@ const toScreenPosition = (obj, camera, renderer) => {
 }
 
 const setMarkerInfos = (obj, position) => {
+  const canvas = document.querySelector('.map__content canvas')
   const markerInfos = document.getElementById('marker__infos')
   const markerInfosCity = document.getElementById('marker__infos__city')
   const markerInfosCountry = document.getElementById('marker__infos__country')
+  const x = position.x - (window.innerWidth - canvas.offsetWidth) / 2
+  const y = position.y - (window.innerHeight - canvas.offsetHeight) / 2
   markerInfos.style.opacity = 1
   markerInfos.style.visibility = 'visible'
-  markerInfos.style.top = `${position.y}px`
-  markerInfos.style.left = `${position.x}px`
+  markerInfos.style.top = `${y}px`
+  markerInfos.style.left = `${x}px`
   markerInfosCity.innerText = obj.userData.city
 
   markerInfosCountry.innerText = obj.userData.country_name
