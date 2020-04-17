@@ -5,7 +5,7 @@ const HtmlMinifierPlugin = require('html-minifier-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const autoprefixer = require('autoprefixer')
-const svgUrlLoader = require('svg-url-loader')
+const fileLoader = require('file-loader')
 const pxToRem = require('postcss-pixels-to-rem')
 const htmlLoader = require('html-loader')
 const Dotenv = require('dotenv-webpack')
@@ -27,7 +27,18 @@ module.exports = {
   },
   module: {
     rules: [
-      // { test: /\.html$/i, use: ['file-loader?name=[name].[ext]', 'extract-loader', 'html-loader'] },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: 'html-loader',
+            options: {
+              minimize: true,
+              attrs: ['img:src', 'link:href'],
+            },
+          },
+        ],
+      },
       {
         test: /\.(scss|css)$/,
         use: [
@@ -57,14 +68,21 @@ module.exports = {
         ],
       },
       {
-        test: /\.svg/,
-        use: {
-          loader: 'svg-url-loader',
-          options: {},
-        },
+        test: /\.(jpe?g|png|gif|svg|webmanifest|ico)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: './',
+              useRelativePath: true,
+              esModule: false,
+            },
+          },
+        ],
       },
       {
-        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.(woff(2)?|ttf|eot|otf)(\?v=\d+\.\d+\.\d+)?$/,
         use: [
           {
             loader: 'file-loader',
@@ -86,22 +104,15 @@ module.exports = {
       chunkFilename: '[id].css',
     }),
 
-    new HtmlMinifierPlugin({
-      // HTMLMinifier options
-      collapseWhitespace: true,
-      removeRedundantAttributes: true,
-      useShortDoctype: true,
-    }),
-
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: './index.html',
-      minify: !isDevelopment && {
+      hash: true,
+      minify: {
         html5: true,
         collapseWhitespace: true,
         caseSensitive: true,
         removeComments: true,
-        removeEmptyElements: true,
       },
     }),
   ],

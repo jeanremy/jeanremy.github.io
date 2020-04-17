@@ -1,8 +1,10 @@
 .map {
   display: flex;
   flex-direction: column;
+  max-height: 100vh;
   &__content {
     flex-grow: 1;
+    position: relative;
   }
   &__message {
     font-weight: 300;
@@ -11,7 +13,11 @@
 }
 
 canvas {
-  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
   outline: none;
 }
 
@@ -22,6 +28,7 @@ canvas {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s;
+  z-index: 1;
 
   &__city {
     font-size: 18px;

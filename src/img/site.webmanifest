@@ -1,0 +1,22 @@
+{
+  "name": "Jean-Rémy Praud",
+  "short_name": "jnrmprd",
+  "description": "Personal website",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ],
+  "background_color": "#1e1e20",
+  "display": "minimal-ui",
+  "start_url": "/",
+  "scope": "/",
+  "theme_color": "#1e1e20"
+}

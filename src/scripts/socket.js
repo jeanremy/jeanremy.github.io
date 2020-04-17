@@ -9,11 +9,11 @@ const socket = io(process.env.WS_URL)
 socket.on('users', ({ users, count, message }) => {
   for (let i = 0, j = users.length; i < j; i++) {
     const element = users[i]
-    var markerG = new SphereGeometry(0.5, 32, 32)
+    var markerG = new SphereGeometry(0.7, 32, 32)
     var markerMat = new MeshBasicMaterial({ color: yellow })
     var marker = new Mesh(markerG, markerMat)
     marker.userData = users[i]
-    let pos = latLongToVector3(element.latitude, element.longitude, radius + 0.3, 0.5)
+    let pos = latLongToVector3(element.latitude, element.longitude, radius + 0.5, 0.5)
 
     marker.position.copy(pos)
     marker.name = 'pin'
