@@ -13,11 +13,12 @@ const isDevelopment = process.env.NODE_ENV !== 'production'
 
 module.exports = {
   entry: {
-    index: './src/index.js',
+    sw: './src/sw.js',
+    index: './src/bundle.js',
   },
   output: {
     path: path.resolve(__dirname, './public'),
-    filename: 'bundle.js',
+    filename: '[name].js',
   },
   // externals: ['tls', 'net', 'fs'],
   devtool: isDevelopment && 'source-map',
