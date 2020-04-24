@@ -45,8 +45,8 @@
         <section class="section map">
           <div class="map__header">
             <div class="dotted">
-              <p id="users__count" class="gilroy map__count">1 user connected</p>
-              <p id="users__message" class="map__message">Almost Myspace</p>
+              <p id="users__count" class="gilroy map__count">...</p>
+              <p id="users__message" class="map__message"></p>
             </div>
           </div>
           <div class="map__content">
@@ -58,7 +58,7 @@
         </section>
         <article id="about" class="section about">
           <div class="container--mini">
-            <h2 class="gilroy dotted">
+            <h2 class="h1 gilroy dotted">
               About
             </h2>
             <p>
@@ -76,7 +76,7 @@
                 >send me a mail</a
               >.
             </p>
-            <h2 class="h1 gilroy dotted">
+            <h2 class="h2 gilroy">
               Colophon
             </h2>
             <p>
@@ -90,9 +90,7 @@
     </main>
     <script>
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js').then(function () {
-          console.log('Service Worker Registered')
-        })
+        navigator.serviceWorker.register('/sw.js')
       }
     </script>
   </body>

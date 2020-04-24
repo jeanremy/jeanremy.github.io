@@ -13,13 +13,10 @@ canvas.addEventListener('touchend', onDocumentMouseDown, false)
 
 function setMousePosition(eventX, eventY) {
   const xMargin = (window.innerWidth - canvas.offsetWidth) / 2
-  const yMargin = (window.innerHeight - canvas.offsetHeight) / 2
+  const yMargin = (window.innerHeight - canvas.offsetHeight) / 2 - window.scrollY
   // window.innerHeight
-  console.log('setMousePosition -> window.innerHeight', window.innerHeight)
-
   mouse.x = ((eventX - xMargin) / canvas.offsetWidth) * 2 - 1
   mouse.y = -((eventY - yMargin) / canvas.offsetHeight) * 2 + 1
-  console.log('setMousePosition -> mouse.y', mouse.y)
 }
 
 function onMouseMove(event) {
