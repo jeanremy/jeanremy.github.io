@@ -1,32 +1,38 @@
+import { throttle } from 'lodash'
+
+document.querySelectorAll('nav a').forEach((link) => link.addEventListener('click', anchorLinkHandler))
+
 function anchorLinkHandler(e) {
-  const distanceToTop = (el) => Math.floor(el.getBoundingClientRect().top)
   e.preventDefault()
   const targetID = this.getAttribute('href').split('#')
   const targetAnchor = targetID[1] ? document.getElementById(targetID[1]) : document.documentElement
-  // if (!targetAnchor) return
-  const originalTop = distanceToTop(targetAnchor)
-  window.scrollBy({ top: originalTop, left: 0, behavior: 'smooth' })
+
+  targetAnchor.scrollIntoView({
+    behavior: 'smooth',
+  })
 }
 
-document.querySelectorAll('nav a').forEach((e) => (e.onclick = anchorLinkHandler))
-
-const aboutSection = document.getElementById('about')
-const nav = document.getElementById('menu')
-
-window.addEventListener('scroll', () => {
-  updateMenu()
-})
+window.addEventListener('scroll', throttle(updateMenu))
 
 function updateMenu() {
-  window.requestAnimationFrame(updateMenu)
+  const aboutSection = document.getElementById('about')
+  const nav = document.getElementById('menu')
 
   const scroll = document.documentElement.scrollTop
-  const aboutTop = aboutSection.offsetTop
-  if (scroll >= aboutTop - 1) {
+  const aboutTop = aboutSection.offsetTop - window.innerHeight / 2
+
+  if (scroll >= aboutTop) {
     nav.classList.add('topactive')
+    updateUrl('#about')
   } else {
     nav.classList.remove('topactive')
+    updateUrl('/')
   }
 }
 
-updateMenu()
+function updateUrl(path) {
+  if (history.state && history.state.path === path) {
+    return
+  }
+  history.pushState({ path }, null, path)
+}

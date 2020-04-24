@@ -12,7 +12,6 @@ self.addEventListener('activate', function (event) {
 
 self.addEventListener('fetch', function (event) {
   // cehcker si c'est du WS
-  // console.log(event.request.url)
 
   // Renvoyer une fake IP
   event.respondWith(

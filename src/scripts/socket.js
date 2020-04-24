@@ -24,6 +24,6 @@ socket.on('users', ({ users, count, message }) => {
     scene.add(markerGroup)
   }
 
-  document.getElementById('users__count').innerText = `${count} ${count > 1 ? 'users' : 'user'} connected to this page`
+  document.getElementById('users__count').innerText = `${count} ${count > 1 ? 'users' : 'user'} connected`
   document.getElementById('users__message').innerText = message
 })
