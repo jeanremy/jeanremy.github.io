@@ -22,6 +22,16 @@ p {
   letter-spacing: 0.03125rem;
   a {
     color: inherit;
-    text-decoration: underline;
+    background-color: var(--darkgrey);
+    padding: 1px 5px;
+    border-radius: 3px;
+    vertical-align: baseline;
+    border: 1px solid var(--darkgrey);
+    transition: all 0.3s;
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+    }
   }
 }
