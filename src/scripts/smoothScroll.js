@@ -7,9 +7,10 @@ function anchorLinkHandler(e) {
   const targetID = this.getAttribute('href').split('#')
   const targetAnchor = targetID[1] ? document.getElementById(targetID[1]) : document.documentElement
 
-  targetAnchor.scrollIntoView({
-    behavior: 'smooth',
-  })
+  const distanceToTop = (el) => Math.floor(el.getBoundingClientRect().top)
+
+  const originalTop = distanceToTop(targetAnchor)
+  window.scrollBy({ top: originalTop, behavior: 'smooth' })
 }
 
 window.addEventListener('scroll', throttle(updateMenu))
