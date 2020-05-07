@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "webpack-dev-server --config ./webpack.config.js --host 0.0.0.0",
     "build": "NODE_ENV=production webpack --config ./webpack.config.js --mode=production",
-    "deploy": "git subtree push --prefix public origin master"
+    "deploy": "yarn build && git subtree push --prefix public origin master"
   },
   "dependencies": {
     "autoprefixer": "^9.7.4",
