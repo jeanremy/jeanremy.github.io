@@ -7,6 +7,8 @@ import { scene, markerGroup } from './scene'
 const socket = io(process.env.WS_URL)
 
 socket.on('users', ({ users, count, message }) => {
+  scene.remove('markers')
+  markerGroup.children = []
   for (let i = 0, j = users.length; i < j; i++) {
     const element = users[i]
     var markerG = new SphereGeometry(0.7, 32, 32)
@@ -20,7 +22,6 @@ socket.on('users', ({ users, count, message }) => {
     cameraControls.setPosition(pos.x * 2, pos.y * 2, pos.z, true)
 
     markerGroup.add(marker)
-    scene.remove('markers')
     scene.add(markerGroup)
   }
 
