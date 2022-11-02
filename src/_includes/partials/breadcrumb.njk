@@ -1,0 +1,13 @@
+{% set navPages = collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key, {includeSelf: true}) %}
+
+{% if navPages %}
+  <nav class="breadcrumb">
+    {% for navPage in navPages %}
+      {% if loop.last %}
+        <strong>{{ navPage.key }}</strong>
+      {% else %}
+        <a href="{{ navPage.url }}">{{navPage.key}}</a> >
+      {% endif %}
+    {% endfor %}
+  </nav>
+{% endif %}

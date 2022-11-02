@@ -1,0 +1,30 @@
+{
+  "name": "jnrmprd",
+  "version": "3.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "sass": "sass --no-source-map src/assets/scss:_site/assets/css",
+    "postcss": "postcss _site/css/*.css --no-map --replace",
+    "build:sass": "npm-run-all --sequential sass postcss",
+    "build:eleventy": "eleventy",
+    "optimize:fonts": "cd src/assets/fonts && glyphhanger http://localhost:8080/blog/styleguide --subset=AlbertSans-VariableFont_wght.ttf --formats=woff2",
+    "watch:sass": "sass --source-map-urls=absolute --watch src/assets/scss:_site/assets/css",
+    "watch:eleventy": "eleventy --serve",
+    "start": "npm-run-all --parallel watch:*",
+    "build": "npm-run-all --parallel build:sass --sequential build:eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.1",
+    "@11ty/eleventy-navigation": "^0.3.5",
+    "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "clean-css": "^5.3.0",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.52.1"
+  },
+  "dependencies": {
+    "@digital4better/carbonara": "^1.1.1",
+    "dayjs": "^1.11.5",
+    "terser": "^5.15.0"
+  }
+}

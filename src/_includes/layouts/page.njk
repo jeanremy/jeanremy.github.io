@@ -1,0 +1,36 @@
+---
+layout: layouts/base.njk
+---
+{% if not eleventyExcludeFromCollections %}
+  {% include "../partials/breadcrumb.njk" %}
+{% endif %}
+<article class="article">
+  <header>
+    <h1 class="article__title">
+      {{ title }}
+    </h1>
+    {% if date %}
+      <div class="article__meta">
+        <p class="date">
+        Posté le
+        <time datetime="{{ date | format("YYYY/MM/DD") }}">{{ date | format('DD/MM/YYYY') }}</time>
+        </p>
+        {% if tags %}
+          <ul class="taglist">
+            {% for tag in tags %}
+              {%- set tagUrl %}/blog/tags/{{
+          tag | slugify
+        }}/{% endset %}
+              <li>
+                <a href="{{ tagUrl | url }}" class="tag">{{ tag }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    {% endif %}
+  </header>
+  <section class="article__content">
+    {{ content | safe }}
+  </section>
+</article>
