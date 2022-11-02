@@ -1,43 +1,30 @@
 {
   "name": "jnrmprd",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "main": "index.js",
-  "author": "JR <contact@jeanremypraud.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack-dev-server --config ./webpack.config.js --host 0.0.0.0",
-    "build": "NODE_ENV=production webpack --config ./webpack.config.js --mode=production",
-    "deploy": "git subtree push --prefix public origin master"
+    "sass": "sass --no-source-map src/assets/scss:_site/assets/css",
+    "postcss": "postcss _site/css/*.css --no-map --replace",
+    "build:sass": "npm-run-all --sequential sass postcss",
+    "build:eleventy": "eleventy",
+    "optimize:fonts": "cd src/assets/fonts && glyphhanger http://localhost:8080/blog/styleguide --subset=AlbertSans-VariableFont_wght.ttf --formats=woff2",
+    "watch:sass": "sass --source-map-urls=absolute --watch src/assets/scss:_site/assets/css",
+    "watch:eleventy": "eleventy --serve",
+    "start": "npm-run-all --parallel watch:*",
+    "build": "npm-run-all --parallel build:sass --sequential build:eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.1",
+    "@11ty/eleventy-navigation": "^0.3.5",
+    "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "clean-css": "^5.3.0",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.52.1"
   },
   "dependencies": {
-    "autoprefixer": "^9.7.4",
-    "camera-controls": "^1.20.2",
-    "css-loader": "^3.4.2",
-    "dotenv-webpack": "^1.7.0",
-    "file-loader": "^6.0.0",
-    "html-loader": "^0.5.5",
-    "html-minifier-webpack-plugin": "^2.2.3",
-    "html-webpack-plugin": "^3.2.0",
-    "lodash": "^4.17.15",
-    "mini-css-extract-plugin": "^0.9.0",
-    "node-sass": "^4.13.1",
-    "postcss-loader": "^3.0.0",
-    "postcss-pixels-to-rem": "^0.8.0",
-    "sass-loader": "^8.0.2",
-    "socket.io": "^2.3.0",
-    "socket.io-client": "^2.3.0",
-    "svg-url-loader": "^4.0.0",
-    "three": "^0.113.2",
-    "topojson-client": "3",
-    "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.10.2"
-  },
-  "devDependencies": {},
-  "prettier": {
-    "semi": false,
-    "singleQuote": true,
-    "printWidth": 160,
-    "close-empty-jsx-elements": true
+    "@digital4better/carbonara": "^1.1.1",
+    "dayjs": "^1.11.5",
+    "terser": "^5.15.0"
   }
 }

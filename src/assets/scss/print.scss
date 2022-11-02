@@ -1,0 +1,17 @@
+@use 'reset';
+@use 'fonts';
+@use 'variables';
+@use 'typography';
+@use 'utilities';
+@use 'header';
+@use 'page';
+@use 'footer';
+@use 'sidebar';
+@use 'article';
+@use 'home';
+
+
+.sidebar,
+.page-footer {
+  display: none;
+}

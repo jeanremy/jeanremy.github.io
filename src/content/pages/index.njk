@@ -1,0 +1,51 @@
+---
+layout: layouts/base.njk
+permalink: index.html
+eleventyNavigation:
+  key: Accueil
+---
+
+<div class="hero">
+  <p class="baseline">
+    Tech Lead chez <a href="https://www.derniercri.io">Dernier Cri</a>, j’aime travailler sur des projets porteurs de
+    sens.
+  </p>
+  <p class="baseline">
+    Je m’intéresse tout particulièrement à <em>l’éco-conception</em> et à
+    <em>l’accessibilité</em>, et plus largement à la sobriété numérique.
+  </p>
+</div>
+
+<h2>Projets en cours</h2>
+<div class="projects">
+
+  <ul class="arrow-list grid-2">
+    <li class="col">
+      <a href="https://www.nqt.fr">NQT</a>
+      <span class="mt-3 db"
+          >Un portail qui vise à faciliter l'entrée dans la vie active des jeunes diplômés via un système de parrainage.</span
+        >
+    </li>
+    <li class="col">
+      <a href="https://www.plasticorigins.eu/">Plastic Origins</a>
+      <span class="mt-3 db"
+          >Un application web permettant d’annoter des images afin de détecter
+          des déchets. Participation bénévole à un projet de Surfrider
+          Foundation.</span
+        >
+    </li>
+    <li class="col">
+        Co-lead du pôle Numérique Responsable au sein de Dernier Cri
+      </li>
+  </ul>
+
+  {# <section class="col last-article">
+    <div class="last-article__title">
+      <h2>Dernier article</h2>
+      <a href="/blog">Voir tous les articles</a>
+    </div>
+    {% set postslist = collections.posts | reverse %}
+    {% set post = postslist[0] %}
+    {% include 'partials/post-teaser.njk' %}
+  </section> #}
+</div>
