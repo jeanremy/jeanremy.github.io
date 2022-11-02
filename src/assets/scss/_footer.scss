@@ -1,0 +1,15 @@
+.page-footer {
+  margin-top: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  overflow: hidden;
+  gap: 10px;
+  
+  &__menu li {
+    display: inline-block;
+    & + li {
+      margin-left: 5px;
+    }
+  }
+}

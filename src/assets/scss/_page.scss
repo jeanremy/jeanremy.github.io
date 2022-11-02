@@ -1,0 +1,48 @@
+
+.page {
+  background: var(--primary);
+  color: var(--text);
+  overflow: auto;
+  margin: 0;
+  position: relative;
+
+  @media screen and (min-width: 48rem) {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: stretch;
+    min-height: 100vh;
+  }
+}
+
+.container {
+  max-width: 960px;
+  width: 100%;
+  margin: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.content {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.main {
+  padding-top: 80px;
+}
+
+
+.arrow-list {
+  li {
+    padding-left: 22px;
+    position: relative;
+    &:before {
+        content: "→";
+        font-size: .8em;
+        vertical-align: baseline;
+        position: absolute;
+        left: 0;
+    }
+  }
+}

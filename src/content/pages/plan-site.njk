@@ -1,0 +1,16 @@
+---
+title: Plan du site
+description: La liste des rubriques et contenus du site
+layout: layouts/page.njk
+permalink: plan-site/index.html
+eleventyNavigation:
+  key: Plan du site
+  parent: Accueil
+---
+<ul>
+  {% for page in collections.all %}
+    <li>
+      <a href="{{ page.url | url }}">{{ page.data.title }}</a>
+    </li>
+  {% endfor %}
+</ul>

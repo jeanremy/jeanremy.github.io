@@ -1,0 +1,35 @@
+@mixin dark-theme {
+  --primary: #202124;
+  --primaryClear: #484B52;
+  --secondary: #F2F2F2;
+  --grey: #d2d2d2;
+  --textFaded: #B5B5B5;
+  --text: #E8EAED;
+  --emphasis: #A59046;
+}
+
+@mixin light-theme {
+  --primary: #F2F2F2;
+  --primaryClear: #C8C6C6;
+  --secondary: #202124;
+  --grey: #d2d2d2;
+  --textFaded: #535458;
+  --text: #202124;
+  --emphasis: #86D3E4;
+}
+
+:root {
+  @include light-theme();
+  @media (prefers-color-scheme: dark) {
+    @include dark-theme();
+  }
+}
+
+
+body {
+  @include light-theme();
+}
+
+body.dark {
+  @include dark-theme();
+}
