@@ -1,13 +1,12 @@
-const fs = require("fs");
 const CleanCSS = require("clean-css");
-const sass = require("sass");
-const { minify } = require("terser");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+const faviconPlugin = require("eleventy-favicon");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addPlugin(faviconPlugin);
 
   eleventyConfig.addPassthroughCopy("src/assets/fonts");
   eleventyConfig.addPassthroughCopy("src/assets/js");

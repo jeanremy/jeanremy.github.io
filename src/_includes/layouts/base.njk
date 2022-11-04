@@ -6,12 +6,17 @@ description: Tech Lead chez Dernier Cri, j’aime travailler sur des projets por
 <!DOCTYPE html>
 <html lang="fr-FR">
   <head>
-    <title>{{ title }}</title>
+    {% if page.url == "/" %}
+      <title>{{ title }}</title>
+    {% else %}
+      <title>{{ title }} - Jean-Rémy Praud</title>
+    {% endif %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="{{ description }}">
     <meta name="robots" content="noodp">
-    <link rel="icon" href="{{ '/assets/img/favicon.svg' | url }}" type="image/svg+xml">
+    {% favicon './src/assets/img/favicon.svg' %}
+
     <link rel="stylesheet" href="{{ '/assets/css/base.css' | url }}">
     <link rel="stylesheet" href="{{ '/assets/css/print.css' | url }}" media="print">
   </head>
