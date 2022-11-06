@@ -1,0 +1,34 @@
+<footer class="page-footer">
+  <ul class="page-footer__menu">
+    <li>
+      <a href="/mentions-legales">Mentions légales</a>
+    </li>
+    <li>
+      <a href="/plan-site">Plan du site</a>
+    </li>
+    <li>
+      <a href="https://github.com/jeanremy">GitHub</a>
+    </li>
+    <li>
+      <a href="/blog/feed.xml">RSS</a>
+    </li>
+  </ul>
+  <p>Score <a href="/mentions-legales/">ÉcoIndex</a>: A</p>
+</footer>
+
+<style webc:scoped webc:keep>
+  .page-footer {
+    margin-top: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    overflow: hidden;
+    gap: 10px;
+  }
+  .page-footer__menu li {
+    display: inline-block;
+  }
+  .page-footer__menu li + li {
+    margin-left: 5px;
+  }
+</style>

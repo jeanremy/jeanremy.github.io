@@ -1,0 +1,27 @@
+<header class="page-header">
+  <div>
+    <script webc:type="render" webc:is="template">
+      function () {
+        if(this.page.url === "/") {
+          return '<p class="page__title">Jean-Rémy Praud</p>'
+        }
+        return '<p class="page__title"><a href="/" rel="me" title="Homepage">Jean-Rémy Praud</a></p>'
+      }
+    </script>
+    <p class="job">Developpeur Fullstack à Nantes</p>
+  </div>
+</header>
+
+<style webc:scoped webc:keep>
+  .page__title {
+    font-size: 2rem;
+    font-weight: 800;
+  }
+  .page__title a {
+    border: 0;
+  }
+
+  .job {
+    color: var(--textFaded);
+  }
+</style>

@@ -22,13 +22,19 @@ description: Tech Lead chez Dernier Cri, j’aime travailler sur des projets por
   </head>
   <body class="page">
     <div class="content container">
-      {% include "partials/header.njk" %}
+
+      {% renderTemplate "webc" %}
+      <site-header></site-header>
+      {% endrenderTemplate %}
       <main class="main">
         {{ content | safe }}
       </main>
-      {% include "partials/footer.njk" %}
+      {% renderTemplate "webc" %}
+      <site-footer></site-footer>
+      {% endrenderTemplate %}
     </div>
-    {% include "partials/sidebar.njk" %}
-    <script src="{{ '/assets/js/index.js' | url }}"></script>
+    {% renderTemplate "webc" %}
+    <site-sidebar></site-sidebar>
+    {% endrenderTemplate %}
   </body>
 </html>
