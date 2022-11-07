@@ -38,5 +38,14 @@
     border: 0;
     cursor: pointer;
     margin-top: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .sun {display: none;}
+    .moon {display: block;}
+    body.dark & {
+      .sun {display: block;}
+      .moon {display: none;}
+    }
   }
 }
