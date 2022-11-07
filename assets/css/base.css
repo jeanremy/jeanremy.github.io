@@ -850,6 +850,21 @@ pre {
   border: 0;
   cursor: pointer;
   margin-top: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sidebar__toggle-mode .sun {
+  display: none;
+}
+.sidebar__toggle-mode .moon {
+  display: block;
+}
+body.dark .sidebar__toggle-mode .sun {
+  display: block;
+}
+body.dark .sidebar__toggle-mode .moon {
+  display: none;
 }
 
 .breadcrumb {
