@@ -5,6 +5,9 @@ const faviconPlugin = require("eleventy-favicon");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const esbuild = require("esbuild");
 
+const markdownIt = require("markdown-it");
+const anchor = require("markdown-it-anchor");
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.on("eleventy.before", async () => {
     await esbuild.build({
@@ -25,7 +28,6 @@ module.exports = function (eleventyConfig) {
   // ---------- PASSTHROUGH --------------------
   eleventyConfig.addPassthroughCopy("src/assets/fonts");
   eleventyConfig.addPassthroughCopy("src/assets/js");
-  eleventyConfig.addPassthroughCopy("src/assets/img");
   eleventyConfig.addPassthroughCopy("CNAME");
 
   // ---------- FILTERS --------------------
@@ -43,10 +45,28 @@ module.exports = function (eleventyConfig) {
     "posts",
     require("./src/_11ty/collections/posts.js")
   );
-
   eleventyConfig.addCollection(
     "tags",
     require("./src/_11ty/collections/tags.js")
+  );
+  eleventyConfig.addNunjucksAsyncShortcode(
+    "image",
+    require("./src/_11ty/shortcodes/image.js")
+  );
+
+  eleventyConfig.setLibrary(
+    "md",
+    markdownIt({ html: true })
+      .use(anchor, {
+        permalink: anchor.permalink.ariaHidden({
+          placement: "after",
+          class: "title-anchor",
+          symbol: "#",
+        }),
+        level: [2],
+        slugify: eleventyConfig.getFilter("slugify"),
+      })
+      .disable("code")
   );
 
   return {

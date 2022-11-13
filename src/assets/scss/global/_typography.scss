@@ -44,6 +44,12 @@ h6, .h6 {
   margin: 2rem 0 .8rem;
 }
 
+.title-anchor {
+  font-size: 0.75em;
+  border: 0;
+  color: var(--primaryClear);
+  margin-left: 6px;
+}
 /* PARAGRAPHS */
 small {
   font-size: var(--step--1);
