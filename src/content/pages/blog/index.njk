@@ -1,0 +1,17 @@
+---
+permalink: /blog/
+layout: layouts/page.njk
+title: Blog
+eleventyNavigation:
+  key: Blog
+  parent: Accueil
+---
+
+{% set postslist = collections.posts %}
+<div
+  class="postlist"
+>
+  {% for post in postslist | reverse %}
+    {% include 'partials/post-teaser.njk' %}
+  {% endfor %}
+</div>

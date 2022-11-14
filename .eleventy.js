@@ -1,12 +1,12 @@
-const CleanCSS = require("clean-css");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const faviconPlugin = require("eleventy-favicon");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const esbuild = require("esbuild");
 
-const markdownIt = require("markdown-it");
-const anchor = require("markdown-it-anchor");
+const { console, format, cssmin } = require("./src/_11ty/filters");
+const { posts, tags } = require("./src/_11ty/collections");
+const { markdownit } = require("./src/_11ty/libraries");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.on("eleventy.before", async () => {
@@ -31,29 +31,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("CNAME");
 
   // ---------- FILTERS --------------------
-  eleventyConfig.addFilter("cssmin", function (code) {
-    return new CleanCSS({}).minify(code).styles;
-  });
-  eleventyConfig.addFilter("format", require("./src/_11ty/filters/format.js"));
-  eleventyConfig.addFilter(
-    "console",
-    require("./src/_11ty/filters/console.js")
-  );
-
-  // ---------- COLLECTIONS --------------------
-  eleventyConfig.addCollection(
-    "posts",
-    require("./src/_11ty/collections/posts.js")
-  );
-  eleventyConfig.addCollection(
-    "tags",
-    require("./src/_11ty/collections/tags.js")
-  );
-  eleventyConfig.addNunjucksAsyncShortcode(
-    "image",
-    require("./src/_11ty/shortcodes/image.js")
-  );
-
+  eleventyConfig.addFilter("cssmin", cssmin);
+  eleventyConfig.addFilter("format", format);
+  eleventyConfig.addFilter("console", console);
   eleventyConfig.setLibrary(
     "md",
     markdownIt({ html: true })
@@ -68,6 +48,16 @@ module.exports = function (eleventyConfig) {
       })
       .disable("code")
   );
+
+  // ---------- COLLECTIONS --------------------
+  eleventyConfig.addCollection("posts", posts);
+  eleventyConfig.addCollection("tags", tags);
+  eleventyConfig.addNunjucksAsyncShortcode(
+    "image",
+    require("./src/_11ty/shortcodes/image.js")
+  );
+
+  eleventyConfig.setLibrary("md", markdownit(eleventyConfig));
 
   return {
     dir: {
