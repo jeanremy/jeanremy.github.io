@@ -26,6 +26,11 @@
   &__content {
     max-width: 640px;
 
+    img {
+      width: 100%;
+      height: auto;
+    }
+
     ul:not(.taglist) {
       margin-top: .8rem;
       li {

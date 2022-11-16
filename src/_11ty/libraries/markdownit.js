@@ -22,7 +22,7 @@ module.exports = function (eleventyConfig) {
       globalAttributes: {
         loading: "lazy",
         decoding: "async",
-        sizes: "100vw",
+        sizes: "(max-width: 640px) 320px, 640px",
       },
     })
     .disable("code");
