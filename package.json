@@ -22,6 +22,7 @@
     "sass": "^1.52.1"
   },
   "dependencies": {
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
     "dayjs": "^1.11.5",
     "eleventy-favicon": "^1.1.3",
     "terser": "^5.15.0"
