@@ -34,28 +34,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("cssmin", cssmin);
   eleventyConfig.addFilter("format", format);
   eleventyConfig.addFilter("console", console);
-  eleventyConfig.setLibrary(
-    "md",
-    markdownIt({ html: true })
-      .use(anchor, {
-        permalink: anchor.permalink.ariaHidden({
-          placement: "after",
-          class: "title-anchor",
-          symbol: "#",
-        }),
-        level: [2],
-        slugify: eleventyConfig.getFilter("slugify"),
-      })
-      .disable("code")
-  );
 
   // ---------- COLLECTIONS --------------------
   eleventyConfig.addCollection("posts", posts);
   eleventyConfig.addCollection("tags", tags);
-  eleventyConfig.addNunjucksAsyncShortcode(
-    "image",
-    require("./src/_11ty/shortcodes/image.js")
-  );
 
   eleventyConfig.setLibrary("md", markdownit(eleventyConfig));
 

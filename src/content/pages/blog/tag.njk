@@ -6,7 +6,7 @@ pagination:
   filter:
     - posts
   addAllPagesToCollections: true
-layout: layouts/page.njk
+layout: page.njk
 permalink: blog/tags/{{ tag | slugify }}/ 
 eleventyComputed:
   title: Résultats pour “{{ tag }}”
@@ -15,8 +15,7 @@ eleventyComputed:
     parent: Tags
 ---
 
-
-{% set postslist = collections[ tag ] %}
+{% set postslist = collections[tag] %}
 <div
   class="postlist"
 >
