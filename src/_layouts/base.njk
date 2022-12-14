@@ -1,25 +1,23 @@
----
-title: Jean-Rémy Praud - Developpeur fullstack
-description: Tech Lead chez Dernier Cri, j’aime travailler sur des projets porteurs de sens. Je m’intéresse tout particulièrement à l’éco-conception et à l’accessibilité.
----
 {% set assetHash = global.random() %}
 
 <!DOCTYPE html>
 <html lang="fr-FR">
   <head>
-    {% if page.url == "/" %}
-      <title>{{ title }}</title>
-    {% else %}
-      <title>{{ title }} - Jean-Rémy Praud</title>
-    {% endif %}
     <meta charset="utf-8">
+    {% if page.url == "/" %}
+      <title>{{ meta.siteName }} - {{ meta.siteBaseline }}</title>
+    {% else %}
+      <title>{{ title }} - {{ meta.siteName }}</title>
+    {% endif %}
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description" content="{{ description }}">
+    <meta name="description" content="{{ meta.siteDescription }}">
     <meta name="robots" content="noodp">
+
     {% favicon './src/assets/img/favicon.svg' %}
 
     <link rel="stylesheet" href="/assets/css/base.css?{{assetHash}}">
     <link rel="stylesheet" href="/assets/css/print.css?{{assetHash}}" media="print">
+    {% include "schemas/website.njk" %}
 
   </head>
   <body class="page">
