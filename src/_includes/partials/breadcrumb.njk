@@ -4,7 +4,7 @@
   <nav class="breadcrumb">
     {% for navPage in navPages %}
       {% if loop.last %}
-        <strong>{{ navPage.key }}</strong>
+        {{ navPage.key }}
       {% else %}
         <a href="{{ navPage.url }}">{{navPage.key}}</a> >
       {% endif %}

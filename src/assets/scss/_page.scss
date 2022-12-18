@@ -26,10 +26,14 @@
 .content {
   padding-top: 24px;
   padding-bottom: 24px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .main {
   padding-top: 80px;
+  margin-bottom: 80px;
 }
 
 
