@@ -6,14 +6,10 @@
   overflow: hidden;
   gap: 10px;
 
-  &__menu li {
-    display: inline-block;
-    & + li {
-      margin-left: 5px;
-    }
-  }
-
-  p {
-    font-size: var(--step--1);
+  &__menu {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    gap: 10px;
   }
 }
