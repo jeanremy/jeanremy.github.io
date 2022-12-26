@@ -9,18 +9,16 @@ layout: base.njk
     <h1 class="article__title">
       {{ title }}
     </h1>
-    {% if 'blog' in page.url %}
+    {% if 'notes' in page.url %}
       <p class="article__description">
         {{description}}
       </p>
     {% endif %}
     {% if date %}
-
-      <p class="article__date">
+      <p class="article__date with-hyphen">
         Posté le
         <time datetime="{{ date | format("YYYY/MM/DD") }}">{{ date | format('DD/MM/YYYY') }}</time>
       </p>
-
     {% endif %}
   </header>
   <section class="article__content">

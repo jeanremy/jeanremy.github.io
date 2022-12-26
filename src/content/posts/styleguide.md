@@ -1,11 +1,8 @@
 ---
-title: Un premier article de blog avec un titre bien long pour tester les sauts de ligne
+title: Un premier article des notes avec un titre bien long pour tester les sauts de ligne
 description: Ben voila
 date: 2022-09-03
 eleventyExcludeFromCollections: true
-tags:
-  - accessibilité
-  - éco-conception
 ---
 
 Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.

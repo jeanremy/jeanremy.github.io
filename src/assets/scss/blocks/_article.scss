@@ -1,7 +1,4 @@
-
-
 .article {
-  
   &__header {
     margin: var(--space-m) 0 var(--space-7xl);
   }
@@ -12,17 +9,8 @@
 
   &__date {
     font-size: var(--step--1);
-    &:before {
-      content: "";
-      height: 1px;
-      background-color: var(--text);
-      width: 40px;
-      display: inline-block;
-      vertical-align: middle;
-      margin-right: 10px;
-    }
   }
-  
+
   &__content {
     max-width: 640px;
 
@@ -32,48 +20,52 @@
     }
 
     ul:not(.taglist) {
-      margin-top: .8rem;
+      margin-top: 0.8rem;
       li {
         &:before {
           content: "→";
-          margin-right: .3em;
+          margin-right: 0.3em;
         }
       }
     }
 
     ol {
-      margin-top: .8rem;
+      margin-top: 0.8rem;
       counter-reset: content-counter;
       li {
         counter-increment: content-counter;
         &:before {
           content: counter(content-counter) ". ";
-          font-size: .875em;
+          font-size: 0.875em;
           font-weight: 600;
         }
       }
     }
 
-img {
-      margin-top: 1.6rem;;
+    img {
+      margin-block: var(--space-m);
     }
-
   }
 }
 
 .article-teaser {
-  display: flex;
-  align-items: flex-start;
-
   &__date {
-    margin-right: 2rem;
-    font-size: 1.4rem;
-    margin-top: 5px;
+    font-size: var(--step--1);
   }
 
-  h2 {margin-top: 0;}
-  
+  h2 {
+    margin: 0;
+    a {
+      border: 0;
+    }
+  }
+
+  & > p {
+    margin-left: var(--space-l);
+    margin-top: var(--space-s);
+  }
+
   & + & {
-    margin-top: var(--space-m);
+    margin-top: var(--space-xl);
   }
 }

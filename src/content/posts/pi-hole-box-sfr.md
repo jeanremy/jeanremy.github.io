@@ -1,11 +1,8 @@
 ---
 title: Installer Pi-Hole sur un Raspberry Pi et une box SFR
-description: Ben voila
+description: Une introduction à l’installation d’un bloqueur de pub centralisé, disponible pour tous les clients d’un réseau
 date: 2022-11-13
 templateEngineOverride: md
-tags:
-  - raspberry pi
-  - pi-hole
 ---
 
 En quelques minutes, il est possible d'installer chez soi un bloqueur de pubs avec [Pi-Hole](https://pi-hole.net/).

@@ -5,7 +5,7 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const esbuild = require("esbuild");
 
 const { console, format, cssmin } = require("./src/_11ty/filters");
-const { posts, tags } = require("./src/_11ty/collections");
+const { posts } = require("./src/_11ty/collections");
 const { markdownit } = require("./src/_11ty/libraries");
 
 module.exports = function (eleventyConfig) {
@@ -37,7 +37,6 @@ module.exports = function (eleventyConfig) {
 
   // ---------- COLLECTIONS --------------------
   eleventyConfig.addCollection("posts", posts);
-  eleventyConfig.addCollection("tags", tags);
 
   eleventyConfig.setLibrary("md", markdownit(eleventyConfig));
 

@@ -2,11 +2,11 @@
 @use 'global/fonts';
 @use 'global/variables';
 @use 'global/typography';
-@use 'global/spacing';
 @use 'global/page';
 
 @use 'utilities/grid';
 @use 'utilities/utilities';
+@use 'utilities/hyphen';
 
 @use 'blocks/article';
 @use 'blocks/breadcrumb';
