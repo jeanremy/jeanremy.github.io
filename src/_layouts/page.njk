@@ -16,8 +16,7 @@ layout: base.njk
     {% endif %}
     {% if date %}
       <p class="article__date with-hyphen">
-        Posté le
-        <time datetime="{{ date | format("YYYY/MM/DD") }}">{{ date | format('DD/MM/YYYY') }}</time>
+        Posté le&nbsp;<time datetime="{{ date | format("YYYY/MM/DD") }}">{{ date | format('DD/MM/YYYY') }}</time>
       </p>
     {% endif %}
   </header>
