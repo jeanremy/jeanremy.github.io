@@ -77,6 +77,14 @@ a {
   --textFaded: #535458;
   --text: #202124;
   --emphasis: #86D3E4;
+  /* @link https://utopia.fyi/type/calculator?c=320,16,1.125,960,16,1.2,5,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+  --step--1: clamp(0.83rem, calc(0.92rem + -0.14vw), 0.89rem);
+  --step-0: clamp(1.00rem, calc(1.00rem + 0.00vw), 1.00rem);
+  --step-1: clamp(1.13rem, calc(1.09rem + 0.19vw), 1.20rem);
+  --step-2: clamp(1.27rem, calc(1.18rem + 0.44vw), 1.44rem);
+  --step-3: clamp(1.42rem, calc(1.27rem + 0.76vw), 1.73rem);
+  --step-4: clamp(1.60rem, calc(1.37rem + 1.18vw), 2.07rem);
+  --step-5: clamp(1.80rem, calc(1.46rem + 1.72vw), 2.49rem);
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -110,14 +118,8 @@ body.dark {
   --emphasis: #A59046;
 }
 
-html {
-  font-size: 62.5%;
-  /* équivalence "10px" sur l'élément racine */
-}
-
 body {
-  font-size: 1.6rem;
-  /* taille de base pour tous les éléments équivalent 16px */
+  font-size: var(--step-0);
   line-height: 1.4;
   font-family: "Albert Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -126,70 +128,47 @@ body {
 
 /* TITLES */
 h1, .h1 {
-  font-size: 3rem;
-  font-weight: 700;
-}
-@media screen and (min-width: 48rem) {
-  h1, .h1 {
-    font-size: 5rem;
-  }
+  font-size: var(--step-5);
+  font-weight: var(--weight-strong);
 }
 
 h2, .h2 {
-  font-size: 2.4rem;
-  font-weight: 700;
-  margin: 2.4rem 0 1rem;
+  font-size: var(--step-4);
+  font-weight: var(--weight-strong);
+  margin: 2.4rem 0 0.8rem;
 }
 
 h3, .h3 {
-  font-size: 2.2rem;
-  font-weight: 700;
-  margin: 2.2rem 0 1rem;
+  font-size: var(--step-3);
+  font-weight: var(--weight-strong);
+  margin: 2.2rem 0 0.8rem;
 }
 
 h4, .h4 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin: 2rem 0 1rem;
+  font-size: var(--step-2);
+  font-weight: var(--weight-strong);
+  margin: 2rem 0 0.8rem;
 }
 
 h5, .h5 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin: 2rem 0 1rem;
+  font-size: var(--step-1);
+  font-weight: var(--weight-strong);
+  margin: 2rem 0 0.8rem;
 }
 
 h6, .h6 {
-  font-size: 1.6rem;
-  font-weight: 700;
-  margin: 2rem 0 1rem;
+  font-size: var(--step-0);
+  font-weight: var(--weight-strong);
+  margin: 2rem 0 0.8rem;
 }
 
 /* PARAGRAPHS */
-.baseline {
-  font-size: 2.5rem;
-}
-.baseline em {
-  font-weight: 600;
-  position: relative;
-}
-.baseline em:before {
-  content: "";
-  width: 100%;
-  height: 0.1em;
-  display: block;
-  position: absolute;
-  background-color: var(--emphasis);
-  bottom: -2px;
-  left: 0;
-}
-
-.small {
-  font-size: 1.4rem;
+small {
+  font-size: var(--step--1);
 }
 
 strong {
-  font-weight: 600;
+  font-weight: var(--weight-strong);
 }
 
 /* ANCHOR & EMPHASIS */
@@ -274,6 +253,85 @@ pre {
 }
 .list li + li {
   margin-top: 12px;
+}
+
+/* @link https://utopia.fyi/space/calculator?c=320,16,1.125,960,17,1.2,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|5|6|7|8|9,s-l&g=s,l,xl,12 */
+:root {
+  --space-3xs: clamp(0.25rem, calc(0.25rem + 0.00vw), 0.25rem);
+  --space-2xs: clamp(0.50rem, calc(0.47rem + 0.16vw), 0.56rem);
+  --space-xs: clamp(0.75rem, calc(0.72rem + 0.16vw), 0.81rem);
+  --space-s: clamp(1.00rem, calc(0.97rem + 0.16vw), 1.06rem);
+  --space-m: clamp(1.50rem, calc(1.44rem + 0.31vw), 1.63rem);
+  --space-l: clamp(2.00rem, calc(1.94rem + 0.31vw), 2.13rem);
+  --space-xl: clamp(3.00rem, calc(2.91rem + 0.47vw), 3.19rem);
+  --space-2xl: clamp(4.00rem, calc(3.88rem + 0.63vw), 4.25rem);
+  --space-3xl: clamp(5.00rem, calc(4.84rem + 0.78vw), 5.31rem);
+  --space-4xl: clamp(6.00rem, calc(5.81rem + 0.94vw), 6.38rem);
+  --space-5xl: clamp(7.00rem, calc(6.78rem + 1.09vw), 7.44rem);
+  --space-6xl: clamp(8.00rem, calc(7.75rem + 1.25vw), 8.50rem);
+  --space-7xl: clamp(9.00rem, calc(8.72rem + 1.41vw), 9.56rem);
+  /* One-up pairs */
+  --space-3xs-2xs: clamp(0.25rem, calc(0.09rem + 0.78vw), 0.56rem);
+  --space-2xs-xs: clamp(0.50rem, calc(0.34rem + 0.78vw), 0.81rem);
+  --space-xs-s: clamp(0.75rem, calc(0.59rem + 0.78vw), 1.06rem);
+  --space-s-m: clamp(1.00rem, calc(0.69rem + 1.56vw), 1.63rem);
+  --space-m-l: clamp(1.50rem, calc(1.19rem + 1.56vw), 2.13rem);
+  --space-l-xl: clamp(2.00rem, calc(1.41rem + 2.97vw), 3.19rem);
+  --space-xl-2xl: clamp(3.00rem, calc(2.38rem + 3.13vw), 4.25rem);
+  --space-2xl-3xl: clamp(4.00rem, calc(3.34rem + 3.28vw), 5.31rem);
+  --space-3xl-4xl: clamp(5.00rem, calc(4.31rem + 3.44vw), 6.38rem);
+  --space-4xl-5xl: clamp(6.00rem, calc(5.28rem + 3.59vw), 7.44rem);
+  --space-5xl-6xl: clamp(7.00rem, calc(6.25rem + 3.75vw), 8.50rem);
+  --space-6xl-7xl: clamp(8.00rem, calc(7.22rem + 3.91vw), 9.56rem);
+}
+
+.page {
+  background: var(--primary);
+  color: var(--text);
+  overflow: auto;
+  margin: 0;
+  position: relative;
+}
+@media screen and (min-width: 48rem) {
+  .page {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: stretch;
+    min-height: 100vh;
+  }
+}
+
+.container {
+  max-width: 96ch;
+  width: 100%;
+  margin: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.content {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  padding-bottom: var(--space-4xl);
+}
+
+.arrow-list li {
+  padding-left: 22px;
+  position: relative;
+}
+.arrow-list li:before {
+  content: "→";
+  font-size: 0.8em;
+  vertical-align: baseline;
+  position: absolute;
+  left: 0;
 }
 
 .grid-1 {
@@ -740,9 +798,92 @@ pre {
   display: block;
 }
 
+.article__header {
+  margin: var(--space-m) 0 var(--space-7xl);
+}
+.article__description {
+  margin-block: var(--space-m);
+}
+.article__date {
+  font-size: var(--step--1);
+}
+.article__date:before {
+  content: "";
+  height: 1px;
+  background-color: var(--text);
+  width: 40px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.article__content {
+  max-width: 640px;
+}
+.article__content ul:not(.taglist) {
+  margin-top: 0.8rem;
+}
+.article__content ul:not(.taglist) li:before {
+  content: "→";
+  margin-right: 0.3em;
+}
+.article__content ol {
+  margin-top: 0.8rem;
+  counter-reset: content-counter;
+}
+.article__content ol li {
+  counter-increment: content-counter;
+}
+.article__content ol li:before {
+  content: counter(content-counter) ". ";
+  font-size: 0.875em;
+  font-weight: 600;
+}
+
+.article-teaser {
+  display: flex;
+  align-items: flex-start;
+}
+.article-teaser__date {
+  margin-right: 2rem;
+  font-size: 1.4rem;
+  margin-top: 5px;
+}
+.article-teaser h2 {
+  margin-top: 0;
+}
+.article-teaser + .article-teaser {
+  margin-top: var(--space-m);
+}
+
+.breadcrumb {
+  font-size: var(--step--1);
+  margin-block-start: var(--space-3xl);
+}
+
+.hero {
+  padding: var(--space-6xl) 0 var(--space-7xl);
+}
+
+.baseline {
+  font-size: var(--step-3);
+  font-weight: 300;
+}
+.baseline em {
+  position: relative;
+}
+.baseline em:before {
+  content: "";
+  width: 100%;
+  height: 0.1em;
+  display: block;
+  position: absolute;
+  background-color: var(--emphasis);
+  bottom: -2px;
+  left: 0;
+}
+
 .page__title {
-  font-size: 2rem;
-  font-weight: 800;
+  font-weight: 600;
 }
 .page__title a {
   border: 0;
@@ -752,54 +893,8 @@ pre {
   color: var(--textFaded);
 }
 
-.page {
-  background: var(--primary);
-  color: var(--text);
-  overflow: auto;
-  margin: 0;
-  position: relative;
-}
-@media screen and (min-width: 48rem) {
-  .page {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-    align-items: stretch;
-    min-height: 100vh;
-  }
-}
-
-.container {
-  max-width: 960px;
-  width: 100%;
-  margin: 0;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-.content {
-  padding-top: 24px;
-  padding-bottom: 24px;
-}
-
-.main {
-  padding-top: 80px;
-}
-
-.arrow-list li {
-  padding-left: 22px;
-  position: relative;
-}
-.arrow-list li:before {
-  content: "→";
-  font-size: 0.8em;
-  vertical-align: baseline;
-  position: absolute;
-  left: 0;
-}
-
 .page-footer {
-  margin-top: 80px;
+  margin-top: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -816,7 +911,7 @@ pre {
 .sidebar {
   background-color: var(--secondary);
   color: var(--primary);
-  font-size: 1.4rem;
+  font-size: var(--step--1);
   padding: 34px 15px;
   position: relative;
   display: flex;
@@ -843,8 +938,8 @@ pre {
   }
 }
 .sidebar__toggle-mode {
-  width: 4rem;
-  height: 4rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
   background-color: var(--grey);
   border: 0;
@@ -865,104 +960,4 @@ body.dark .sidebar__toggle-mode .sun {
 }
 body.dark .sidebar__toggle-mode .moon {
   display: none;
-}
-
-.breadcrumb {
-  font-size: 1.4rem;
-}
-
-.article__title {
-  margin-top: 1.4rem;
-}
-.article__meta {
-  font-size: 1.4rem;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.article__content {
-  margin-top: 100px;
-  max-width: 640px;
-}
-.article__content ul:not(.taglist) {
-  margin-top: 0.8rem;
-}
-.article__content ul:not(.taglist) li:before {
-  content: "→";
-  margin-right: 0.3em;
-}
-.article__content ol {
-  margin-top: 0.8rem;
-  counter-reset: content-counter;
-}
-.article__content ol li {
-  counter-increment: content-counter;
-}
-.article__content ol li:before {
-  content: counter(content-counter) ". ";
-  font-size: 0.875em;
-  font-weight: 600;
-}
-.article__content * + p {
-  margin-top: 1.1rem;
-}
-
-.article-teaser {
-  display: flex;
-  align-items: flex-start;
-}
-.article-teaser__date {
-  margin-right: 2rem;
-  font-size: 1.4rem;
-  margin-top: 5px;
-}
-.article-teaser h2 {
-  margin-top: 0;
-}
-.article-teaser + .article-teaser {
-  margin-top: 35px;
-}
-
-.taglist {
-  margin: 15px 0;
-  display: flex;
-  gap: 10px;
-}
-
-.tag {
-  text-transform: uppercase;
-  color: var(--text);
-  text-decoration: none;
-  border-bottom: 0;
-  font-size: 1rem;
-  padding: 4px 10px;
-  border-radius: 4px;
-  border: 1px solid var(--emphasis);
-  display: inline-block;
-  font-weight: 600;
-}
-.tag:before {
-  content: none;
-}
-.tag:visited {
-  color: var(--textFaded);
-  border-bottom-color: var(--emphasis);
-}
-
-.hero {
-  padding: 120px 0 150px;
-}
-
-.projects {
-  margin-bottom: 6rem;
-}
-.projects span {
-  display: block;
-  margin-top: 8px;
-}
-
-.last-article__title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
