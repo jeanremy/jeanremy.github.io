@@ -16,7 +16,7 @@
 }
 
 .container {
-  max-width: 960px;
+  max-width: 96ch;
   width: 100%;
   margin: 0;
   padding-left: 15px;
@@ -26,11 +26,15 @@
 .content {
   padding-top: 24px;
   padding-bottom: 24px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .main {
-  padding-top: 80px;
+  padding-bottom: var(--space-4xl);
 }
+
 
 
 .arrow-list {

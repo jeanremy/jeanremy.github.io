@@ -5,29 +5,22 @@ layout: base.njk
   {% include "partials/breadcrumb.njk" %}
 {% endif %}
 <article class="article">
-  <header>
+  <header class="article__header">
     <h1 class="article__title">
       {{ title }}
     </h1>
+    {% if 'blog' in page.url %}
+      <p class="article__description">
+        {{description}}
+      </p>
+    {% endif %}
     {% if date %}
-      <div class="article__meta">
-        <p class="date">
+
+      <p class="article__date">
         Posté le
         <time datetime="{{ date | format("YYYY/MM/DD") }}">{{ date | format('DD/MM/YYYY') }}</time>
-        </p>
-        {% if tags %}
-          <ul class="taglist">
-            {% for tag in tags %}
-              {%- set tagUrl %}/blog/tags/{{
-          tag | slugify
-        }}/{% endset %}
-              <li>
-                <a href="{{ tagUrl | url }}" class="tag">{{ tag }}</a>
-              </li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-      </div>
+      </p>
+
     {% endif %}
   </header>
   <section class="article__content">
