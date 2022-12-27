@@ -5,11 +5,27 @@
   justify-content: space-between;
   overflow: hidden;
   gap: 10px;
+  font-size: var(--step--1);
 
   &__menu {
     display: flex;
     flex-wrap: wrap;
     overflow: hidden;
     gap: 10px;
+  }
+
+  &__social {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    gap: 10px;
+    a {
+      border: 0;
+    }
+
+    svg rect,
+    svg path {
+      fill: var(--text);
+    }
   }
 }

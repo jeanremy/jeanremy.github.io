@@ -1,6 +1,5 @@
 ---
 title: Mentions légales
-description: Contact et crédits
 layout: page.njk
 permalink: mentions-legales/index.html
 eleventyNavigation:

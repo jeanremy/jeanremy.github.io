@@ -24,13 +24,14 @@ pre[class*="language-"] {
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
+  font-size: var(--step--1);
 }
 
 /* Code blocks */
 pre[class*="language-"] {
   padding: 1em;
   overflow: auto;
-  border-radius: 0.3em;
+  border-radius: var(--radius);
 }
 
 :not(pre) > code[class*="language-"],
@@ -41,7 +42,7 @@ pre[class*="language-"] {
 /* Inline code */
 :not(pre) > code[class*="language-"] {
   padding: 0.1em;
-  border-radius: 0.3em;
+  border-radius: var(--radius);
   white-space: normal;
 }
 

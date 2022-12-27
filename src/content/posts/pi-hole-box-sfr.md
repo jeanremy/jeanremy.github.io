@@ -40,7 +40,7 @@ Ensuite, il suffit de sélectionner l'équipement et lui attribuer une IP quelco
 Le Raspberry Pi est maintenant prêt à être configuré. Pour se connecter en SSH, il suffit de lancer la commande suivante
 
 ```bash
-ssh pi@192.168.1.30
+> ssh pi@192.168.1.30
 ```
 
 `pi` est l'utilisateur par défaut et `192.168.1.30` l'IP précédemment attribuée. Dans ce cas, le mot de passe par défaut est `raspberry`.
@@ -48,7 +48,7 @@ ssh pi@192.168.1.30
 On peut ensuite lancer la commande d’installation de Pi-Hole:
 
 ```bash
-curl -sSL https://install.pi-hole.net | bash
+> curl -sSL https://install.pi-hole.net | bash
 ```
 
 La configuration propose plusieurs choix de fournisseurs de DNS. Il faut donc bien lire [la documentation](https://docs.pi-hole.net/guides/dns/upstream-dns-providers/) avant de choisir. De mon côté, j’ai choisi OpenDNS pour son filtre anti-phising et le filtre familial.
@@ -59,7 +59,7 @@ Pi-Hole fonctionne, il faut maintenant le définir comme DNS primaire. Pour cela
 
 ![Changer les DNS primaires](./src/assets/img/posts/dns-primaire.png)
 
-Rdémarrer la box, puis l’interface de Pi-Hole est accessible à [http://192.168.1.30/admin/index.php](http://192.168.1.30/admin/index.php)
+Rdémarrer la box, puis l’interface de Pi-Hole est accessible à http://192.168.1.30/admin/index.php.
 
 ## Bonus
 

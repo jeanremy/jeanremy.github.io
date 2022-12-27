@@ -2,6 +2,7 @@
 permalink: /notes/
 layout: page.njk
 title: Notes
+description: Une liste des solutions trouvées aux problèmes auxquels je suis confronté lors de mon quotidien de développeur.
 eleventyNavigation:
   key: Notes
   parent: Accueil
@@ -11,7 +12,7 @@ eleventyNavigation:
 <div
   class="postlist"
 >
-  {% for post in postslist | reverse %}
+  {% for post in postslist %}
     {% include 'partials/post-teaser.njk' %}
   {% endfor %}
 </div>

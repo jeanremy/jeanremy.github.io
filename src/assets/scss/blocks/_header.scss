@@ -1,8 +1,23 @@
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__nav {
+    ul {
+      display: flex;
+      gap: 20px;
+      font-weight: var(--weight-strong);
+    }
+
+    a:not([aria-current]) {
+      border-bottom-color: transparent;
+    }
+  }
+}
+
 .page__title {
   font-weight: 600;
-  a {
-    border: 0;
-  }
 }
 
 .job {

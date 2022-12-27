@@ -1,12 +1,17 @@
 <header class="page-header">
   <div>
-    {% if page.url == "/" %}
-      <p class="page__title">Jean-Rémy Praud</p>
-    {% else %}
-      <p class="page__title">
-        <a href="/" rel="me" title="Homepage">Jean-Rémy Praud</a>
-      </p>
-    {% endif %}
+    <p class="page__title">Jean-Rémy Praud</p>
     <p class="job">Developpeur Fullstack</p>
   </div>
+
+  <nav class="page-header__nav">
+    <ul>
+      <li>
+        <a href="/" {% if page.url == "/" %} aria-current="page"{% endif %}>À propos</a>
+      </li>
+      <li>
+        <a href="/notes" {% if page.url == "/notes/" %} aria-current="page"{% endif %}>Notes</a>
+      </li>
+    </ul>
+  </nav>
 </header>

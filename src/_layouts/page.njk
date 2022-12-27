@@ -9,7 +9,7 @@ layout: base.njk
     <h1 class="article__title">
       {{ title }}
     </h1>
-    {% if 'notes' in page.url %}
+    {% if type == 'post' %}
       <p class="article__description">
         {{description}}
       </p>
@@ -20,7 +20,7 @@ layout: base.njk
       </p>
     {% endif %}
   </header>
-  <section class="article__content">
+  <section class="article__content container-s">
     {{ content | safe }}
   </section>
 </article>

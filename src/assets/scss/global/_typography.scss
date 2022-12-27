@@ -7,8 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* TITLES */
-
+/* Common title sizes */
 h1,
 .h1 {
   font-size: var(--step-5);
@@ -19,114 +18,38 @@ h2,
 .h2 {
   font-size: var(--step-4);
   font-weight: var(--weight-strong);
-  margin: 2.4rem 0 0.8rem;
 }
 
 h3,
 .h3 {
   font-size: var(--step-3);
   font-weight: var(--weight-strong);
-  margin: 2.2rem 0 0.8rem;
 }
 
 h4,
 .h4 {
   font-size: var(--step-2);
   font-weight: var(--weight-strong);
-  margin: 2rem 0 0.8rem;
 }
 
 h5,
 .h5 {
   font-size: var(--step-1);
   font-weight: var(--weight-strong);
-  margin: 2rem 0 0.8rem;
 }
 
 h6,
 .h6 {
   font-size: var(--step-0);
   font-weight: var(--weight-strong);
-  margin: 2rem 0 0.8rem;
 }
 
-.title-anchor {
-  font-size: 0.75em;
-  border: 0;
-  color: var(--primaryClear);
-  margin-left: 6px;
-}
-/* PARAGRAPHS */
-small {
-  font-size: var(--step--1);
-}
-
-strong {
-  font-weight: var(--weight-strong);
-}
-
-/* ANCHOR & EMPHASIS */
 a {
   text-decoration: none;
-  position: relative;
   border-bottom: 1px solid var(--text);
-
-  &[href^="http"]:after {
-    content: "↗";
-    font-size: 0.8em;
-    vertical-align: baseline;
-    margin-left: 0.2rem;
-  }
 
   &:visited {
     color: var(--textFaded);
     border-bottom-color: var(--textFaded);
-  }
-}
-
-blockquote {
-  margin: 1.6rem 0 1.1rem;
-  padding: 8px 15px;
-  border-left: 2px solid var(--text);
-}
-
-/* CODE */
-code {
-  color: var(--text);
-  font-family: monospace;
-  font-size: 1rem;
-}
-
-// code block
-pre {
-  background-color: var(--primaryClear);
-  padding: 20px 14px;
-  margin: 1.6rem 0 1.1rem;
-  overflow-x: auto;
-}
-
-// inline code
-p > code {
-  background-color: var(--primaryClear);
-  padding: 0 5px;
-  border-radius: 4px;
-}
-
-/* LISTS */
-@for $i from 0 through 10 {
-  .translucent-#{$i}0 {
-    opacity: calc($i / 10);
-  }
-}
-
-.list {
-  li {
-    &:before {
-      content: "→";
-    }
-
-    & + li {
-      margin-top: 12px;
-    }
   }
 }

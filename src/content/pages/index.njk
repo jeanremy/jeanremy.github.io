@@ -17,11 +17,11 @@ eleventyNavigation:
   </p>
 </div>
 
-<section class="col last-article">
+<section class="col last-article container-s">
   <div class="last-article__title">
     <h2>Dernier article</h2>
   </div>
-  {% set postslist = collections.posts | reverse %}
+  {% set postslist = collections.posts %}
   {% set post = postslist[0] %}
   {% include 'partials/post-teaser.njk' %}
 </section>
