@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../src/assets/js/index.js"],
+  "sourcesContent": ["const toggleMode = document.getElementById(\"sidebar__toggle-mode\");\nconst currentTheme = localStorage.getItem(\"theme\");\n\nif (currentTheme === \"dark\") {\n  document.body.classList.add(\"dark\");\n} else if (currentTheme === \"light\") {\n  document.body.classList.remove(\"dark\");\n} else if (window.matchMedia(\"(prefers-color-scheme: dark)\").matches) {\n  document.body.classList.add(\"dark\");\n}\n\n// Listen for a click on the button\ntoggleMode.addEventListener(\"click\", function () {\n  if (document.body.className.includes(\"dark\")) {\n    document.body.classList.remove(\"dark\");\n    localStorage.setItem(\"theme\", \"light\");\n  } else {\n    document.body.classList.add(\"dark\");\n    localStorage.setItem(\"theme\", \"dark\");\n  }\n});\n"],
+  "mappings": "MAAA,IAAMA,EAAa,SAAS,eAAe,sBAAsB,EAC3DC,EAAe,aAAa,QAAQ,OAAO,EAE7CA,IAAiB,OACnB,SAAS,KAAK,UAAU,IAAI,MAAM,EACzBA,IAAiB,QAC1B,SAAS,KAAK,UAAU,OAAO,MAAM,EAC5B,OAAO,WAAW,8BAA8B,EAAE,SAC3D,SAAS,KAAK,UAAU,IAAI,MAAM,EAIpCD,EAAW,iBAAiB,QAAS,UAAY,CAC3C,SAAS,KAAK,UAAU,SAAS,MAAM,GACzC,SAAS,KAAK,UAAU,OAAO,MAAM,EACrC,aAAa,QAAQ,QAAS,OAAO,IAErC,SAAS,KAAK,UAAU,IAAI,MAAM,EAClC,aAAa,QAAQ,QAAS,MAAM,EAExC,CAAC",
+  "names": ["toggleMode", "currentTheme"]
+}
