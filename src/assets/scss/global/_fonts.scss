@@ -1,5 +1,13 @@
 @font-face {
   font-family: "Albert Sans";
   src: url("../fonts/AlbertSans-VariableFont_wght-subset.woff2") format("woff");
- }
- 
+}
+
+@font-face {
+  font-family: "Adjusted Arial Fallback";
+  src: local(Arial);
+  size-adjust: 104%;
+  ascent-override: 90%;
+  descent-override: 20%;
+  line-gap-override: 4%;
+}

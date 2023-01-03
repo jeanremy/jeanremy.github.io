@@ -1,8 +1,8 @@
 body {
   font-size: var(--step-0);
   line-height: 1.4;
-  font-family: "Albert Sans", system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", sans-serif;
+  font-family: "Albert Sans", "Adjusted Arial Fallback", system-ui,
+    -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
