@@ -2,23 +2,12 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const faviconPlugin = require("eleventy-favicon");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const esbuild = require("esbuild");
 
 const { console, format, cssmin } = require("./src/_11ty/filters");
 const { posts } = require("./src/_11ty/collections");
 const { markdownit } = require("./src/_11ty/libraries");
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.on("eleventy.before", async () => {
-    await esbuild.build({
-      entryPoints: ["src/assets/js/index.js"],
-      bundle: true,
-      outfile: "_site/assets/js/bundle.js",
-      sourcemap: true,
-      minify: true,
-    });
-  });
-
   // ---------- PLUGINS --------------------
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addPlugin(pluginRss);
