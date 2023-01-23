@@ -12,6 +12,10 @@
     flex-wrap: wrap;
     overflow: hidden;
     gap: 10px;
+
+    a:not([aria-current]) {
+      border-bottom-color: transparent;
+    }
   }
 
   &__social {

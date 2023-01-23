@@ -36,3 +36,7 @@ La consultation de ce site a été envisagée dans une démarche d'éco-concepti
 ## Licence
 
 Le contenu de ce site est proposé en licence [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+## Mise à jour
+
+Le contenu du site a été mis à jour le {{global.generated}}

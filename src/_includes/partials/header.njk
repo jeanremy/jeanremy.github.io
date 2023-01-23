@@ -10,7 +10,7 @@
         <a href="/" {% if page.url == "/" %} aria-current="page"{% endif %}>À propos</a>
       </li>
       <li>
-        <a href="/notes" {% if page.url == "/notes/" %} aria-current="page"{% endif %}>Notes</a>
+        <a href="/notes" {% if "notes" in page.url  %} aria-current="page"{% endif %}>Notes</a>
       </li>
     </ul>
   </nav>
