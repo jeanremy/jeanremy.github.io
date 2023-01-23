@@ -907,6 +907,9 @@ pre {
 .page-footer__menu li + li {
   margin-left: 5px;
 }
+.page-footer p {
+  font-size: var(--step--1);
+}
 
 .sidebar,
 .page-footer {
