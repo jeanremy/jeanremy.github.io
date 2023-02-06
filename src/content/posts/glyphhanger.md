@@ -5,15 +5,15 @@ date: 2022-11-13
 templateEngineOverride: md
 ---
 
-Lorsque l'on utilise une police custom sur le web, il est rare que la totalité des glyphes soit utilisée.
+Lorsque l'on utilise une police custom sur le web (encore plus si c'est une fonte d'icônes), il est rare que la totalité des glyphes soit utilisée.
 
-Dans une optique d'efficience, il est donc intéressant de pouvoir supprimer ces signes typographiques inutiles (pas tant que ça, voir plus bas). Et c'est là que la [librairie Glyphhanger](https://github.com/zachleat/glyphhanger) entre en jeu.
+Dans une optique d'efficience, il peut être intéressant de vouloir supprimer ces signes typographiques inutiles (ça dépend des cas, voir plus bas). Et c'est là que la [librairie Glyphhanger](https://github.com/zachleat/glyphhanger) entre en jeu.
 
 ![Une partie de la liste des glyphes utilisés dans la police Albert Sans. Chaque carré représente un glyphe.](./src/assets/img/posts/albert-sans-glyphs.png)
 
 Glyphhanger va permettre d'optimiser la fonte et de réduire son poids. Elle permet également de définir un sous-ensemble (subset) de caractères que l'on souhaite garder dans un fichier séparé.
 
-⚠️ ⚠️ Attention, le subsetting n'est pas toujours autorisé par la licence de distribution de la police. Une liste est disponible sur le site [subsetting.xyz](https://subsetting.xyz/)
+⚠️ ⚠️ Attention, le subsetting n'est pas toujours autorisé par la licence de distribution de la police. Une liste (partielle) de fontes l'autorisant est disponible sur le site [subsetting.xyz](https://subsetting.xyz/)
 
 ## Optimiser simplement une fonte
 
@@ -27,11 +27,11 @@ Subsetting AlbertSans-VariableFont_wght.ttf to AlbertSans-VariableFont_wght-subs
 Subsetting AlbertSans-VariableFont_wght.ttf to AlbertSans-VariableFont_wght-subset.woff2 (was 125.41 KB, now 49.78 KB)
 ```
 
-La police a été réduite de 53% en woff et jusqu'à 61% au format woff2.
-
 **Quel format utiliser ?**
 
 J'utilise le format woff2 qui supporte les fontes variables et dont [le support est très élevé](https://caniuse.com/?search=woff): 97.15%. Il est possible d'ajoute woff en fallback.
+
+La police a été réduite de 53% en woff et jusqu'à 61% au format woff2. Cette opération est déjà suffisante, mais on peut aller plus loin.
 
 ## Définir un subset
 
@@ -67,39 +67,16 @@ Subsetting AlbertSans-VariableFont_wght.ttf to AlbertSans-VariableFont_wght-subs
 Subsetting AlbertSans-VariableFont_wght.ttf to AlbertSans-VariableFont_wght-subset.woff2 (was 125.41 KB, now 33.45 KB)
 ```
 
-### Passer une URL que Glyphhanger analysera pour en tirer les glyphes présents
+### Passer une URL
 
-il est possible de passer à l'outil une URL d'où il tirera tous les glyphes nécéssaires. Il peut parcourir plusieurs pages grâce à l'option `--spider` ou `--spider-limit`.
+Il est possible de passer à l'outil une URL d'où il tirera tous les glyphes nécéssaires. Il peut parcourir plusieurs pages grâce à l'option `--spider` ou `--spider-limit`.
 
 ```bash
 glyphhanger http://localhost:8080/notes --spider-limit=0 --subset=AlbertSans-VariableFont_wght.ttf --formats=woff2
 ```
 
-### Faire une page dédiée
+## Inconvénient d'un subset
 
-Dans mon cas, j'ai créé une page non publiée, mais qui me permet d'afficher tous les caractères que je souhaite garder dans ma fonte:
+Définir un subset peut se révéler utile avec une fonte d'icônes existantes. Pour une fonte utilisée par du texte, on prend le risque que le contenu s'affiche mal. Des lecteurs peuvent consulter une page traduite via Google Translate. Dans ce cas, si la langue ciblée comporte des caractères non présents dans le subset, c'est le fallback qui s'appliquera.
 
-_azertyuiopqsdfghjklmwxcvbnèéàçëêâäüûïîæôö?,.;:/+=%ù£`Ôûö\*$€@#&"'(§!ç))-#1234567890¹½¼²³¾⁴°\_~<>[]{} AZERTYUIOPQSDFGHJKLMWXCVBNÈÉÀÇËÊÂÄÜÛÆÏÎÔÖ_
-
-A noter qu'avec cette liste, on aurait pu la passer en whitelist.
-
-Puis j'utilise ce script pour générer ma fonte ne comportant que ces glyphes:
-
-```bash
-glyphhanger http://localhost:8080/notes/styleguide --subset=AlbertSans-VariableFont_wght.ttf --formats=woff2
-```
-
-Un fichier est généré, il ne reste plus qu'à l'utiliser dans le CSS via ce genre de code:
-
-```css
-@font-face {
-  font-family: "Albert Sans";
-  src: url("../fonts/AlbertSans-VariableFont_wght-subset.woff2") format("woff");
-}
-```
-
-## Inconvénient
-
-En supprimant des caractères non compris, on prend le risque que le contenu traduit s'affiche mal. Même si le site ne comporte qu'un seule langue, des lecteurs peuvent consulter une page traduite via Google Translate. Dans ce cas, si la langue ciblée comporte des caractères non présents dans le subset, c'est le fallback qui s'appliquera.
-
-Choisir une police de subsitution proche de celle chargée s'avère donc important pour limiter les différences de hauteur de ligne par exemple. On peut s'appuyer sur [Fallback Font Generator](https://screenspan.net/fallback).
+Pour choisir une police de subsitution qui colle au plus près, on peut s'appuyer sur [Fallback Font Generator](https://screenspan.net/fallback).

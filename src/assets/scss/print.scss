@@ -5,14 +5,13 @@
 @use "global/page";
 @use "global/code";
 
-@use "utilities/grid";
 @use "utilities/utilities";
+@use "utilities/hyphen";
 
 @use "blocks/article";
 @use "blocks/breadcrumb";
 @use "blocks/hero";
 @use "blocks/header";
-@use "blocks/footer";
 
 .sidebar,
 .page-footer {
