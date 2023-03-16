@@ -1,10 +1,11 @@
-<article class="article-teaser ">
-  <h2 class="h4 with-hyphen">
-    <a href={{ post.data.page.url }}>{{ post.data.title }}</a>
-  </h2>
-  <p>{{post.data.description}}</p>
-  <p class="article-teaser__date">
-    Posté le&nbsp;<time datetime="{{ post.data.date | format("YYYY/MM/DD") }}">{{ post.data.date | format('DD/MM/YYYY') }}</time>
-  </p>
-</time>
+<article class="article-teaser">
+
+  <time class="article-teaser__date" datetime="{{ post.data.date | format("YYYY/MM/DD") }}">{{ post.data.date | format('MM/YY') }}</time>
+
+  <div>
+    <h2 class="article-teaser__title">
+      <a href={{ post.data.page.url }}>{{ post.data.title }}</a>
+    </h2>
+    <p class="article-teaser__description">{{post.data.description}}</p>
+  </div>
 </article>

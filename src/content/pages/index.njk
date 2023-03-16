@@ -6,22 +6,30 @@ eleventyNavigation:
   key: Accueil
 ---
 
-<div class="hero">
-  <p class="baseline">
+<section class="container">
+  <div class="hero">
+    <p class="baseline">
     Tech Lead chez <a href="https://www.derniercri.io">Dernier Cri</a>, j’aime travailler sur des projets porteurs de
     sens.
   </p>
-  <p class="baseline">
+    <p class="baseline">
     Je m’intéresse tout particulièrement à <em>l’éco-conception</em> et à
     <em>l’accessibilité</em>, et plus largement à la sobriété numérique.
   </p>
-</div>
-
-<section class="col last-article container-s">
-  <div class="last-article__title">
-    <h2>Dernière note</h2>
   </div>
-  {% set postslist = collections.posts %}
-  {% set post = postslist[0] %}
-  {% include 'partials/post-teaser.njk' %}
+</section>
+<section class="last-notes">
+  <div class="container">
+
+    <h2 class="h3">Dernières notes</h2>
+    <div class="notes">
+
+      {%- for post in collections.posts.reverse().slice(0,2) %}
+
+        {% include 'partials/post-teaser.njk' %}
+      {% endfor -%}
+
+    </div>
+  </div>
+
 </section>

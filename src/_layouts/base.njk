@@ -21,14 +21,12 @@
 
   </head>
   <body class="page">
-    <div class="content container">
-      {% include "partials/header.njk" %}
-      <main class="main">
-        {{ content | safe }}
-      </main>
-      {% include "partials/footer.njk" %}
-    </div>
-    {% include "partials/sidebar.njk" %}
+    {% include "partials/header.njk" %}
+    <main class="main">
+      {{ content | safe }}
+    </main>
+    {% include "partials/footer.njk" %}
     <script src="/assets/js/bundle.js?{{assetHash}}"></script>
+
   </body>
 </html>

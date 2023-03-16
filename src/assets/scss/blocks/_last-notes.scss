@@ -1,0 +1,11 @@
+.last-notes {
+  background-color: var(--accent-006);
+  padding-block-start: var(--space-xl);
+  padding-block-end: var(--space-2xl);
+}
+
+.notes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-m);
+}

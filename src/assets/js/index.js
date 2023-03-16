@@ -1,4 +1,4 @@
-const toggleMode = document.getElementById("sidebar__toggle-mode");
+const toggleMode = document.getElementById("page-header__toggle-mode");
 const currentTheme = localStorage.getItem("theme");
 
 if (currentTheme === "dark") {

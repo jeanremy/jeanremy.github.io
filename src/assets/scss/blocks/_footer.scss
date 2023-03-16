@@ -1,36 +1,36 @@
 .page-footer {
-  margin-top: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-end;
-  overflow: hidden;
-  gap: 10px;
-  font-size: var(--step--1);
+  background-color: var(--faded);
+  color: var(--white);
+  padding-block: var(--space-s);
 
-  &__menu {
+  &__menus {
     display: flex;
-    flex-wrap: wrap;
-    overflow: hidden;
-    gap: 10px;
+    justify-content: space-between;
+    align-items: stretch;
+  }
 
-    a:not([aria-current]) {
-      border-bottom-color: transparent;
-    }
+  &__menu li {
+    display: block;
+  }
+
+  &__menus > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
   }
 
   &__social {
     display: flex;
-    flex-wrap: wrap;
-    overflow: hidden;
-    gap: 10px;
-    a {
-      border: 0;
-    }
 
-    svg rect,
-    svg path {
-      fill: var(--text);
+    li + li {
+      margin-inline-start: var(--space-2xs);
     }
+  }
+
+  p {
+    margin-block-start: var(--space-s);
+    font-size: var(--step--1);
+    text-align: right;
   }
 }

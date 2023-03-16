@@ -1,25 +1,61 @@
 .page-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding-block: var(--space-s);
 
-  &__nav {
-    ul {
-      display: flex;
-      gap: 20px;
-      font-weight: var(--weight-strong);
-    }
+  & > * {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-    a:not([aria-current]) {
-      border-bottom-color: transparent;
+  .page__title {
+    font-weight: 700;
+    font-size: var(--step-1);
+
+    span {
+      color: var(--accent);
     }
   }
-}
 
-.page__title {
-  font-weight: 600;
-}
+  &__menu,
+  &__menu ul {
+    display: flex;
+    align-items: center;
 
-.job {
-  color: var(--textFaded);
+    a {
+      padding-inline: var(--space-2xs);
+      padding-block: var(--space-2xs);
+      transition: all 0.3s ease;
+
+      &[aria-current] {
+        background: url("/assets/img/underline.svg") no-repeat center bottom 2px;
+      }
+    }
+  }
+
+  &__toggle-mode {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: var(--accent-05);
+    border: 0;
+    cursor: pointer;
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .sun {
+      display: none;
+    }
+    .moon {
+      display: block;
+    }
+    body.dark & {
+      .sun {
+        display: block;
+      }
+      .moon {
+        display: none;
+      }
+    }
+  }
 }

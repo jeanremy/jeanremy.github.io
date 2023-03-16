@@ -1,26 +1,27 @@
 ---
 layout: base.njk
 ---
-{% if not eleventyExcludeFromCollections %}
-  {% include "partials/breadcrumb.njk" %}
-{% endif %}
 <article class="article">
   <header class="article__header">
-    <h1 class="article__title">
-      {{ title }}
-    </h1>
-    {% if type == 'post' %}
-      <p class="article__description">
-        {{description}}
-      </p>
-    {% endif %}
-    {% if date %}
-      <p class="article__date with-hyphen">
-        Posté le&nbsp;<time datetime="{{ date | format("YYYY/MM/DD") }}">{{ date | format('DD/MM/YYYY') }}</time>
-      </p>
-    {% endif %}
+    <div class="container">
+      {% if not eleventyExcludeFromCollections %}
+        {% include "partials/breadcrumb.njk" %}
+      {% endif %}
+
+      <h1 class="article__title">
+        {{ title }}
+      </h1>
+    </div>
   </header>
-  <section class="article__content container-s">
-    {{ content | safe }}
+  <section class="article__content">
+    <div class="container">
+      {% if date %}
+        <p class="article__date">
+        Posté le
+        <time datetime="{{ date | format("YYYY/MM/DD") }}">{{ date | format('DD/MM/YYYY') }}</time>
+        </p>
+      {% endif %}
+      {{ content | safe }}
+    </div>
   </section>
 </article>

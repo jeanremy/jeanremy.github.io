@@ -1,6 +1,27 @@
 .article {
+  /* ANCHOR & EMPHASIS */
+  a {
+    text-decoration: none;
+    position: relative;
+    color: inherit;
+    border-bottom: 1px solid var(--text);
+
+    &[href^="http"]:after {
+      content: "↗";
+      font-size: 0.8em;
+      vertical-align: baseline;
+      margin-left: 0.2rem;
+    }
+
+    &:visited {
+      // color: var(--textFaded);
+      border-bottom-color: var(--textFaded);
+    }
+  }
+
   &__header {
-    margin: var(--space-m) 0 var(--space-7xl);
+    padding-block: var(--space-6xl) var(--space-l);
+    background-color: var(--accent-006);
   }
 
   &__description {
@@ -9,19 +30,21 @@
 
   &__date {
     font-size: var(--step--1);
+    opacity: 0.6;
+    margin-block-end: var(--space-m);
+    &:before {
+      content: "";
+      height: 1px;
+      background-color: var(--text);
+      width: 40px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
   }
 
   &__content {
-    & > * + * {
-      margin: 1.2em 0 0;
-    }
-
-    img {
-      width: 100%;
-      height: auto;
-      border-radius: var(--radius);
-    }
-
+    margin-block: var(--space-2xl);
     ul:not(.taglist) {
       margin-top: 0.8rem;
       li {
@@ -44,82 +67,34 @@
         }
       }
     }
-
-    .title-anchor {
-      font-size: 0.75em;
-      border: 0;
-      color: var(--primaryClear);
-    }
-    /* PARAGRAPHS */
-    small {
-      font-size: var(--step--1);
-    }
-
-    strong {
-      font-weight: var(--weight-strong);
-    }
-
-    em {
-      font-style: italic;
-    }
-
-    /* ANCHOR & EMPHASIS */
-    a {
-      position: relative;
-
-      &[href^="http"]:after {
-        content: "↗";
-        font-size: 0.8em;
-        vertical-align: baseline;
-        margin-left: 0.2rem;
-      }
-    }
-
-    blockquote {
-      margin: 1.6rem 0 1.1rem;
-      padding: 8px 15px;
-      border-left: 2px solid var(--text);
-    }
-
-    // inline code
-    p > code {
-      font-family: "Fira Code", Consolas, Monaco, "Andale Mono", "Ubuntu Mono",
-        monospace;
-      font-size: 0.875em;
-    }
-
-    .list {
-      li {
-        &:before {
-          content: "→";
-        }
-
-        & + li {
-          margin-top: 12px;
-        }
-      }
-    }
   }
 }
 
 .article-teaser {
-  &__date {
-    font-size: var(--step--1);
+  display: flex;
+  align-items: flex-start;
+
+  & > * + * {
+    margin-inline-start: var(--space-xs);
   }
 
-  h2 {
-    margin: 0;
+  &__date {
+    font-size: var(--step--1);
+    background: var(--secondary);
+    color: var(--primary);
+    border-radius: 4px;
+    line-height: 1;
+    padding-inline: var(--space-2xs);
+    padding-block: var(--space-3xs);
+  }
+
+  &__title {
+    font-size: var(--step-1);
+    font-weight: 700;
+    margin-top: 0;
+
     a {
       border: 0;
     }
-  }
-
-  & > p {
-    margin-left: var(--space-l);
-    margin-top: var(--space-s);
-  }
-
-  & + & {
-    margin-top: var(--space-xl);
   }
 }
