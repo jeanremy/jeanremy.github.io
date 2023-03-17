@@ -16,6 +16,7 @@ module.exports = function (eleventyConfig) {
 
   // ---------- PASSTHROUGH --------------------
   eleventyConfig.addPassthroughCopy("src/assets/fonts");
+  eleventyConfig.addPassthroughCopy("src/assets/img");
   eleventyConfig.addPassthroughCopy("CNAME");
 
   // ---------- FILTERS --------------------

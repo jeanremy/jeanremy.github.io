@@ -8,28 +8,34 @@ eleventyNavigation:
 
 <section class="container">
   <div class="hero">
-    <p class="baseline">
-    Tech Lead chez <a href="https://www.derniercri.io">Dernier Cri</a>, j’aime travailler sur des projets porteurs de
-    sens.
-  </p>
-    <p class="baseline">
-    Je m’intéresse tout particulièrement à <em>l’éco-conception</em> et à
-    <em>l’accessibilité</em>, et plus largement à la sobriété numérique.
-  </p>
+    <img src="/assets/img/profile.png" alt=""/>
+    <div>
+      <p class="baseline">
+        Tech Lead chez <a href="https://www.derniercri.io">Dernier Cri</a>, j’aime travailler sur des projets porteurs de
+        sens.
+      </p>
+      <p class="baseline">
+        Je m’intéresse tout particulièrement à <em>l’éco-conception</em> et à
+        <em>l’accessibilité</em>, et plus largement à la sobriété numérique.
+      </p>
+      <a href="/a-propos" class="button">Plus d'infos</a>
+    </div>
   </div>
 </section>
 <section class="last-notes">
   <div class="container">
 
     <h2 class="h3">Dernières notes</h2>
-    <div class="notes">
-
+    <ul class="last-notes__list" >
       {%- for post in collections.posts.reverse().slice(0,2) %}
+        <li>
 
-        {% include 'partials/post-teaser.njk' %}
+          {% include 'partials/post-teaser.njk' %}
+        </li>
       {% endfor -%}
 
-    </div>
+    </ul>
+    <a href="/notes" class="button">Voir tout</a>
   </div>
 
 </section>

@@ -3,12 +3,16 @@
 @use "global/variables";
 @use "global/typography";
 @use "global/page";
+@use "global/code";
 
 @use "utilities/utilities";
 
 @use "blocks/article";
+@use "blocks/buttons";
 @use "blocks/breadcrumb";
 @use "blocks/hero";
 @use "blocks/header";
 @use "blocks/footer";
-@use "blocks/last-notes";
+
+@use "compositions/last-notes";
+@use "compositions/notes";

@@ -4,6 +4,12 @@
 }
 
 @font-face {
+  font-family: "IBMPlex";
+  src: url("../fonts/IBMPlexMono-Medium-subset.woff2") format("woff");
+  unicode-range: U+2160 –217F;
+}
+
+@font-face {
   font-family: "Adjusted Arial Fallback";
   src: local(Arial);
   size-adjust: 104%;
