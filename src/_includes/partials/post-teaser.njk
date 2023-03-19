@@ -1,6 +1,7 @@
 <article class="article-teaser">
-
-  <time class="article-teaser__date" datetime="{{ post.data.date | format("YYYY/MM/DD") }}">{{ post.data.date | format('MM/YY') }}</time>
+  <p class="article-teaser__date">
+    <time  datetime="{{ post.data.date | format("YYYY/MM/DD") }}">{{ post.data.date | format('MM/YY') }}</time>
+  </p>
 
   <div>
     <h2 class="article-teaser__title">

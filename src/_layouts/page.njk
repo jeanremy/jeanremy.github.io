@@ -21,7 +21,9 @@ layout: base.njk
         <time datetime="{{ date | format("YYYY/MM/DD") }}">{{ date | format('DD/MM/YYYY') }}</time>
         </p>
       {% endif %}
-      {{ content | safe }}
+      <div class="md">
+        {{ content | safe }}
+      </div>
     </div>
   </section>
 </article>
