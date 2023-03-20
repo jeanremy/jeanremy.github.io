@@ -8,7 +8,7 @@
     "build:sass": "npm-run-all --sequential sass",
     "build:js": "esbuild src/assets/js/index.js --outfile=_site/assets/js/bundle.js --minify --bundle",
     "build:eleventy": "ELEVENTY_ENV=production eleventy",
-    "optimize:fonts": "cd src/assets/fonts && glyphhanger http://localhost:8080/notes/styleguide --spider-limit=0 --subset=AlbertSans-VariableFont_wght.ttf --formats=woff2",
+    "optimize:fonts": "cd src/assets/fonts && glyphhanger --spider-limit=0 --subset=AlbertSans-VariableFont_wght.ttf --formats=woff2",
     "watch:sass": "sass --source-map-urls=absolute --watch src/assets/scss:_site/assets/css",
     "watch:js": "esbuild src/assets/js/index.js --bundle --watch --outfile=_site/assets/js/bundle.js ",
     "watch:eleventy": "eleventy --serve",
