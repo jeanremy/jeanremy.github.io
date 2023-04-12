@@ -8,6 +8,6 @@ eleventyNavigation:
   parent: Accueil
 ---
 
-## Formation
+## Contact
 
 Si vous souhaitez me contacter, vous pouvez m'écrire à l'adresse [hello@jeanremypraud.com](mailto:hello@jeanremypraud.com)

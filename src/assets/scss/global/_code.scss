@@ -5,8 +5,17 @@
  * Ported for PrismJS by Zane Hitchcoxc (@zwhitchcox) and Gabriel Ramos (@gabrieluizramos)
  */
 
-code[class*="language-"],
-pre[class*="language-"] {
+code,
+pre {
+  font-family: "Fira Code", Consolas, Monaco, "Andale Mono", "Ubuntu Mono",
+    monospace;
+}
+
+p > code {
+  font-size: 0.8em;
+}
+
+pre {
   --radius: 4px;
   color: #f8f8f2;
   background: none;
@@ -28,19 +37,18 @@ pre[class*="language-"] {
 }
 
 /* Code blocks */
-pre[class*="language-"] {
+pre {
   padding: 1em;
   overflow: auto;
   border-radius: var(--radius);
 }
 
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
+pre {
   background: #2e3440;
 }
 
 /* Inline code */
-:not(pre) > code[class*="language-"] {
+:not(pre) > code {
   padding: 0.1em;
   border-radius: var(--radius);
   white-space: normal;
@@ -70,7 +78,7 @@ pre[class*="language-"] {
 }
 
 .token.number {
-  color: #b48ead;
+  color: #cda1c5;
 }
 
 .token.boolean {

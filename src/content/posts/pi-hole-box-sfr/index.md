@@ -29,11 +29,11 @@ Le mot de passe par défaut varie en fonction des modèles. Une liste complète 
 
 Pour ajouter une IP statique, il faut se rendre dans la partie LAN, puis l'onglet Baux statiques. Cliquer sur Ajouter un bail statique.
 
-![Les baux statiques sur la box SFR](./src/assets/img/posts/baux-statiques.png)
+![Les baux statiques sur la box SFR](./baux-statiques.png)
 
 Ensuite, il suffit de sélectionner l'équipement et lui attribuer une IP quelconque (192.169.1.30 dans mon cas).
 
-![Ajouter un bail statique sur la box SFR](./src/assets/img/posts/creer-bail-statique.png)
+![Ajouter un bail statique sur la box SFR](./creer-bail-statique.png)
 
 ## Installer Pi-Hole
 
@@ -57,7 +57,7 @@ La configuration propose plusieurs choix de fournisseurs de DNS. Il faut donc bi
 
 Pi-Hole fonctionne, il faut maintenant le définir comme DNS primaire. Pour cela, dans la partie LAN de l'interface de la box, on peut entrer l'IP du Raspberry comme DNS primaire
 
-![Changer les DNS primaires](./src/assets/img/posts/dns-primaire.png)
+![Changer les DNS primaires](./dns-primaire.png)
 
 Rdémarrer la box, puis l’interface de Pi-Hole est accessible à http://192.168.1.30/admin/index.php.
 
@@ -65,4 +65,4 @@ Rdémarrer la box, puis l’interface de Pi-Hole est accessible à http://192.16
 
 Il est également possible d’ajouter une URL locale qui permettra d’accéder à l’interface d’admin de Pi-Hole via l’url pi.hole/admin/. Tous les utilisateurs du réseau local y auront accès.
 
-![Ajouter une DNS locale](./src/assets/img/posts/dns-local.png)
+![Ajouter une DNS locale](./dns-local.png)

@@ -1,29 +1,26 @@
 @mixin dark-theme {
   --primary: #181c20;
   --secondary: #fff;
-
   --text: #fff;
+  --accent-code: 169, 169, 169;
 }
 
 @mixin light-theme {
   --primary: #fff;
   --secondary: #181c20;
   --text: #181c20;
+  --accent-code: 108, 209, 156;
 }
 
 :root {
-  --white: #fff;
-  --accent-code: 108, 209, 156;
-  --accent: rgb(var(--accent-code));
-  --accent-05: rgba(var(--accent-code), 0.5);
-  --accent-006: rgba(var(--accent-code), 0.06);
-  --weight-strong: 700;
-  --faded: #0b1e11;
-  --textFaded: #b5b5b5;
   @include light-theme();
   @media (prefers-color-scheme: dark) {
     @include dark-theme();
   }
+  --white: #fff;
+  --weight-strong: 700;
+  --faded: #181c20;
+  --textFaded: #6d7171;
 
   /* @link https://utopia.fyi/type/calculator?c=320,16,1.25,1120,17,1.25,6,2,&s=0.75|0.5|0.25,1.5|2|3|4|5|6|7|8,s-l&g=s,l,xl,12 */
   --step--2: clamp(0.64rem, calc(0.62rem + 0.08vw), 0.68rem);
@@ -52,6 +49,9 @@
 
 body {
   @include light-theme();
+  --accent: rgb(var(--accent-code));
+  --accent-05: rgba(var(--accent-code), 0.5);
+  --accent-006: rgba(var(--accent-code), 0.12);
 }
 
 body.dark {

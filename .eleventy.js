@@ -25,6 +25,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("console", console);
 
   // ---------- COLLECTIONS --------------------
+  eleventyConfig.ignores.add("**/_*.md");
   eleventyConfig.addCollection("posts", posts);
 
   eleventyConfig.setLibrary("md", markdownit(eleventyConfig));
