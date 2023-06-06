@@ -1,9 +1,9 @@
-<header class="page-header">
+<header class="page-header" role="banner">
   <div class="container">
     <p class="page__title">
       <a href="/" rel="me" title="Homepage">jr<span>.</span></a>
     </p>
-    <div class="page-header__menu">
+    <nav class="page-header__menu" role="navigation">
       <ul>
         <li>
           <a href="/notes/" {% if "notes" in page.url  %} aria-current="page"{% endif %}>Notes</a>
@@ -36,6 +36,6 @@
         </svg>
 
       </button>
-    </div>
+    </nav>
   </div>
 </header>

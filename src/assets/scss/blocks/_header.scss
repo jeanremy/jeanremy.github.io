@@ -22,13 +22,20 @@
     align-items: center;
 
     a {
-      padding-inline: var(--space-2xs);
+      margin-inline-end: var(--space-l);
       padding-block: var(--space-2xs);
       transition: all 0.3s ease;
+      position: relative;
+      font-weight: 600;
 
-      &[aria-current] {
-        background: url("/assets/img/underline.svg") no-repeat center bottom 2px;
-        font-weight: 600;
+      &[aria-current]:after {
+        content: "";
+        background-color: var(--accent-05);
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 4px;
+        position: absolute;
       }
     }
   }

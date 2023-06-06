@@ -29,25 +29,8 @@
 }
 
 .article-teaser {
-  display: flex;
-  align-items: flex-start;
-
-  & > * + * {
-    margin-inline-start: var(--space-xs);
-  }
-
   &__date {
-    font-size: var(--step-1); // for alignment with title
-    & > time {
-      font-size: var(--step--1);
-      font-family: "IBMPlex", monospace;
-      background: var(--secondary);
-      color: var(--primary);
-      border-radius: 4px;
-      line-height: 1;
-      padding-inline: var(--space-2xs);
-      padding-block: var(--space-3xs);
-    }
+    font-size: var(--step--1);
   }
 
   &__title {
