@@ -11,6 +11,10 @@
 
   &__menu li {
     display: block;
+
+    & + li {
+      margin-block-start: var(--space-xs);
+    }
   }
 
   &__menus > div {

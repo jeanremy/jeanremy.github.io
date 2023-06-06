@@ -21,8 +21,11 @@
     display: flex;
     align-items: center;
 
+    li + li {
+      margin-inline-start: var(--space-l);
+    }
+
     a {
-      margin-inline-end: var(--space-l);
       padding-block: var(--space-2xs);
       transition: all 0.3s ease;
       position: relative;

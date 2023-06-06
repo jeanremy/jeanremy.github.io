@@ -2,10 +2,12 @@
   padding-block: var(--space-3xl);
 
   & > div {
-    margin-inline-start: 120px;
     margin-block-start: -80px;
     display: flex;
     flex-direction: column;
+    @media screen and (min-width: 600px) {
+      margin-inline-start: 120px;
+    }
   }
 
   .button {

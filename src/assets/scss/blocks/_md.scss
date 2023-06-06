@@ -66,4 +66,9 @@
     padding: 8px 15px;
     border-left: 2px solid var(--text);
   }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 }

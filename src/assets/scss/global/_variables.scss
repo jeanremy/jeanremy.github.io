@@ -1,9 +1,9 @@
-@mixin dark-theme {
-  --primary: #181c20;
-  --secondary: #fff;
-  --text: #fff;
-  --accent-code: 169, 169, 169;
-}
+// @mixin dark-theme {
+//   --primary: #181c20;
+//   --secondary: #fff;
+//   --text: #fff;
+//   --accent-code: 169, 169, 169;
+// }
 
 @mixin light-theme {
   --primary: #fff;
@@ -14,9 +14,9 @@
 
 :root {
   @include light-theme();
-  @media (prefers-color-scheme: dark) {
-    @include dark-theme();
-  }
+  // @media (prefers-color-scheme: dark) {
+  //   @include dark-theme();
+  // }
   --white: #fff;
   --weight-strong: 700;
   --faded: #2e3440;
@@ -54,6 +54,6 @@ body {
   --accent-006: rgba(var(--accent-code), 0.12);
 }
 
-body.dark {
-  @include dark-theme();
-}
+// body.dark {
+//   @include dark-theme();
+// }
