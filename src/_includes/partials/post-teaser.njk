@@ -1,24 +1,12 @@
 <article class="article-teaser">
-  <time class="article-teaser__date" datetime={{ post.data.date | format("YYYY/MM/DD") }}>
-    {{ post.data.date | format("DD/MM/YY") }}
-  </time>
+  <p class="article-teaser__date">
+    <time  datetime="{{ post.data.date | format("YYYY-MM-DD") }}">{{ post.data.date | format('DD MMMM YYYY') }}</time>
+  </p>
+
   <div>
-    <h2 class="h4">
+    <h2 class="article-teaser__title">
       <a href={{ post.data.page.url }}>{{ post.data.title }}</a>
     </h2>
-    <p>{{post.data.description}}</p>
-
-    {% if post.data.tags %}
-      <ul class="taglist">
-        {% for tag in post.data.tags %}
-          {%- set tagUrl %}/blog/tags/{{
-          tag | slugify
-        }}/{% endset %}
-          <li>
-            <a href="{{ tagUrl | url }}" class="tag">{{ tag }}</a>
-          </li>
-        {% endfor %}
-      </ul>
-    {% endif %}
+    <p class="article-teaser__description">{{post.data.description}}</p>
   </div>
 </article>

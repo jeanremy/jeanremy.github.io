@@ -1,45 +1,59 @@
-@mixin dark-theme {
-  --primary: #202124;
-  --primaryClear: #484B52;
-  --secondary: #F2F2F2;
-  --grey: #d2d2d2;
-  --textFaded: #B5B5B5;
-  --text: #E8EAED;
-  --emphasis: #A59046;
-}
+// @mixin dark-theme {
+//   --primary: #181c20;
+//   --secondary: #fff;
+//   --text: #fff;
+//   --accent-code: 169, 169, 169;
+// }
 
 @mixin light-theme {
-  --primary: #F2F2F2;
-  --primaryClear: #C8C6C6;
-  --secondary: #202124;
-  --grey: #d2d2d2;
-  --textFaded: #535458;
-  --text: #202124;
-  --emphasis: #86D3E4;
+  --primary: #fff;
+  --secondary: #181c20;
+  --text: #181c20;
+  --accent-code: 108, 209, 156;
 }
 
 :root {
   @include light-theme();
-  @media (prefers-color-scheme: dark) {
-    @include dark-theme();
-  }
-  
-  /* @link https://utopia.fyi/type/calculator?c=320,16,1.125,960,16,1.2,5,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
-  --step--1: clamp(0.83rem, calc(0.92rem + -0.14vw), 0.89rem);
-  --step-0: clamp(1.00rem, calc(1.00rem + 0.00vw), 1.00rem);
-  --step-1: clamp(1.13rem, calc(1.09rem + 0.19vw), 1.20rem);
-  --step-2: clamp(1.27rem, calc(1.18rem + 0.44vw), 1.44rem);
-  --step-3: clamp(1.42rem, calc(1.27rem + 0.76vw), 1.73rem);
-  --step-4: clamp(1.60rem, calc(1.37rem + 1.18vw), 2.07rem);
-  --step-5: clamp(1.80rem, calc(1.46rem + 1.72vw), 2.49rem);
+  // @media (prefers-color-scheme: dark) {
+  //   @include dark-theme();
+  // }
+  --white: #fff;
+  --weight-strong: 700;
+  --faded: #2e3440;
+  --textFaded: #6d7171;
 
+  /* @link https://utopia.fyi/type/calculator?c=320,16,1.25,1120,17,1.25,6,2,&s=0.75|0.5|0.25,1.5|2|3|4|5|6|7|8,s-l&g=s,l,xl,12 */
+  --step--2: clamp(0.64rem, calc(0.62rem + 0.08vw), 0.68rem);
+  --step--1: clamp(0.8rem, calc(0.78rem + 0.1vw), 0.85rem);
+  --step-0: clamp(1rem, calc(0.98rem + 0.13vw), 1.06rem);
+  --step-1: clamp(1.25rem, calc(1.22rem + 0.16vw), 1.33rem);
+  --step-2: clamp(1.56rem, calc(1.52rem + 0.2vw), 1.66rem);
+  --step-3: clamp(1.95rem, calc(1.9rem + 0.24vw), 2.08rem);
+  --step-4: clamp(2.44rem, calc(2.38rem + 0.3vw), 2.59rem);
+  --step-5: clamp(3.05rem, calc(2.98rem + 0.38vw), 3.24rem);
+  --step-6: clamp(3.82rem, calc(3.72rem + 0.48vw), 4.05rem);
+
+  --space-3xs: clamp(0.25rem, calc(0.25rem + 0vw), 0.25rem);
+  --space-2xs: clamp(0.5rem, calc(0.48rem + 0.13vw), 0.56rem);
+  --space-xs: clamp(0.75rem, calc(0.73rem + 0.13vw), 0.81rem);
+  --space-s: clamp(1rem, calc(0.98rem + 0.13vw), 1.06rem);
+  --space-m: clamp(1.5rem, calc(1.45rem + 0.25vw), 1.63rem);
+  --space-l: clamp(2rem, calc(1.95rem + 0.25vw), 2.13rem);
+  --space-xl: clamp(3rem, calc(2.93rem + 0.38vw), 3.19rem);
+  --space-2xl: clamp(4rem, calc(3.9rem + 0.5vw), 4.25rem);
+  --space-3xl: clamp(5rem, calc(4.88rem + 0.63vw), 5.31rem);
+  --space-4xl: clamp(6rem, calc(5.85rem + 0.75vw), 6.38rem);
+  --space-5xl: clamp(7rem, calc(6.83rem + 0.88vw), 7.44rem);
+  --space-6xl: clamp(8rem, calc(7.8rem + 1vw), 8.5rem);
 }
-
 
 body {
   @include light-theme();
+  --accent: rgb(var(--accent-code));
+  --accent-05: rgba(var(--accent-code), 0.5);
+  --accent-006: rgba(var(--accent-code), 0.12);
 }
 
-body.dark {
-  @include dark-theme();
-}
+// body.dark {
+//   @include dark-theme();
+// }

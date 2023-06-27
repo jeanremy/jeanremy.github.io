@@ -7,7 +7,7 @@ module.exports = {
   siteURL: "https://jeanremypraud.com",
   locale: "fr_FR",
   lang: "fr",
-  skipContent: "Skip to content",
+  skipcontent: "Skip to content",
   pagination: {
     itemsPerPage: 20,
   },

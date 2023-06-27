@@ -1,19 +1,40 @@
 .page-footer {
-  margin-top: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  overflow: hidden;
-  gap: 10px;
+  background-color: var(--faded);
+  color: var(--white);
+  padding-block: var(--space-l);
 
-  &__menu li {
-    display: inline-block;
-    & + li {
-      margin-left: 5px;
+  &__menus {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: row;
+
+    li + li {
+      margin-inline-start: var(--space-xs);
+    }
+  }
+
+  &__menus > div {
+    display: flex;
+    align-items: flex-end;
+    align-items: center;
+  }
+
+  &__social {
+    display: flex;
+
+    li + li {
+      margin-inline-start: var(--space-2xs);
     }
   }
 
   p {
+    margin-inline-end: var(--space-s);
     font-size: var(--step--1);
+    text-align: right;
   }
 }

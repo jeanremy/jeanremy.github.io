@@ -1,0 +1,14 @@
+.with-hyphen {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &:before {
+    content: "";
+    height: 1px;
+    background-color: var(--text);
+    width: calc(var(--space-l) - 10px);
+    display: inline-block;
+    margin-right: 10px;
+  }
+}

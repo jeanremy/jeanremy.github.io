@@ -1,0 +1,22 @@
+.last-notes {
+  background-color: var(--accent-006);
+  padding-block-start: var(--space-xl);
+  padding-block-end: var(--space-2xl);
+
+  .button {
+    display: block;
+    width: fit-content;
+    margin-inline: auto;
+    margin-block-start: var(--space-s);
+  }
+
+  &__list {
+    --auto-grid-min-size: 21rem;
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(var(--auto-grid-min-size), 1fr)
+    );
+    gap: var(--space-m);
+  }
+}

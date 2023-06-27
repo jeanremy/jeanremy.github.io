@@ -1,0 +1,6 @@
+.notes {
+  max-width: 67ch;
+  & > * + * {
+    margin-block-start: var(--space-l);
+  }
+}

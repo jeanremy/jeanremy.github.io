@@ -16,19 +16,17 @@
     {% favicon './src/assets/img/favicon.svg' %}
 
     <link rel="stylesheet" href="/assets/css/base.css?{{assetHash}}">
-    <link rel="stylesheet" href="/assets/css/print.css?{{assetHash}}" media="print">
     {% include "schemas/website.njk" %}
 
   </head>
   <body class="page">
-    <div class="content container">
-      {% include "partials/header.njk" %}
-      <main class="main">
-        {{ content | safe }}
-      </main>
-      {% include "partials/footer.njk" %}
-    </div>
-    {% include "partials/sidebar.njk" %}
-    <script src="/assets/js/bundle.js?{{assetHash}}"></script>
+
+    {% include "partials/header.njk" %}
+    <main class="main" role="main">
+      {{ content | safe }}
+    </main>
+    {% include "partials/footer.njk" %}
+    {# <script src="/assets/js/bundle.js?{{assetHash}}"></script> #}
+
   </body>
 </html>

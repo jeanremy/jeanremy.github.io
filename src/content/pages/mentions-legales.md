@@ -1,6 +1,5 @@
 ---
 title: Mentions légales
-description: Contact et crédits
 layout: page.njk
 permalink: mentions-legales/index.html
 eleventyNavigation:
@@ -20,11 +19,9 @@ Pour plus d'informations, vous pouvez visiter [leur page de renseignements](http
 
 ## Crédits
 
-La police utilisée est [Albert Sans](https://fonts.google.com/specimen/Albert+Sans), issu de Google Fonts, mais hébergée sur ce domaine.
+Les polices utilisées sont [Albert Sans](https://fonts.google.com/specimen/Albert+Sans) et [IBM Plex Mono](https://fonts.google.com/specimen/IBM+Plex+Mono), issues de Google Fonts, mais hébergées sur ce domaine.
 
 Le site est généré avec [Eleventy](https://www.11ty.dev/), un générateur de sites statiques formidable.
-
-L'[ÉcoIndex](http://www.ecoindex.fr/quest-ce-que-ecoindex/) est un outil du collectif GreenIT.
 
 ## Confidentialité
 
@@ -37,3 +34,7 @@ La consultation de ce site a été envisagée dans une démarche d'éco-concepti
 ## Licence
 
 Le contenu de ce site est proposé en licence [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+## Mise à jour
+
+Le contenu du site a été mis à jour le {{global.generated}}

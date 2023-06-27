@@ -1,29 +1,29 @@
 ---
 layout: base.njk
 ---
-{% if not eleventyExcludeFromCollections %}
-  {% include "partials/breadcrumb.njk" %}
-{% endif %}
 <article class="article">
   <header class="article__header">
-    <h1 class="article__title">
-      {{ title }}
-    </h1>
-    {% if 'blog' in page.url %}
-      <p class="article__description">
-        {{description}}
-      </p>
-    {% endif %}
-    {% if date %}
+    <div class="container">
+      {% if not eleventyExcludeFromCollections %}
+        {% include "partials/breadcrumb.njk" %}
+      {% endif %}
 
-      <p class="article__date">
-        Posté le
-        <time datetime="{{ date | format("YYYY/MM/DD") }}">{{ date | format('DD/MM/YYYY') }}</time>
-      </p>
-
-    {% endif %}
+      <h1 class="article__title">
+        {{ title }}
+      </h1>
+    </div>
   </header>
   <section class="article__content">
-    {{ content | safe }}
+    <div class="container">
+      {% if date %}
+        <p class="article__date">
+        Posté le
+        <time datetime="{{ date | format("YYYY-MM-DD") }}">{{ date | format('DD/MM/YYYY') }}</time>
+        </p>
+      {% endif %}
+      <div class="md">
+        {{ content | safe }}
+      </div>
+    </div>
   </section>
 </article>

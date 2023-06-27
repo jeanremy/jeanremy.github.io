@@ -1,19 +1,21 @@
-@use 'global/reset';
-@use 'global/fonts';
-@use 'global/variables';
-@use 'global/typography';
-@use 'global/spacing';
-@use 'global/page';
+@use "global/reset";
+@use "global/fonts";
+@use "global/variables";
+@use "global/typography";
+@use "global/page";
+@use "global/code";
 
-@use 'utilities/grid';
-@use 'utilities/utilities';
+@use "utilities/utilities";
 
-@use 'blocks/article';
-@use 'blocks/breadcrumb';
-@use 'blocks/hero';
-@use 'blocks/header';
-@use 'blocks/footer';
+@use "blocks/md";
+@use "blocks/article";
+@use "blocks/buttons";
+@use "blocks/breadcrumb";
+@use "blocks/hero";
+@use "blocks/header";
+@use "blocks/footer";
 
-@use 'compositions/sidebar';
+@use "compositions/last-notes";
+@use "compositions/notes";
 
-
+@use "global/print";
