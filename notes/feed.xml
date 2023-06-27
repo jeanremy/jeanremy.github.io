@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="https://www.jeanremypraud.com/">
+  <title>Les notes de Jean-Rémy Praud</title>
+  <subtitle>Les derniers notes</subtitle>
+  <link href="https://www.jeanremypraud.com/notes/feed.xml" rel="self"/>
+  <link href="https://www.jeanremypraud.com/"/>
+  <updated>2022-12-27T00:00:00Z</updated>
+  <id>https://www.jeanremypraud.com/</id>
+  <author>
+    <name>Jean-Rémy Praud</name>
+    <email>hello@jeanremypraud.com</email>
+  </author>
+    <entry>
+      <title>Installer une ancienne version d&#39;Expo Go</title>
+      <link href="https://www.jeanremypraud.com/notes/installer-ancienne-version-expo/"/>
+      <updated>2022-12-27T00:00:00Z</updated>
+      <id>https://www.jeanremypraud.com/notes/installer-ancienne-version-expo/</id>
+      <content xml:lang="fr" type="html">&lt;p&gt;Lorsque l&#39;on jongle entre pluseurs projets mobile avec Expo, on peut être confronté à un problème de version entre le sdk d&#39;Expo utilisé dans le projet et la version du client installée sur le mobile.&lt;/p&gt;
+&lt;p&gt;Heureusement, il est possible d&#39;installer une version adaptée à son projet.&lt;/p&gt;
+&lt;h2 id=&quot;installation-automatique-la-plus-simple&quot; tabindex=&quot;-1&quot;&gt;Installation automatique (la plus simple) &lt;a class=&quot;title-anchor&quot; href=&quot;https://www.jeanremypraud.com/notes/installer-ancienne-version-expo/#installation-automatique-la-plus-simple&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;L&#39;outil en ligne de commande d&#39;Expo fournit &lt;a href=&quot;https://docs.expo.dev/archived/expo-cli/#client&quot;&gt;une commande bien pratique&lt;/a&gt; pour installer l&#39;application cliente automatiquement.&lt;/p&gt;
+&lt;p&gt;Sur iOS, l&#39;installation d&#39;une application sans passer par un store n&#39;est (pour le moment) possible que sur le simulateur.&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; expo client:install:ios/android&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;installation-manuelle&quot; tabindex=&quot;-1&quot;&gt;Installation manuelle &lt;a class=&quot;title-anchor&quot; href=&quot;https://www.jeanremypraud.com/notes/installer-ancienne-version-expo/#installation-manuelle&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Si pour une quelconque raison la première solution ne fonctionne pas, une solution consiste à récupérer le binaire de l&#39;application, puis à l&#39;installer directement sur le téléphone cible.&lt;/p&gt;
+&lt;p&gt;Il faut se rendre sur &lt;a href=&quot;https://expo.io/--/api/v2/versions&quot;&gt;le site d&#39;Expo&lt;/a&gt;. Si la version le permet, il faut télécharger ensuite &lt;code&gt;iosClientUrl&lt;/code&gt; et &lt;code&gt;androidClientUrl&lt;/code&gt;.&lt;/p&gt;
+&lt;h3&gt;Android&lt;/h3&gt;
+&lt;p&gt;Pour installer l&#39;application sur le téléphone, il suffit de rentrer la commande suivante:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; adb &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; chemindubinaire.apk&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Si un téléphone est branché, l&#39;application s&#39;installera dessus. Dans le cas contraire, ce sera sur le simulateur.&lt;/p&gt;
+&lt;h3&gt;iOS (non testé)&lt;/h3&gt;
+&lt;p&gt;Dans un premier temps, il faut lancer le simulateur, puis la commande suivante:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; xcrun simctl &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; booted ~/chemindubinaire.app&lt;/code&gt;&lt;/pre&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Installer Pi-Hole sur un Raspberry Pi et une box SFR</title>
+      <link href="https://www.jeanremypraud.com/notes/pi-hole-box-sfr/"/>
+      <updated>2022-11-13T00:00:00Z</updated>
+      <id>https://www.jeanremypraud.com/notes/pi-hole-box-sfr/</id>
+      <content xml:lang="fr" type="html">&lt;p&gt;En quelques minutes, il est possible d&#39;installer chez soi un bloqueur de pubs avec &lt;a href=&quot;https://pi-hole.net/&quot;&gt;Pi-Hole&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Pour cela, j&#39;ai utilisé:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Un Raspberry Pi (mobèle 3B)&lt;/li&gt;
+&lt;li&gt;Un câble Ethernet pour le relier à la box&lt;/li&gt;
+&lt;li&gt;Une carte micro SD de 16 Go&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;fonctionnement&quot; tabindex=&quot;-1&quot;&gt;Fonctionnement &lt;a class=&quot;title-anchor&quot; href=&quot;https://www.jeanremypraud.com/notes/pi-hole-box-sfr/#fonctionnement&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Sur le réseau local, Pi-Hole agit comme serveur DNS disposant d&#39;une liste de domaines indésirables. Lorsqu&#39;une requête pointe vers un de ces domaines, le serveur répond par une page vierge. Contrairement aux bloqueurs de pub qui s&#39;installent dans les navigateurs de chaque périphérique, Pi-Hole s&#39;éxécute sur le réseau, et bénéficie donc à tous les périphériques connectés.&lt;/p&gt;
+&lt;h2 id=&quot;installer-raspberry-pi-os&quot; tabindex=&quot;-1&quot;&gt;Installer Raspberry Pi OS &lt;a class=&quot;title-anchor&quot; href=&quot;https://www.jeanremypraud.com/notes/pi-hole-box-sfr/#installer-raspberry-pi-os&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Si ce n&#39;est déjà fait, il faut installer un OS sur la carte SD afin que le Raspberry Pi puisse fonctionner. La dernière version de l&#39;OS est accessible sur &lt;a href=&quot;https://raspberry-pi.fr/telechargements/&quot;&gt;le site officiel&lt;/a&gt;.
+À l&#39;aide d&#39;un logiciel tel que &lt;a href=&quot;https://www.balena.io/etcher/&quot;&gt;Balena Etcher&lt;/a&gt;, copier l&#39;OS vers la carte SD. Une fois la copie terminée, ouvrir la carte SD, puis ajouter à la racine un fichier nommé ssh (sans extension). La seule présence de ce fichier suffira à activer par défaut la connexion par SSH.&lt;/p&gt;
+&lt;h2 id=&quot;configuration-reseau&quot; tabindex=&quot;-1&quot;&gt;Configuration réseau &lt;a class=&quot;title-anchor&quot; href=&quot;https://www.jeanremypraud.com/notes/pi-hole-box-sfr/#configuration-reseau&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Pour que Pi-Hole puisse fonctionner, il faut attribuer au Raspberry Pi un IP locale statique dans l&#39;interface d&#39;administration de la box, accessible à l&#39;adresse &lt;a href=&quot;http://192.168.1.1/&quot;&gt;http://192.168.1.1/&lt;/a&gt;.
+Le mot de passe par défaut varie en fonction des modèles. Une liste complète est disponible &lt;a href=&quot;https://actuneuf.com/tutoriel/interface-box-sfr&quot;&gt;ici&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Pour ajouter une IP statique, il faut se rendre dans la partie LAN, puis l&#39;onglet Baux statiques. Cliquer sur Ajouter un bail statique.&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; alt=&quot;Les baux statiques sur la box SFR&quot; src=&quot;https://www.jeanremypraud.com/img/wZmwSd_EYx-320.webp&quot; width=&quot;640&quot; height=&quot;290&quot; srcset=&quot;https://www.jeanremypraud.com/img/wZmwSd_EYx-320.webp 320w, https://www.jeanremypraud.com/img/wZmwSd_EYx-640.webp 640w&quot; sizes=&quot;(max-width: 640px) 320px, 640px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Ensuite, il suffit de sélectionner l&#39;équipement et lui attribuer une IP quelconque (192.169.1.30 dans mon cas).&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; alt=&quot;Ajouter un bail statique sur la box SFR&quot; src=&quot;https://www.jeanremypraud.com/img/33vR1jXdx8-320.webp&quot; width=&quot;640&quot; height=&quot;420&quot; srcset=&quot;https://www.jeanremypraud.com/img/33vR1jXdx8-320.webp 320w, https://www.jeanremypraud.com/img/33vR1jXdx8-640.webp 640w&quot; sizes=&quot;(max-width: 640px) 320px, 640px&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;installer-pi-hole&quot; tabindex=&quot;-1&quot;&gt;Installer Pi-Hole &lt;a class=&quot;title-anchor&quot; href=&quot;https://www.jeanremypraud.com/notes/pi-hole-box-sfr/#installer-pi-hole&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Le Raspberry Pi est maintenant prêt à être configuré. Pour se connecter en SSH, il suffit de lancer la commande suivante&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;ssh&lt;/span&gt; pi@192.168.1.30&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;pi&lt;/code&gt; est l&#39;utilisateur par défaut et &lt;code&gt;192.168.1.30&lt;/code&gt; l&#39;IP précédemment attribuée. Dans ce cas, le mot de passe par défaut est &lt;code&gt;raspberry&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;On peut ensuite lancer la commande d’installation de Pi-Hole:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;curl&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-sSL&lt;/span&gt; https://install.pi-hole.net &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;bash&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;La configuration propose plusieurs choix de fournisseurs de DNS. Il faut donc bien lire &lt;a href=&quot;https://docs.pi-hole.net/guides/dns/upstream-dns-providers/&quot;&gt;la documentation&lt;/a&gt; avant de choisir. De mon côté, j’ai choisi OpenDNS pour son filtre anti-phising et le filtre familial.&lt;/p&gt;
+&lt;h2 id=&quot;configuration-finale&quot; tabindex=&quot;-1&quot;&gt;Configuration finale &lt;a class=&quot;title-anchor&quot; href=&quot;https://www.jeanremypraud.com/notes/pi-hole-box-sfr/#configuration-finale&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Pi-Hole fonctionne, il faut maintenant le définir comme DNS primaire. Pour cela, dans la partie LAN de l&#39;interface de la box, on peut entrer l&#39;IP du Raspberry comme DNS primaire&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; alt=&quot;Changer les DNS primaires&quot; src=&quot;https://www.jeanremypraud.com/img/M-SwI3iRUs-320.webp&quot; width=&quot;640&quot; height=&quot;434&quot; srcset=&quot;https://www.jeanremypraud.com/img/M-SwI3iRUs-320.webp 320w, https://www.jeanremypraud.com/img/M-SwI3iRUs-640.webp 640w&quot; sizes=&quot;(max-width: 640px) 320px, 640px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Rdémarrer la box, puis l’interface de Pi-Hole est accessible à http://192.168.1.30/admin/index.php.&lt;/p&gt;
+&lt;h2 id=&quot;bonus&quot; tabindex=&quot;-1&quot;&gt;Bonus &lt;a class=&quot;title-anchor&quot; href=&quot;https://www.jeanremypraud.com/notes/pi-hole-box-sfr/#bonus&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Il est également possible d’ajouter une URL locale qui permettra d’accéder à l’interface d’admin de Pi-Hole via l’url pi.hole/admin/. Tous les utilisateurs du réseau local y auront accès.&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; alt=&quot;Ajouter une DNS locale&quot; src=&quot;https://www.jeanremypraud.com/img/JIw3py3cXk-320.webp&quot; width=&quot;640&quot; height=&quot;264&quot; srcset=&quot;https://www.jeanremypraud.com/img/JIw3py3cXk-320.webp 320w, https://www.jeanremypraud.com/img/JIw3py3cXk-640.webp 640w&quot; sizes=&quot;(max-width: 640px) 320px, 640px&quot; /&gt;&lt;/p&gt;
+</content>
+    </entry>
+</feed>

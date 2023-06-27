@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8">
     
-      <title>Jean-Rémy Praud - Developpeur fullstack</title>
+      <title>Installer une ancienne version d&#39;Expo Go - Jean-Rémy Praud</title>
     
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="Tech Lead chez Dernier Cri, j’aime travailler sur des projets porteurs de sens. Je m’intéresse tout particulièrement à l’éco-conception et à l’accessibilité.">
@@ -17,7 +17,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     
 
-    <link rel="stylesheet" href="/assets/css/base.css?0f21-9e48-6bf2">
+    <link rel="stylesheet" href="/assets/css/base.css?a9d9-cdc8-de6b">
     <script type="application/ld+json">
 	{
 		"@context": "https://schema.org",
@@ -45,7 +45,7 @@
     <nav class="page-header__menu" role="navigation">
       <ul>
         <li>
-          <a href="/notes/" >Notes</a>
+          <a href="/notes/"  aria-current="page">Notes</a>
         </li>
         <li>
           <a href="/a-propos/" >À propos</a>
@@ -56,62 +56,66 @@
   </div>
 </header>
     <main class="main" role="main">
+      <article class="article">
+  <header class="article__header">
+    <div class="container">
       
-<section class="container">
-  <div class="hero">
-    <img src="/assets/img/profile.png" alt=""/>
-    <div>
-      <p class="baseline">
-        Tech Lead chez <a href="https://www.derniercri.io">Dernier Cri</a>, j’aime travailler sur des projets porteurs de
-        sens. 
-        Je m’intéresse tout particulièrement à <em>l’éco-conception</em> et à
-        <em>l’accessibilité</em>, et plus largement à la sobriété numérique.
-      </p>
-      <a href="/a-propos/" class="button">Plus d'infos</a>
+        
+
+
+  <nav class="breadcrumb">
+    
+      
+        <a href="/">Accueil</a> >
+      
+    
+      
+        <a href="/notes/">Notes</a> >
+      
+    
+      
+        Installer une ancienne version d&#39;Expo Go
+      
+    
+  </nav>
+
+      
+
+      <h1 class="article__title">
+        Installer une ancienne version d&#39;Expo Go
+      </h1>
     </div>
-  </div>
-</section>
-<section class="last-notes">
-  <div class="container">
-
-    <h2 class="h2 mb-6">Dernières notes</h2>
-    <ul class="last-notes__list" >
-        <li>
-
-          <article class="article-teaser">
-  <p class="article-teaser__date">
-    <time  datetime="2022-11-13">13 novembre 2022</time>
-  </p>
-
-  <div>
-    <h2 class="article-teaser__title">
-      <a href=/notes/pi-hole-box-sfr/>Installer Pi-Hole sur un Raspberry Pi et une box SFR</a>
-    </h2>
-    <p class="article-teaser__description">Une introduction à l’installation d’un bloqueur de pub centralisé, disponible pour tous les clients d’un réseau</p>
-  </div>
-</article>
-        </li>
+  </header>
+  <section class="article__content">
+    <div class="container">
       
-        <li>
+        <p class="article__date">
+        Posté le
+        <time datetime="2022-12-27">27/12/2022</time>
+        </p>
+      
+      <div class="md">
+        <p>Lorsque l'on jongle entre pluseurs projets mobile avec Expo, on peut être confronté à un problème de version entre le sdk d'Expo utilisé dans le projet et la version du client installée sur le mobile.</p>
+<p>Heureusement, il est possible d'installer une version adaptée à son projet.</p>
+<h2 id="installation-automatique-la-plus-simple" tabindex="-1">Installation automatique (la plus simple) <a class="title-anchor" href="#installation-automatique-la-plus-simple" aria-hidden="true">#</a></h2>
+<p>L'outil en ligne de commande d'Expo fournit <a href="https://docs.expo.dev/archived/expo-cli/#client">une commande bien pratique</a> pour installer l'application cliente automatiquement.</p>
+<p>Sur iOS, l'installation d'une application sans passer par un store n'est (pour le moment) possible que sur le simulateur.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token operator">></span> expo client:install:ios/android</code></pre>
+<h2 id="installation-manuelle" tabindex="-1">Installation manuelle <a class="title-anchor" href="#installation-manuelle" aria-hidden="true">#</a></h2>
+<p>Si pour une quelconque raison la première solution ne fonctionne pas, une solution consiste à récupérer le binaire de l'application, puis à l'installer directement sur le téléphone cible.</p>
+<p>Il faut se rendre sur <a href="https://expo.io/--/api/v2/versions">le site d'Expo</a>. Si la version le permet, il faut télécharger ensuite <code>iosClientUrl</code> et <code>androidClientUrl</code>.</p>
+<h3>Android</h3>
+<p>Pour installer l'application sur le téléphone, il suffit de rentrer la commande suivante:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token operator">></span> adb <span class="token function">install</span> chemindubinaire.apk</code></pre>
+<p>Si un téléphone est branché, l'application s'installera dessus. Dans le cas contraire, ce sera sur le simulateur.</p>
+<h3>iOS (non testé)</h3>
+<p>Dans un premier temps, il faut lancer le simulateur, puis la commande suivante:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token operator">></span> xcrun simctl <span class="token function">install</span> booted ~/chemindubinaire.app</code></pre>
 
-          <article class="article-teaser">
-  <p class="article-teaser__date">
-    <time  datetime="2022-12-27">27 décembre 2022</time>
-  </p>
-
-  <div>
-    <h2 class="article-teaser__title">
-      <a href=/notes/installer-ancienne-version-expo/>Installer une ancienne version d&#39;Expo Go</a>
-    </h2>
-    <p class="article-teaser__description">Comment installer une ancienne version du client Expo lorsque le SDK n&#39;est pas compatible</p>
-  </div>
+      </div>
+    </div>
+  </section>
 </article>
-        </li>
-      </ul>
-    <a href="/notes/" class="button">Voir tout</a>
-  </div>
-
-</section>
     </main>
     <footer class="page-footer" role="contentinfo">
   <div class="container">
