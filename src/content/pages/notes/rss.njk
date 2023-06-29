@@ -1,6 +1,6 @@
 ---json
 {
-  "permalink": "notes/feed.xml",
+  "permalink": "notes/rss.xml",
   "eleventyExcludeFromCollections": true,
   "layout": null,
   "metadata": {
@@ -16,6 +16,7 @@
 }
 ---
 <?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="/notes/rss-style.xsl" type="text/xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:base="{{ metadata.url }}">
   <title>{{ metadata.title }}</title>
   <subtitle>{{ metadata.subtitle }}</subtitle>

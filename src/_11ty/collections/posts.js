@@ -5,5 +5,7 @@
  */
 
 module.exports = function (collection) {
-  return collection.getFilteredByGlob("./src/content/posts/**/*.md").reverse();
+  return collection
+    .getFilteredByGlob("./src/content/posts/**/*.[md,njk]")
+    .reverse();
 };

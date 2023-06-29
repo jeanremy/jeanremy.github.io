@@ -1,4 +1,5 @@
 const getPermalinkForPost = (data) => {
+  if (data.permalink) return data.permalink;
   return process.env.ELEVENTY_ENV === "production" && data.draft
     ? false
     : `/notes/${data.page.fileSlug}/index.html`;
