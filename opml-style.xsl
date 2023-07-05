@@ -1,43 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
 
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
 
-<!DOCTYPE html>
-<html lang="fr-FR">
-  <head>
-    <meta charset="utf-8">
-    
-      <title>À propos - Jean-Rémy Praud</title>
-    
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description" content="Tech Lead chez Dernier Cri, j’aime travailler sur des projets porteurs de sens. Je m’intéresse tout particulièrement à l’éco-conception et à l’accessibilité.">
-    <meta name="robots" content="noodp">
+  <xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes"/>
 
-    
-<link rel="icon" href="/favicon.ico">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg"></link>
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    
-
-    <link rel="stylesheet" href="/assets/css/base.css?30f7-9a3f-78c4">
-    <script type="application/ld+json">
-	{
-		"@context": "https://schema.org",
-		"@graph": [
-			{
-				"@type": "WebSite",
-				"@id": "https://jeanremypraud.com#website",
-				"url": "https://jeanremypraud.com",
-				"name": "Jean-Rémy Praud",
-				"description": "Tech Lead chez Dernier Cri, j’aime travailler sur des projets porteurs de sens. Je m’intéresse tout particulièrement à l’éco-conception et à l’accessibilité.",
-				"inLanguage": "fr_FR"
-			}
-		]
-	}
-</script>
-
-  </head>
-  <body class="page">
-
-    <header class="page-header" role="banner">
+  <xsl:template match="/">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+      <head>
+        <title> Mes flux RSS 
+        </title>
+        <meta charset="utf-8"/>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="/assets/css/base.css?"/>
+      </head>
+      <body class="page">
+        <header class="page-header" role="banner">
   <div class="container">
     <p class="page__title">
       <a href="/" rel="me" title="Homepage">jr<span>.</span></a>
@@ -48,59 +26,57 @@
           <a href="/notes/" >Notes</a>
         </li>
         <li>
-          <a href="/a-propos/"  aria-current="page">À propos</a>
+          <a href="/a-propos/" >À propos</a>
         </li>
       </ul>
       
     </nav>
   </div>
 </header>
-    <main class="main" role="main">
-      <article class="article">
-  <header class="article__header">
-    <div class="container">
-      
-        
+        <main class="main" role="main">
+          <article class="article">
+            <header class="article__header">
+              <div class="container">
 
+                <h1 class="article__title df aic">
 
-  <nav class="breadcrumb">
-    
-      
-        <a href="/">Accueil</a> >
-      
-    
-      
-        À propos
-      
-    
-  </nav>
+                  <xsl:value-of select="/opml/head/title"/>
+                </h1>
+              </div>
+            </header>
+            <section class="article__content">
+              <div class="container">
+                <div class="md">
 
-      
+                  <xsl:for-each select="/opml/body/outline">
 
-      <h1 class="article__title">
-        À propos
-      </h1>
-    </div>
-  </header>
-  <section class="article__content">
-    <div class="container">
-      
-      <div class="md">
-        <h2 id="developpeur-full-stack-avec-10-ans-d-experience" tabindex="-1">Developpeur full-stack avec 10 ans d'experience <a class="title-anchor" href="#developpeur-full-stack-avec-10-ans-d-experience" aria-hidden="true">#</a></h2>
-<p>Développeur depuis 2013, je me suis d'abord orienté dans l'intégration, que j'affectionne particulièrement. Puis j'ai pu approfondir mes connaissances dans le developpement front-end (React, React Native, Vue et le JavaScript en général). Les projets sur lesquels j'ai travaillé m'ont amené à développer mes connaissances en back-end (d'abord WordPress, puis Drupal et maintenant Laravel).
-Aujourd'hui, je continue d'aborder le développement à travers ces différents prismes.</p>
-<h2 id="certification" tabindex="-1">Certification <a class="title-anchor" href="#certification" aria-hidden="true">#</a></h2>
-<p>Le collectif Green IT créé par Frédéric Bordage a développé une <a href="https://www.greenit.fr/certification-ecoconception-de-service-numerique/">certification Éco-conception web</a>. Comme son contenu l'indique, &quot;elle atteste du niveau de maîtrise de la méthodologie, des bonnes pratiques, du vocabulaire et des connaissances fondamentales associées à cette pratique&quot;.
-Obtenue le 26/10/2022</p>
-<h2 id="contact" tabindex="-1">Contact <a class="title-anchor" href="#contact" aria-hidden="true">#</a></h2>
-<p>Si vous souhaitez me contacter, vous pouvez m'écrire à l'adresse <a href="mailto:hello@jeanremypraud.com">hello@jeanremypraud.com</a></p>
+                    <h2>
+                      <xsl:value-of select="@title"/>
+                    </h2>
 
-      </div>
-    </div>
-  </section>
-</article>
-    </main>
-    <footer class="page-footer" role="contentinfo">
+                    <ul>
+
+                      <xsl:for-each select="outline">
+                        <li>
+                          <a>
+
+                            <xsl:attribute name="href">
+                              <xsl:value-of select="@xmlUrl"/>
+                            </xsl:attribute>
+
+                            <xsl:value-of select="@title"/>
+                          </a>
+                        </li>
+                      </xsl:for-each>
+                    </ul>
+
+                  </xsl:for-each>
+                </div>
+              </div>
+            </section>
+          </article>
+        </main>
+        <footer class="page-footer" role="contentinfo">
   <div class="container">
     <nav class="page-footer__menus">
       <ul class="page-footer__menu">
@@ -142,7 +118,7 @@ Obtenue le 26/10/2022</p>
 
   </div>
 </footer>
-    
-
-  </body>
-</html>
+      </body>
+    </html>
+  </xsl:template>
+</xsl:stylesheet>

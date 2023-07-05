@@ -813,6 +813,10 @@ pre {
   display: flex;
 }
 
+.aic {
+  align-items: center;
+}
+
 .db {
   display: block;
 }

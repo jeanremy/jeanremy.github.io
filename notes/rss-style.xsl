@@ -1,43 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
 
+<xsl:stylesheet version="3.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:atom="http://www.w3.org/2005/Atom">
 
-<!DOCTYPE html>
-<html lang="fr-FR">
-  <head>
-    <meta charset="utf-8">
-    
-      <title>À propos - Jean-Rémy Praud</title>
-    
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description" content="Tech Lead chez Dernier Cri, j’aime travailler sur des projets porteurs de sens. Je m’intéresse tout particulièrement à l’éco-conception et à l’accessibilité.">
-    <meta name="robots" content="noodp">
+  <xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes"/>
 
-    
-<link rel="icon" href="/favicon.ico">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg"></link>
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    
-
-    <link rel="stylesheet" href="/assets/css/base.css?30f7-9a3f-78c4">
-    <script type="application/ld+json">
-	{
-		"@context": "https://schema.org",
-		"@graph": [
-			{
-				"@type": "WebSite",
-				"@id": "https://jeanremypraud.com#website",
-				"url": "https://jeanremypraud.com",
-				"name": "Jean-Rémy Praud",
-				"description": "Tech Lead chez Dernier Cri, j’aime travailler sur des projets porteurs de sens. Je m’intéresse tout particulièrement à l’éco-conception et à l’accessibilité.",
-				"inLanguage": "fr_FR"
-			}
-		]
-	}
-</script>
-
-  </head>
-  <body class="page">
-
-    <header class="page-header" role="banner">
+  <xsl:template match="/">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+      <head>
+        <title>
+          RSS Feed |
+          <xsl:value-of select="/atom:feed/atom:title"/>
+        </title>
+        <meta charset="utf-8"/>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="/assets/css/base.css?"/>
+      </head>
+      <body class="page">
+        <header class="page-header" role="banner">
   <div class="container">
     <p class="page__title">
       <a href="/" rel="me" title="Homepage">jr<span>.</span></a>
@@ -45,62 +26,58 @@
     <nav class="page-header__menu" role="navigation">
       <ul>
         <li>
-          <a href="/notes/" >Notes</a>
+          <a href="/notes/"  aria-current="page">Notes</a>
         </li>
         <li>
-          <a href="/a-propos/"  aria-current="page">À propos</a>
+          <a href="/a-propos/" >À propos</a>
         </li>
       </ul>
       
     </nav>
   </div>
 </header>
-    <main class="main" role="main">
-      <article class="article">
-  <header class="article__header">
-    <div class="container">
-      
-        
+        <main class="main" role="main">
+          <article class="article">
+            <header class="article__header">
+              <div class="container">
+                <h1 class="article__title df aic">
+                  <svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 8 8" width="30" height="30" class="mr-3">
+                    <title>RSS feed icon</title>
+                    <rect fill="orange"  class="button" width="8" height="8" rx="1.5"/>
+                    <circle fill="white" class="symbol" cx="2" cy="6" r="1"/>
+                    <path  fill="white"  class="symbol" d="m 1,4 a 3,3 0 0 1 3,3 h 1 a 4,4 0 0 0 -4,-4 z"/>
+                    <path  fill="white"  class="symbol" d="m 1,2 a 5,5 0 0 1 5,5 h 1 a 6,6 0 0 0 -6,-6 z"/>
+                  </svg>
 
+                  <xsl:value-of select="/atom:feed/atom:title"/>
+                </h1>
+              </div>
+            </header>
+            <section class="article__content">
+              <div class="container">
+                <div class="md">
+                  <ul>
 
-  <nav class="breadcrumb">
-    
-      
-        <a href="/">Accueil</a> >
-      
-    
-      
-        À propos
-      
-    
-  </nav>
+                    <xsl:for-each select="/atom:feed/atom:entry">
+                      <li class="article-teaser">
+                        <a>
 
-      
+                          <xsl:attribute name="href">
+                            <xsl:value-of select="atom:link/@href"/>
+                          </xsl:attribute>
 
-      <h1 class="article__title">
-        À propos
-      </h1>
-    </div>
-  </header>
-  <section class="article__content">
-    <div class="container">
-      
-      <div class="md">
-        <h2 id="developpeur-full-stack-avec-10-ans-d-experience" tabindex="-1">Developpeur full-stack avec 10 ans d'experience <a class="title-anchor" href="#developpeur-full-stack-avec-10-ans-d-experience" aria-hidden="true">#</a></h2>
-<p>Développeur depuis 2013, je me suis d'abord orienté dans l'intégration, que j'affectionne particulièrement. Puis j'ai pu approfondir mes connaissances dans le developpement front-end (React, React Native, Vue et le JavaScript en général). Les projets sur lesquels j'ai travaillé m'ont amené à développer mes connaissances en back-end (d'abord WordPress, puis Drupal et maintenant Laravel).
-Aujourd'hui, je continue d'aborder le développement à travers ces différents prismes.</p>
-<h2 id="certification" tabindex="-1">Certification <a class="title-anchor" href="#certification" aria-hidden="true">#</a></h2>
-<p>Le collectif Green IT créé par Frédéric Bordage a développé une <a href="https://www.greenit.fr/certification-ecoconception-de-service-numerique/">certification Éco-conception web</a>. Comme son contenu l'indique, &quot;elle atteste du niveau de maîtrise de la méthodologie, des bonnes pratiques, du vocabulaire et des connaissances fondamentales associées à cette pratique&quot;.
-Obtenue le 26/10/2022</p>
-<h2 id="contact" tabindex="-1">Contact <a class="title-anchor" href="#contact" aria-hidden="true">#</a></h2>
-<p>Si vous souhaitez me contacter, vous pouvez m'écrire à l'adresse <a href="mailto:hello@jeanremypraud.com">hello@jeanremypraud.com</a></p>
-
-      </div>
-    </div>
-  </section>
-</article>
-    </main>
-    <footer class="page-footer" role="contentinfo">
+                          <xsl:value-of select="atom:title"/>
+                        </a>
+                      </li>
+                    </xsl:for-each>
+                  </ul>
+                </div>
+              </div>
+            </section>
+          </article>
+        </main>
+        <footer class="page-footer" role="contentinfo">
   <div class="container">
     <nav class="page-footer__menus">
       <ul class="page-footer__menu">
@@ -142,7 +119,8 @@ Obtenue le 26/10/2022</p>
 
   </div>
 </footer>
-    
 
-  </body>
-</html>
+      </body>
+    </html>
+  </xsl:template>
+</xsl:stylesheet>

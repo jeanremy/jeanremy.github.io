@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8">
     
-      <title>À propos - Jean-Rémy Praud</title>
+      <title>Ma liste de flux RSS - Jean-Rémy Praud</title>
     
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="Tech Lead chez Dernier Cri, j’aime travailler sur des projets porteurs de sens. Je m’intéresse tout particulièrement à l’éco-conception et à l’accessibilité.">
@@ -17,7 +17,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     
 
-    <link rel="stylesheet" href="/assets/css/base.css?30f7-9a3f-78c4">
+    <link rel="stylesheet" href="/assets/css/base.css?2966-0e02-24f1">
     <script type="application/ld+json">
 	{
 		"@context": "https://schema.org",
@@ -45,10 +45,10 @@
     <nav class="page-header__menu" role="navigation">
       <ul>
         <li>
-          <a href="/notes/" >Notes</a>
+          <a href="/notes/"  aria-current="page">Notes</a>
         </li>
         <li>
-          <a href="/a-propos/"  aria-current="page">À propos</a>
+          <a href="/a-propos/" >À propos</a>
         </li>
       </ul>
       
@@ -70,7 +70,11 @@
       
     
       
-        À propos
+        <a href="/notes/">Notes</a> >
+      
+    
+      
+        Ma liste de flux RSS
       
     
   </nav>
@@ -78,22 +82,32 @@
       
 
       <h1 class="article__title">
-        À propos
+        Ma liste de flux RSS
       </h1>
     </div>
   </header>
   <section class="article__content">
     <div class="container">
       
+        <p class="article__date">
+        Posté le
+        <time datetime="2023-07-04">04/07/2023</time>
+        </p>
+      
       <div class="md">
-        <h2 id="developpeur-full-stack-avec-10-ans-d-experience" tabindex="-1">Developpeur full-stack avec 10 ans d'experience <a class="title-anchor" href="#developpeur-full-stack-avec-10-ans-d-experience" aria-hidden="true">#</a></h2>
-<p>Développeur depuis 2013, je me suis d'abord orienté dans l'intégration, que j'affectionne particulièrement. Puis j'ai pu approfondir mes connaissances dans le developpement front-end (React, React Native, Vue et le JavaScript en général). Les projets sur lesquels j'ai travaillé m'ont amené à développer mes connaissances en back-end (d'abord WordPress, puis Drupal et maintenant Laravel).
-Aujourd'hui, je continue d'aborder le développement à travers ces différents prismes.</p>
-<h2 id="certification" tabindex="-1">Certification <a class="title-anchor" href="#certification" aria-hidden="true">#</a></h2>
-<p>Le collectif Green IT créé par Frédéric Bordage a développé une <a href="https://www.greenit.fr/certification-ecoconception-de-service-numerique/">certification Éco-conception web</a>. Comme son contenu l'indique, &quot;elle atteste du niveau de maîtrise de la méthodologie, des bonnes pratiques, du vocabulaire et des connaissances fondamentales associées à cette pratique&quot;.
-Obtenue le 26/10/2022</p>
-<h2 id="contact" tabindex="-1">Contact <a class="title-anchor" href="#contact" aria-hidden="true">#</a></h2>
-<p>Si vous souhaitez me contacter, vous pouvez m'écrire à l'adresse <a href="mailto:hello@jeanremypraud.com">hello@jeanremypraud.com</a></p>
+        <p>Inspiré par Darek Kay qui a publié <a href="https://darekkay.com/blog/rss-styling/">un article</a> sur la façon de styler son flux RSS, j'ai décidé de faire de même.</p>
+<p>Le flux RSS de mes notes est donc accessible en bas de page ou à cette <a href="/notes/rss.xml">adresse</a>.</p>
+<h2 id="comment-ca-marche" tabindex="-1">Comment ça marche ? <a class="title-anchor" href="#comment-ca-marche" aria-hidden="true">#</a></h2>
+<p>J'ignorais qu'il était possible de mettre en forme un xml. Comme l'auteur l'explique, le XML appelle un fichier de <code>xsl</code> via la balise <code>xml-stylesheet</code>.</p>
+<p>Ce fichier met en forme les données contenues dans le XML. On appelle ensuite les éléments contenus dans le XML à travers des sélecteurs spécifique tels que <code>xsl:value-of</code>. On peut également insérer un fichier CSS.</p>
+<p>Il est possible de faire une boucle avec le tag suivant:</p>
+<pre class="language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">xsl:</span>for-each</span> <span class="token attr-name">select</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/opml/body/outline<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></code></pre>
+<h2 id="pour-aller-plus-loin" tabindex="-1">Pour aller plus loin <a class="title-anchor" href="#pour-aller-plus-loin" aria-hidden="true">#</a></h2>
+<p>Profitant de cette découverte, j'en ai profité pour publier la liste des comptes que je suis par RSS. Il s'agit d'un fichier <a href="https://fr.wikipedia.org/wiki/Outline_Processor_Markup_Language">OPML</a>, que j'ai pu styler avec le technique précédemment évoquée, tout à fait applicable à ce type de fichier basé sur XML.</p>
+<p>Le fichier est au format XML pour être visualisé dans un navigateur. Il suffit de le renommer en <code>.opml</code> pour l'importer dans un lecteur de flux type Feedly.</p>
+<p>La liste est accessible et sera mise à jour à <a href="/mes-flux.xml">cette adresse</a>.</p>
+<h2 id="inconvenients" tabindex="-1">Inconvénients <a class="title-anchor" href="#inconvenients" aria-hidden="true">#</a></h2>
+<p>Le fichier <code>xsl</code>est intimement lié au <code>xml</code> qui l'appelle, car il utilise les balises pour les remanier. Chaque type de fichier XML aura donc son fichier xsl associé.</p>
 
       </div>
     </div>
