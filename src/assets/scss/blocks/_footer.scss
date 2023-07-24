@@ -1,12 +1,17 @@
 .page-footer {
   background-color: var(--faded);
   color: var(--white);
-  padding-block: var(--space-l);
+  padding-block: var(--space-m);
 
   &__menus {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
+    flex-wrap: wrap;
+
+    & > * {
+      margin-block-start: var(--space-xs);
+    }
   }
 
   &__menu {
@@ -20,7 +25,6 @@
 
   &__menus > div {
     display: flex;
-    align-items: flex-end;
     align-items: center;
   }
 
@@ -29,6 +33,10 @@
 
     li + li {
       margin-inline-start: var(--space-2xs);
+    }
+
+    a, svg {
+      display: block;
     }
   }
 
