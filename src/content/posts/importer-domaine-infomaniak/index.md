@@ -15,39 +15,29 @@ La principale raison est qu’Infomaniak propose des boîtes emails gratuites. P
 
 1. Récupérer ses anciens mails (au cas où)
 
-    - Avec Sogo
-
-    Si vous utilisez Sogo, sélectionner tous les emails de la boite de réception et cliquer ensuite sur Télécharger
+    1. Si vous utilisez Sogo, sélectionner tous les emails de la boite de réception et cliquer ensuite sur Télécharger
     ![Une capture d'écran de Sogo qui montre comment sélectionner puis exporter tous les emails](export-sogo.png)
     
-    - Avec Thunderbird
-
-    Télécharger [Thunderbird](https://www.thunderbird.net/fr/)
-    Configurer une boite mail. Choisir POP afin de récupérer une copie de tous les emails.
-    Thunderbird détectera la configuration de manière automatique puis téléchargera tous les emails
+    2. Avec [Thunderbird](https://www.thunderbird.net/fr/), 
+    configurer une boite mail. Choisir POP afin de récupérer une copie de tous les emails. Thunderbird détectera la configuration de manière automatique puis téléchargera tous les emails
 
 2. Copier ses DNS si certaines entrées ont été modifiées
-
 ![DNS de Gandi](dns-gandi.png)
 
 3. Désactiver la protection chez Gandi
+Afin de pouvoir transférer le nom de domaine, il faut d’abord le déverrouiller. Copier ensuite le code de transfert fourni et importer le nom de domaine chez Infomaniak. ![Une capture d'écran de Gandi où l'on peut déverouiller son domaine pour le transférer](deverrouiller.png)
 
-Afin de pouvoir transférer le nom de domaine, il faut d’abord le déverrouiller. Copier ensuite le code de transfert fourni et importer le nom de domaine chez infomaniak
-![Une capture d'écran de Gandi où l'on peut déverouiller son domaine pour le transférer](deverrouiller.png)
-
-4. Chercher un nom de domaine, et cliquer sur Transférer
+4. Chercher un nom de domaine, et cliquer sur Transférer.
 ![Une capture d'écran d'une recherche de nom de domaine et son transfert](transfert.png)
 
 5. Entrer le code de transfert
-![Une capture d'écran montrant le champ du cod ede transfert](transfert.png)
+![Une capture d'écran montrant le champ du code de transfert](transfert.png)
 
 6. Commander (et créer un compte)
 
 7. Importer les emails chez InfoManiak
-
-Infomaniak dispose d’un service très simple pour importer ses emails. Comme le transfert d’un nom de domaine n’est pas instantané, il est possible d’importer ses emails le temps que le transfert s’effectue. Pour cela, aller sur https://import-email.infomaniak.com/ et reentrez vos identifiants de messagerie. C’est tout.
+Infomaniak dispose d’un service très simple pour importer ses emails. Comme le transfert d’un nom de domaine n’est pas instantané, il est possible d’importer ses emails le temps que le transfert s’effectue. Pour cela, aller sur [https://import-email.infomaniak.com/](https://import-email.infomaniak.com/) et reentrez vos identifiants de messagerie. C’est tout.
 ![Capture d'écran de la configuration de l'import de messagerie](import-infomaniak.png)
-
 Les sauvegardes précédemment effectuées ne seront donc pas utiles (en théorie).
 
 
