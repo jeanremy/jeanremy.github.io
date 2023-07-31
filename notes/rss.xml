@@ -5,7 +5,7 @@
   <subtitle>Le flux RSS des dernieres notes</subtitle>
   <link href="https://www.jeanremypraud.com/notes/rss.xml" rel="self"/>
   <link href="https://www.jeanremypraud.com/"/>
-  <updated>2023-07-04T00:00:00Z</updated>
+  <updated>2023-07-24T00:00:00Z</updated>
   <id>https://www.jeanremypraud.com/</id>
   <author>
     <name>Jean-Rémy Praud</name>
@@ -92,6 +92,48 @@ Le mot de passe par défaut varie en fonction des modèles. Une liste complète 
 &lt;p&gt;La liste est accessible et sera mise à jour à &lt;a href=&quot;https://www.jeanremypraud.com/mes-flux.xml&quot;&gt;cette adresse&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&quot;inconvenients&quot; tabindex=&quot;-1&quot;&gt;Inconvénients &lt;a class=&quot;title-anchor&quot; href=&quot;https://www.jeanremypraud.com/notes/mes-flux-rss/#inconvenients&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Le fichier &lt;code&gt;xsl&lt;/code&gt;est intimement lié au &lt;code&gt;xml&lt;/code&gt; qui l&#39;appelle, car il utilise les balises pour les remanier. Chaque type de fichier XML aura donc son fichier xsl associé.&lt;/p&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Migrer ses emails chez Infomaniak</title>
+      <link href="https://www.jeanremypraud.com/notes/importer-domaine-infomaniak/"/>
+      <updated>2023-07-24T00:00:00Z</updated>
+      <id>https://www.jeanremypraud.com/notes/importer-domaine-infomaniak/</id>
+      <content xml:lang="fr" type="html">&lt;p&gt;Le 13 juin 2023, Gandi a annoncé un changement dans les tarifs de ses boîtes emails, passant de 0 à plus de 4€ par mois. Bien que content du service de Gandi, le montant était trop élevé pour moi. Les changement d&#39;hébergeur de mes emails est une opération que je fais peu et que j&#39;évite autant que possible.
+Après quelques semaines d’hésitation, j’ai donc migré mon nom de domaine vers un autre service, Infomaniak.&lt;/p&gt;
+&lt;h2 id=&quot;pourquoi-infomaniak&quot; tabindex=&quot;-1&quot;&gt;Pourquoi Infomaniak ? &lt;a class=&quot;title-anchor&quot; href=&quot;https://www.jeanremypraud.com/notes/importer-domaine-infomaniak/#pourquoi-infomaniak&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;La principale raison est qu’Infomaniak propose des boîtes emails gratuites. Pour ne rien gâcher, un hébergement est fourni pour l’achat d’un domaine. Même si je ne l’utilise pas (ce site est hébergé sur GitHub Pages), je pourrais en trouver l’utilité. Et enfin, je trouve leur &lt;a href=&quot;https://www.infomaniak.com/fr/ecologie&quot;&gt;communication relative à leur empreinte écologique&lt;/a&gt; assez juste.&lt;/p&gt;
+&lt;h2 id=&quot;guide-rapide-pour-migrer-son-domaine-chez-infomaniak&quot; tabindex=&quot;-1&quot;&gt;Guide rapide pour migrer son domaine chez Infomaniak &lt;a class=&quot;title-anchor&quot; href=&quot;https://www.jeanremypraud.com/notes/importer-domaine-infomaniak/#guide-rapide-pour-migrer-son-domaine-chez-infomaniak&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3&gt;Récupérer ses anciens mails (au cas où)&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Si vous utilisez Sogo, sélectionner tous les emails de la boite de réception et cliquer ensuite sur Télécharger
+&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; alt=&quot;Une capture d&#39;écran de Sogo qui montre comment sélectionner puis exporter tous les emails&quot; src=&quot;https://www.jeanremypraud.com/img/HRilnyg4NR-320.webp&quot; width=&quot;640&quot; height=&quot;224&quot; srcset=&quot;https://www.jeanremypraud.com/img/HRilnyg4NR-320.webp 320w, https://www.jeanremypraud.com/img/HRilnyg4NR-640.webp 640w&quot; sizes=&quot;(max-width: 640px) 320px, 640px&quot; /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Avec &lt;a href=&quot;https://www.thunderbird.net/fr/&quot;&gt;Thunderbird&lt;/a&gt;,
+configurer une boite mail. Choisir POP afin de récupérer une copie de tous les emails. Thunderbird détectera la configuration de manière automatique puis téléchargera tous les emails&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;Copier ses DNS&lt;/h3&gt;
+&lt;p&gt;Si certaines entrées ont été modifiées, il peut être utile d&#39;en garder une copie.
+&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; alt=&quot;DNS de Gandi&quot; src=&quot;https://www.jeanremypraud.com/img/DG5VbjPIjz-320.webp&quot; width=&quot;640&quot; height=&quot;548&quot; srcset=&quot;https://www.jeanremypraud.com/img/DG5VbjPIjz-320.webp 320w, https://www.jeanremypraud.com/img/DG5VbjPIjz-640.webp 640w&quot; sizes=&quot;(max-width: 640px) 320px, 640px&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;Désactiver la protection chez Gandi&lt;/h3&gt;
+&lt;p&gt;Afin de pouvoir transférer le nom de domaine, il faut d’abord le déverrouiller. Copier ensuite le code de transfert fourni et importer le nom de domaine chez Infomaniak. &lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; alt=&quot;Une capture d&#39;écran de Gandi où l&#39;on peut déverouiller son domaine pour le transférer&quot; src=&quot;https://www.jeanremypraud.com/img/t2nGNo5inc-320.webp&quot; width=&quot;640&quot; height=&quot;175&quot; srcset=&quot;https://www.jeanremypraud.com/img/t2nGNo5inc-320.webp 320w, https://www.jeanremypraud.com/img/t2nGNo5inc-640.webp 640w&quot; sizes=&quot;(max-width: 640px) 320px, 640px&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;Transférer chez Infomaniak&lt;/h3&gt;
+&lt;p&gt;Chercher un nom de domaine, et cliquer sur Transférer.
+&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; alt=&quot;Une capture d&#39;écran d&#39;une recherche de nom de domaine et son transfert&quot; src=&quot;https://www.jeanremypraud.com/img/aNf8TtcMJZ-320.webp&quot; width=&quot;640&quot; height=&quot;302&quot; srcset=&quot;https://www.jeanremypraud.com/img/aNf8TtcMJZ-320.webp 320w, https://www.jeanremypraud.com/img/aNf8TtcMJZ-640.webp 640w&quot; sizes=&quot;(max-width: 640px) 320px, 640px&quot; /&gt;
+Entrer ensuite le code de transfert.
+&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; alt=&quot;Une capture d&#39;écran montrant le champ du code de transfert&quot; src=&quot;https://www.jeanremypraud.com/img/aNf8TtcMJZ-320.webp&quot; width=&quot;640&quot; height=&quot;302&quot; srcset=&quot;https://www.jeanremypraud.com/img/aNf8TtcMJZ-320.webp 320w, https://www.jeanremypraud.com/img/aNf8TtcMJZ-640.webp 640w&quot; sizes=&quot;(max-width: 640px) 320px, 640px&quot; /&gt;
+Commander (et créer un compte)&lt;/p&gt;
+&lt;h3&gt;Importer les emails chez InfoManiak&lt;/h3&gt;
+&lt;p&gt;Infomaniak dispose d’un service très simple pour importer ses emails. Comme le transfert d’un nom de domaine n’est pas instantané, il est possible d’importer ses emails le temps que le transfert s’effectue. Pour cela, aller sur &lt;a href=&quot;https://import-email.infomaniak.com/&quot;&gt;https://import-email.infomaniak.com/&lt;/a&gt; et reentrez vos identifiants de messagerie. C’est tout.
+&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; alt=&quot;Capture d&#39;écran de la configuration de l&#39;import de messagerie&quot; src=&quot;https://www.jeanremypraud.com/img/pszFDNp55I-320.webp&quot; width=&quot;640&quot; height=&quot;308&quot; srcset=&quot;https://www.jeanremypraud.com/img/pszFDNp55I-320.webp 320w, https://www.jeanremypraud.com/img/pszFDNp55I-640.webp 640w&quot; sizes=&quot;(max-width: 640px) 320px, 640px&quot; /&gt;
+Les sauvegardes précédemment effectuées ne seront donc pas utiles (en théorie).&lt;/p&gt;
+&lt;h3&gt;Réécrire sa zone DNS&lt;/h3&gt;
+&lt;p&gt;En cas de besoin réécrire la zone DNS une fois le transfert effectué.&lt;/p&gt;
+&lt;h2 id=&quot;conclusion&quot; tabindex=&quot;-1&quot;&gt;Conclusion &lt;a class=&quot;title-anchor&quot; href=&quot;https://www.jeanremypraud.com/notes/importer-domaine-infomaniak/#conclusion&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Dans mon cas, le transfert a pris 5 jours. J&#39;ai pu donc migrer mon nom de domaine et mes emails sans trop de souci grâce au service d&#39;Infomaniak qui facilite grandement la tâche.&lt;/p&gt;
 </content>
     </entry>
 </feed>

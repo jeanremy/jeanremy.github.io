@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8">
     
-      <title>Plan du site - Jean-Rémy Praud</title>
+      <title>Migrer ses emails chez Infomaniak - Jean-Rémy Praud</title>
     
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="Tech Lead chez Dernier Cri, j’aime travailler sur des projets porteurs de sens. Je m’intéresse tout particulièrement à l’éco-conception et à l’accessibilité.">
@@ -17,7 +17,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     
 
-    <link rel="stylesheet" href="/assets/css/base.css?872f-0a8d-9c15">
+    <link rel="stylesheet" href="/assets/css/base.css?b9b3-b8d8-33e6">
     <script type="application/ld+json">
 	{
 		"@context": "https://schema.org",
@@ -45,7 +45,7 @@
     <nav class="page-header__menu" role="navigation">
       <ul>
         <li>
-          <a href="/notes/" >Notes</a>
+          <a href="/notes/"  aria-current="page">Notes</a>
         </li>
         <li>
           <a href="/a-propos/" >À propos</a>
@@ -70,7 +70,11 @@
       
     
       
-        Plan du site
+        <a href="/notes/">Notes</a> >
+      
+    
+      
+        Migrer ses emails chez Infomaniak
       
     
   </nav>
@@ -78,54 +82,55 @@
       
 
       <h1 class="article__title">
-        Plan du site
+        Migrer ses emails chez Infomaniak
       </h1>
     </div>
   </header>
   <section class="article__content">
     <div class="container">
       
+        <p class="article__date">
+        Posté le
+        <time datetime="2023-07-24">24/07/2023</time>
+        </p>
+      
       <div class="md">
-        <h2>Liste des pages</h2>
-<ul>
-  
-    <li>
-      <a href="/notes/pi-hole-box-sfr/">Installer Pi-Hole sur un Raspberry Pi et une box SFR</a>
-    </li>
-  
-    <li>
-      <a href="/notes/installer-ancienne-version-expo/">Installer une ancienne version d&#39;Expo Go</a>
-    </li>
-  
-    <li>
-      <a href="/notes/mes-flux-rss/">Ma liste de flux RSS</a>
-    </li>
-  
-    <li>
-      <a href="/notes/importer-domaine-infomaniak/">Migrer ses emails chez Infomaniak</a>
-    </li>
-  
-    <li>
-      <a href="/a-propos/">À propos</a>
-    </li>
-  
-    <li>
-      <a href="/">Jean-Rémy Praud</a>
-    </li>
-  
-    <li>
-      <a href="/mentions-legales/">Mentions légales</a>
-    </li>
-  
-    <li>
-      <a href="/notes/">Notes</a>
-    </li>
-  
-    <li>
-      <a href="/plan-site/">Plan du site</a>
-    </li>
-  
-</ul>
+        <p>Le 13 juin 2023, Gandi a annoncé un changement dans les tarifs de ses boîtes emails, passant de 0 à plus de 4€ par mois. Bien que content du service de Gandi, le montant était trop élevé pour moi. Les changement d'hébergeur de mes emails est une opération que je fais peu et que j'évite autant que possible.
+Après quelques semaines d’hésitation, j’ai donc migré mon nom de domaine vers un autre service, Infomaniak.</p>
+<h2 id="pourquoi-infomaniak" tabindex="-1">Pourquoi Infomaniak ? <a class="title-anchor" href="#pourquoi-infomaniak" aria-hidden="true">#</a></h2>
+<p>La principale raison est qu’Infomaniak propose des boîtes emails gratuites. Pour ne rien gâcher, un hébergement est fourni pour l’achat d’un domaine. Même si je ne l’utilise pas (ce site est hébergé sur GitHub Pages), je pourrais en trouver l’utilité. Et enfin, je trouve leur <a href="https://www.infomaniak.com/fr/ecologie">communication relative à leur empreinte écologique</a> assez juste.</p>
+<h2 id="guide-rapide-pour-migrer-son-domaine-chez-infomaniak" tabindex="-1">Guide rapide pour migrer son domaine chez Infomaniak <a class="title-anchor" href="#guide-rapide-pour-migrer-son-domaine-chez-infomaniak" aria-hidden="true">#</a></h2>
+<h3>Récupérer ses anciens mails (au cas où)</h3>
+<ol>
+<li>
+<p>Si vous utilisez Sogo, sélectionner tous les emails de la boite de réception et cliquer ensuite sur Télécharger
+<img loading="lazy" decoding="async" alt="Une capture d'écran de Sogo qui montre comment sélectionner puis exporter tous les emails" src="/img/HRilnyg4NR-320.webp" width="640" height="224" srcset="/img/HRilnyg4NR-320.webp 320w, /img/HRilnyg4NR-640.webp 640w" sizes="(max-width: 640px) 320px, 640px"></p>
+</li>
+<li>
+<p>Avec <a href="https://www.thunderbird.net/fr/">Thunderbird</a>,
+configurer une boite mail. Choisir POP afin de récupérer une copie de tous les emails. Thunderbird détectera la configuration de manière automatique puis téléchargera tous les emails</p>
+</li>
+</ol>
+<h3>Copier ses DNS</h3>
+<p>Si certaines entrées ont été modifiées, il peut être utile d'en garder une copie.
+<img loading="lazy" decoding="async" alt="DNS de Gandi" src="/img/DG5VbjPIjz-320.webp" width="640" height="548" srcset="/img/DG5VbjPIjz-320.webp 320w, /img/DG5VbjPIjz-640.webp 640w" sizes="(max-width: 640px) 320px, 640px"></p>
+<h3>Désactiver la protection chez Gandi</h3>
+<p>Afin de pouvoir transférer le nom de domaine, il faut d’abord le déverrouiller. Copier ensuite le code de transfert fourni et importer le nom de domaine chez Infomaniak. <img loading="lazy" decoding="async" alt="Une capture d'écran de Gandi où l'on peut déverouiller son domaine pour le transférer" src="/img/t2nGNo5inc-320.webp" width="640" height="175" srcset="/img/t2nGNo5inc-320.webp 320w, /img/t2nGNo5inc-640.webp 640w" sizes="(max-width: 640px) 320px, 640px"></p>
+<h3>Transférer chez Infomaniak</h3>
+<p>Chercher un nom de domaine, et cliquer sur Transférer.
+<img loading="lazy" decoding="async" alt="Une capture d'écran d'une recherche de nom de domaine et son transfert" src="/img/aNf8TtcMJZ-320.webp" width="640" height="302" srcset="/img/aNf8TtcMJZ-320.webp 320w, /img/aNf8TtcMJZ-640.webp 640w" sizes="(max-width: 640px) 320px, 640px">
+Entrer ensuite le code de transfert.
+<img loading="lazy" decoding="async" alt="Une capture d'écran montrant le champ du code de transfert" src="/img/aNf8TtcMJZ-320.webp" width="640" height="302" srcset="/img/aNf8TtcMJZ-320.webp 320w, /img/aNf8TtcMJZ-640.webp 640w" sizes="(max-width: 640px) 320px, 640px">
+Commander (et créer un compte)</p>
+<h3>Importer les emails chez InfoManiak</h3>
+<p>Infomaniak dispose d’un service très simple pour importer ses emails. Comme le transfert d’un nom de domaine n’est pas instantané, il est possible d’importer ses emails le temps que le transfert s’effectue. Pour cela, aller sur <a href="https://import-email.infomaniak.com/">https://import-email.infomaniak.com/</a> et reentrez vos identifiants de messagerie. C’est tout.
+<img loading="lazy" decoding="async" alt="Capture d'écran de la configuration de l'import de messagerie" src="/img/pszFDNp55I-320.webp" width="640" height="308" srcset="/img/pszFDNp55I-320.webp 320w, /img/pszFDNp55I-640.webp 640w" sizes="(max-width: 640px) 320px, 640px">
+Les sauvegardes précédemment effectuées ne seront donc pas utiles (en théorie).</p>
+<h3>Réécrire sa zone DNS</h3>
+<p>En cas de besoin réécrire la zone DNS une fois le transfert effectué.</p>
+<h2 id="conclusion" tabindex="-1">Conclusion <a class="title-anchor" href="#conclusion" aria-hidden="true">#</a></h2>
+<p>Dans mon cas, le transfert a pris 5 jours. J'ai pu donc migrer mon nom de domaine et mes emails sans trop de souci grâce au service d'Infomaniak qui facilite grandement la tâche.</p>
+
       </div>
     </div>
   </section>
