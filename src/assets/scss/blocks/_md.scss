@@ -5,6 +5,11 @@
     margin-block-start: 1.5em;
   }
 
+  img {
+    margin-block-start: 1.5em;
+    margin-block-end: 1em;
+  }
+
   a {
     text-decoration: none;
     position: relative;
@@ -31,11 +36,15 @@
 
   ul,ol {
     padding: revert;
+    li + li {
+      margin-block-start: var(--space-2xs);
+    }
   }
 
   ol > li > ol > li{
     list-style-type: lower-alpha;
   }
+
 
   ul:not(.taglist) {
     margin-top: 0.8rem;
@@ -67,5 +76,6 @@
   img {
     max-width: 100%;
     height: auto;
+    display: block;
   }
 }
