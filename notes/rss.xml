@@ -5,7 +5,7 @@
   <subtitle>Le flux RSS des dernieres notes</subtitle>
   <link href="https://www.jeanremypraud.com/notes/rss.xml" rel="self"/>
   <link href="https://www.jeanremypraud.com/"/>
-  <updated>2023-07-24T00:00:00Z</updated>
+  <updated>2023-07-31T00:00:00Z</updated>
   <id>https://www.jeanremypraud.com/</id>
   <author>
     <name>Jean-Rémy Praud</name>
@@ -134,6 +134,39 @@ Les sauvegardes précédemment effectuées ne seront donc pas utiles (en théori
 &lt;p&gt;En cas de besoin réécrire la zone DNS une fois le transfert effectué.&lt;/p&gt;
 &lt;h2 id=&quot;conclusion&quot; tabindex=&quot;-1&quot;&gt;Conclusion &lt;a class=&quot;title-anchor&quot; href=&quot;https://www.jeanremypraud.com/notes/importer-domaine-infomaniak/#conclusion&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Dans mon cas, le transfert a pris 5 jours. J&#39;ai pu donc migrer mon nom de domaine et mes emails sans trop de souci grâce au service d&#39;Infomaniak qui facilite grandement la tâche.&lt;/p&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Migrer ses contacts chez Infomaniak</title>
+      <link href="https://www.jeanremypraud.com/notes/importer-contacts-infomaniak/"/>
+      <updated>2023-07-31T00:00:00Z</updated>
+      <id>https://www.jeanremypraud.com/notes/importer-contacts-infomaniak/</id>
+      <content xml:lang="fr" type="html">&lt;p class=&quot;info&quot;&gt;Cet article fait partie d&#39;une série sur la migration de Sogo vers Infomaniak. On peut en retrouver une partie &lt;a href=&quot;https://www.jeanremypraud.com/notes/importer-domaine-infomaniak&quot;&gt;ici&lt;/a&gt; et &lt;a href=&quot;https://www.jeanremypraud.com/notes/importer-agenda-infomaniak&quot;&gt;là&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;exporter-ses-contacts&quot; tabindex=&quot;-1&quot;&gt;Exporter ses contacts &lt;a class=&quot;title-anchor&quot; href=&quot;https://www.jeanremypraud.com/notes/importer-contacts-infomaniak/#exporter-ses-contacts&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Dans Sogo, sélectionner tous les contacts et cliquer ensuite sur Exporter
+&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; alt=&quot;Une capture d&#39;écran de Sogo qui montre comment sélectionner puis exporter tous les contacts&quot; src=&quot;https://www.jeanremypraud.com/img/l89Iek2GdJ-320.webp&quot; width=&quot;640&quot; height=&quot;196&quot; srcset=&quot;https://www.jeanremypraud.com/img/l89Iek2GdJ-320.webp 320w, https://www.jeanremypraud.com/img/l89Iek2GdJ-640.webp 640w&quot; sizes=&quot;(max-width: 640px) 320px, 640px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;L&#39;export est au format &lt;code&gt;ldif&lt;/code&gt;. Il est nécéssaire de le convertir pour l&#39;importer ensuite. C&#39;est possible via un outil en ligne, &lt;a href=&quot;https://www.ldif2csv.com/&quot;&gt;ldif2csv&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;importer-ses-contacts&quot; tabindex=&quot;-1&quot;&gt;Importer ses contacts &lt;a class=&quot;title-anchor&quot; href=&quot;https://www.jeanremypraud.com/notes/importer-contacts-infomaniak/#importer-ses-contacts&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Sur le compte Infomaniak, se rendre dans la partie Contacts. Cliquer ensuite sur importer, en bas du menu.
+&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; alt=&quot;Une capture d&#39;écran d&#39;infomaniak qui montre comment importer des contacts&quot; src=&quot;https://www.jeanremypraud.com/img/RG0KjA-Zg5-320.webp&quot; width=&quot;640&quot; height=&quot;401&quot; srcset=&quot;https://www.jeanremypraud.com/img/RG0KjA-Zg5-320.webp 320w, https://www.jeanremypraud.com/img/RG0KjA-Zg5-640.webp 640w&quot; sizes=&quot;(max-width: 640px) 320px, 640px&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;synchroniser-ses-contacts-sur-android&quot; tabindex=&quot;-1&quot;&gt;Synchroniser ses contacts sur Android &lt;a class=&quot;title-anchor&quot; href=&quot;https://www.jeanremypraud.com/notes/importer-contacts-infomaniak/#synchroniser-ses-contacts-sur-android&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Il est possible de synchroniser ses contacts sur téléphone avec l&#39;application kSync.&lt;/p&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Migrer son agenda chez Infomaniak</title>
+      <link href="https://www.jeanremypraud.com/notes/importer-agenda-infomaniak/"/>
+      <updated>2023-07-31T00:00:00Z</updated>
+      <id>https://www.jeanremypraud.com/notes/importer-agenda-infomaniak/</id>
+      <content xml:lang="fr" type="html">&lt;p class=&quot;info&quot;&gt;Cet article fait partie d&#39;une série sur la migration de Sogo vers Infomaniak. On peut en retrouver une partie &lt;a href=&quot;https://www.jeanremypraud.com/notes/importer-domaine-infomaniak&quot;&gt;ici&lt;/a&gt; et &lt;a href=&quot;https://www.jeanremypraud.com/notes/importer-contacts-infomaniak&quot;&gt;là&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;exporter-son-agenda&quot; tabindex=&quot;-1&quot;&gt;Exporter son agenda &lt;a class=&quot;title-anchor&quot; href=&quot;https://www.jeanremypraud.com/notes/importer-agenda-infomaniak/#exporter-son-agenda&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Dans Sogo, sélectionner l&#39;agenda et cliquer ensuite sur Exporter
+&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; alt=&quot;Une capture d&#39;écran de Sogo qui montre comment sélectionner puis exporter son agenda&quot; src=&quot;https://www.jeanremypraud.com/img/G9UoVfj2Dn-320.webp&quot; width=&quot;640&quot; height=&quot;614&quot; srcset=&quot;https://www.jeanremypraud.com/img/G9UoVfj2Dn-320.webp 320w, https://www.jeanremypraud.com/img/G9UoVfj2Dn-640.webp 640w&quot; sizes=&quot;(max-width: 640px) 320px, 640px&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;importer-l-agenda&quot; tabindex=&quot;-1&quot;&gt;Importer l&#39;agenda &lt;a class=&quot;title-anchor&quot; href=&quot;https://www.jeanremypraud.com/notes/importer-agenda-infomaniak/#importer-l-agenda&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Sur le compte Infomaniak, se rendre dans la partie Agenda. Cliquer ensuite sur importer, en bas du menu.
+&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; alt=&quot;Une capture d&#39;écran d&#39;infomaniak qui montre comment importer son agenda&quot; src=&quot;https://www.jeanremypraud.com/img/EMtMXmL1RT-320.webp&quot; width=&quot;320&quot; height=&quot;298&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;synchroniser-son-agenda-sur-android&quot; tabindex=&quot;-1&quot;&gt;Synchroniser son agenda sur Android &lt;a class=&quot;title-anchor&quot; href=&quot;https://www.jeanremypraud.com/notes/importer-agenda-infomaniak/#synchroniser-son-agenda-sur-android&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Il est possible de synchroniser son agenda sur téléphone avec l&#39;application kSync.&lt;/p&gt;
 </content>
     </entry>
 </feed>

@@ -925,6 +925,14 @@ pre {
   border: 0;
 }
 
+.info {
+  border-inline-start: 4px solid var(--accent-05);
+  background-color: var(--accent-006);
+  padding-block: var(--space-xs);
+  padding-inline: var(--space-s);
+  border-radius: 2px;
+}
+
 .button {
   padding-block-end: 4px;
   font-weight: 700;
