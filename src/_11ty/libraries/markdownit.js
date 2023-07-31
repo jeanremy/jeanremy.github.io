@@ -1,5 +1,7 @@
 const markdownIt = require("markdown-it");
 const anchor = require("markdown-it-anchor");
+const markdownItAttrs = require('markdown-it-attrs');
+
 const path = require("path");
 module.exports = function (eleventyConfig) {
   const pathResolver = (filepath, env) => {
@@ -38,5 +40,6 @@ module.exports = function (eleventyConfig) {
       },
       resolvePath: pathResolver,
     })
+    .use(markdownItAttrs)
     .disable("code");
 };
