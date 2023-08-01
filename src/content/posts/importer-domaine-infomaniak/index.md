@@ -1,5 +1,5 @@
 ---
-title: Migrer ses emails chez Infomaniak
+title: Migrer ses données de Sogo à Infomaniak
 description: Un guide rapide pour transférer un nom de domaine et ses emails chez Infomaniak
 date: 2023-07-24
 templateEngineOverride: md
@@ -15,7 +15,7 @@ La principale raison est qu’Infomaniak propose des boîtes emails gratuites. P
 
 ### Récupérer ses anciens mails (au cas où)
 
-1. Si vous utilisez Sogo, sélectionner tous les emails de la boite de réception et cliquer ensuite sur Télécharger
+1. Dans Sogo, sélectionner tous les emails de la boite de réception et cliquer ensuite sur Télécharger
     ![Une capture d'écran de Sogo qui montre comment sélectionner puis exporter tous les emails](export-sogo.png)
     
 2. Avec [Thunderbird](https://www.thunderbird.net/fr/), 
@@ -38,9 +38,11 @@ Entrer ensuite le code de transfert.
 Commander (et créer un compte)
 
 ### Importer les emails chez InfoManiak
-Infomaniak dispose d’un service très simple pour importer ses emails. Comme le transfert d’un nom de domaine n’est pas instantané, il est possible d’importer ses emails le temps que le transfert s’effectue. Pour cela, aller sur [https://import-email.infomaniak.com/](https://import-email.infomaniak.com/) et reentrez vos identifiants de messagerie. C’est tout.
+Infomaniak dispose d’un service très simple pour importer ses emails. Pour cela, aller sur [https://import-email.infomaniak.com/](https://import-email.infomaniak.com/) et reentrez vos identifiants de messagerie. C’est tout.
 ![Capture d'écran de la configuration de l'import de messagerie](import-infomaniak.png)
 Les sauvegardes précédemment effectuées ne seront donc pas utiles (en théorie).
+
+Il est possible d'importer les emails même après le transfert du nom de domaine. {.info}
 
 
 ### Réécrire sa zone DNS
