@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8">
     
-      <title>Migrer ses contacts chez Infomaniak - Jean-Rémy Praud</title>
+      <title>Migrer ses contacts et agenda chez Infomaniak - Jean-Rémy Praud</title>
     
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="Tech Lead chez Dernier Cri, j’aime travailler sur des projets porteurs de sens. Je m’intéresse tout particulièrement à l’éco-conception et à l’accessibilité.">
@@ -17,7 +17,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     
 
-    <link rel="stylesheet" href="/assets/css/base.css?79ec-c2c8-3d78">
+    <link rel="stylesheet" href="/assets/css/base.css?3164-dc9d-de45">
     <script type="application/ld+json">
 	{
 		"@context": "https://schema.org",
@@ -74,7 +74,7 @@
       
     
       
-        Migrer ses contacts chez Infomaniak
+        Migrer ses contacts et agenda chez Infomaniak
       
     
   </nav>
@@ -82,7 +82,7 @@
       
 
       <h1 class="article__title">
-        Migrer ses contacts chez Infomaniak
+        Migrer ses contacts et agenda chez Infomaniak
       </h1>
     </div>
   </header>
@@ -95,16 +95,19 @@
         </p>
       
       <div class="md">
-        <p class="info">Cet article fait partie d'une série sur la migration de Sogo vers Infomaniak. On peut en retrouver une partie <a href="/notes/importer-domaine-infomaniak">ici</a> et <a href="/notes/importer-agenda-infomaniak">là</a>.</p>
-<h2 id="exporter-ses-contacts" tabindex="-1">Exporter ses contacts <a class="title-anchor" href="#exporter-ses-contacts" aria-hidden="true">#</a></h2>
-<p>Dans Sogo, sélectionner tous les contacts et cliquer ensuite sur Exporter
+        <p class="info">Cet article est la deuxième partie d'un article sur la migration de Sogo vers Infomaniak. On peut retrouver la première partie <a href="/notes/importer-domaine-infomaniak">ici</a>.</p>
+<h2 id="exporter-ses-contacts-agenda" tabindex="-1">Exporter ses contacts / agenda <a class="title-anchor" href="#exporter-ses-contacts-agenda" aria-hidden="true">#</a></h2>
+<p>Dans Sogo, sélectionner tous les contacts et cliquer ensuite sur Exporter.
 <img loading="lazy" decoding="async" alt="Une capture d'écran de Sogo qui montre comment sélectionner puis exporter tous les contacts" src="/img/l89Iek2GdJ-320.webp" width="640" height="196" srcset="/img/l89Iek2GdJ-320.webp 320w, /img/l89Iek2GdJ-640.webp 640w" sizes="(max-width: 640px) 320px, 640px"></p>
-<p>L'export est au format <code>ldif</code>. Il est nécéssaire de le convertir pour l'importer ensuite. C'est possible via un outil en ligne, <a href="https://www.ldif2csv.com/">ldif2csv</a></p>
-<h2 id="importer-ses-contacts" tabindex="-1">Importer ses contacts <a class="title-anchor" href="#importer-ses-contacts" aria-hidden="true">#</a></h2>
-<p>Sur le compte Infomaniak, se rendre dans la partie Contacts. Cliquer ensuite sur importer, en bas du menu.
-<img loading="lazy" decoding="async" alt="Une capture d'écran d'infomaniak qui montre comment importer des contacts" src="/img/RG0KjA-Zg5-320.webp" width="640" height="401" srcset="/img/RG0KjA-Zg5-320.webp 320w, /img/RG0KjA-Zg5-640.webp 640w" sizes="(max-width: 640px) 320px, 640px"></p>
+<p>Pour l'agenda, sélectionner l'agenda concerné et faire Exporter.
+<img loading="lazy" decoding="async" alt="Une capture d'écran de Sogo qui montre comment sélectionner puis exporter un agenda" src="/img/G9UoVfj2Dn-320.webp" width="640" height="614" srcset="/img/G9UoVfj2Dn-320.webp 320w, /img/G9UoVfj2Dn-640.webp 640w" sizes="(max-width: 640px) 320px, 640px"></p>
+<p>Pour les contacts, l'export est au format <code>ldif</code>. Il est nécéssaire de le convertir pour l'importer ensuite. C'est possible via un outil en ligne, <a href="https://www.ldif2csv.com/">ldif2csv</a>. Pas de modification à faire pour l'agenda, la format <code>ics</code> est importable tel quel.</p>
+<h2 id="importer-ses-contacts-agenda" tabindex="-1">Importer ses contacts / agenda <a class="title-anchor" href="#importer-ses-contacts-agenda" aria-hidden="true">#</a></h2>
+<p>Sur le compte Infomaniak, se rendre dans la partie Contacts ou Agenda. Cliquer ensuite sur importer, en bas du menu.
+<img loading="lazy" decoding="async" alt="Une capture d'écran d'infomaniak qui montre comment importer des contacts" src="/img/RG0KjA-Zg5-320.webp" width="640" height="401" srcset="/img/RG0KjA-Zg5-320.webp 320w, /img/RG0KjA-Zg5-640.webp 640w" sizes="(max-width: 640px) 320px, 640px">
+<img loading="lazy" decoding="async" alt="Une capture d'écran d'infomaniak qui montre comment importer un agenda" src="/img/EMtMXmL1RT-320.webp" width="320" height="298"></p>
 <h2 id="synchroniser-ses-contacts-sur-android" tabindex="-1">Synchroniser ses contacts sur Android <a class="title-anchor" href="#synchroniser-ses-contacts-sur-android" aria-hidden="true">#</a></h2>
-<p>Il est possible de synchroniser ses contacts sur téléphone avec l'application kSync.</p>
+<p>Il est possible de synchroniser ses contacts et son agenda sur téléphone avec l'application kSync.</p>
 
       </div>
     </div>
@@ -126,7 +129,7 @@
         </li>
       </ul>
       <div>
-        <p>Dernière mise à jour le 31/07/2023</p>
+        <p>Dernière mise à jour le 01/08/2023</p>
         <ul class="page-footer__social">
           <li>
             <a rel="me" href="https://github.com/jeanremy" title="Lien vers le profil GitHub" >
