@@ -20,9 +20,10 @@
 
   </head>
   <body class="page">
+    <a href="#main" class="sr-only sr-only-focusable">Accéder au contenu</a>
 
     {% include "partials/header.njk" %}
-    <main class="main" role="main">
+    <main class="main" role="main" id="main" tabindex="-1">
       {{ content | safe }}
     </main>
     {% include "partials/footer.njk" %}
