@@ -18,9 +18,9 @@
         <header class="page-header" role="banner">
   <div class="container">
     <p class="page__title">
-      <a href="/" rel="me" title="Homepage">jr<span>.</span></a>
+      <a href="/" rel="me" title="jr retour à l'accueil">jr<span>.</span></a>
     </p>
-    <nav class="page-header__menu" role="navigation">
+    <nav class="page-header__menu" role="navigation" aria-label="Navigation principale">
       <ul>
         <li>
           <a href="/notes/" >Notes</a>
@@ -33,6 +33,7 @@
     </nav>
   </div>
 </header>
+
         <main class="main" role="main">
           <article class="article">
             <header class="article__header">
@@ -91,7 +92,7 @@
         </li>
       </ul>
       <div>
-        <p>Dernière mise à jour le 23/10/2023</p>
+        <p>Dernière mise à jour le 07/11/2023</p>
         <ul class="page-footer__social">
           <li>
             <a rel="me" href="https://github.com/jeanremy" title="Lien vers le profil GitHub" >
