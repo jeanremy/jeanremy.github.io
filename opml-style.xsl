@@ -79,7 +79,7 @@
         </main>
         <footer class="page-footer" role="contentinfo">
   <div class="container">
-    <nav class="page-footer__menus">
+    <div class="page-footer__menus">
       <ul class="page-footer__menu">
         <li>
           <a href="/mentions-legales/">Mentions légales</a>
@@ -92,7 +92,7 @@
         </li>
       </ul>
       <div>
-        <p>Dernière mise à jour le 07/11/2023</p>
+        <p>Dernière mise à jour le 04/12/2023</p>
         <ul class="page-footer__social">
           <li>
             <a rel="me" href="https://github.com/jeanremy" title="Lien vers le profil GitHub" >
@@ -115,10 +115,11 @@
         </ul>
       </div>
 
-    </nav>
+    </div>
 
   </div>
 </footer>
+
       </body>
     </html>
   </xsl:template>
