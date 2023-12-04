@@ -1,7 +1,7 @@
 {% set navPages = collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key, {includeSelf: true}) %}
 
 {% if navPages %}
-  <nav class="breadcrumb">
+  <nav class="breadcrumb" role="navigation" aria-label="Fil d'ariane">
     {% for navPage in navPages %}
       {% if loop.last %}
         {{ navPage.key }}
