@@ -1,7 +1,7 @@
 ---
 title: Landmarks et validation W3C
 description: Pourquoi le validateur émet-il un avertissement lorsqu'un header a un role banner ?
-date: 2023-12-04
+date: 2023-12-14
 templateEngineOverride: md
 ---
 
@@ -11,7 +11,7 @@ Je tombe régulièrement sur un avertissement lors de la validation de mes pages
 The banner role is unnecessary for element header
 ```
 
-Il en est de même pour la balise main, nav, footer et aside. Pour comprendre cet avertissement, il faut savoir à quoi servent les landmarks.
+Il en est de même pour la balise main, nav, footer et aside. Alors, faut-il ignorer ces warnings ou retirer les attributs role ?
 
 ![Erreurs émises par le validateur du W3C, de type The main role is unnecessary for element main](w3cwarnings.png)
 
