@@ -1,7 +1,7 @@
 ---
 title: Landmarks et validation W3C
-description: Pourquoi le validateur émet-il un avertissement lorsqu'un header a un role banner ?
-date: 2023-12-14
+description: Peut-on ignorer les avertissements lorsqu'un header a un role banner ?
+date: 2023-12-18
 templateEngineOverride: md
 ---
 
