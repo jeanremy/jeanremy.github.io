@@ -1,3 +1,3 @@
 import markdownit from './markdownit.js'
 
-export default { markdownit }
+export { markdownit }

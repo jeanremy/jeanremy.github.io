@@ -3,9 +3,9 @@ import pluginRss from '@11ty/eleventy-plugin-rss'
 import faviconPlugin from 'eleventy-favicon'
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
 
-import filters from './src/_11ty/filters/index.js'
-import collections from './src/_11ty/collections/index.js'
-import libraries from './src/_11ty/libraries/index.js'
+import { cssmin, format, console } from './src/_11ty/filters/index.js'
+import { posts } from './src/_11ty/collections/index.js'
+import { markdownit } from './src/_11ty/libraries/index.js'
 
 export default async function (eleventyConfig) {
   // ---------- PLUGINS --------------------
@@ -22,15 +22,15 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('*.opml')
 
   // ---------- FILTERS --------------------
-  eleventyConfig.addFilter('cssmin', filters.cssmin)
-  eleventyConfig.addFilter('format', filters.format)
-  eleventyConfig.addFilter('console', filters.console)
+  eleventyConfig.addFilter('cssmin', cssmin)
+  eleventyConfig.addFilter('format', format)
+  eleventyConfig.addFilter('console', console)
 
   // ---------- COLLECTIONS --------------------
   eleventyConfig.ignores.add('**/_*.md')
-  eleventyConfig.addCollection('posts', collections.posts)
+  eleventyConfig.addCollection('posts', posts)
 
-  eleventyConfig.setLibrary('md', libraries.markdownit(eleventyConfig))
+  eleventyConfig.setLibrary('md', markdownit(eleventyConfig))
 
   return {
     dir: {
