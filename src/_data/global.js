@@ -1,12 +1,12 @@
-module.exports = {
+export default {
   random() {
     const segment = () => {
-      return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
-    };
-    return `${segment()}-${segment()}-${segment()}`;
+      return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1)
+    }
+    return `${segment()}-${segment()}-${segment()}`
   },
 
-  generated: new Intl.DateTimeFormat("fr-FR", {
-    dateStyle: "short",
+  generated: new Intl.DateTimeFormat('fr-FR', {
+    dateStyle: 'short',
   }).format(new Date()),
-};
+}
