@@ -19,9 +19,7 @@ module.exports = function (eleventyConfig) {
 
   // ---------- PASSTHROUGH --------------------
   eleventyConfig.addPassthroughCopy('src/assets')
-  eleventyConfig.addPassthroughCopy('CNAME')
-  eleventyConfig.addPassthroughCopy('robots.txt')
-  eleventyConfig.addPassthroughCopy('index.opml')
+  eleventyConfig.addPassthroughCopy('src/public')
 
   // ---------- FILTERS --------------------
   eleventyConfig.addFilter('cssmin', cssmin)
