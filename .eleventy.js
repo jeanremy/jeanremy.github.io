@@ -7,19 +7,19 @@ const { console, format, cssmin } = require('./src/_11ty/filters')
 const { posts } = require('./src/_11ty/collections')
 const { markdownit } = require('./src/_11ty/libraries')
 
-const EleventyVitePlugin = require('@11ty/eleventy-plugin-vite')
-
 module.exports = function (eleventyConfig) {
   // ---------- PLUGINS --------------------
   eleventyConfig.addPlugin(eleventyNavigationPlugin)
   eleventyConfig.addPlugin(pluginRss)
   eleventyConfig.addPlugin(faviconPlugin)
   eleventyConfig.addPlugin(syntaxHighlight)
-  eleventyConfig.addPlugin(EleventyVitePlugin)
 
   // ---------- PASSTHROUGH --------------------
-  eleventyConfig.addPassthroughCopy('src/assets')
-  eleventyConfig.addPassthroughCopy('src/public')
+  eleventyConfig.addPassthroughCopy('src/assets/fonts')
+  eleventyConfig.addPassthroughCopy('src/assets/img')
+  eleventyConfig.addPassthroughCopy('CNAME')
+  eleventyConfig.addPassthroughCopy('robots.txt')
+  eleventyConfig.addPassthroughCopy('index.opml')
 
   // ---------- FILTERS --------------------
   eleventyConfig.addFilter('cssmin', cssmin)
