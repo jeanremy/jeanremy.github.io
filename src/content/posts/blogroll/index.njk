@@ -1,0 +1,20 @@
+---
+title: Ma liste de flux RSS
+description: Ma liste de flux RSS
+date: 2023-07-04
+---
+
+<p class="info">
+    Télécharger le fichier <a href="/blogroll.opml">OPML</a>
+</p>
+
+<ul>
+
+  {%- for blog in blogroll %}
+    <li>
+      {{blog.title}}
+      <a href="{{blog.xmlUrl}}">RSS</a>
+      <a href="{{blog.htmlUrl}}">Visiter</a>
+    </li>
+  {% endfor -%}
+</ul>
