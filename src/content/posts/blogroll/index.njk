@@ -2,19 +2,30 @@
 title: Ma liste de flux RSS
 description: Ma liste de flux RSS
 date: 2023-07-04
+layout: page.njk
 ---
 
 <p class="info">
     Télécharger le fichier <a href="/blogroll.opml">OPML</a>
 </p>
 
-<ul>
+<ul class="naked blogroll">
 
   {%- for blog in blogroll %}
-    <li>
-      {{blog.title}}
-      <a href="{{blog.xmlUrl}}">RSS</a>
-      <a href="{{blog.htmlUrl}}">Visiter</a>
-    </li>
-  {% endfor -%}
-</ul>
+    <li class="source">
+      <img class="source__img" src="" alt="">
+      <div>
+
+        <p class="source__title">
+          {{blog.title}}
+        </p>
+        <p>
+          <a href="{{blog.xmlUrl}}">RSS</a>
+          <p>
+            <p>
+              <a href="{{blog.htmlUrl}}">Visiter</a>
+            </p>
+          </div>
+        </li>
+      {% endfor -%}
+    </ul>

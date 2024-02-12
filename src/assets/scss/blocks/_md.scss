@@ -16,8 +16,8 @@
     color: inherit;
     border-bottom: 1px solid var(--text);
 
-    &[href^="http"]:after {
-      content: "↗";
+    &[href^='http']:after {
+      content: '↗';
       font-size: 0.8em;
       vertical-align: baseline;
       margin-left: 0.2rem;
@@ -34,29 +34,27 @@
     font-size: var(--step-0);
   }
 
-  ul,ol {
+  ul:not(.naked),
+  ol:not(.naked) {
     padding: revert;
     li + li {
       margin-block-start: var(--space-2xs);
     }
   }
 
-  ol > li > ol > li{
+  ol > li > ol > li {
     list-style-type: lower-alpha;
   }
 
-
-  ul:not(.taglist) {
+  ul:not(.naked) {
     margin-top: 0.8rem;
     li {
       &:before {
-        content: "→";
+        content: '→';
         margin-right: 0.3em;
       }
     }
   }
-
-
 
   /* PARAGRAPHS */
   small {

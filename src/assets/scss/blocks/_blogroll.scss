@@ -1,0 +1,28 @@
+.blogroll {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  gap: var(--space-m);
+}
+
+.source {
+  border: 1px solid var(--accent-05);
+  border-radius: 4px;
+  padding-block: var(--space-m);
+  padding-inline: var(--space-m);
+  display: flex;
+  align-items: start;
+
+  & &__img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--accent-006);
+    display: block;
+    margin: 0;
+    margin-inline-end: var(--space-m);
+  }
+
+  &__title {
+    font-weight: var(--weight-strong);
+  }
+}
