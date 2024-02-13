@@ -8,6 +8,5 @@ module.exports = function () {
     attributeNamePrefix: '',
   })
   const json = parser.parse(xmlFile)
-  console.log('json:', json.opml.body.outline.outline)
   return { blogroll: json.opml.body.outline.outline }
 }

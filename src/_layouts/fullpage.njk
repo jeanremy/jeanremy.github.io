@@ -1,0 +1,21 @@
+---
+layout: base.njk
+---
+<article class="article">
+  <header class="article__header">
+    <div class="container">
+      {% if not eleventyExcludeFromCollections %}
+        {% include "partials/breadcrumb.njk" %}
+      {% endif %}
+
+      <h1 class="article__title">
+        {{ title }}
+      </h1>
+    </div>
+  </header>
+  <section class="article__content">
+    <div class="container">
+      {{ content | safe }}
+    </div>
+  </section>
+</article>
