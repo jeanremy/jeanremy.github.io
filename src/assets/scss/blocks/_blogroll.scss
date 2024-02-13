@@ -1,6 +1,6 @@
 .blogroll {
   display: grid;
-  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: var(--space-m);
 }
 
@@ -17,9 +17,13 @@
     height: 40px;
     border-radius: 50%;
     background-color: var(--accent-006);
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0;
     margin-inline-end: var(--space-m);
+    font-weight: var(--weight-strong);
+    flex-shrink: 0;
   }
 
   &__title {

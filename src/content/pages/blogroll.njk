@@ -16,7 +16,7 @@ eleventyNavigation:
 
   {%- for blog in blogroll %}
     <li class="source">
-      <img class="source__img" src="" alt="">
+      <span class="source__img">{{blog.title | first | upper}}</span>
       <div>
 
         <p class="source__title">
@@ -24,11 +24,11 @@ eleventyNavigation:
         </p>
         <p>
           <a href="{{blog.xmlUrl}}">RSS</a>
-          <p>
-            <p>
-              <a href="{{blog.htmlUrl}}">Visiter</a>
-            </p>
-          </div>
-        </li>
-      {% endfor -%}
-    </ul>
+        </p>
+        <p>
+          <a href="{{blog.htmlUrl}}">Visiter</a>
+        </p>
+      </div>
+    </li>
+  {% endfor -%}
+</ul>
