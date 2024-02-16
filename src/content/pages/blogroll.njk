@@ -16,9 +16,9 @@ eleventyNavigation:
 
   {%- for blog in blogroll %}
     <li class="source">
-      <span class="source__img">{{blog.title | first | upper}}</span>
-      <div>
+      <span class="source__img" aria-hidden="true">{{blog.title | first | upper}}</span>
 
+      <div>
         <p class="source__title">
           {{blog.title}}
         </p>
