@@ -89,11 +89,14 @@
           <a href="/plan-site/">Plan du site</a>
         </li>
         <li>
+          <a href="/blogroll/">Blogroll</a>
+        </li>
+        <li>
           <a href="/notes/rss.xml">RSS</a>
         </li>
       </ul>
       <div>
-        <p>Dernière mise à jour le 19/12/2023</p>
+        <p>Dernière mise à jour le 16/02/2024</p>
         <ul class="page-footer__social">
           <li>
             <a rel="me" href="https://github.com/jeanremy" title="Lien vers le profil GitHub" >

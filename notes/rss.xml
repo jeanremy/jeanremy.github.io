@@ -79,19 +79,7 @@ Le mot de passe par défaut varie en fonction des modèles. Une liste complète 
       <link href="https://www.jeanremypraud.com/notes/mes-flux-rss/"/>
       <updated>2023-07-04T00:00:00Z</updated>
       <id>https://www.jeanremypraud.com/notes/mes-flux-rss/</id>
-      <content xml:lang="fr" type="html">&lt;p&gt;Inspiré par Darek Kay qui a publié &lt;a href=&quot;https://darekkay.com/blog/rss-styling/&quot;&gt;un article&lt;/a&gt; sur la façon de styler son flux RSS, j&#39;ai décidé de faire de même.&lt;/p&gt;
-&lt;p&gt;Le flux RSS de mes notes est donc accessible en bas de page ou à cette &lt;a href=&quot;https://www.jeanremypraud.com/notes/rss.xml&quot;&gt;adresse&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;comment-ca-marche&quot; tabindex=&quot;-1&quot;&gt;Comment ça marche ? &lt;a class=&quot;title-anchor&quot; href=&quot;https://www.jeanremypraud.com/notes/mes-flux-rss/#comment-ca-marche&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;J&#39;ignorais qu&#39;il était possible de mettre en forme un xml. Comme l&#39;auteur l&#39;explique, le XML appelle un fichier de &lt;code&gt;xsl&lt;/code&gt; via la balise &lt;code&gt;xml-stylesheet&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Ce fichier met en forme les données contenues dans le XML. On appelle ensuite les éléments contenus dans le XML à travers des sélecteurs spécifique tels que &lt;code&gt;xsl:value-of&lt;/code&gt;. On peut également insérer un fichier CSS.&lt;/p&gt;
-&lt;p&gt;Il est possible de faire une boucle avec le tag suivant:&lt;/p&gt;
-&lt;pre class=&quot;language-xml&quot;&gt;&lt;code class=&quot;language-xml&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token namespace&quot;&gt;xsl:&lt;/span&gt;for-each&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;/opml/body/outline&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&quot;pour-aller-plus-loin&quot; tabindex=&quot;-1&quot;&gt;Pour aller plus loin &lt;a class=&quot;title-anchor&quot; href=&quot;https://www.jeanremypraud.com/notes/mes-flux-rss/#pour-aller-plus-loin&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Profitant de cette découverte, j&#39;en ai profité pour publier la liste des comptes que je suis par RSS. Il s&#39;agit d&#39;un fichier &lt;a href=&quot;https://fr.wikipedia.org/wiki/Outline_Processor_Markup_Language&quot;&gt;OPML&lt;/a&gt;, que j&#39;ai pu styler avec le technique précédemment évoquée, tout à fait applicable à ce type de fichier basé sur XML.&lt;/p&gt;
-&lt;p&gt;Le fichier est au format XML pour être visualisé dans un navigateur. Il suffit de le renommer en &lt;code&gt;.opml&lt;/code&gt; pour l&#39;importer dans un lecteur de flux type Feedly.&lt;/p&gt;
-&lt;p&gt;La liste est accessible et sera mise à jour à &lt;a href=&quot;https://www.jeanremypraud.com/mes-flux.xml&quot;&gt;cette adresse&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;inconvenients&quot; tabindex=&quot;-1&quot;&gt;Inconvénients &lt;a class=&quot;title-anchor&quot; href=&quot;https://www.jeanremypraud.com/notes/mes-flux-rss/#inconvenients&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Le fichier &lt;code&gt;xsl&lt;/code&gt;est intimement lié au &lt;code&gt;xml&lt;/code&gt; qui l&#39;appelle, car il utilise les balises pour les remanier. Chaque type de fichier XML aura donc son fichier xsl associé.&lt;/p&gt;
+      <content xml:lang="fr" type="html">&lt;p class=&quot;info&quot;&gt;Edit: Cette note n&#39;est plus d&#39;actualité. Ma liste de liens se trouve dans ma &lt;a href=&quot;https://www.jeanremypraud.com/blogroll&quot;&gt;blogroll&lt;/a&gt;&lt;/p&gt;
 </content>
     </entry>
     <entry>

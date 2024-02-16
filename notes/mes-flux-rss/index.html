@@ -17,7 +17,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     
 
-    <link rel="stylesheet" href="/assets/css/base.css?dfbb-1246-356f">
+    <link rel="stylesheet" href="/assets/css/base.css?8c5c-9843-0f88">
     <script type="application/ld+json">
 	{
 		"@context": "https://schema.org",
@@ -97,25 +97,14 @@
         <time datetime="2023-07-04">04/07/2023</time>
         </p>
       
-      <div class="md">
-        <p>Inspiré par Darek Kay qui a publié <a href="https://darekkay.com/blog/rss-styling/">un article</a> sur la façon de styler son flux RSS, j'ai décidé de faire de même.</p>
-<p>Le flux RSS de mes notes est donc accessible en bas de page ou à cette <a href="/notes/rss.xml">adresse</a>.</p>
-<h2 id="comment-ca-marche" tabindex="-1">Comment ça marche ? <a class="title-anchor" href="#comment-ca-marche" aria-hidden="true">#</a></h2>
-<p>J'ignorais qu'il était possible de mettre en forme un xml. Comme l'auteur l'explique, le XML appelle un fichier de <code>xsl</code> via la balise <code>xml-stylesheet</code>.</p>
-<p>Ce fichier met en forme les données contenues dans le XML. On appelle ensuite les éléments contenus dans le XML à travers des sélecteurs spécifique tels que <code>xsl:value-of</code>. On peut également insérer un fichier CSS.</p>
-<p>Il est possible de faire une boucle avec le tag suivant:</p>
-<pre class="language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token namespace">xsl:</span>for-each</span> <span class="token attr-name">select</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/opml/body/outline<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></code></pre>
-<h2 id="pour-aller-plus-loin" tabindex="-1">Pour aller plus loin <a class="title-anchor" href="#pour-aller-plus-loin" aria-hidden="true">#</a></h2>
-<p>Profitant de cette découverte, j'en ai profité pour publier la liste des comptes que je suis par RSS. Il s'agit d'un fichier <a href="https://fr.wikipedia.org/wiki/Outline_Processor_Markup_Language">OPML</a>, que j'ai pu styler avec le technique précédemment évoquée, tout à fait applicable à ce type de fichier basé sur XML.</p>
-<p>Le fichier est au format XML pour être visualisé dans un navigateur. Il suffit de le renommer en <code>.opml</code> pour l'importer dans un lecteur de flux type Feedly.</p>
-<p>La liste est accessible et sera mise à jour à <a href="/mes-flux.xml">cette adresse</a>.</p>
-<h2 id="inconvenients" tabindex="-1">Inconvénients <a class="title-anchor" href="#inconvenients" aria-hidden="true">#</a></h2>
-<p>Le fichier <code>xsl</code>est intimement lié au <code>xml</code> qui l'appelle, car il utilise les balises pour les remanier. Chaque type de fichier XML aura donc son fichier xsl associé.</p>
+      <div class="md blog_content">
+        <p class="info">Edit: Cette note n'est plus d'actualité. Ma liste de liens se trouve dans ma <a href="/blogroll">blogroll</a></p>
 
       </div>
     </div>
   </section>
 </article>
+
     </main>
     <footer class="page-footer" role="contentinfo">
   <div class="container">
@@ -128,11 +117,14 @@
           <a href="/plan-site/">Plan du site</a>
         </li>
         <li>
+          <a href="/blogroll/">Blogroll</a>
+        </li>
+        <li>
           <a href="/notes/rss.xml">RSS</a>
         </li>
       </ul>
       <div>
-        <p>Dernière mise à jour le 19/12/2023</p>
+        <p>Dernière mise à jour le 16/02/2024</p>
         <ul class="page-footer__social">
           <li>
             <a rel="me" href="https://github.com/jeanremy" title="Lien vers le profil GitHub" >
