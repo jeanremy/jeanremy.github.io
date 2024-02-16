@@ -15,13 +15,7 @@ layout: base.njk
   </header>
   <section class="article__content">
     <div class="container">
-      {% if date %}
-        <p class="article__date">
-        Posté le
-        <time datetime="{{ date | format("YYYY-MM-DD") }}">{{ date | format('DD/MM/YYYY') }}</time>
-        </p>
-      {% endif %}
-      <div class="md blog_content">
+      <div class="md">
         {{ content | safe }}
       </div>
     </div>

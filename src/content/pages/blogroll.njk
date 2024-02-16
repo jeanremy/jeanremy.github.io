@@ -1,0 +1,34 @@
+---
+title: Blogroll
+description: Ma liste de flux RSS
+layout: fullpage.njk
+permalink: blogroll/index.html
+eleventyNavigation:
+  key: Blogroll
+  parent: Accueil
+---
+
+<p class="info mb-6">
+    Télécharger le fichier <a href="/blogroll.opml">OPML</a>
+</p>
+
+<ul class="naked blogroll">
+
+  {%- for blog in blogroll %}
+    <li class="source">
+      <span class="source__img" aria-hidden="true">{{blog.title | first | upper}}</span>
+
+      <div>
+        <p class="source__title">
+          {{blog.title}}
+        </p>
+        <p>
+          <a href="{{blog.xmlUrl}}">RSS</a>
+        </p>
+        <p>
+          <a href="{{blog.htmlUrl}}">Visiter</a>
+        </p>
+      </div>
+    </li>
+  {% endfor -%}
+</ul>

@@ -22,12 +22,16 @@
   flex-direction: column;
 }
 
+.blog_content {
+  max-width: 67ch;
+}
+
 .arrow-list {
   li {
     padding-left: 22px;
     position: relative;
     &:before {
-      content: "→";
+      content: '→';
       font-size: 0.8em;
       vertical-align: baseline;
       position: absolute;
