@@ -25,7 +25,7 @@ eleventyNavigation:
 
     <h2 class="h2 mb-6">Dernières notes</h2>
     <ul class="last-notes__list" >
-      {%- for post in collections.posts.reverse().slice(0,2) %}
+      {%- for post in collections.posts.slice(0,2) %}
         <li>
 
           {% include 'partials/post-teaser.njk' %}

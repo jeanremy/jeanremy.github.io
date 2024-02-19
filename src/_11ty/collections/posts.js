@@ -4,5 +4,4 @@ export default function (collection) {
     .sort((a, b) => {
       return b.data.date - a.data.date
     })
-    .reverse()
 }
