@@ -49,7 +49,6 @@ pre {
 
 /* Inline code */
 :not(pre) > code {
-  padding: 0.1em;
   border-radius: var(--radius);
   white-space: normal;
   font-size: var(--step--1);
