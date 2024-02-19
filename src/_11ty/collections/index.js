@@ -1,3 +1,3 @@
-const posts = require("./posts");
+import posts from './posts.js'
 
-module.exports = { posts };
+export { posts }

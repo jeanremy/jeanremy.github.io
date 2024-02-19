@@ -1,3 +1,3 @@
-const markdownit = require("./markdownit");
+import markdownit from './markdownit.js'
 
-module.exports = { markdownit };
+export { markdownit }

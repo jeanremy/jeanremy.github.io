@@ -1,5 +1,5 @@
-const util = require("util");
+import util from 'util'
 
-module.exports = function (obj) {
-  return util.inspect(obj);
-};
+export default function (obj) {
+  return util.inspect(obj)
+}

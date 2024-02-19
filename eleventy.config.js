@@ -1,13 +1,13 @@
-const eleventyNavigationPlugin = require('@11ty/eleventy-navigation')
-const pluginRss = require('@11ty/eleventy-plugin-rss')
-const faviconPlugin = require('eleventy-favicon')
-const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
+import eleventyNavigationPlugin from '@11ty/eleventy-navigation'
+import pluginRss from '@11ty/eleventy-plugin-rss'
+import faviconPlugin from 'eleventy-favicon'
+import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
 
-const { console, format, cssmin } = require('./src/_11ty/filters')
-const { posts } = require('./src/_11ty/collections')
-const { markdownit } = require('./src/_11ty/libraries')
+import { cssmin, format, console } from './src/_11ty/filters/index.js'
+import { posts } from './src/_11ty/collections/index.js'
+import { markdownit } from './src/_11ty/libraries/index.js'
 
-module.exports = function (eleventyConfig) {
+export default async function (eleventyConfig) {
   // ---------- PLUGINS --------------------
   eleventyConfig.addPlugin(eleventyNavigationPlugin)
   eleventyConfig.addPlugin(pluginRss)

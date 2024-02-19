@@ -1,6 +1,6 @@
-const dayjs = require("dayjs");
-require("dayjs/locale/fr");
+import dayjs from 'dayjs'
+import 'dayjs/locale/fr.js'
 
-module.exports = function (date, format) {
-  return dayjs(date).locale("fr").format(format);
-};
+export default function (date, format) {
+  return dayjs(date).locale('fr').format(format)
+}

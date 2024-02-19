@@ -1,4 +1,5 @@
-const console = require("./console");
-const format = require("./format");
+import console from './console.js'
+import format from './format.js'
+import cssmin from './cssmin.js'
 
-module.exports = { console, format };
+export { console, format, cssmin }
