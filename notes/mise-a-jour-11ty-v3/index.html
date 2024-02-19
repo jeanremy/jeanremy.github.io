@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8">
     
-      <title>Notes - Jean-Rémy Praud</title>
+      <title>Mise à jour de 11ty v3 - Jean-Rémy Praud</title>
     
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="Tech Lead chez Dernier Cri, j’aime travailler sur des projets porteurs de sens. Je m’intéresse tout particulièrement à l’éco-conception et à l’accessibilité.">
@@ -17,7 +17,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     
 
-    <link rel="stylesheet" href="/assets/css/base.css?30ab-f72a-ac63">
+    <link rel="stylesheet" href="/assets/css/base.css?c0ec-9587-fd3d">
     <script type="application/ld+json">
 	{
 		"@context": "https://schema.org",
@@ -72,7 +72,11 @@
       
     
       
-        Notes
+        <a href="/notes/">Notes</a> >
+      
+    
+      
+        Mise à jour de 11ty v3
       
     
   </nav>
@@ -81,112 +85,34 @@
       
 
       <h1 class="article__title">
-        Notes
+        Mise à jour de 11ty v3
       </h1>
     </div>
   </header>
   <section class="article__content">
     <div class="container">
       
+        <p class="article__date">
+        Posté le
+        <time datetime="2024-02-19">19/02/2024</time>
+        </p>
+      
       <div class="md blog_content">
-        
+        <p>Le générateur de site statique 11ty vient de sortir en version 3 alpha. Le changement principal est sa compatibilité avec ESM. Bien que touchant aux fondements d’11ty, la mise à jour est assez simple:</p>
+<ul>
+<li>Modifier le package.json pour y ajouter <code>&quot;type&quot;: &quot;module&quot;</code></li>
+<li>Utiliser les imports en lieu et places des require.
+Pour cela, il suffit de passer de cette façon d'écrire</li>
+</ul>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> posts <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./posts'</span><span class="token punctuation">)</span><br>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span> posts <span class="token punctuation">}</span></code></pre>
+<p>à celle-ci:</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">import</span> posts <span class="token keyword">from</span> <span class="token string">'./posts.js'</span><br><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span> posts <span class="token punctuation">}</span></code></pre>
+<p>Le guide propose également <a href="https://www.11ty.dev/blog/canary-eleventy-v3/">une mise à jour progressive</a>.</p>
+<blockquote lang="en">
+<p>You can add <code>&quot;type&quot;: &quot;module&quot;</code> to your <code>package.json</code> and rename your Node <code>.js</code> files to <code>.cjs</code> and be done with it. Later on, you can slowly upgrade to ESM syntax one JavaScript file at a time by renaming back from <code>.cjs</code> to <code>.js</code>.</p>
+</blockquote>
+<p>La mise à jour de ce site m'a pris quelques minutes. C'est ce qui fait (entre autres) la force d'11ty: sa simplicité et sa stabilité.</p>
 
-<div
-  class="notes"
->
-  
-    <article class="article-teaser">
-  <p class="article-teaser__date">
-    <time  datetime="2024-02-19">19 février 2024</time>
-  </p>
-
-  <div>
-    <h2 class="article-teaser__title">
-      <a href=/notes/mise-a-jour-11ty-v3/>Mise à jour de 11ty v3</a>
-    </h2>
-    <p class="article-teaser__description">Stabilité et simplicité</p>
-  </div>
-</article>
-  
-    <article class="article-teaser">
-  <p class="article-teaser__date">
-    <time  datetime="2023-12-18">18 décembre 2023</time>
-  </p>
-
-  <div>
-    <h2 class="article-teaser__title">
-      <a href=/notes/landmarks-warning/>Landmarks et validation W3C</a>
-    </h2>
-    <p class="article-teaser__description">Peut-on ignorer les avertissements lorsqu&#39;un header a un role banner ?</p>
-  </div>
-</article>
-  
-    <article class="article-teaser">
-  <p class="article-teaser__date">
-    <time  datetime="2023-07-31">31 juillet 2023</time>
-  </p>
-
-  <div>
-    <h2 class="article-teaser__title">
-      <a href=/notes/importer-contacts-infomaniak/>Migrer ses contacts et agenda chez Infomaniak</a>
-    </h2>
-    <p class="article-teaser__description">Un guide rapide pour transférer ses contacts chez Infomaniak</p>
-  </div>
-</article>
-  
-    <article class="article-teaser">
-  <p class="article-teaser__date">
-    <time  datetime="2023-07-24">24 juillet 2023</time>
-  </p>
-
-  <div>
-    <h2 class="article-teaser__title">
-      <a href=/notes/importer-domaine-infomaniak/>Migrer ses données de Sogo à Infomaniak</a>
-    </h2>
-    <p class="article-teaser__description">Un guide rapide pour transférer un nom de domaine et ses emails chez Infomaniak</p>
-  </div>
-</article>
-  
-    <article class="article-teaser">
-  <p class="article-teaser__date">
-    <time  datetime="2023-07-04">04 juillet 2023</time>
-  </p>
-
-  <div>
-    <h2 class="article-teaser__title">
-      <a href=/notes/mes-flux-rss/>Ma liste de flux RSS</a>
-    </h2>
-    <p class="article-teaser__description">Le RSS, c&#39;est super</p>
-  </div>
-</article>
-  
-    <article class="article-teaser">
-  <p class="article-teaser__date">
-    <time  datetime="2022-12-27">27 décembre 2022</time>
-  </p>
-
-  <div>
-    <h2 class="article-teaser__title">
-      <a href=/notes/installer-ancienne-version-expo/>Installer une ancienne version d&#39;Expo Go</a>
-    </h2>
-    <p class="article-teaser__description">Comment installer une ancienne version du client Expo lorsque le SDK n&#39;est pas compatible</p>
-  </div>
-</article>
-  
-    <article class="article-teaser">
-  <p class="article-teaser__date">
-    <time  datetime="2022-11-13">13 novembre 2022</time>
-  </p>
-
-  <div>
-    <h2 class="article-teaser__title">
-      <a href=/notes/pi-hole-box-sfr/>Installer Pi-Hole sur un Raspberry Pi et une box SFR</a>
-    </h2>
-    <p class="article-teaser__description">Une introduction à l’installation d’un bloqueur de pub centralisé, disponible pour tous les clients d’un réseau</p>
-  </div>
-</article>
-  
-</div>
       </div>
     </div>
   </section>

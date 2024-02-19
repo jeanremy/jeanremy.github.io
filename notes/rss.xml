@@ -5,7 +5,7 @@
   <subtitle>Le flux RSS des dernieres notes</subtitle>
   <link href="https://www.jeanremypraud.com/notes/rss.xml" rel="self"/>
   <link href="https://www.jeanremypraud.com/"/>
-  <updated>2023-12-18T00:00:00Z</updated>
+  <updated>2024-02-19T00:00:00Z</updated>
   <id>https://www.jeanremypraud.com/</id>
   <author>
     <name>Jean-Rémy Praud</name>
@@ -177,6 +177,27 @@ Les sauvegardes précédemment effectuées ne seront donc pas utiles (en théori
 &lt;p&gt;Toutefois, il est préférable d’ignorer cet avertissement qui n’entrave pas la validation du code. &lt;a href=&quot;https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#12.6&quot;&gt;La régle 12.6 du RGAA&lt;/a&gt; demande que &lt;em&gt;les zones de regroupement de contenus présentes dans plusieurs pages web (zones d’en-tête, de navigation principale, de contenu principal, de pied de page et de moteur de recherche) puissent être atteintes ou évitées&lt;/em&gt;. Et parmi les moyens mis en oeuvre, l’ajout de role aria est la solution la plus rapide et la plus simple&lt;/p&gt;
 &lt;p&gt;Il semblerait également que le rôle soit nécéssaire pour des questions de rétro compatibilité: VoiceOver n’exposait pas correctement le role du footer avec Safari 13.&lt;/p&gt;
 &lt;p&gt;Même si cela peut paraitre redondant, l’ajout de rôle aux balises structurantes est donc nécéssaire, notamment pour valider une règle du RGAA. On peut donc ignorer cet avertissement.&lt;/p&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Mise à jour de 11ty v3</title>
+      <link href="https://www.jeanremypraud.com/notes/mise-a-jour-11ty-v3/"/>
+      <updated>2024-02-19T00:00:00Z</updated>
+      <id>https://www.jeanremypraud.com/notes/mise-a-jour-11ty-v3/</id>
+      <content xml:lang="fr" type="html">&lt;p&gt;Le générateur de site statique 11ty vient de sortir en version 3 alpha. Le changement principal est sa compatibilité avec ESM. Bien que touchant aux fondements d’11ty, la mise à jour est assez simple:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Modifier le package.json pour y ajouter &lt;code&gt;&amp;quot;type&amp;quot;: &amp;quot;module&amp;quot;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Utiliser les imports en lieu et places des require.
+Pour cela, il suffit de passer de cette façon d&#39;écrire&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; posts &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;./posts&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br /&gt;module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; posts &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;à celle-ci:&lt;/p&gt;
+&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; posts &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&#39;./posts.js&#39;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; posts &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Le guide propose également &lt;a href=&quot;https://www.11ty.dev/blog/canary-eleventy-v3/&quot;&gt;une mise à jour progressive&lt;/a&gt;.&lt;/p&gt;
+&lt;blockquote lang=&quot;en&quot;&gt;
+&lt;p&gt;You can add &lt;code&gt;&amp;quot;type&amp;quot;: &amp;quot;module&amp;quot;&lt;/code&gt; to your &lt;code&gt;package.json&lt;/code&gt; and rename your Node &lt;code&gt;.js&lt;/code&gt; files to &lt;code&gt;.cjs&lt;/code&gt; and be done with it. Later on, you can slowly upgrade to ESM syntax one JavaScript file at a time by renaming back from &lt;code&gt;.cjs&lt;/code&gt; to &lt;code&gt;.js&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;La mise à jour de ce site m&#39;a pris quelques minutes. C&#39;est ce qui fait (entre autres) la force d&#39;11ty: sa simplicité et sa stabilité.&lt;/p&gt;
 </content>
     </entry>
 </feed>
