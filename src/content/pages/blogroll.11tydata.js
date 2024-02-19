@@ -1,7 +1,7 @@
-const { XMLParser } = require('fast-xml-parser')
-const { readFileSync } = require('fs')
+import { XMLParser } from 'fast-xml-parser'
+import { readFileSync } from 'fs'
 
-module.exports = function () {
+export default function () {
   const xmlFile = readFileSync(`${process.cwd()}/blogroll.opml`, 'utf8')
   const parser = new XMLParser({
     ignoreAttributes: false,
