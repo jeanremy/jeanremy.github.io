@@ -894,7 +894,7 @@ pre {
 }
 .md ul:not(.naked),
 .md ol:not(.naked) {
-  padding: revert;
+  padding-left: 0;
 }
 .md ul:not(.naked) li + li,
 .md ol:not(.naked) li + li {

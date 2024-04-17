@@ -5,7 +5,7 @@
   <subtitle>Le flux RSS des dernieres notes</subtitle>
   <link href="https://www.jeanremypraud.com/notes/rss.xml" rel="self"/>
   <link href="https://www.jeanremypraud.com/"/>
-  <updated>2024-02-19T00:00:00Z</updated>
+  <updated>2024-04-17T00:00:00Z</updated>
   <id>https://www.jeanremypraud.com/</id>
   <author>
     <name>Jean-Rémy Praud</name>
@@ -198,6 +198,32 @@ Pour cela, il suffit de passer de cette façon d&#39;écrire&lt;/li&gt;
 &lt;p&gt;You can add &lt;code&gt;&amp;quot;type&amp;quot;: &amp;quot;module&amp;quot;&lt;/code&gt; to your &lt;code&gt;package.json&lt;/code&gt; and rename your Node &lt;code&gt;.js&lt;/code&gt; files to &lt;code&gt;.cjs&lt;/code&gt; and be done with it. Later on, you can slowly upgrade to ESM syntax one JavaScript file at a time by renaming back from &lt;code&gt;.cjs&lt;/code&gt; to &lt;code&gt;.js&lt;/code&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;La mise à jour de ce site m&#39;a pris quelques minutes. C&#39;est ce qui fait (entre autres) la force d&#39;11ty: sa simplicité et sa stabilité.&lt;/p&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Un effet de surlignage sur plusieurs lignes</title>
+      <link href="https://www.jeanremypraud.com/notes/surlignage-multiligne/"/>
+      <updated>2024-04-17T00:00:00Z</updated>
+      <id>https://www.jeanremypraud.com/notes/surlignage-multiligne/</id>
+      <content xml:lang="fr" type="html">&lt;p&gt;Un récent cas d&#39;intégration m&#39;a posé question. Il s&#39;agit de faire effet de surlignage sur un texte de plusieurs lignes.&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; alt=&quot;un aperçu d&#39;un texte avec une partie surlignée sur plusieurs lignes&quot; src=&quot;https://www.jeanremypraud.com/img/2nbI_eJpBS-320.webp&quot; width=&quot;640&quot; height=&quot;313&quot; srcset=&quot;https://www.jeanremypraud.com/img/2nbI_eJpBS-320.webp 320w, https://www.jeanremypraud.com/img/2nbI_eJpBS-640.webp 640w&quot; sizes=&quot;(max-width: 640px) 320px, 640px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Parmi les contraintes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ce qui est surligné doit avoir des bords arrondis de chaque côté.&lt;/li&gt;
+&lt;li&gt;si le texte se positionne sur plusieurs lignes, chaque tronçon de texte doit avoir des bords arrondis de chaque côté.&lt;/li&gt;
+&lt;li&gt;le texte surligné peut passer à la ligne à différents endroits, de manière fluide selon les dimensions. Il n&#39;est donc pas question d&#39;encadrer chaque tronçon avec une balise.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;La base html est donc la suivante:&lt;/p&gt;
+&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;p&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br /&gt;  Un texte &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;span&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;important surligné sur plusieurs lignes&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;span&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; qui met en avant&lt;br /&gt;  une idée dans un paragraphe plus long.&lt;br /&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;p&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;La balise &lt;code&gt;span&lt;/code&gt; représente la partie que l&#39;on souhaite mettre en avant avec le surlignage.&lt;/p&gt;
+&lt;p&gt;Par défaut, même si elle passe sur plusieurs lignes, la balise sera considérée comme un seul bloc. Si l&#39;on ajoute un effet d&#39;arrondi sur les bords, ceux-ci ne seront présents qu&#39;au début et à la fin (devant le mot important et après le mot lignes).&lt;/p&gt;
+&lt;p&gt;La solution pour éviter cela est d&#39;utiliser la propriété &lt;code&gt;box-decoration-break&lt;/code&gt; associée à la valeur &lt;code&gt;clone&lt;/code&gt;. Cette propriété va avoir un impact sur quelques propriétés lorsqu&#39;un effet de fragmentation apparait (un passage à la ligne par exemple). Chaque fragment aura alors un rendu propre.&lt;/p&gt;
+&lt;p&gt;La &lt;a href=&quot;https://developer.mozilla.org/fr/docs/Web/CSS/box-decoration-break&quot;&gt;doc de MDN&lt;/a&gt; le décrit très bien:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Le rendu de chaque fragment de boîte est obtenu indépendamment avec la bordure, le remplissage, la marge indiqués pour chacun des fragments&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Bien qu&#39;encore expérimentale actuellement, elle est relativement &lt;a href=&quot;https://caniuse.com/css-boxdecorationbreak&quot;&gt;bien supportée par les navigateurs&lt;/a&gt; (97%).&lt;/p&gt;
+&lt;p&gt;Voir la &lt;a href=&quot;https://codepen.io/jr_/pen/ZEZvMeV&quot;&gt;démo sur Codepen&lt;/a&gt;&lt;/p&gt;
 </content>
     </entry>
 </feed>
