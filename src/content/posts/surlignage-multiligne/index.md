@@ -7,7 +7,7 @@ templateEngineOverride: md
 
 Un récent cas d'intégration m'a posé question. Il s'agit de faire effet de surlignage sur un texte de plusieurs lignes.
 
-![un paerçu d'un texte avec une partie surlignée sur plusieurs lignes](./surlignage-multiligne.png)
+![un aperçu d'un texte avec une partie surlignée sur plusieurs lignes](./surlignage-multiligne.png)
 
 Parmi les contraintes:
 
@@ -24,9 +24,9 @@ La base html est donc la suivante:
 </p>
 ```
 
-La balise `span` représentant la partie que l'on souhaite mettre en avant avec le surlignage.
+La balise `span` représente la partie que l'on souhaite mettre en avant avec le surlignage.
 
-Par défaut, même si elle passe sur plusieurs lignes, la balise sera considérée comme un seul bloc. Si l'on ajoute un effet d'arrondi sur les bords, ceux-ci ne seront présents qu'au début et à la fin (devant le signe + et après multinationale).
+Par défaut, même si elle passe sur plusieurs lignes, la balise sera considérée comme un seul bloc. Si l'on ajoute un effet d'arrondi sur les bords, ceux-ci ne seront présents qu'au début et à la fin (devant le mot important et après le mot lignes).
 
 La solution pour éviter cela est d'utiliser la propriété `box-decoration-break` associée à la valeur `clone`. Cette propriété va avoir un impact sur quelques propriétés lorsqu'un effet de fragmentation apparait (un passage à la ligne par exemple). Chaque fragment aura alors un rendu propre.
 
