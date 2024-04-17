@@ -34,7 +34,7 @@
 
   ul:not(.naked),
   ol:not(.naked) {
-    padding: revert;
+    padding-left: 0;
     li + li {
       margin-block-start: var(--space-2xs);
     }
