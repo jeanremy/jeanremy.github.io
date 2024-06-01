@@ -1,3 +1,10 @@
+---
+title: Comprendre les unités des fontes fluides
+description: Peut-on appréhender des nombres obscurs en étant nul en math ?
+date: 2024-06-01
+templateEngineOverride: md
+---
+
 Depuis quelques temps, j'ai pris l'habitude d'utiliser des tailles de texte fluides. On définit deux tailles: une pour une largeur minimale et l'autre pour la largeur maximale. Dans l'intervalle, le texte s'agrandira en fonction de la largeur en cours, sans avoir à passer par de multiples media queries.
 
 Pour ce faire, j'utilise [Utopia](https://utopia.fyi/), qui permet de générer le code CSS de chaque intervalle de taille. Cela ressemble à ça:
@@ -77,9 +84,10 @@ On a notre deuxième chiffre, youpi, le livre de math va pouvoir retourner dans 
 Pour calculer un nombre entre deux intervalles, on calcule le coefficient, représenté par le second chiffre.
 En ayant ce coefficient, on peut calculer y en ayant x. Il faut toutefois ajouter la valeur initiale pour que la calcul soit juste, et c'est tout le but de la première valeur.
 
-Sources:
-https://www.madebymike.com.au/writing/precise-control-responsive-typography/
-https://www.smashingmagazine.com/2023/11/addressing-accessibility-concerns-fluid-type/
-https://fluidtypography.com/#app-get-started
-https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
-https://blog.logrocket.com/fluid-vs-responsive-typography-css-clamp/
+## Sources:
+
+- https://www.madebymike.com.au/writing/precise-control-responsive-typography/
+- https://www.smashingmagazine.com/2023/11/addressing-accessibility-concerns-fluid-type/
+- https://fluidtypography.com/#app-get-started
+- https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+- https://blog.logrocket.com/fluid-vs-responsive-typography-css-clamp/
