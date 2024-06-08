@@ -34,7 +34,7 @@ Pour obtenir la taille à partir d'une largeur (soit y en ayant x), il faut calc
 
 Ce calcul va nous permettre de répondre à la question: entre ces deux hauteurs, combien y aura de marches, et quelle hauteur représentera une marche ?
 Le calcul est plus simple qu'il n'y parait:
-`coefficient = (y2 - y1) / (x2 - x1)`
+`coefficient = (y2 - y1) / (x2 - x1)`.
 Avec notre exemple, cela donne:
 
 ```
@@ -69,8 +69,8 @@ y = 10,9090909092
 
 Pourquoi trouve-t-on 10,9 au lieu de 24 ?
 Si l'on reprend l'analogie, on a donc gravi 1200 marches de 0,09vi. Mais à quelle hauteur était l'escalier au tout début ?
-On serait tenté d'ajouter 16 pour avoir la bonne valeur (au passage, ça ferait 26,9 au lieu de 24, faites un effort). Pour que le calcul soit juste, il faut trouver la hauteur initiale lorsque x est à 0. Comment la calcule-t-on ?
-Si l'on multiplie 320px par le coefficient, on obtient 2,9 . Ce qui veut dire qu'en avançant de 320px en largeur, on a gravit 2,9px en hauteur. Or, on sait qu'à 320px, on est à 16px. Donc à 0, on est à `16 - 320*0,00909`. Soit 13,1px.
+On serait tenté d'ajouter 16 pour avoir la bonne valeur mais pour que le calcul soit juste, il faut trouver la hauteur initiale lorsque x est à 0. Comment la calcule-t-on ?
+Si l'on multiplie 320px par le coefficient, on obtient 2,9. Ce qui veut dire qu'en avançant de 320px en largeur, on a gravit 2,9px en hauteur. Or, on sait qu'à 320px, on est à 16px. Donc à 0, on est à `16 - 320*0,00909`. Soit 13,1px.
 
 ![Si la droite qui relie les deux points était infinie, elle aurait pour ordonnée 13,2 lorsqu'elle passerait par l'abscisse 0](graph_corrected.png)
 
@@ -83,11 +83,12 @@ On a notre deuxième chiffre, youpi, le livre de math va pouvoir retourner dans 
 
 Pour calculer un nombre entre deux intervalles, on calcule le coefficient, représenté par le second chiffre.
 En ayant ce coefficient, on peut calculer y en ayant x. Il faut toutefois ajouter la valeur initiale pour que la calcul soit juste, et c'est tout le but de la première valeur.
+Attention cependant à préserver le zoom avec les unités fluides. [Cet article de Smashing Mag](https://www.smashingmagazine.com/2023/11/addressing-accessibility-concerns-fluid-type/) préconise un écart max de 2,5 entre la taille minimale et la maximale.
 
-## Sources:
+## Sources
 
-- https://www.madebymike.com.au/writing/precise-control-responsive-typography/
-- https://www.smashingmagazine.com/2023/11/addressing-accessibility-concerns-fluid-type/
-- https://fluidtypography.com/#app-get-started
-- https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
-- https://blog.logrocket.com/fluid-vs-responsive-typography-css-clamp/
+- [https://www.madebymike.com.au/writing/precise-control-responsive-typography/](https://www.madebymike.com.au/writing/precise-control-responsive-typography/)
+- [https://www.smashingmagazine.com/2023/11/addressing-accessibility-concerns-fluid-type/](https://www.smashingmagazine.com/2023/11/addressing-accessibility-concerns-fluid-type/)
+- [https://fluidtypography.com/#app-get-started](https://fluidtypography.com/#app-get-started)
+- [https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/](https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/)
+- [https://blog.logrocket.com/fluid-vs-responsive-typography-css-clamp/](https://blog.logrocket.com/fluid-vs-responsive-typography-css-clamp/)
