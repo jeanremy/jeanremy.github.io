@@ -5,7 +5,7 @@
   <subtitle>Le flux RSS des dernieres notes</subtitle>
   <link href="https://www.jeanremypraud.com/notes/rss.xml" rel="self"/>
   <link href="https://www.jeanremypraud.com/"/>
-  <updated>2024-04-17T00:00:00Z</updated>
+  <updated>2024-06-01T00:00:00Z</updated>
   <id>https://www.jeanremypraud.com/</id>
   <author>
     <name>Jean-Rémy Praud</name>
@@ -224,6 +224,67 @@ Pour cela, il suffit de passer de cette façon d&#39;écrire&lt;/li&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Bien qu&#39;encore expérimentale actuellement, elle est relativement &lt;a href=&quot;https://caniuse.com/css-boxdecorationbreak&quot;&gt;bien supportée par les navigateurs&lt;/a&gt; (97%).&lt;/p&gt;
 &lt;p&gt;Voir la &lt;a href=&quot;https://codepen.io/jr_/pen/ZEZvMeV&quot;&gt;démo sur Codepen&lt;/a&gt;&lt;/p&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Comprendre les unités dynamiques des fontes fluides</title>
+      <link href="https://www.jeanremypraud.com/notes/calcul-taille-font-fluides/"/>
+      <updated>2024-06-01T00:00:00Z</updated>
+      <id>https://www.jeanremypraud.com/notes/calcul-taille-font-fluides/</id>
+      <content xml:lang="fr" type="html">&lt;p&gt;Depuis quelques temps, j&#39;ai pris l&#39;habitude d&#39;utiliser des tailles de texte fluides. On définit deux tailles: une pour une largeur minimale et l&#39;autre pour la largeur maximale. Dans l&#39;intervalle, le texte s&#39;agrandira en fonction de la largeur en cours, sans avoir à passer par de multiples media queries.&lt;/p&gt;
+&lt;p&gt;Pour ce faire, j&#39;utilise &lt;a href=&quot;https://utopia.fyi/&quot;&gt;Utopia&lt;/a&gt;, qui permet de générer le code CSS de chaque intervalle de taille. Cela ressemble à ça:&lt;/p&gt;
+&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;/* Pour une taille de 16px à 320px et 24px à 1200px*/&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token selector&quot;&gt;:root&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br /&gt;  &lt;span class=&quot;token property&quot;&gt;--step-0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;clamp&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;1rem&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 0.8182rem + 0.9091vi&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 1.5rem&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;La fonction clamp permet de définir des valeurs minimales et maximales à ne pas dépasser (respectivement 1rem et 1.5rem).
+Depuis que je les utilise, les valeurs du deuxième paramètre restent un mystère pour moi (le &lt;code&gt;0.8182rem + 0.9091vi&lt;/code&gt;).
+Pour essayer de comprendre ça, ressortons les vieux manuels de math.&lt;/p&gt;
+&lt;h2 id=&quot;calculer-le-coefficient&quot; tabindex=&quot;-1&quot;&gt;Calculer le coefficient &lt;a class=&quot;title-anchor&quot; href=&quot;https://www.jeanremypraud.com/notes/calcul-taille-font-fluides/#calculer-le-coefficient&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Pour comprendre le calcul nous prendrons une valeur de 16px à 320px et 24px à 1200px.&lt;/p&gt;
+&lt;p&gt;On peut aisément représenter ces deux valeurs sur un graphique, x étant la largeur de l&#39;écran et y la taille en pixel.&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; alt=&quot;Une représentation graphique des deux points: le premier est à 320 d&#39;abscisse et 16 d&#39;ordonnée, et le second est à 1200 d&#39;abscisse et 24 d&#39;ordonnée&quot; src=&quot;https://www.jeanremypraud.com/img/RZrmQVum-a-320.webp&quot; width=&quot;640&quot; height=&quot;519&quot; srcset=&quot;https://www.jeanremypraud.com/img/RZrmQVum-a-320.webp 320w, https://www.jeanremypraud.com/img/RZrmQVum-a-640.webp 640w&quot; sizes=&quot;(max-width: 640px) 320px, 640px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Pour obtenir la taille à partir d&#39;une largeur (soit y en ayant x), il faut calculer le coefficient (m) qui permet de passer de l&#39;une à l&#39;autre. Pour cela, il suffit de diviser la longueur de l&#39;intervalle y divisé par l&#39;intervalle x.&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; alt=&quot;Le graphique montre la distance entre chaque point: 8 en ordonnée et 880 en abscisse.&quot; src=&quot;https://www.jeanremypraud.com/img/u8DDFDsUhG-320.webp&quot; width=&quot;640&quot; height=&quot;519&quot; srcset=&quot;https://www.jeanremypraud.com/img/u8DDFDsUhG-320.webp 320w, https://www.jeanremypraud.com/img/u8DDFDsUhG-640.webp 640w&quot; sizes=&quot;(max-width: 640px) 320px, 640px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Ce calcul va nous permettre de répondre à la question: entre ces deux hauteurs, combien y aura de marches, et quelle hauteur représentera une marche ?
+Le calcul est plus simple qu&#39;il n&#39;y parait:
+&lt;code&gt;coefficient = (y2 - y1) / (x2 - x1)&lt;/code&gt;.
+Avec notre exemple, cela donne:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;coefficient = (24 - 16) / (1200 - 320)
+coefficient = 8 / 880
+coefficient = 0,009090909091
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Pour 8 de hauteur, il y aura 880 marches, qui feront 0,00909 de haut.&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; alt=&quot;Un zoom sur le graphique montre que pour chaque point d&#39;ordonnée, le droite rejoignant les deux points montent de 0,009px&quot; src=&quot;https://www.jeanremypraud.com/img/pAl3gPLFQe-320.webp&quot; width=&quot;640&quot; height=&quot;460&quot; srcset=&quot;https://www.jeanremypraud.com/img/pAl3gPLFQe-320.webp 320w, https://www.jeanremypraud.com/img/pAl3gPLFQe-640.webp 640w&quot; sizes=&quot;(max-width: 640px) 320px, 640px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Ce coefficient est utilisé par Utopia en combinaison avec l&#39;unité vi qui correspond à 1% de la taille de la zone d&#39;affichage sur l&#39;axe en ligne. Il s&#39;agit de notre variable coefficient multipliée par 100. On pourrait tout à fait la remplacer par 0,00909vw.
+A 1200px, on aurait donc la calcul suivant:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1200px = 1vw = 100vi
+1200px * 0,00909 = 1vw * 0,009090909091 (soit 0,009090909091vw)
+1200px * 0,00909 = 100vi * 0,009090909091 = 1vi * 0,9090909091 (0,9090909091vi)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;On a donc notre second chiffre du calcul. Reste donc à trouver le premier.&lt;/p&gt;
+&lt;h2 id=&quot;calculer-la-taille-pour-une-largeur&quot; tabindex=&quot;-1&quot;&gt;Calculer la taille pour une largeur &lt;a class=&quot;title-anchor&quot; href=&quot;https://www.jeanremypraud.com/notes/calcul-taille-font-fluides/#calculer-la-taille-pour-une-largeur&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Le coefficient va donc nous permettre de calculer une taille pour une largeur d&#39;écran donnée. Si l&#39;on suite le calcul précédent, il suffit donc de multiplier la largeur d&#39;écran par ce coefficient. Prenons 1200px:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;y = 0,09090909091 * 1200
+y = 10,9090909092
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Pourquoi trouve-t-on 10,9 au lieu de 24 ?
+Si l&#39;on reprend l&#39;analogie, on a donc gravi 1200 marches de 0,09vi. Mais à quelle hauteur était l&#39;escalier au tout début ?
+On serait tenté d&#39;ajouter 16 pour avoir la bonne valeur mais pour que le calcul soit juste, il faut trouver la hauteur initiale lorsque x est à 0. Comment la calcule-t-on ?
+Si l&#39;on multiplie 320px par le coefficient, on obtient 2,9. Ce qui veut dire qu&#39;en avançant de 320px en largeur, on a gravit 2,9px en hauteur. Or, on sait qu&#39;à 320px, on est à 16px. Donc à 0, on est à &lt;code&gt;16 - 320*0,00909&lt;/code&gt;. Soit 13,1px.&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; alt=&quot;Si la droite qui relie les deux points était infinie, elle aurait pour ordonnée 13,2 lorsqu&#39;elle passerait par l&#39;abscisse 0&quot; src=&quot;https://www.jeanremypraud.com/img/saCSWxo5SN-320.webp&quot; width=&quot;640&quot; height=&quot;519&quot; srcset=&quot;https://www.jeanremypraud.com/img/saCSWxo5SN-320.webp 320w, https://www.jeanremypraud.com/img/saCSWxo5SN-640.webp 640w&quot; sizes=&quot;(max-width: 640px) 320px, 640px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Converti en rem (divisé par 16), cela donne
+&lt;code&gt;y = 0.8182rem&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;On a notre deuxième chiffre, youpi, le livre de math va pouvoir retourner dans son vieux placard.&lt;/p&gt;
+&lt;h2 id=&quot;recapitulatif&quot; tabindex=&quot;-1&quot;&gt;Recapitulatif &lt;a class=&quot;title-anchor&quot; href=&quot;https://www.jeanremypraud.com/notes/calcul-taille-font-fluides/#recapitulatif&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Pour calculer un nombre entre deux intervalles, on calcule le coefficient, représenté par le second chiffre.
+En ayant ce coefficient, on peut calculer y en ayant x. Il faut toutefois ajouter la valeur initiale pour que la calcul soit juste, et c&#39;est tout le but de la première valeur.
+Attention cependant à préserver le zoom avec les unités fluides. &lt;a href=&quot;https://www.smashingmagazine.com/2023/11/addressing-accessibility-concerns-fluid-type/&quot;&gt;Cet article de Smashing Mag&lt;/a&gt; préconise un écart max de 2,5 entre la taille minimale et la maximale.&lt;/p&gt;
+&lt;h2 id=&quot;sources&quot; tabindex=&quot;-1&quot;&gt;Sources &lt;a class=&quot;title-anchor&quot; href=&quot;https://www.jeanremypraud.com/notes/calcul-taille-font-fluides/#sources&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.madebymike.com.au/writing/precise-control-responsive-typography/&quot;&gt;https://www.madebymike.com.au/writing/precise-control-responsive-typography/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.smashingmagazine.com/2023/11/addressing-accessibility-concerns-fluid-type/&quot;&gt;https://www.smashingmagazine.com/2023/11/addressing-accessibility-concerns-fluid-type/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://fluidtypography.com/#app-get-started&quot;&gt;https://fluidtypography.com/#app-get-started&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/&quot;&gt;https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.logrocket.com/fluid-vs-responsive-typography-css-clamp/&quot;&gt;https://blog.logrocket.com/fluid-vs-responsive-typography-css-clamp/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </content>
     </entry>
 </feed>
