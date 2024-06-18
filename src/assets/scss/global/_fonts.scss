@@ -1,11 +1,12 @@
 @font-face {
-  font-family: "Albert Sans";
-  src: url("../fonts/AlbertSans-VariableFont_wght-subset.woff2") format("woff2"),
-    url("../fonts/AlbertSans-VariableFont_wght-subset.woff") format("woff");
+  font-family: 'Albert Sans';
+  src: url('../fonts/AlbertSans-VariableFont_wght-subset.woff2') format('woff2'),
+    url('../fonts/AlbertSans-VariableFont_wght-subset.woff') format('woff');
+  font-display: optional;
 }
 
 @font-face {
-  font-family: "Adjusted Albert Fallback";
+  font-family: 'Adjusted Albert Fallback';
   src: local(Arial);
   size-adjust: 104%;
   ascent-override: 90%;
@@ -14,7 +15,7 @@
 }
 
 @font-face {
-  font-family: "IBMPlex";
-  src: url("../fonts/IBMPlexMono-Medium-subset.woff2") format("woff");
+  font-family: 'IBMPlex';
+  src: url('../fonts/IBMPlexMono-Medium-subset.woff2') format('woff');
   unicode-range: U+0030-0039;
 }
