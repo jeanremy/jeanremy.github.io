@@ -32,7 +32,7 @@ export default function (eleventyConfig) {
         widths: [320, 640],
         formats: ['webp'],
         urlPath: '/img/',
-        outputDir: './_site/img/',
+        outputDir: './public/img/',
       },
       globalAttributes: {
         loading: 'lazy',

@@ -13,9 +13,10 @@
     <meta name="description" content="{{ meta.siteDescription }}">
     <meta name="robots" content="noodp">
 
-    {% favicon './src/assets/img/favicon.svg' %}
+    {% favicon './public/favicon.svg' %}
 
-    <link rel="stylesheet" href="/assets/css/base.css?{{assetHash}}">
+    <link rel="stylesheet" href="/assets/css/base.scss">
+    
     {% include "schemas/website.njk" %}
 
   </head>
@@ -23,11 +24,12 @@
     <a href="#main" class="sr-only sr-only-focusable">Accéder au contenu</a>
 
     {% include "partials/header.njk" %}
+
     <main class="main" role="main" id="main" tabindex="-1">
       {{ content | safe }}
     </main>
+    
     {% include "partials/footer.njk" %}
-    {# <script src="/assets/js/bundle.js?{{assetHash}}"></script> #}
 
   </body>
 </html>
