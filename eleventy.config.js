@@ -3,11 +3,13 @@ import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import EleventyPluginRss from "@11ty/eleventy-plugin-rss";
 import faviconPlugin from "eleventy-favicon";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
+import EleventyPluginOgImage from 'eleventy-plugin-og-image';
+
 
 import { cssmin, format, console } from "./src/_11ty/filters/index.js";
 import { feedPosts, posts } from "./src/_11ty/collections/index.js";
 import { markdownit } from "./src/_11ty/libraries/index.js";
-import { rss, image, css, js } from "./src/_11ty/plugins/index.js";
+import { rss, image, css, js, ogimage } from "./src/_11ty/plugins/index.js";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 
 export default async function (eleventyConfig) {
@@ -17,6 +19,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(EleventyPluginRss);
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, image);
+  eleventyConfig.addPlugin(EleventyPluginOgImage, ogimage);
   eleventyConfig.addPlugin(css);
   eleventyConfig.addPlugin(js);
 
