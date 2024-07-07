@@ -2,6 +2,8 @@ import eleventyNavigationPlugin from '@11ty/eleventy-navigation'
 import { feedPlugin } from '@11ty/eleventy-plugin-rss'
 import faviconPlugin from 'eleventy-favicon'
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
+import EleventyVitePlugin from "@11ty/eleventy-plugin-vite";
+import { resolve } from 'path';
 
 import { cssmin, format, console } from './src/_11ty/filters/index.js'
 import { feedPosts, posts } from './src/_11ty/collections/index.js'
@@ -11,13 +13,42 @@ import { rss } from './src/_11ty/plugins/index.js'
 export default async function (eleventyConfig) {
   // ---------- PLUGINS --------------------
   eleventyConfig.addPlugin(eleventyNavigationPlugin)
-  eleventyConfig.addPlugin(faviconPlugin)
+  eleventyConfig.addPlugin(faviconPlugin, {
+    destination: './public'
+  })
   eleventyConfig.addPlugin(syntaxHighlight)
   eleventyConfig.addPlugin(feedPlugin, rss)
+  eleventyConfig.addPlugin(EleventyVitePlugin, {
+
+		// Options passed to the Eleventy Dev Server
+		// Defaults
+		serverOptions: {
+			module: "@11ty/eleventy-dev-server",
+			domDiff: false,
+		},
+
+		// Defaults
+		viteOptions: {
+      publicDir: 'public',
+			clearScreen: false,
+			server: {
+				mode: 'development',
+				middlewareMode: true,
+			},
+			appType: 'custom',
+
+			build: {
+				mode: 'production',
+				// manifest: true,
+				// This puts CSS and JS in subfolders – remove if you want all of it to be in /assets instead
+				
+			}
+		},
+	});
 
   // ---------- PASSTHROUGH --------------------
-  eleventyConfig.addPassthroughCopy('src/assets/fonts')
-  eleventyConfig.addPassthroughCopy('src/assets/img')
+  eleventyConfig.addPassthroughCopy('src/assets')
+  eleventyConfig.addPassthroughCopy('public')
   eleventyConfig.addPassthroughCopy('CNAME')
   eleventyConfig.addPassthroughCopy('robots.txt')
   eleventyConfig.addPassthroughCopy('*.opml')
