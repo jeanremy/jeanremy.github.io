@@ -2,7 +2,7 @@ import { XMLParser } from 'fast-xml-parser'
 import { readFileSync } from 'fs'
 
 export default function () {
-  const xmlFile = readFileSync(`${process.cwd()}/blogroll.opml`, 'utf8')
+  const xmlFile = readFileSync(`./public/blogroll.opml`, 'utf8')
   const parser = new XMLParser({
     ignoreAttributes: false,
     attributeNamePrefix: '',
