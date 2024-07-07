@@ -3,12 +3,12 @@ import { feedPlugin } from '@11ty/eleventy-plugin-rss'
 import faviconPlugin from 'eleventy-favicon'
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
 import EleventyVitePlugin from "@11ty/eleventy-plugin-vite";
-import { resolve } from 'path';
+import EleventyPluginOgImage from 'eleventy-plugin-og-image';
 
 import { cssmin, format, console } from './src/_11ty/filters/index.js'
 import { feedPosts, posts } from './src/_11ty/collections/index.js'
 import { markdownit } from './src/_11ty/libraries/index.js'
-import { rss } from './src/_11ty/plugins/index.js'
+import { rss, ogimage, vite } from './src/_11ty/plugins/index.js'
 
 export default async function (eleventyConfig) {
   // ---------- PLUGINS --------------------
@@ -18,33 +18,9 @@ export default async function (eleventyConfig) {
   })
   eleventyConfig.addPlugin(syntaxHighlight)
   eleventyConfig.addPlugin(feedPlugin, rss)
-  eleventyConfig.addPlugin(EleventyVitePlugin, {
+  eleventyConfig.addPlugin(EleventyVitePlugin, vite);
 
-		// Options passed to the Eleventy Dev Server
-		// Defaults
-		serverOptions: {
-			module: "@11ty/eleventy-dev-server",
-			domDiff: false,
-		},
-
-		// Defaults
-		viteOptions: {
-      publicDir: 'public',
-			clearScreen: false,
-			server: {
-				mode: 'development',
-				middlewareMode: true,
-			},
-			appType: 'custom',
-
-			build: {
-				mode: 'production',
-				// manifest: true,
-				// This puts CSS and JS in subfolders – remove if you want all of it to be in /assets instead
-				
-			}
-		},
-	});
+  eleventyConfig.addPlugin(EleventyPluginOgImage, ogimage);
 
   // ---------- PASSTHROUGH --------------------
   eleventyConfig.addPassthroughCopy('src/assets')

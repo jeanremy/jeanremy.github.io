@@ -1,0 +1,51 @@
+<style>
+  div {
+    display: flex;
+  }
+  .root {
+    background-color: #edfaf3;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+  }
+  .container {
+    padding: 20px 40px;
+  }
+
+  .title {
+    flex-grow: 1;
+  }
+  
+  .metas {
+    background: #fff;
+    margin-top: auto;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+
+  .title {
+      color: white;
+      font-size: 80px;
+      margin: auto 0;
+  }
+</style>
+
+<div class="root">
+  <div class="container">
+    <h1 class="title">{{title | console}}</h1>
+  </div>
+  {{ page.title | console}}
+  <div class="container metas">
+    {% if date %}
+      <p class="article__date">
+      Posté le
+      <time datetime="{{ date | format("YYYY-MM-DD") }}">{{ date | format('DD/MM/YYYY') }}</time>
+      </p>
+    {% endif %}
+    <p class="page__title">
+      jr<span>.</span>
+    </p>
+  </div>
+</div>

@@ -1,2 +1,5 @@
 import rss from './rss.js'
-export { rss }
+import vite from './vite.js'
+import ogimage from './ogimage.js'
+
+export { rss, ogimage, vite }
