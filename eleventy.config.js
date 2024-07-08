@@ -15,7 +15,7 @@ export default async function (eleventyConfig) {
   // ---------- PLUGINS --------------------
   eleventyConfig.addPlugin(eleventyNavigationPlugin)
   eleventyConfig.addPlugin(faviconPlugin, {
-    destination: './public'
+    destination: './src/public'
   })
   eleventyConfig.addPlugin(syntaxHighlight)
   eleventyConfig.addPlugin(EleventyPluginRss)
