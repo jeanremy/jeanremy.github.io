@@ -1,5 +1,6 @@
 import eleventyNavigationPlugin from '@11ty/eleventy-navigation'
 import { feedPlugin } from '@11ty/eleventy-plugin-rss'
+import EleventyPluginRss from '@11ty/eleventy-plugin-rss';
 import faviconPlugin from 'eleventy-favicon'
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
 import EleventyVitePlugin from "@11ty/eleventy-plugin-vite";
@@ -17,7 +18,7 @@ export default async function (eleventyConfig) {
     destination: './public'
   })
   eleventyConfig.addPlugin(syntaxHighlight)
-  eleventyConfig.addPlugin(feedPlugin, rss)
+  eleventyConfig.addPlugin(EleventyPluginRss)
   eleventyConfig.addPlugin(EleventyVitePlugin, {
 
 		// Options passed to the Eleventy Dev Server
@@ -26,6 +27,7 @@ export default async function (eleventyConfig) {
 			module: "@11ty/eleventy-dev-server",
 			domDiff: false,
 		},
+    
 
 		// Defaults
 		viteOptions: {
@@ -35,20 +37,30 @@ export default async function (eleventyConfig) {
 				mode: 'development',
 				middlewareMode: true,
 			},
+      shared: {
+        assetsInclude: '*.xsl'
+      },
 			appType: 'custom',
-
 			build: {
 				mode: 'production',
 				// manifest: true,
 				// This puts CSS and JS in subfolders – remove if you want all of it to be in /assets instead
-				
+				rollupOptions: {
+          input: {
+            app: ['**/*.html', '**/*.xsl'], // default
+          },
+          output: {
+            experimentalMinChunkSize: 0,
+            assetFileNames: 'assets/[name].[ext]',
+          },
+        },
 			}
 		},
 	});
 
   // ---------- PASSTHROUGH --------------------
   eleventyConfig.addPassthroughCopy('src/assets')
-  eleventyConfig.addPassthroughCopy('public')
+  eleventyConfig.addPassthroughCopy('src/public/!(**/*.njk)')
 
   // ---------- FILTERS --------------------
   eleventyConfig.addFilter('cssmin', cssmin)
