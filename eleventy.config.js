@@ -49,9 +49,6 @@ export default async function (eleventyConfig) {
   // ---------- PASSTHROUGH --------------------
   eleventyConfig.addPassthroughCopy('src/assets')
   eleventyConfig.addPassthroughCopy('public')
-  eleventyConfig.addPassthroughCopy('CNAME')
-  eleventyConfig.addPassthroughCopy('robots.txt')
-  eleventyConfig.addPassthroughCopy('*.opml')
 
   // ---------- FILTERS --------------------
   eleventyConfig.addFilter('cssmin', cssmin)
