@@ -1,3 +1,7 @@
+---
+permalink: public/notes/rss-style.xsl
+eleventyExcludeFromCollections: true
+---
 <?xml version="1.0" encoding="utf-8"?>
 
 <xsl:stylesheet version="3.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -15,7 +19,7 @@
         <meta charset="utf-8"/>
         <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <link rel="stylesheet" href="/assets/css/base.css?{{assetHash}}"/>
+        <link rel="stylesheet" href="/assets/base.css"/>
       </head>
       <body class="page">
         {% include "partials/header.njk" %}
