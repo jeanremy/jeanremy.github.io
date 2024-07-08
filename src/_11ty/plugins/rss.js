@@ -1,6 +1,6 @@
 export default {
   type: 'atom',
-  outputPath: './public/notes/rss.xml',
+  outputPath: '/notes/rss.xml',
   collection: {
     name: 'feedPosts',
     limit: 0,

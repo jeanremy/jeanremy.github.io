@@ -1,5 +1,6 @@
 import eleventyNavigationPlugin from '@11ty/eleventy-navigation'
 import { feedPlugin } from '@11ty/eleventy-plugin-rss'
+import EleventyPluginRss from '@11ty/eleventy-plugin-rss';
 import faviconPlugin from 'eleventy-favicon'
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
 import EleventyVitePlugin from "@11ty/eleventy-plugin-vite";
@@ -17,7 +18,7 @@ export default async function (eleventyConfig) {
     destination: './public'
   })
   eleventyConfig.addPlugin(syntaxHighlight)
-  eleventyConfig.addPlugin(feedPlugin, rss)
+  eleventyConfig.addPlugin(EleventyPluginRss)
   eleventyConfig.addPlugin(EleventyVitePlugin, {
 
 		// Options passed to the Eleventy Dev Server
@@ -48,7 +49,8 @@ export default async function (eleventyConfig) {
 
   // ---------- PASSTHROUGH --------------------
   eleventyConfig.addPassthroughCopy('src/assets')
-  eleventyConfig.addPassthroughCopy('public')
+  eleventyConfig.addPassthroughCopy('src/public/!(*.njk)')
+  eleventyConfig.addPassthroughCopy('src/public/!(**/*.njk)')
 
   // ---------- FILTERS --------------------
   eleventyConfig.addFilter('cssmin', cssmin)
