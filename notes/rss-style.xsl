@@ -1,43 +1,24 @@
-<!DOCTYPE html>
-<html lang="fr-FR">
-  <head>
-    <meta charset="utf-8">
-    
-      <title>Plan du site - Jean-Rémy Praud</title>
-    
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description" content="Developpeur fullstack, j’aime travailler sur des projets porteurs de sens. Je m’intéresse tout particulièrement à l’éco-conception et à l’accessibilité.">
-    <meta name="robots" content="noodp">
+<?xml version="1.0" encoding="utf-8"?>
 
-    
-<link rel="icon" href="/favicon.ico">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    
+<xsl:stylesheet version="3.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:atom="http://www.w3.org/2005/Atom">
 
-    
-    <script type="application/ld+json">
-	{
-		"@context": "https://schema.org",
-		"@graph": [
-			{
-				"@type": "WebSite",
-				"@id": "https://jeanremypraud.com#website",
-				"url": "https://jeanremypraud.com",
-				"name": "Jean-Rémy Praud",
-				"description": "Developpeur fullstack, j’aime travailler sur des projets porteurs de sens. Je m’intéresse tout particulièrement à l’éco-conception et à l’accessibilité.",
-				"inLanguage": "fr_FR"
-			}
-		]
-	}
-</script>
+  <xsl:output method="html" version="1.0" encoding="UTF-8" indent="yes"/>
 
-    <link rel="stylesheet" crossorigin href="/assets/base.css">
-  </head>
-  <body class="page">
-    <a href="#main" class="sr-only sr-only-focusable">Accéder au contenu</a>
-
-    <header class="page-header" role="banner">
+  <xsl:template match="/">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+      <head>
+        <title>
+          RSS Feed |
+          <xsl:value-of select="/atom:feed/atom:title"/>
+        </title>
+        <meta charset="utf-8"/>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="/assets/base.css"/>
+      </head>
+      <body class="page">
+        <header class="page-header" role="banner">
   <div class="container">
     <p class="page__title">
       <a href="/" rel="me" title="jr retour à l'accueil">jr<span>.</span></a>
@@ -45,7 +26,7 @@
     <nav class="page-header__menu" role="navigation" aria-label="Navigation principale">
       <ul>
         <li>
-          <a href="/notes/" >Notes</a>
+          <a href="/notes/"  aria-current="page">Notes</a>
         </li>
         <li>
           <a href="/a-propos/" >À propos</a>
@@ -56,111 +37,48 @@
   </div>
 </header>
 
+        <main class="main" role="main">
+          <article class="article">
+            <header class="article__header">
+              <div class="container">
+                <h1 class="article__title df aic">
+                  <svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 8 8" width="30" height="30" class="mr-3">
+                    <title>RSS feed icon</title>
+                    <rect fill="orange"  class="button" width="8" height="8" rx="1.5"/>
+                    <circle fill="white" class="symbol" cx="2" cy="6" r="1"/>
+                    <path  fill="white"  class="symbol" d="m 1,4 a 3,3 0 0 1 3,3 h 1 a 4,4 0 0 0 -4,-4 z"/>
+                    <path  fill="white"  class="symbol" d="m 1,2 a 5,5 0 0 1 5,5 h 1 a 6,6 0 0 0 -6,-6 z"/>
+                  </svg>
 
-    <main class="main" role="main" id="main" tabindex="-1">
-      <article class="article">
-  <header class="article__header">
-    <div class="container">
-      
-        
+                  <xsl:value-of select="/atom:feed/atom:title"/>
+                </h1>
+              </div>
+            </header>
+            <section class="article__content">
+              <div class="container">
+                <div class="md">
+                  <ul>
 
+                    <xsl:for-each select="/atom:feed/atom:entry">
+                      <li class="article-teaser">
+                        <a>
 
-  <nav class="breadcrumb" role="navigation" aria-label="Fil d'ariane">
-    
-      
-        <a href="/">Accueil</a> >
-      
-    
-      
-        Plan du site
-      
-    
-  </nav>
+                          <xsl:attribute name="href">
+                            <xsl:value-of select="atom:link/@href"/>
+                          </xsl:attribute>
 
-
-      
-
-      <h1 class="article__title">
-        Plan du site
-      </h1>
-    </div>
-  </header>
-  <section class="article__content">
-    <div class="container">
-      
-      <div class="md blog_content">
-        <h2>Liste des pages</h2>
-<ul>
-  
-    <li>
-      <a href="/notes/pi-hole-box-sfr/">Installer Pi-Hole sur un Raspberry Pi et une box SFR</a>
-    </li>
-  
-    <li>
-      <a href="/notes/installer-ancienne-version-expo/">Installer une ancienne version d&#39;Expo Go</a>
-    </li>
-  
-    <li>
-      <a href="/notes/mes-flux-rss/">Ma liste de flux RSS</a>
-    </li>
-  
-    <li>
-      <a href="/notes/importer-domaine-infomaniak/">Migrer ses données de Sogo à Infomaniak</a>
-    </li>
-  
-    <li>
-      <a href="/notes/importer-contacts-infomaniak/">Migrer ses contacts et agenda chez Infomaniak</a>
-    </li>
-  
-    <li>
-      <a href="/notes/landmarks-warning/">Landmarks et validation W3C</a>
-    </li>
-  
-    <li>
-      <a href="/notes/mise-a-jour-11ty-v3/">Mise à jour de 11ty v3</a>
-    </li>
-  
-    <li>
-      <a href="/notes/surlignage-multiligne/">Un effet de surlignage sur plusieurs lignes</a>
-    </li>
-  
-    <li>
-      <a href="/notes/calcul-taille-font-fluides/">Comprendre les unités dynamiques des fontes fluides</a>
-    </li>
-  
-    <li>
-      <a href="/a-propos/">À propos</a>
-    </li>
-  
-    <li>
-      <a href="/blogroll/">Blogroll</a>
-    </li>
-  
-    <li>
-      <a href="/">Jean-Rémy Praud</a>
-    </li>
-  
-    <li>
-      <a href="/mentions-legales/">Mentions légales</a>
-    </li>
-  
-    <li>
-      <a href="/notes/">Notes</a>
-    </li>
-  
-    <li>
-      <a href="/plan-site/">Plan du site</a>
-    </li>
-  
-</ul>
-      </div>
-    </div>
-  </section>
-</article>
-
-    </main>
-    
-    <footer class="page-footer" role="contentinfo">
+                          <xsl:value-of select="atom:title"/>
+                        </a>
+                      </li>
+                    </xsl:for-each>
+                  </ul>
+                </div>
+              </div>
+            </section>
+          </article>
+        </main>
+        <footer class="page-footer" role="contentinfo">
   <div class="container">
     <div class="page-footer__menus">
       <ul class="page-footer__menu">
@@ -207,5 +125,7 @@
 </footer>
 
 
-  </body>
-</html>
+      </body>
+    </html>
+  </xsl:template>
+</xsl:stylesheet>
