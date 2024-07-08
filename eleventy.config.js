@@ -37,18 +37,12 @@ export default async function (eleventyConfig) {
 				mode: 'development',
 				middlewareMode: true,
 			},
-      shared: {
-        assetsInclude: '*.xsl'
-      },
 			appType: 'custom',
 			build: {
 				mode: 'production',
 				// manifest: true,
 				// This puts CSS and JS in subfolders – remove if you want all of it to be in /assets instead
 				rollupOptions: {
-          input: {
-            app: ['**/*.html', '**/*.xsl'], // default
-          },
           output: {
             experimentalMinChunkSize: 0,
             assetFileNames: 'assets/[name].[ext]',
