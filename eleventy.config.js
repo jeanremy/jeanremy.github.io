@@ -49,7 +49,6 @@ export default async function (eleventyConfig) {
 
   // ---------- PASSTHROUGH --------------------
   eleventyConfig.addPassthroughCopy('src/assets')
-  eleventyConfig.addPassthroughCopy('src/public/!(*.njk)')
   eleventyConfig.addPassthroughCopy('src/public/!(**/*.njk)')
 
   // ---------- FILTERS --------------------
