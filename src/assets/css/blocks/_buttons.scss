@@ -1,11 +1,6 @@
+@use '../utilities/mixins' as mixins;
+
 .button {
-  padding-block-end: 4px;
   font-weight: 700;
-  &:before {
-    content: "\2794";
-    margin-inline-end: var(--space-xs);
-    color: var(--accent);
-    display: inline-block;
-    font-weight: normal;
-  }
+  @include mixins.underlined-link;
 }

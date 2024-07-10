@@ -1,3 +1,5 @@
+@use '../utilities/mixins' as mixins;
+
 .page-header {
   padding-block: var(--space-s);
 
@@ -26,19 +28,17 @@
     }
 
     a {
-      padding-block: var(--space-2xs);
+      padding-block-start: var(--space-2xs);
       transition: all 0.3s ease;
       position: relative;
       font-weight: 600;
 
-      &[aria-current]:after {
-        content: "";
-        background-color: var(--accent-05);
-        left: 0;
-        right: 0;
-        bottom: 0;
-        height: 4px;
-        position: absolute;
+      &[aria-current] {
+        @include mixins.underlined-link;
+
+        &:before {
+          bottom: 0;
+        }
       }
     }
   }

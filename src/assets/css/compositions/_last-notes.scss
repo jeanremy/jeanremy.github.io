@@ -11,10 +11,10 @@
   }
 
   &__list {
-    --auto-grid-min-size: 21rem;
+    --auto-grid-min-size: 300px;
     display: grid;
     grid-template-columns: repeat(
-      auto-fill,
+      auto-fit,
       minmax(var(--auto-grid-min-size), 1fr)
     );
     gap: var(--space-m);

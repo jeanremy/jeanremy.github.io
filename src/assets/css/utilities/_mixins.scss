@@ -1,0 +1,23 @@
+@mixin underlined-link {
+  position: relative;
+
+  &:before {
+    content: "";
+    background-color: var(--accent-05);
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    right: 0;
+    height: .5em;
+    z-index: -1;
+    transform-origin: bottom center;
+    transition: transform .3s ease;
+  }
+
+  &:hover,
+  &:focus {
+    &:before {
+      transform: scaleY(1.3);
+    }
+  }
+}
