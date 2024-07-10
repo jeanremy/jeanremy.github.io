@@ -1,3 +1,5 @@
+@use 'utilities/utilities';
+
 @use 'global/reset';
 @use 'global/fonts';
 @use 'global/variables';
@@ -5,13 +7,11 @@
 @use 'global/page';
 @use 'global/code';
 
-@use 'utilities/utilities';
-
 @use 'blocks/md';
 @use 'blocks/article';
 @use 'blocks/blogroll';
-@use 'blocks/info';
 @use 'blocks/buttons';
+@use 'blocks/info';
 @use 'blocks/breadcrumb';
 @use 'blocks/hero';
 @use 'blocks/header';

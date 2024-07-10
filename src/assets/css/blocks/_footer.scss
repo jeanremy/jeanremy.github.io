@@ -17,9 +17,10 @@
   &__menu {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 
-    li + li {
-      margin-inline-start: var(--space-xs);
+    li {
+      margin-inline-end: var(--space-xs);
     }
   }
 
