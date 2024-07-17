@@ -2,18 +2,31 @@
   padding-block: var(--space-3xl);
 
   & > div {
-    margin-block-start: -80px;
+    margin-block-start: -48px;
     display: flex;
     flex-direction: column;
     @media screen and (min-width: 600px) {
       margin-inline-start: 120px;
+      margin-block-start: -128px;
     }
   }
 
   .button {
     margin-inline-start: auto;
   }
+
+  &__title {
+      font-size: var(--step-2);
+      margin-block-end: var(--space-m);
+      
+      span {
+        font-weight: 300;
+      }
+
+  }
 }
+
+
 
 .baseline {
   font-size: var(--step-2);
