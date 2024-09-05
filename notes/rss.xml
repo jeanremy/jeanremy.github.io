@@ -5,7 +5,7 @@
   <subtitle></subtitle>
   <link href="notes/rss.xml" rel="self"/>
   <link href=""/>
-  <updated>2024-06-01T00:00:00Z</updated>
+  <updated>2024-09-05T00:00:00Z</updated>
   <id></id>
   <author>
     <name></name>
@@ -284,6 +284,36 @@ Attention cependant à préserver le zoom avec les unités fluides. &lt;a href=&
 &lt;li&gt;&lt;a href=&quot;https://fluidtypography.com/#app-get-started&quot;&gt;https://fluidtypography.com/#app-get-started&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/&quot;&gt;https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://blog.logrocket.com/fluid-vs-responsive-typography-css-clamp/&quot;&gt;https://blog.logrocket.com/fluid-vs-responsive-typography-css-clamp/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Automatiser les mesures d&#39;ÉcoIndex</title>
+      <link href="/notes/automatiser-mesures-ecoindex/"/>
+      <updated>2024-09-05T00:00:00Z</updated>
+      <id>/notes/automatiser-mesures-ecoindex/</id>
+      <content xml:lang="" type="html">&lt;p&gt;&lt;a href=&quot;https://www.ecoindex.fr/&quot;&gt;EcoIndex&lt;/a&gt; permet d&#39;obtenir un instantané de l&#39;empreinte environnementale d&#39;un site ou service en ligne.
+Il est possible de réaliser ces mesures de deux façons: via une extension navigateur ou via le site ecoindex.
+Cette dernière solution ne permet que 10 analyses par domaine par jour, et ne peut analyser de site en local.&lt;/p&gt;
+&lt;p&gt;Une troisième possibilité existe: installer directement le moteur de calcul sur sa machine.&lt;/p&gt;
+&lt;p&gt;Une grande partie de ce guide provient du &lt;a href=&quot;https://github.com/cnumr/ecoindex_python_fullstack/blob/main/projects/ecoindex_cli/README.md&quot;&gt;readme&lt;/a&gt; disponible sur github.&lt;/p&gt;
+&lt;h2 id=&quot;installation-du-cli-eco-index&quot; tabindex=&quot;-1&quot;&gt;Installation du cli eco-index &lt;a class=&quot;title-anchor&quot; href=&quot;#installation-du-cli-eco-index&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Pré-requis: avoir Docker. De mon côté, j&#39;utilise &lt;a href=&quot;https://docs.docker.com/desktop/install/mac-install/&quot;&gt;Docker Desktop&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Ajouter ensuite un alias:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;alias&lt;/span&gt; ecoindex-cli&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;docker run -it --rm -v /tmp/ecoindex-cli:/tmp/ecoindex-cli vvatelot/ecoindex-cli:latest ecoindex-cli&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Pour tester il faut d&#39;abord lancer Docker desktop, puis lancer la commande&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;ecoindex-cli &lt;span class=&quot;token parameter variable&quot;&gt;--help&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Lors de ce premier lancement, Docker ne trouvera pas l&#39;image correspondante localement, il la téléchargera donc depuis DockerHub (du moins je crois).&lt;/p&gt;
+&lt;p&gt;On peut ensuite l&#39;utiliser pour générer des rapports avec la commande suivante:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;ecoindex-cli analyze &lt;span class=&quot;token parameter variable&quot;&gt;--url&lt;/span&gt; https://www.ecoindex.fr/&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Un rapport en csv sera généré. Parmi les informations remontées, on retrouvera&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;l&#39;url de la page&lt;/li&gt;
+&lt;li&gt;le poids de la page&lt;/li&gt;
+&lt;li&gt;le nombre d&#39;éléments du DOM&lt;/li&gt;
+&lt;li&gt;le nombre de requêtes&lt;/li&gt;
+&lt;li&gt;sa note de A à G&lt;/li&gt;
+&lt;li&gt;une estimation de la consommation en gaz à effet de serre ou en eau.&lt;/li&gt;
 &lt;/ul&gt;
 </content>
     </entry>

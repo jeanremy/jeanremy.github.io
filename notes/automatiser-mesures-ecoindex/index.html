@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     
-      <title>Ma liste de flux RSS - Jean-Rémy Praud</title>
+      <title>Automatiser les mesures d&#39;ÉcoIndex - Jean-Rémy Praud</title>
     
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="Developpeur fullstack, j’aime travailler sur des projets porteurs de sens. Je m’intéresse tout particulièrement à l’éco-conception et à l’accessibilité.">
@@ -76,7 +76,7 @@
       
     
       
-        Ma liste de flux RSS
+        Automatiser les mesures d&#39;ÉcoIndex
       
     
   </nav>
@@ -85,7 +85,7 @@
       
 
       <h1 class="article__title">
-        Ma liste de flux RSS
+        Automatiser les mesures d&#39;ÉcoIndex
       </h1>
     </div>
   </header>
@@ -94,11 +94,33 @@
       
         <p class="article__date">
         Posté le
-        <time datetime="2023-07-04">04/07/2023</time>
+        <time datetime="2024-09-05">05/09/2024</time>
         </p>
       
       <div class="md blog_content">
-        <p class="info">Edit: Cette note n'est plus d'actualité. Ma liste de liens se trouve dans ma <a href="/blogroll">blogroll</a></p>
+        <p><a href="https://www.ecoindex.fr/">EcoIndex</a> permet d'obtenir un instantané de l'empreinte environnementale d'un site ou service en ligne.
+Il est possible de réaliser ces mesures de deux façons: via une extension navigateur ou via le site ecoindex.
+Cette dernière solution ne permet que 10 analyses par domaine par jour, et ne peut analyser de site en local.</p>
+<p>Une troisième possibilité existe: installer directement le moteur de calcul sur sa machine.</p>
+<p>Une grande partie de ce guide provient du <a href="https://github.com/cnumr/ecoindex_python_fullstack/blob/main/projects/ecoindex_cli/README.md">readme</a> disponible sur github.</p>
+<h2 id="installation-du-cli-eco-index" tabindex="-1">Installation du cli eco-index <a class="title-anchor" href="#installation-du-cli-eco-index" aria-hidden="true">#</a></h2>
+<p>Pré-requis: avoir Docker. De mon côté, j'utilise <a href="https://docs.docker.com/desktop/install/mac-install/">Docker Desktop</a>.</p>
+<p>Ajouter ensuite un alias:</p>
+<pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">alias</span> ecoindex-cli<span class="token operator">=</span><span class="token string">"docker run -it --rm -v /tmp/ecoindex-cli:/tmp/ecoindex-cli vvatelot/ecoindex-cli:latest ecoindex-cli"</span></code></pre>
+<p>Pour tester il faut d'abord lancer Docker desktop, puis lancer la commande</p>
+<pre class="language-bash"><code class="language-bash">ecoindex-cli <span class="token parameter variable">--help</span></code></pre>
+<p>Lors de ce premier lancement, Docker ne trouvera pas l'image correspondante localement, il la téléchargera donc depuis DockerHub (du moins je crois).</p>
+<p>On peut ensuite l'utiliser pour générer des rapports avec la commande suivante:</p>
+<pre class="language-bash"><code class="language-bash">ecoindex-cli analyze <span class="token parameter variable">--url</span> https://www.ecoindex.fr/</code></pre>
+<p>Un rapport en csv sera généré. Parmi les informations remontées, on retrouvera</p>
+<ul>
+<li>l'url de la page</li>
+<li>le poids de la page</li>
+<li>le nombre d'éléments du DOM</li>
+<li>le nombre de requêtes</li>
+<li>sa note de A à G</li>
+<li>une estimation de la consommation en gaz à effet de serre ou en eau.</li>
+</ul>
 
       </div>
     </div>
