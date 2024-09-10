@@ -27,11 +27,9 @@ export default async function (eleventyConfig) {
 			module: "@11ty/eleventy-dev-server",
 			domDiff: false,
 		},
-    
 
 		// Defaults
 		viteOptions: {
-      publicDir: 'public',
 			clearScreen: false,
 			server: {
 				mode: 'development',
@@ -40,8 +38,6 @@ export default async function (eleventyConfig) {
 			appType: 'custom',
 			build: {
 				mode: 'production',
-				// manifest: true,
-				// This puts CSS and JS in subfolders – remove if you want all of it to be in /assets instead
 				rollupOptions: {
           output: {
             experimentalMinChunkSize: 0,
