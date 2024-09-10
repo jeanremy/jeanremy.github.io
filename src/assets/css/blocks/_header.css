@@ -1,5 +1,3 @@
-@use '../utilities/mixins' as mixins;
-
 .page-header {
   padding-block: var(--space-s);
 
@@ -33,12 +31,12 @@
       position: relative;
       font-weight: 600;
 
-      &[aria-current] {
-        @include mixins.underlined-link;
-
-        &:before {
-          bottom: 0;
-        }
+    }
+    a[aria-current] {
+      @extend %underlined-link;
+  
+      &:before {
+        bottom: 0;
       }
     }
   }

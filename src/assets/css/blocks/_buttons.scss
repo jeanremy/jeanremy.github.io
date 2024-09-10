@@ -1,6 +1,0 @@
-@use '../utilities/mixins' as mixins;
-
-.button {
-  font-weight: 700;
-  @include mixins.underlined-link;
-}

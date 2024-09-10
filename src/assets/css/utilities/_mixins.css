@@ -1,4 +1,4 @@
-@mixin underlined-link {
+%underlined-link {
   position: relative;
 
   &:before {
