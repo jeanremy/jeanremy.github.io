@@ -4,12 +4,12 @@ import EleventyPluginRss from '@11ty/eleventy-plugin-rss';
 import faviconPlugin from 'eleventy-favicon'
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
 import EleventyVitePlugin from "@11ty/eleventy-plugin-vite";
-import { resolve } from 'path';
 
 import { cssmin, format, console } from './src/_11ty/filters/index.js'
 import { feedPosts, posts } from './src/_11ty/collections/index.js'
 import { markdownit } from './src/_11ty/libraries/index.js'
-import { rss } from './src/_11ty/plugins/index.js'
+import { rss, image, vite } from './src/_11ty/plugins/index.js'
+import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 
 export default async function (eleventyConfig) {
   // ---------- PLUGINS --------------------
@@ -19,34 +19,9 @@ export default async function (eleventyConfig) {
   })
   eleventyConfig.addPlugin(syntaxHighlight)
   eleventyConfig.addPlugin(EleventyPluginRss)
-  eleventyConfig.addPlugin(EleventyVitePlugin, {
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin, image);
 
-		// Options passed to the Eleventy Dev Server
-		// Defaults
-		serverOptions: {
-			module: "@11ty/eleventy-dev-server",
-			domDiff: false,
-		},
-
-		// Defaults
-		viteOptions: {
-			clearScreen: false,
-			server: {
-				mode: 'development',
-				middlewareMode: true,
-			},
-			appType: 'custom',
-			build: {
-				mode: 'production',
-				rollupOptions: {
-          output: {
-            experimentalMinChunkSize: 0,
-            assetFileNames: 'assets/[name].[ext]',
-          },
-        },
-			}
-		},
-	});
+  eleventyConfig.addPlugin(EleventyVitePlugin, vite);
 
   // ---------- PASSTHROUGH --------------------
   eleventyConfig.addPassthroughCopy('src/assets')
