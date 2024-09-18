@@ -1,5 +1,4 @@
 export default {
-
   // Options passed to the Eleventy Dev Server
   // Defaults
   serverOptions: {

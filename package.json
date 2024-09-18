@@ -8,8 +8,8 @@
     "not IE 11"
   ],
   "scripts": {
-    "start": "npx @11ty/eleventy --serve --incremental",
-    "build": "ELEVENTY_ENV=production npx @11ty/eleventy",
+    "start": "npx @11ty/eleventy --watch --incremental",
+    "build": "rm -rf ./_site/ && ELEVENTY_ENV=production npx @11ty/eleventy",
     "optimize:fonts": "cd src/assets/fonts && glyphhanger --spider-limit=0 --subset=AlbertSans-VariableFont_wght.ttf --formats=woff2"
   },
   "devDependencies": {

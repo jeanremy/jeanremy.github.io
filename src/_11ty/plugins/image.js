@@ -5,11 +5,11 @@ export default {
 		// Add any other Image utility options here:
 
 		// optional, output image formats
-		formats: ["webp", "jpeg"],
+		formats: ["webp"],
 
 		// optional, output image widths
     widths: [320, 640],
-    //     outputDir: 'public/img/',
+		outputDir: 'assets/img/',
 
 		// optional, attributes assigned on <img> override these values.
 		defaultAttributes: {
