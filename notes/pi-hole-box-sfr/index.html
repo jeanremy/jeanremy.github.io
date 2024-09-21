@@ -15,6 +15,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     
 
+    <link rel="stylesheet" href="/assets/css/base.css">
     
     <script type="application/ld+json">
 	{
@@ -32,7 +33,6 @@
 	}
 </script>
 
-    <link rel="stylesheet" crossorigin href="/assets/base.css">
   </head>
   <body class="page">
     <a href="#main" class="sr-only sr-only-focusable">Accéder au contenu</a>
@@ -114,9 +114,9 @@
 <p>Pour que Pi-Hole puisse fonctionner, il faut attribuer au Raspberry Pi un IP locale statique dans l'interface d'administration de la box, accessible à l'adresse <a href="http://192.168.1.1/">http://192.168.1.1/</a>.
 Le mot de passe par défaut varie en fonction des modèles. Une liste complète est disponible <a href="https://actuneuf.com/tutoriel/interface-box-sfr">ici</a>.</p>
 <p>Pour ajouter une IP statique, il faut se rendre dans la partie LAN, puis l'onglet Baux statiques. Cliquer sur Ajouter un bail statique.</p>
-<p><img loading="lazy" decoding="async" src="/assets/wZmwSd_EYx-320.webp" alt="Les baux statiques sur la box SFR" width="640" height="290" srcset="/assets/wZmwSd_EYx-320.webp 320w, /assets/wZmwSd_EYx-640.webp 640w" sizes="(max-width: 640px) 320px, 640px"></p>
+<p><img loading="lazy" decoding="async" src="/notes/pi-hole-box-sfr/wZmwSd_EYx-320.webp" alt="Les baux statiques sur la box SFR" width="640" height="290" srcset="/notes/pi-hole-box-sfr/wZmwSd_EYx-320.webp 320w, /notes/pi-hole-box-sfr/wZmwSd_EYx-640.webp 640w" sizes="(max-width: 640px) 320px, 640px"></p>
 <p>Ensuite, il suffit de sélectionner l'équipement et lui attribuer une IP quelconque (192.169.1.30 dans mon cas).</p>
-<p><img loading="lazy" decoding="async" src="/assets/33vR1jXdx8-320.webp" alt="Ajouter un bail statique sur la box SFR" width="640" height="420" srcset="/assets/33vR1jXdx8-320.webp 320w, /assets/33vR1jXdx8-640.webp 640w" sizes="(max-width: 640px) 320px, 640px"></p>
+<p><img loading="lazy" decoding="async" src="/notes/pi-hole-box-sfr/33vR1jXdx8-320.webp" alt="Ajouter un bail statique sur la box SFR" width="640" height="420" srcset="/notes/pi-hole-box-sfr/33vR1jXdx8-320.webp 320w, /notes/pi-hole-box-sfr/33vR1jXdx8-640.webp 640w" sizes="(max-width: 640px) 320px, 640px"></p>
 <h2 id="installer-pi-hole" tabindex="-1">Installer Pi-Hole <a class="title-anchor" href="#installer-pi-hole" aria-hidden="true">#</a></h2>
 <p>Le Raspberry Pi est maintenant prêt à être configuré. Pour se connecter en SSH, il suffit de lancer la commande suivante</p>
 <pre class="language-bash"><code class="language-bash"><span class="token operator">></span> <span class="token function">ssh</span> pi@192.168.1.30</code></pre>
@@ -126,11 +126,11 @@ Le mot de passe par défaut varie en fonction des modèles. Une liste complète 
 <p>La configuration propose plusieurs choix de fournisseurs de DNS. Il faut donc bien lire <a href="https://docs.pi-hole.net/guides/dns/upstream-dns-providers/">la documentation</a> avant de choisir. De mon côté, j’ai choisi OpenDNS pour son filtre anti-phising et le filtre familial.</p>
 <h2 id="configuration-finale" tabindex="-1">Configuration finale <a class="title-anchor" href="#configuration-finale" aria-hidden="true">#</a></h2>
 <p>Pi-Hole fonctionne, il faut maintenant le définir comme DNS primaire. Pour cela, dans la partie LAN de l'interface de la box, on peut entrer l'IP du Raspberry comme DNS primaire</p>
-<p><img loading="lazy" decoding="async" src="/assets/M-SwI3iRUs-320.webp" alt="Changer les DNS primaires" width="640" height="434" srcset="/assets/M-SwI3iRUs-320.webp 320w, /assets/M-SwI3iRUs-640.webp 640w" sizes="(max-width: 640px) 320px, 640px"></p>
+<p><img loading="lazy" decoding="async" src="/notes/pi-hole-box-sfr/M-SwI3iRUs-320.webp" alt="Changer les DNS primaires" width="640" height="434" srcset="/notes/pi-hole-box-sfr/M-SwI3iRUs-320.webp 320w, /notes/pi-hole-box-sfr/M-SwI3iRUs-640.webp 640w" sizes="(max-width: 640px) 320px, 640px"></p>
 <p>Rdémarrer la box, puis l’interface de Pi-Hole est accessible à http://192.168.1.30/admin/index.php.</p>
 <h2 id="bonus" tabindex="-1">Bonus <a class="title-anchor" href="#bonus" aria-hidden="true">#</a></h2>
 <p>Il est également possible d’ajouter une URL locale qui permettra d’accéder à l’interface d’admin de Pi-Hole via l’url pi.hole/admin/. Tous les utilisateurs du réseau local y auront accès.</p>
-<p><img loading="lazy" decoding="async" src="/assets/JIw3py3cXk-320.webp" alt="Ajouter une DNS locale" width="640" height="264" srcset="/assets/JIw3py3cXk-320.webp 320w, /assets/JIw3py3cXk-640.webp 640w" sizes="(max-width: 640px) 320px, 640px"></p>
+<p><img loading="lazy" decoding="async" src="/notes/pi-hole-box-sfr/JIw3py3cXk-320.webp" alt="Ajouter une DNS locale" width="640" height="264" srcset="/notes/pi-hole-box-sfr/JIw3py3cXk-320.webp 320w, /notes/pi-hole-box-sfr/JIw3py3cXk-640.webp 640w" sizes="(max-width: 640px) 320px, 640px"></p>
 
       </div>
     </div>
@@ -157,7 +157,7 @@ Le mot de passe par défaut varie en fonction des modèles. Une liste complète 
         </li>
       </ul>
       <div>
-        <p>Dernière mise à jour le 18/09/2024</p>
+        <p>Dernière mise à jour le 21/09/2024</p>
         <ul class="page-footer__social">
           <li>
             <a rel="me" href="https://github.com/jeanremy" title="Lien vers le profil GitHub">
