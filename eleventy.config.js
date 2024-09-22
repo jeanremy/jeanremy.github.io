@@ -19,7 +19,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(EleventyPluginRss);
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, image);
-  eleventyConfig.addPlugin(EleventyPluginOgImage, ogimage);
+  eleventyConfig.addPlugin(EleventyPluginOgImage, await ogimage());
   eleventyConfig.addPlugin(css);
   eleventyConfig.addPlugin(js);
 
@@ -50,7 +50,6 @@ export default async function (eleventyConfig) {
       includes: "_includes",
       layouts: "_layouts",
     },
-
     passthroughFileCopy: true,
   };
 }

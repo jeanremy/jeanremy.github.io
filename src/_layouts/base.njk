@@ -13,7 +13,7 @@
 
     {% favicon './src/assets/img/favicon.svg' %}
 
-    {% ogImage "./_includes/partials/og-image.njk" %}
+    {% ogImage "./_includes/partials/og-image.njk", { title: title, date: date } %}
 
     <link rel="stylesheet" href="/assets/css/base.css">
     

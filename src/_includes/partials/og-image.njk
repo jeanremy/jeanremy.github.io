@@ -1,6 +1,7 @@
 <style>
   div {
     display: flex;
+    font-size: 24px;
   }
   .root {
     background-color: #edfaf3;
@@ -9,11 +10,15 @@
     flex-direction: column;
   }
   .container {
-    padding: 20px 40px;
+    padding: 40px;
   }
 
   .title {
     flex-grow: 1;
+    color: #181c20;
+    font-size: 80px;
+    margin: auto 0;
+    font-family: 'AlbertSans';
   }
   
   .metas {
@@ -22,26 +27,26 @@
     flex-direction: row;
     align-items: flex-end;
     justify-content: space-between;
+    padding: 20px 40px;
   }
 
+  .page__title {
+    margin-left: auto;
+  }
 
-  .title {
-      color: white;
-      font-size: 80px;
-      margin: auto 0;
+  .page__title span {
+    color: #6cd19c;
   }
 </style>
 
 <div class="root">
   <div class="container">
-    <h1 class="title">{{title | console}}</h1>
+    <h1 class="title">{{ title }}</h1>
   </div>
-  {{ page.title | console}}
   <div class="container metas">
     {% if date %}
       <p class="article__date">
-      Posté le
-      <time datetime="{{ date | format("YYYY-MM-DD") }}">{{ date | format('DD/MM/YYYY') }}</time>
+      {{ date | format('DD/MM/YYYY') }}
       </p>
     {% endif %}
     <p class="page__title">
