@@ -39,14 +39,16 @@
   }
 </style>
 
+
+
 <div class="root">
   <div class="container">
-    <h1 class="title">{{ title }}</h1>
+    <h1 class="title">{{ title | safe }}</h1>
   </div>
   <div class="container metas">
-    {% if date %}
+    {% if page.date %}
       <p class="article__date">
-      {{ date | format('DD/MM/YYYY') }}
+      {{ page.date | format('DD/MM/YYYY') }}
       </p>
     {% endif %}
     <p class="page__title">
