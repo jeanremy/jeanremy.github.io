@@ -13,12 +13,15 @@
 
     {% favicon './src/assets/img/favicon.svg' %}
 
+    {% ogImage "./_includes/partials/og-image.njk", { title: title } %}
+
     <link rel="stylesheet" href="/assets/css/base.css">
     
     {% include "schemas/website.njk" %}
 
   </head>
   <body class="page">
+    
     <a href="#main" class="sr-only sr-only-focusable">Accéder au contenu</a>
 
     {% include "partials/header.njk" %}

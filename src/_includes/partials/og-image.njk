@@ -1,0 +1,58 @@
+<style>
+  div {
+    display: flex;
+    font-size: 24px;
+  }
+  .root {
+    background-color: #edfaf3;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+  }
+  .container {
+    padding: 40px;
+  }
+
+  .title {
+    flex-grow: 1;
+    color: #181c20;
+    font-size: 80px;
+    margin: auto 0;
+    font-family: 'AlbertSans';
+  }
+  
+  .metas {
+    background: #fff;
+    margin-top: auto;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 20px 40px;
+  }
+
+  .page__title {
+    margin-left: auto;
+  }
+
+  .page__title span {
+    color: #6cd19c;
+  }
+</style>
+
+
+
+<div class="root">
+  <div class="container">
+    <h1 class="title">{{ title | safe }}</h1>
+  </div>
+  <div class="container metas">
+    {% if page.date %}
+      <p class="article__date">
+      {{ page.date | format('DD/MM/YYYY') }}
+      </p>
+    {% endif %}
+    <p class="page__title">
+      jr<span>.</span>
+    </p>
+  </div>
+</div>
