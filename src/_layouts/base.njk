@@ -13,6 +13,11 @@
 
     {% favicon './src/assets/img/favicon.svg' %}
 
+    <meta property="og:title" content="{{title or siteName}}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{meta.siteURL + page.url}}">
+    <meta property="og:site_name" content="{{ meta.siteName }}">
+    <meta property="og:description" content="{{ description or meta.siteDescription }}">
     {% ogImage "./_includes/partials/og-image.njk", { title: title } %}
 
     <link rel="stylesheet" href="/assets/css/base.css">
