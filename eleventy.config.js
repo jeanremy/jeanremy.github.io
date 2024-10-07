@@ -1,10 +1,8 @@
 import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
-import EleventyPluginRss from "@11ty/eleventy-plugin-rss";
 import faviconPlugin from "eleventy-favicon";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import EleventyPluginOgImage from 'eleventy-plugin-og-image';
-
 
 import { cssmin, format, console } from "./src/_11ty/filters/index.js";
 import { feedPosts, posts } from "./src/_11ty/collections/index.js";
@@ -17,7 +15,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addPlugin(faviconPlugin);
   eleventyConfig.addPlugin(syntaxHighlight);
-  eleventyConfig.addPlugin(EleventyPluginRss);
+  eleventyConfig.addPlugin(feedPlugin, rss);
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, image);
   eleventyConfig.addPlugin(EleventyPluginOgImage, await ogimage());
   eleventyConfig.addPlugin(css);
@@ -29,7 +27,6 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('CNAME')
   eleventyConfig.addPassthroughCopy('robots.txt')
   eleventyConfig.addPassthroughCopy('*.opml')
-
 
   // ---------- FILTERS --------------------
   eleventyConfig.addFilter("cssmin", cssmin);
