@@ -46,9 +46,9 @@
     <h1 class="title">{{ title | safe }}</h1>
   </div>
   <div class="container metas">
-    {% if page.date %}
+    {% if page.created_at %}
       <p class="article__date">
-      {{ page.date | format('DD/MM/YYYY') }}
+      {{ page.created_at | format('DD/MM/YYYY') }}
       </p>
     {% endif %}
     <p class="page__title">

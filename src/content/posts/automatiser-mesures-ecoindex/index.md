@@ -1,7 +1,7 @@
 ---
 title: Automatiser les mesures d'ÉcoIndex
 description: Comment utiliser le cli pour s'affranchir des limites des outils en ligne
-date: 2024-09-05
+created_at: 2024-09-05
 templateEngineOverride: md
 ---
 

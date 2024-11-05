@@ -1,7 +1,7 @@
 ---
 title: Optimiser ses fontes avec Glyphhanger
 description: Comment réduire la taille d'une fonte en ne gardant que les glyphes utiles grâce à Glyphhanger
-date: 2023-04-01
+created_at: 2023-04-01
 templateEngineOverride: md
 ---
 
