@@ -20,7 +20,7 @@
     <meta property="og:url" content="https://jeanremypraud.com/notes/mise-a-jour-11ty-v3/">
     <meta property="og:site_name" content="Jean-Rémy Praud">
     <meta property="og:description" content="Stabilité et simplicité">
-    <meta property="og:image" content="/assets/og-images/1c0d8370.png">
+    <meta property="og:image" content="/assets/og-images/23db1c1c.png">
 
     <link rel="stylesheet" href="/assets/css/base.css">
     
@@ -102,8 +102,9 @@
       
         <p class="article__date">
         Posté le
-        <time datetime="2024-02-19">19/02/2024</time>
+          <time datetime="2024-02-19">19/02/2024</time>
         </p>
+      
       
       <div class="md blog_content">
         <p>Le générateur de site statique 11ty vient de sortir en version 3 alpha. Le changement principal est sa compatibilité avec ESM. Bien que touchant aux fondements d’11ty, la mise à jour est assez simple:</p>
@@ -112,9 +113,9 @@
 <li>Utiliser les imports en lieu et places des require.
 Pour cela, il suffit de passer de cette façon d'écrire</li>
 </ul>
-<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> posts <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./posts'</span><span class="token punctuation">)</span><br>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span> posts <span class="token punctuation">}</span></code></pre>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> posts <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"./posts"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span> posts <span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 <p>à celle-ci:</p>
-<pre class="language-js"><code class="language-js"><span class="token keyword">import</span> posts <span class="token keyword">from</span> <span class="token string">'./posts.js'</span><br><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span> posts <span class="token punctuation">}</span></code></pre>
+<pre class="language-js"><code class="language-js"><span class="token keyword">import</span> posts <span class="token keyword">from</span> <span class="token string">"./posts.js"</span><span class="token punctuation">;</span><br><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span> posts <span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 <p>Le guide propose également <a href="https://www.11ty.dev/blog/canary-eleventy-v3/">une mise à jour progressive</a>.</p>
 <blockquote lang="en">
 <p>You can add <code>&quot;type&quot;: &quot;module&quot;</code> to your <code>package.json</code> and rename your Node <code>.js</code> files to <code>.cjs</code> and be done with it. Later on, you can slowly upgrade to ESM syntax one JavaScript file at a time by renaming back from <code>.cjs</code> to <code>.js</code>.</p>
@@ -122,6 +123,9 @@ Pour cela, il suffit de passer de cette façon d'écrire</li>
 <p>La mise à jour de ce site m'a pris quelques minutes. C'est ce qui fait (entre autres) la force d'11ty: sa simplicité et sa stabilité.</p>
 
       </div>
+
+      
+
     </div>
   </section>
 </article>
@@ -146,7 +150,7 @@ Pour cela, il suffit de passer de cette façon d'écrire</li>
         </li>
       </ul>
       <div>
-        <p>Dernière mise à jour le 07/10/2024</p>
+        <p>Dernière mise à jour le 05/11/2024</p>
         <ul class="page-footer__social">
           <li>
             <a rel="me" href="https://github.com/jeanremy" title="Lien vers le profil GitHub">

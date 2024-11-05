@@ -20,7 +20,7 @@
     <meta property="og:url" content="https://jeanremypraud.com/notes/pi-hole-box-sfr/">
     <meta property="og:site_name" content="Jean-Rémy Praud">
     <meta property="og:description" content="Une introduction à l’installation d’un bloqueur de pub centralisé, disponible pour tous les clients d’un réseau">
-    <meta property="og:image" content="/assets/og-images/27483a09.png">
+    <meta property="og:image" content="/assets/og-images/3ef078d6.png">
 
     <link rel="stylesheet" href="/assets/css/base.css">
     
@@ -102,8 +102,9 @@
       
         <p class="article__date">
         Posté le
-        <time datetime="2022-11-13">13/11/2022</time>
+          <time datetime="2022-11-13">13/11/2022</time>
         </p>
+      
       
       <div class="md blog_content">
         <p>En quelques minutes, il est possible d'installer chez soi un bloqueur de pubs avec <a href="https://pi-hole.net/">Pi-Hole</a>.</p>
@@ -116,31 +117,43 @@
 <h2 id="fonctionnement" tabindex="-1">Fonctionnement <a class="title-anchor" href="#fonctionnement" aria-hidden="true">#</a></h2>
 <p>Sur le réseau local, Pi-Hole agit comme serveur DNS disposant d'une liste de domaines indésirables. Lorsqu'une requête pointe vers un de ces domaines, le serveur répond par une page vierge. Contrairement aux bloqueurs de pub qui s'installent dans les navigateurs de chaque périphérique, Pi-Hole s'éxécute sur le réseau, et bénéficie donc à tous les périphériques connectés.</p>
 <h2 id="installer-raspberry-pi-os" tabindex="-1">Installer Raspberry Pi OS <a class="title-anchor" href="#installer-raspberry-pi-os" aria-hidden="true">#</a></h2>
-<p>Si ce n'est déjà fait, il faut installer un OS sur la carte SD afin que le Raspberry Pi puisse fonctionner. La dernière version de l'OS est accessible sur <a href="https://raspberry-pi.fr/telechargements/">le site officiel</a>.
-À l'aide d'un logiciel tel que <a href="https://www.balena.io/etcher/">Balena Etcher</a>, copier l'OS vers la carte SD. Une fois la copie terminée, ouvrir la carte SD, puis ajouter à la racine un fichier nommé ssh (sans extension). La seule présence de ce fichier suffira à activer par défaut la connexion par SSH.</p>
+<p>Si ce n'est déjà fait, il faut installer un OS sur la carte SD afin que le Raspberry Pi puisse fonctionner. e processus s'est grandement amélioré avec le sortie de <a href="https://www.raspberrypi.com/software/#:~:text=Raspberry%20Pi%20Imager">Raspberry Pi Imager</a>. Il suffit de télécharger le logiciel, puis de se laisser guider.
+Il suffit de choisir l'OS et de sélectionner quelques options, comme l'activation de SSH, l'activation du wifi, etc.</p>
 <h2 id="configuration-reseau" tabindex="-1">Configuration réseau <a class="title-anchor" href="#configuration-reseau" aria-hidden="true">#</a></h2>
 <p>Pour que Pi-Hole puisse fonctionner, il faut attribuer au Raspberry Pi un IP locale statique dans l'interface d'administration de la box, accessible à l'adresse <a href="http://192.168.1.1/">http://192.168.1.1/</a>.
 Le mot de passe par défaut varie en fonction des modèles. Une liste complète est disponible <a href="https://actuneuf.com/tutoriel/interface-box-sfr">ici</a>.</p>
 <p>Pour ajouter une IP statique, il faut se rendre dans la partie LAN, puis l'onglet Baux statiques. Cliquer sur Ajouter un bail statique.</p>
 <p><img loading="lazy" decoding="async" src="/notes/pi-hole-box-sfr/wZmwSd_EYx-320.webp" alt="Les baux statiques sur la box SFR" width="640" height="290" srcset="/notes/pi-hole-box-sfr/wZmwSd_EYx-320.webp 320w, /notes/pi-hole-box-sfr/wZmwSd_EYx-640.webp 640w" sizes="(max-width: 640px) 320px, 640px"></p>
-<p>Ensuite, il suffit de sélectionner l'équipement et lui attribuer une IP quelconque (192.169.1.30 dans mon cas).</p>
+<p>Ensuite, il suffit de sélectionner l'équipement et lui attribuer une IP quelconque (192.168.1.30 dans mon cas).</p>
 <p><img loading="lazy" decoding="async" src="/notes/pi-hole-box-sfr/33vR1jXdx8-320.webp" alt="Ajouter un bail statique sur la box SFR" width="640" height="420" srcset="/notes/pi-hole-box-sfr/33vR1jXdx8-320.webp 320w, /notes/pi-hole-box-sfr/33vR1jXdx8-640.webp 640w" sizes="(max-width: 640px) 320px, 640px"></p>
 <h2 id="installer-pi-hole" tabindex="-1">Installer Pi-Hole <a class="title-anchor" href="#installer-pi-hole" aria-hidden="true">#</a></h2>
 <p>Le Raspberry Pi est maintenant prêt à être configuré. Pour se connecter en SSH, il suffit de lancer la commande suivante</p>
 <pre class="language-bash"><code class="language-bash"><span class="token operator">></span> <span class="token function">ssh</span> pi@192.168.1.30</code></pre>
-<p><code>pi</code> est l'utilisateur par défaut et <code>192.168.1.30</code> l'IP précédemment attribuée. Dans ce cas, le mot de passe par défaut est <code>raspberry</code>.</p>
+<p><code>pi</code> est l'utilisateur par défaut et <code>192.168.1.30</code> l'IP précédemment attribuée. Dans ce cas, le mot de passe par défaut est <code>raspberry</code>, mais il peut être défini lors du processus d'installation de l'OS (voir plus haut).</p>
 <p>On peut ensuite lancer la commande d’installation de Pi-Hole:</p>
 <pre class="language-bash"><code class="language-bash"><span class="token operator">></span> <span class="token function">curl</span> <span class="token parameter variable">-sSL</span> https://install.pi-hole.net <span class="token operator">|</span> <span class="token function">bash</span></code></pre>
 <p>La configuration propose plusieurs choix de fournisseurs de DNS. Il faut donc bien lire <a href="https://docs.pi-hole.net/guides/dns/upstream-dns-providers/">la documentation</a> avant de choisir. De mon côté, j’ai choisi OpenDNS pour son filtre anti-phising et le filtre familial.</p>
+<p>Une fois l'installation terminée, l’interface de Pi-Hole est accessible à http://192.168.1.30/admin/index.php.</p>
 <h2 id="configuration-finale" tabindex="-1">Configuration finale <a class="title-anchor" href="#configuration-finale" aria-hidden="true">#</a></h2>
-<p>Pi-Hole fonctionne, il faut maintenant le définir comme DNS primaire. Pour cela, dans la partie LAN de l'interface de la box, on peut entrer l'IP du Raspberry comme DNS primaire</p>
+<p>Pi-Hole fonctionne, il faut maintenant le définir comme DNS primaire. Pour cela, dans la partie LAN de l'interface de la box, on peut entrer l'IP du Raspberry comme DNS primaire.</p>
 <p><img loading="lazy" decoding="async" src="/notes/pi-hole-box-sfr/M-SwI3iRUs-320.webp" alt="Changer les DNS primaires" width="640" height="434" srcset="/notes/pi-hole-box-sfr/M-SwI3iRUs-320.webp 320w, /notes/pi-hole-box-sfr/M-SwI3iRUs-640.webp 640w" sizes="(max-width: 640px) 320px, 640px"></p>
-<p>Rdémarrer la box, puis l’interface de Pi-Hole est accessible à http://192.168.1.30/admin/index.php.</p>
+<p>Toutes les requêtes transiteront désormais vers le Raspberry Pi, qui pourra filtrer selon ses règles.</p>
+<h2 id="autorisation-sur-macos" tabindex="-1">Autorisation sur MacOS <a class="title-anchor" href="#autorisation-sur-macos" aria-hidden="true">#</a></h2>
+<p>Sur MacOS version 15 (Sequoia), il faut veiller à ce que le navigateur ait les droits pour accéder au réseau local, sans quoi il sera impossble d'accéder au dashboard de Pi-Hole. Pour cela, il faut autoriser l'accès en se rendant dans Réglages système / Confidentialité et sécurité / Réseau local.</p>
+<p><img loading="lazy" decoding="async" src="/notes/pi-hole-box-sfr/NqLHgm3Xdz-320.webp" alt="autoriser l'accès au réseau local sur MacOS" width="640" height="361" srcset="/notes/pi-hole-box-sfr/NqLHgm3Xdz-320.webp 320w, /notes/pi-hole-box-sfr/NqLHgm3Xdz-640.webp 640w" sizes="(max-width: 640px) 320px, 640px"></p>
 <h2 id="bonus" tabindex="-1">Bonus <a class="title-anchor" href="#bonus" aria-hidden="true">#</a></h2>
 <p>Il est également possible d’ajouter une URL locale qui permettra d’accéder à l’interface d’admin de Pi-Hole via l’url pi.hole/admin/. Tous les utilisateurs du réseau local y auront accès.</p>
 <p><img loading="lazy" decoding="async" src="/notes/pi-hole-box-sfr/JIw3py3cXk-320.webp" alt="Ajouter une DNS locale" width="640" height="264" srcset="/notes/pi-hole-box-sfr/JIw3py3cXk-320.webp 320w, /notes/pi-hole-box-sfr/JIw3py3cXk-640.webp 640w" sizes="(max-width: 640px) 320px, 640px"></p>
 
       </div>
+
+      
+      <p class="article__update">
+        Mis à jour le 
+          <time datetime="2024-11-05">05/11/2024</time>
+      </p>
+      
+
     </div>
   </section>
 </article>
@@ -165,7 +178,7 @@ Le mot de passe par défaut varie en fonction des modèles. Une liste complète 
         </li>
       </ul>
       <div>
-        <p>Dernière mise à jour le 07/10/2024</p>
+        <p>Dernière mise à jour le 05/11/2024</p>
         <ul class="page-footer__social">
           <li>
             <a rel="me" href="https://github.com/jeanremy" title="Lien vers le profil GitHub">

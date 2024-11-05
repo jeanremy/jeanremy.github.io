@@ -96,7 +96,7 @@
         </li>
       </ul>
       <div>
-        <p>Dernière mise à jour le 07/10/2024</p>
+        <p>Dernière mise à jour le 05/11/2024</p>
         <ul class="page-footer__social">
           <li>
             <a rel="me" href="https://github.com/jeanremy" title="Lien vers le profil GitHub" >
