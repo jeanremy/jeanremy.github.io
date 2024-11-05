@@ -23,6 +23,8 @@ Sur le réseau local, Pi-Hole agit comme serveur DNS disposant d'une liste de do
 Si ce n'est déjà fait, il faut installer un OS sur la carte SD afin que le Raspberry Pi puisse fonctionner. e processus s'est grandement amélioré avec le sortie de [Raspberry Pi Imager](https://www.raspberrypi.com/software/#:~:text=Raspberry%20Pi%20Imager). Il suffit de télécharger le logiciel, puis de se laisser guider.
 Il suffit de choisir l'OS et de sélectionner quelques options, comme l'activation de SSH, l'activation du wifi, etc.
 
+![](./pi-imager.png)
+
 ## Configuration réseau
 
 Pour que Pi-Hole puisse fonctionner, il faut attribuer au Raspberry Pi un IP locale statique dans l'interface d'administration de la box, accessible à l'adresse [http://192.168.1.1/](http://192.168.1.1/).
