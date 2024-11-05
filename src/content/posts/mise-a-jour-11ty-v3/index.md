@@ -1,7 +1,7 @@
 ---
 title: Mise à jour de 11ty v3
 description: Stabilité et simplicité
-date: 2024-02-19
+created_at: 2024-02-19
 templateEngineOverride: md
 ---
 
@@ -12,15 +12,15 @@ Le générateur de site statique 11ty vient de sortir en version 3 alpha. Le cha
   Pour cela, il suffit de passer de cette façon d'écrire
 
 ```js
-const posts = require('./posts')
-module.exports = { posts }
+const posts = require("./posts");
+module.exports = { posts };
 ```
 
 à celle-ci:
 
 ```js
-import posts from './posts.js'
-export default { posts }
+import posts from "./posts.js";
+export default { posts };
 ```
 
 Le guide propose également [une mise à jour progressive](https://www.11ty.dev/blog/canary-eleventy-v3/).

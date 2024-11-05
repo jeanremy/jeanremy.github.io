@@ -15,15 +15,24 @@ layout: base.njk
   </header>
   <section class="article__content">
     <div class="container">
-      {% if date %}
+      {% if created_at %}
         <p class="article__date">
         Posté le
-        <time datetime="{{ date | format("YYYY-MM-DD") }}">{{ date | format('DD/MM/YYYY') }}</time>
+          <time datetime="{{ created_at | format("YYYY-MM-DD") }}">{{ created_at | format('DD/MM/YYYY') }}</time>
         </p>
       {% endif %}
+      
       <div class="md blog_content">
         {{ content | safe }}
       </div>
+
+      {% if updated_at %}
+      <p class="article__update">
+        Mis à jour le 
+          <time datetime="{{ updated_at | format("YYYY-MM-DD") }}">{{ updated_at | format('DD/MM/YYYY') }}</time>
+      </p>
+      {% endif %}
+
     </div>
   </section>
 </article>

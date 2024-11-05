@@ -1,7 +1,7 @@
 ---
 title: Un effet de surlignage sur plusieurs lignes
 description: Une propriété CSS permet d'avoir l'effet recherché
-date: 2024-04-17
+created_at: 2024-04-17
 templateEngineOverride: md
 ---
 

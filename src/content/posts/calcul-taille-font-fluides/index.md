@@ -1,7 +1,7 @@
 ---
 title: Comprendre les unités dynamiques des fontes fluides
 description: Peut-on appréhender des nombres obscurs en étant nul en math ?
-date: 2024-06-01
+created_at: 2024-06-01
 templateEngineOverride: md
 ---
 

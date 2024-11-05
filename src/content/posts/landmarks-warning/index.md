@@ -1,7 +1,7 @@
 ---
 title: Landmarks et validation W3C
 description: Peut-on ignorer les avertissements lorsqu'un header a un role banner ?
-date: 2023-12-18
+created_at: 2023-12-18
 templateEngineOverride: md
 ---
 

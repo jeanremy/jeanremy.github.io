@@ -1,7 +1,7 @@
 ---
 title: Installer une ancienne version d'Expo Go
 description: Comment installer une ancienne version du client Expo lorsque le SDK n'est pas compatible
-date: 2022-12-27
+created_at: 2022-12-27
 templateEngineOverride: md
 ---
 
