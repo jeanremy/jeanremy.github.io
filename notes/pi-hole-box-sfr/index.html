@@ -146,6 +146,7 @@ Le mot de passe par défaut varie en fonction des modèles. Une liste complète 
 <p>Avec le temps, j'ai noté que le décodeur TV SFR ne fonctionnait pas très bien lorsque Pi-Hole était activé en tant que DNS. En particulier, les services annexes (replay, VOD, etc.) semblaient toujours bloqués. La solution est de laisser passer toutes les requêtes qui émanent de cet appareil pour ne pas entraver son fonctionnement. Pour cela, il faut tout d'abord créer un groupe, que l'on appelera Bypass (ou n'importe quoi d'autre).</p>
 <p>Ensuite, on assigne l'appareil voulu à ce groupe dans Client &gt; Add a new client. On recherche son adresse IP, et on l'assigne à ce groupe, et uniquement celui-ci.</p>
 <p>Enfin, on va éviter le filtrage pour ce groupe en se rendant dans Adlists. Sur chaque liste sélectionnée (une seule dans mon cas), on ôte le groupe Bypass.</p>
+<p>Il m'a également fallu rajouter Google dans les serveurs DNS.</p>
 <p><img loading="lazy" decoding="async" src="/notes/pi-hole-box-sfr/gyumnYV3zG-320.webp" alt="Désactive le filtrage pour un groupe" width="640" height="248" srcset="/notes/pi-hole-box-sfr/gyumnYV3zG-320.webp 320w, /notes/pi-hole-box-sfr/gyumnYV3zG-640.webp 640w" sizes="(max-width: 640px) 320px, 640px"></p>
 <h2 id="bonus" tabindex="-1">Bonus <a class="title-anchor" href="#bonus" aria-hidden="true">#</a></h2>
 <p>Il est également possible d’ajouter une URL locale qui permettra d’accéder à l’interface d’admin de Pi-Hole via l’url pi.hole/admin/. Tous les utilisateurs du réseau local y auront accès.</p>
