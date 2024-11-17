@@ -2,7 +2,7 @@
 title: Installer Pi-Hole sur un Raspberry Pi et une box SFR
 description: Une introduction à l’installation d’un bloqueur de pub centralisé, disponible pour tous les clients d’un réseau
 created_at: 2022-11-13
-updated_at: 2024-11-05
+updated_at: 2024-11-17
 templateEngineOverride: md
 ---
 
@@ -71,6 +71,18 @@ Toutes les requêtes transiteront désormais vers le Raspberry Pi, qui pourra fi
 Sur MacOS version 15 (Sequoia), il faut veiller à ce que le navigateur ait les droits pour accéder au réseau local, sans quoi il sera impossble d'accéder au dashboard de Pi-Hole. Pour cela, il faut autoriser l'accès en se rendant dans Réglages système / Confidentialité et sécurité / Réseau local.
 
 ![autoriser l'accès au réseau local sur MacOS](./local-network.png)
+
+## Desactiver pour certains appareils
+
+Avec le temps, j'ai noté que le décodeur TV SFR ne fonctionnait pas très bien lorsque Pi-Hole était activé en tant que DNS. En particulier, les services annexes (replay, VOD, etc.) semblaient toujours bloqués. La solution est de laisser passer toutes les requêtes qui émanent de cet appareil pour ne pas entraver son fonctionnement. Pour cela, il faut tout d'abord créer un groupe, que l'on appelera Bypass (ou n'importe quoi d'autre).
+
+Ensuite, on assigne l'appareil voulu à ce groupe dans Client > Add a new client. On recherche son adresse IP, et on l'assigne à ce groupe, et uniquement celui-ci.
+
+Enfin, on va éviter le filtrage pour ce groupe en se rendant dans Adlists. Sur chaque liste sélectionnée (une seule dans mon cas), on ôte le groupe Bypass.
+
+Il m'a également fallu rajouter Google dans les serveurs DNS.
+
+![Désactive le filtrage pour un groupe](./adlists.png)
 
 ## Bonus
 
