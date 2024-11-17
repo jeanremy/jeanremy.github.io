@@ -5,7 +5,7 @@
   <subtitle>Le flux RSS des dernieres notes</subtitle>
   <link href="https://www.jeanremypraud.com/notes/rss.xml" rel="self" />
   <link href="https://www.jeanremypraud.com/" />
-  <updated>2024-11-05T22:11:47Z</updated>
+  <updated>2024-11-17T20:58:15Z</updated>
   <id>https://www.jeanremypraud.com/</id>
   <author>
     <name>Jean-Rémy Praud</name>
@@ -14,7 +14,7 @@
   <entry>
     <title>Automatiser les mesures d&#39;ÉcoIndex</title>
     <link href="https://www.jeanremypraud.com/notes/automatiser-mesures-ecoindex/" />
-    <updated>2024-11-05T22:11:47Z</updated>
+    <updated>2024-11-17T20:58:15Z</updated>
     <id>https://www.jeanremypraud.com/notes/automatiser-mesures-ecoindex/</id>
     <content type="html">&lt;p&gt;&lt;a href=&quot;https://www.ecoindex.fr/&quot;&gt;EcoIndex&lt;/a&gt; permet d&#39;obtenir un instantané de l&#39;empreinte environnementale d&#39;un site ou service en ligne.
 Il est possible de réaliser ces mesures de deux façons: via une extension navigateur ou via le site ecoindex.
@@ -44,7 +44,7 @@ Cette dernière solution ne permet que 10 analyses par domaine par jour, et ne p
   <entry>
     <title>Comprendre les unités dynamiques des fontes fluides</title>
     <link href="https://www.jeanremypraud.com/notes/calcul-taille-font-fluides/" />
-    <updated>2024-11-05T22:11:47Z</updated>
+    <updated>2024-11-17T20:58:15Z</updated>
     <id>https://www.jeanremypraud.com/notes/calcul-taille-font-fluides/</id>
     <content type="html">&lt;p&gt;Depuis quelques temps, j&#39;ai pris l&#39;habitude d&#39;utiliser des tailles de texte fluides. On définit deux tailles: une pour une largeur minimale et l&#39;autre pour la largeur maximale. Dans l&#39;intervalle, le texte s&#39;agrandira en fonction de la largeur en cours, sans avoir à passer par de multiples media queries.&lt;/p&gt;
 &lt;p&gt;Pour ce faire, j&#39;utilise &lt;a href=&quot;https://utopia.fyi/&quot;&gt;Utopia&lt;/a&gt;, qui permet de générer le code CSS de chaque intervalle de taille. Cela ressemble à ça:&lt;/p&gt;
@@ -105,7 +105,7 @@ Attention cependant à préserver le zoom avec les unités fluides. &lt;a href=&
   <entry>
     <title>Un effet de surlignage sur plusieurs lignes</title>
     <link href="https://www.jeanremypraud.com/notes/surlignage-multiligne/" />
-    <updated>2024-11-05T22:11:47Z</updated>
+    <updated>2024-11-17T20:58:15Z</updated>
     <id>https://www.jeanremypraud.com/notes/surlignage-multiligne/</id>
     <content type="html">&lt;p&gt;Un récent cas d&#39;intégration m&#39;a posé question. Il s&#39;agit de faire effet de surlignage sur un texte de plusieurs lignes.&lt;/p&gt;
 &lt;p&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://www.jeanremypraud.com/notes/surlignage-multiligne/2nbI_eJpBS-320.webp&quot; alt=&quot;un aperçu d&#39;un texte avec une partie surlignée sur plusieurs lignes&quot; width=&quot;640&quot; height=&quot;313&quot; srcset=&quot;https://www.jeanremypraud.com/notes/surlignage-multiligne/2nbI_eJpBS-320.webp 320w, https://www.jeanremypraud.com/notes/surlignage-multiligne/2nbI_eJpBS-640.webp 640w&quot; sizes=&quot;(max-width: 640px) 320px, 640px&quot;&gt;&lt;/p&gt;
@@ -131,7 +131,7 @@ Attention cependant à préserver le zoom avec les unités fluides. &lt;a href=&
   <entry>
     <title>Mise à jour de 11ty v3</title>
     <link href="https://www.jeanremypraud.com/notes/mise-a-jour-11ty-v3/" />
-    <updated>2024-11-05T22:11:47Z</updated>
+    <updated>2024-11-17T20:58:15Z</updated>
     <id>https://www.jeanremypraud.com/notes/mise-a-jour-11ty-v3/</id>
     <content type="html">&lt;p&gt;Le générateur de site statique 11ty vient de sortir en version 3 alpha. Le changement principal est sa compatibilité avec ESM. Bien que touchant aux fondements d’11ty, la mise à jour est assez simple:&lt;/p&gt;
 &lt;ul&gt;
@@ -152,7 +152,7 @@ Pour cela, il suffit de passer de cette façon d&#39;écrire&lt;/li&gt;
   <entry>
     <title>Landmarks et validation W3C</title>
     <link href="https://www.jeanremypraud.com/notes/landmarks-warning/" />
-    <updated>2024-11-05T22:11:47Z</updated>
+    <updated>2024-11-17T20:58:15Z</updated>
     <id>https://www.jeanremypraud.com/notes/landmarks-warning/</id>
     <content type="html">&lt;p&gt;Je tombe régulièrement sur un avertissement lors de la validation de mes pages au validateur W3C:&lt;/p&gt;
 &lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;The banner role is unnecessary for element header&lt;/code&gt;&lt;/pre&gt;
@@ -186,7 +186,7 @@ Pour cela, il suffit de passer de cette façon d&#39;écrire&lt;/li&gt;
   <entry>
     <title>Migrer ses contacts et agenda chez Infomaniak</title>
     <link href="https://www.jeanremypraud.com/notes/importer-contacts-infomaniak/" />
-    <updated>2024-11-05T22:11:47Z</updated>
+    <updated>2024-11-17T20:58:15Z</updated>
     <id>https://www.jeanremypraud.com/notes/importer-contacts-infomaniak/</id>
     <content type="html">&lt;p class=&quot;info&quot;&gt;Cet article est la deuxième partie d&#39;un article sur la migration de Sogo vers Infomaniak. On peut retrouver la première partie &lt;a href=&quot;https://www.jeanremypraud.com/notes/importer-domaine-infomaniak&quot;&gt;ici&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&quot;exporter-ses-contacts-agenda&quot; tabindex=&quot;-1&quot;&gt;Exporter ses contacts / agenda &lt;a class=&quot;title-anchor&quot; href=&quot;https://www.jeanremypraud.com/notes/importer-contacts-infomaniak/#exporter-ses-contacts-agenda&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
@@ -206,7 +206,7 @@ Pour cela, il suffit de passer de cette façon d&#39;écrire&lt;/li&gt;
   <entry>
     <title>Migrer ses données de Sogo à Infomaniak</title>
     <link href="https://www.jeanremypraud.com/notes/importer-domaine-infomaniak/" />
-    <updated>2024-11-05T22:11:47Z</updated>
+    <updated>2024-11-17T20:58:15Z</updated>
     <id>https://www.jeanremypraud.com/notes/importer-domaine-infomaniak/</id>
     <content type="html">&lt;p&gt;Le 13 juin 2023, Gandi a annoncé un changement dans les tarifs de ses boîtes emails, passant de 0 à plus de 4€ par mois. Bien que content du service de Gandi, le montant était trop élevé pour moi. Les changement d&#39;hébergeur de mes emails est une opération que je fais peu et que j&#39;évite autant que possible.
 Après quelques semaines d’hésitation, j’ai donc migré mon nom de domaine vers un autre service, Infomaniak.&lt;/p&gt;
@@ -245,7 +245,7 @@ Les sauvegardes précédemment effectuées ne seront donc pas utiles (en théori
   <entry>
     <title>Ma liste de flux RSS</title>
     <link href="https://www.jeanremypraud.com/notes/mes-flux-rss/" />
-    <updated>2024-11-05T22:11:47Z</updated>
+    <updated>2024-11-17T20:58:15Z</updated>
     <id>https://www.jeanremypraud.com/notes/mes-flux-rss/</id>
     <content type="html">&lt;p class=&quot;info&quot;&gt;Edit: Cette note n&#39;est plus d&#39;actualité. Ma liste de liens se trouve dans ma &lt;a href=&quot;https://www.jeanremypraud.com/blogroll&quot;&gt;blogroll&lt;/a&gt;&lt;/p&gt;
 </content>
@@ -253,7 +253,7 @@ Les sauvegardes précédemment effectuées ne seront donc pas utiles (en théori
   <entry>
     <title>Installer une ancienne version d&#39;Expo Go</title>
     <link href="https://www.jeanremypraud.com/notes/installer-ancienne-version-expo/" />
-    <updated>2024-11-05T22:11:47Z</updated>
+    <updated>2024-11-17T20:58:15Z</updated>
     <id>https://www.jeanremypraud.com/notes/installer-ancienne-version-expo/</id>
     <content type="html">&lt;p&gt;Lorsque l&#39;on jongle entre pluseurs projets mobile avec Expo, on peut être confronté à un problème de version entre le sdk d&#39;Expo utilisé dans le projet et la version du client installée sur le mobile.&lt;/p&gt;
 &lt;p&gt;Heureusement, il est possible d&#39;installer une version adaptée à son projet.&lt;/p&gt;
@@ -276,7 +276,7 @@ Les sauvegardes précédemment effectuées ne seront donc pas utiles (en théori
   <entry>
     <title>Installer Pi-Hole sur un Raspberry Pi et une box SFR</title>
     <link href="https://www.jeanremypraud.com/notes/pi-hole-box-sfr/" />
-    <updated>2024-11-05T22:11:47Z</updated>
+    <updated>2024-11-17T20:58:15Z</updated>
     <id>https://www.jeanremypraud.com/notes/pi-hole-box-sfr/</id>
     <content type="html">&lt;p&gt;En quelques minutes, il est possible d&#39;installer chez soi un bloqueur de pubs avec &lt;a href=&quot;https://pi-hole.net/&quot;&gt;Pi-Hole&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Pour cela, j&#39;ai utilisé:&lt;/p&gt;
@@ -313,6 +313,11 @@ Le mot de passe par défaut varie en fonction des modèles. Une liste complète 
 &lt;h2 id=&quot;autorisation-sur-macos&quot; tabindex=&quot;-1&quot;&gt;Autorisation sur MacOS &lt;a class=&quot;title-anchor&quot; href=&quot;https://www.jeanremypraud.com/notes/pi-hole-box-sfr/#autorisation-sur-macos&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Sur MacOS version 15 (Sequoia), il faut veiller à ce que le navigateur ait les droits pour accéder au réseau local, sans quoi il sera impossble d&#39;accéder au dashboard de Pi-Hole. Pour cela, il faut autoriser l&#39;accès en se rendant dans Réglages système / Confidentialité et sécurité / Réseau local.&lt;/p&gt;
 &lt;p&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://www.jeanremypraud.com/notes/pi-hole-box-sfr/NqLHgm3Xdz-320.webp&quot; alt=&quot;autoriser l&#39;accès au réseau local sur MacOS&quot; width=&quot;640&quot; height=&quot;361&quot; srcset=&quot;https://www.jeanremypraud.com/notes/pi-hole-box-sfr/NqLHgm3Xdz-320.webp 320w, https://www.jeanremypraud.com/notes/pi-hole-box-sfr/NqLHgm3Xdz-640.webp 640w&quot; sizes=&quot;(max-width: 640px) 320px, 640px&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;desactiver-pour-certains-appareils&quot; tabindex=&quot;-1&quot;&gt;Desactiver pour certains appareils &lt;a class=&quot;title-anchor&quot; href=&quot;https://www.jeanremypraud.com/notes/pi-hole-box-sfr/#desactiver-pour-certains-appareils&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Avec le temps, j&#39;ai noté que le décodeur TV SFR ne fonctionnait pas très bien lorsque Pi-Hole était activé en tant que DNS. En particulier, les services annexes (replay, VOD, etc.) semblaient toujours bloqués. La solution est de laisser passer toutes les requêtes qui émanent de cet appareil pour ne pas entraver son fonctionnement. Pour cela, il faut tout d&#39;abord créer un groupe, que l&#39;on appelera Bypass (ou n&#39;importe quoi d&#39;autre).&lt;/p&gt;
+&lt;p&gt;Ensuite, on assigne l&#39;appareil voulu à ce groupe dans Client &amp;gt; Add a new client. On recherche son adresse IP, et on l&#39;assigne à ce groupe, et uniquement celui-ci.&lt;/p&gt;
+&lt;p&gt;Enfin, on va éviter le filtrage pour ce groupe en se rendant dans Adlists. Sur chaque liste sélectionnée (une seule dans mon cas), on ôte le groupe Bypass.&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://www.jeanremypraud.com/notes/pi-hole-box-sfr/gyumnYV3zG-320.webp&quot; alt=&quot;Désactive le filtrage pour un groupe&quot; width=&quot;640&quot; height=&quot;248&quot; srcset=&quot;https://www.jeanremypraud.com/notes/pi-hole-box-sfr/gyumnYV3zG-320.webp 320w, https://www.jeanremypraud.com/notes/pi-hole-box-sfr/gyumnYV3zG-640.webp 640w&quot; sizes=&quot;(max-width: 640px) 320px, 640px&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;bonus&quot; tabindex=&quot;-1&quot;&gt;Bonus &lt;a class=&quot;title-anchor&quot; href=&quot;https://www.jeanremypraud.com/notes/pi-hole-box-sfr/#bonus&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Il est également possible d’ajouter une URL locale qui permettra d’accéder à l’interface d’admin de Pi-Hole via l’url pi.hole/admin/. Tous les utilisateurs du réseau local y auront accès.&lt;/p&gt;
 &lt;p&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://www.jeanremypraud.com/notes/pi-hole-box-sfr/JIw3py3cXk-320.webp&quot; alt=&quot;Ajouter une DNS locale&quot; width=&quot;640&quot; height=&quot;264&quot; srcset=&quot;https://www.jeanremypraud.com/notes/pi-hole-box-sfr/JIw3py3cXk-320.webp 320w, https://www.jeanremypraud.com/notes/pi-hole-box-sfr/JIw3py3cXk-640.webp 640w&quot; sizes=&quot;(max-width: 640px) 320px, 640px&quot;&gt;&lt;/p&gt;
