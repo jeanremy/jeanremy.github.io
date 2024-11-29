@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+  <head>
+    <meta charset="utf-8">
+    
+      <title>Installer Windows sur Mac - Jean-Rémy Praud</title>
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Developpeur fullstack, j’aime travailler sur des projets porteurs de sens. Je m’intéresse tout particulièrement à l’éco-conception et à l’accessibilité.">
+    <meta name="robots" content="noodp">
+
+    
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+
+    <meta property="og:title" content="Installer Windows sur Mac">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jeanremypraud.com/notes/installer-windows-mac/">
+    <meta property="og:site_name" content="Jean-Rémy Praud">
+    <meta property="og:description" content="Les étapes à suivre pour utiliser Windows dans une machine virtuelle avec MacOS.">
+    <meta property="og:image" content="/assets/og-images/be515ff1.png">
+
+    <link rel="stylesheet" href="/assets/css/base.css">
+    
+    <script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@graph": [
+			{
+				"@type": "WebSite",
+				"@id": "https://jeanremypraud.com#website",
+				"url": "https://jeanremypraud.com",
+				"name": "Jean-Rémy Praud",
+				"description": "Developpeur fullstack, j’aime travailler sur des projets porteurs de sens. Je m’intéresse tout particulièrement à l’éco-conception et à l’accessibilité.",
+				"inLanguage": "fr_FR"
+			}
+		]
+	}
+</script>
+
+  </head>
+  <body class="page">
+    
+    <a href="#main" class="sr-only sr-only-focusable">Accéder au contenu</a>
+
+    <header class="page-header" role="banner">
+  <div class="container">
+    <p class="page__title">
+      <a href="/" rel="me" title="jr retour à l'accueil">jr<span>.</span></a>
+    </p>
+    <nav class="page-header__menu" role="navigation" aria-label="Navigation principale">
+      <ul>
+        <li>
+          <a href="/notes/" aria-current="page">Notes</a>
+        </li>
+        <li>
+          <a href="/a-propos/">À propos</a>
+        </li>
+      </ul>
+      
+    </nav>
+  </div>
+</header>
+
+
+    <main class="main" role="main" id="main" tabindex="-1">
+      <article class="article">
+  <header class="article__header">
+    <div class="container">
+      
+        
+
+
+  <nav class="breadcrumb" role="navigation" aria-label="Fil d'ariane">
+    
+      
+        <a href="/">Accueil</a> >
+      
+    
+      
+        <a href="/notes/">Notes</a> >
+      
+    
+      
+        Installer Windows sur Mac
+      
+    
+  </nav>
+
+
+      
+
+      <h1 class="article__title">
+        Installer Windows sur Mac
+      </h1>
+    </div>
+  </header>
+  <section class="article__content">
+    <div class="container">
+      
+        <p class="article__date">
+        Posté le
+          <time datetime="2024-11-29">29/11/2024</time>
+        </p>
+      
+      
+      <div class="md blog_content">
+        <p>Auparavant, il était possible de télécharger de petites images disques de Windows avec une version d’essai d’IE. Plusieurs formats étaient disponibles (VirtualBox ou VMWare de mémoire), ce qui se révelait bien pratique pour tester le rendu navigateur ou les lecteurs d’écran. Malheureusement, ces images ne sont plus accessibles.</p>
+<p>Voici donc une nouvelle façon de faire, avec VMWare Fusion, édité par Broadcom. C’est assez tentaculaire, d’où cette prise de notes.</p>
+<p>Attention, les étapes et les intitulés changent souvent, ce guide peut donc se révéler incomplet ou erroné rapidement.</p>
+<h2 id="telecharger-vmware-fusion" tabindex="-1">Télécharger VMWare Fusion <a class="title-anchor" href="#telecharger-vmware-fusion" aria-hidden="true">#</a></h2>
+<p>Tout d’abord, cela nécéssite de créer un compte Broadcom. Pour cela, se rendre sur https://profile.broadcom.com/web/registration</p>
+<p>Lorsque le compte est créé, se rendre sur https://support.broadcom.com/ et sélectionner en haut à droite VMWare Cloud Foundation
+<img loading="lazy" decoding="async" src="/notes/installer-windows-mac/rWRUStjVKs-320.webp" alt="Le menu avec l'entrée VM Cloud Foudnation à sélectionner" width="640" height="837" srcset="/notes/installer-windows-mac/rWRUStjVKs-320.webp 320w, /notes/installer-windows-mac/rWRUStjVKs-640.webp 640w" sizes="(max-width: 640px) 320px, 640px"></p>
+<p>Dans le menu My downloads, rechercher Fusion</p>
+<p><img loading="lazy" decoding="async" src="/notes/installer-windows-mac/o-tpPE5T45-320.webp" alt="le terme Fusion entré dans un champ de recherche à droite pour filtrer les téléchargements." width="640" height="313" srcset="/notes/installer-windows-mac/o-tpPE5T45-320.webp 320w, /notes/installer-windows-mac/o-tpPE5T45-640.webp 640w" sizes="(max-width: 640px) 320px, 640px"></p>
+<p>Cliquer sur VM Ware Fusion. Choisir la dernière version (13.6.1 dans mon cas).
+<img loading="lazy" decoding="async" src="/notes/installer-windows-mac/TQLRPtN0Jt-320.webp" alt="La liste des versions de VMWare Fusion" width="640" height="540" srcset="/notes/installer-windows-mac/TQLRPtN0Jt-320.webp 320w, /notes/installer-windows-mac/TQLRPtN0Jt-640.webp 640w" sizes="(max-width: 640px) 320px, 640px"></p>
+<p>Télécharger la dernière version en cliquant sur l'icône en forme de nuage.</p>
+<p><img loading="lazy" decoding="async" src="/notes/installer-windows-mac/A3dT9j52tL-320.webp" alt="La bonne version du logiciel accompagnée d'une icone de téléchargement." width="640" height="473" srcset="/notes/installer-windows-mac/A3dT9j52tL-320.webp 320w, /notes/installer-windows-mac/A3dT9j52tL-640.webp 640w" sizes="(max-width: 640px) 320px, 640px"></p>
+<p>Lorsque le fichier est téléchargé, lancer l’installation en double cliquant dessus.</p>
+<h2 id="installer-vmware" tabindex="-1">Installer VMWare <a class="title-anchor" href="#installer-vmware" aria-hidden="true">#</a></h2>
+<p>L’installation est assez facile, il suffit de suivre les étapes.</p>
+<p>Tout d’abord, sélectionner &quot;Obtenir Windows depuis Microsoft&quot;.</p>
+<p><img loading="lazy" decoding="async" src="/notes/installer-windows-mac/Ij8n-iZ9Rd-320.webp" alt="Dans la fenêtre d'instalaltion, sélectionner Obtenir Windows depuis Microsoft" width="640" height="530" srcset="/notes/installer-windows-mac/Ij8n-iZ9Rd-320.webp 320w, /notes/installer-windows-mac/Ij8n-iZ9Rd-640.webp 640w" sizes="(max-width: 640px) 320px, 640px"></p>
+<p>Sélectionner ensuite la langue adaptée.</p>
+<p><img loading="lazy" decoding="async" src="/notes/installer-windows-mac/ghBwhrqlMD-320.webp" alt="Une sélection de la langue" width="640" height="531" srcset="/notes/installer-windows-mac/ghBwhrqlMD-320.webp 320w, /notes/installer-windows-mac/ghBwhrqlMD-640.webp 640w" sizes="(max-width: 640px) 320px, 640px"></p>
+<p>Télécharger Windows, puis suivre ensuite toutes les étapes en sélectionnant les choix par défaut.</p>
+<p><img loading="lazy" decoding="async" src="/notes/installer-windows-mac/TYpKg9dbnC-320.webp" alt="&quot;&quot;" width="640" height="533" srcset="/notes/installer-windows-mac/TYpKg9dbnC-320.webp 320w, /notes/installer-windows-mac/TYpKg9dbnC-640.webp 640w" sizes="(max-width: 640px) 320px, 640px"></p>
+<p><img loading="lazy" decoding="async" src="/notes/installer-windows-mac/8QeRgt4NwM-320.webp" alt="&quot;&quot;" width="640" height="530" srcset="/notes/installer-windows-mac/8QeRgt4NwM-320.webp 320w, /notes/installer-windows-mac/8QeRgt4NwM-640.webp 640w" sizes="(max-width: 640px) 320px, 640px"></p>
+<p><img loading="lazy" decoding="async" src="/notes/installer-windows-mac/O8C8nL2P3P-320.webp" alt="&quot;&quot;" width="640" height="534" srcset="/notes/installer-windows-mac/O8C8nL2P3P-320.webp 320w, /notes/installer-windows-mac/O8C8nL2P3P-640.webp 640w" sizes="(max-width: 640px) 320px, 640px"></p>
+<p>Lancer ensuite la machine virtuelle (VM). Attention à bien appuyer sur un touche au démarrage de la VM, sinon Windows ne se lancera pas.</p>
+<p>Ensuite Windows devrait s'installer normalement, il suffit de suivre les étapes (ça reste un peu fastidieux, notamment la création d'un compte, oui, encore un).</p>
+<h2 id="tester-sur-la-vm" tabindex="-1">Tester sur la VM <a class="title-anchor" href="#tester-sur-la-vm" aria-hidden="true">#</a></h2>
+<p>Pour que la VM puisse communiquer avec le local du Mac, il faut que la carte réseau soit “Bridged” ou en mode Pont, dans la langue de Molière.</p>
+<p><img loading="lazy" decoding="async" src="/notes/installer-windows-mac/xae7mdJZkQ-320.webp" alt="Il faut sélectionner détection automatique dans Mise en réseau en pont" width="640" height="395" srcset="/notes/installer-windows-mac/xae7mdJZkQ-320.webp 320w, /notes/installer-windows-mac/xae7mdJZkQ-640.webp 640w" sizes="(max-width: 640px) 320px, 640px"></p>
+<p>Une fois fait, retour sur le Mac pour trouver son IP sur le réseau.</p>
+<p>Avec cette commande, on retrouve une liste d’IPv4: <code>ifconfig | grep &quot;inet &quot; | grep -v 127.0.0.1 | cut -d\ -f2</code></p>
+<p>Dans mon cas, la deuxième à marché, j’ignore pourquoi.</p>
+<p>Pour tester, rendez vous dans le navigateur sur Windows, et essayer l’ip dans la barre d’adresse: <code>http://10.1.34.34:8084</code> Le port dépend de celui de votre projet.</p>
+<p>Avec tout ça, il est normalement possible de tester des sites qui sont en local avec des synthèses vocales. Pour cela, on peut suivre <a href="https://www.sarasoueidan.com/blog/testing-environment-setup/#download-nvda-screen-reader-on-windows">le précieux guide de Sara Soueidan</a> sur le sujet.</p>
+
+      </div>
+
+      
+
+    </div>
+  </section>
+</article>
+
+    </main>
+    
+    <footer class="page-footer" role="contentinfo">
+  <div class="container">
+    <div class="page-footer__menus">
+      <ul class="page-footer__menu">
+        <li>
+          <a href="/mentions-legales/">Mentions légales</a>
+        </li>
+        <li>
+          <a href="/plan-site/">Plan du site</a>
+        </li>
+        <li>
+          <a href="/blogroll/">Blogroll</a>
+        </li>
+        <li>
+          <a href="/notes/rss.xml">RSS</a>
+        </li>
+      </ul>
+      <div>
+        <p>Dernière mise à jour le 29/11/2024</p>
+        <ul class="page-footer__social">
+          <li>
+            <a rel="me" href="https://github.com/jeanremy" title="Lien vers le profil GitHub">
+              <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <title>Voir le profil GitHub</title>
+                <path d="M10.7359 0.256348C5.06489 0.256348 0.47168 4.60731 0.47168 9.97375C0.47168 14.268 3.41236 17.9096 7.4898 19.1931C8.00298 19.2845 8.19118 18.9842 8.19118 18.7259C8.19118 18.4951 8.18258 17.8837 8.17838 17.0739C5.3232 17.6602 4.72104 15.7701 4.72104 15.7701C4.25402 14.6486 3.57915 14.349 3.57915 14.349C2.64939 13.7465 3.651 13.7587 3.651 13.7587C4.68169 13.8267 5.22313 14.7596 5.22313 14.7596C6.13835 16.2455 7.6258 15.8163 8.21258 15.5677C8.30498 14.9393 8.56928 14.511 8.86268 14.268C6.58313 14.0251 4.1873 13.1894 4.1873 9.46602C4.1873 8.40521 4.58504 7.53867 5.24366 6.8585C5.12819 6.61313 4.78177 5.6252 5.33347 4.28663C5.33347 4.28663 6.19309 4.02588 8.15608 5.28266C8.97728 5.06645 9.84968 4.95956 10.7222 4.9547C11.5946 4.95956 12.4671 5.06645 13.2882 5.28266C15.2384 4.02588 16.098 4.28663 16.098 4.28663C16.6497 5.6252 16.3033 6.61313 16.2007 6.8585C16.855 7.53867 17.2527 8.40521 17.2527 9.46602C17.2527 13.1991 14.8535 14.021 12.5697 14.2599C12.929 14.5514 13.2626 15.1474 13.2626 16.0576C13.2626 17.3581 13.2497 18.4028 13.2497 18.7186C13.2497 18.9736 13.4293 19.2773 13.9554 19.1801C18.0619 17.9055 21 14.2615 21 9.97375C21 4.60731 16.4042 0.256348 10.7359 0.256348Z" fill="white"></path>
+              </svg>
+
+            </a>
+          </li>
+          <li>
+            <a rel="me" href="https://mastodon.design/@jnrmprd" title="Lien vers le profil mastodon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <title>Voir le profil Mastodon</title>
+                <path d="M18.6167 11.6171C18.3367 12.952 16.1767 14.4194 13.6467 14.7034C12.3367 14.8454 11.0467 14.9874 9.67673 14.9306C7.42673 14.8265 5.67668 14.4194 5.67668 14.4194V15.0064C5.99668 17.1081 7.89673 17.2312 9.70673 17.2975C11.5267 17.3448 13.1467 16.862 13.1467 16.862L13.2267 18.4241C13.2267 18.4241 11.9467 19.0678 9.67673 19.1909C8.42673 19.2572 6.86673 19.1625 5.05668 18.7175C1.13668 17.7235 0.45668 13.7567 0.35668 9.72362L0.34668 6.47636C0.34668 2.36755 3.17668 1.16521 3.17668 1.16521C4.62668 0.540366 7.08673 0.256348 9.64673 0.256348H9.70673C12.2667 0.256348 14.7267 0.540366 16.1767 1.16521C16.1767 1.16521 19.0067 2.36755 19.0067 6.47636C19.0067 6.47636 19.0467 9.51534 18.6167 11.6171ZM15.6767 6.79825C15.6767 5.77578 15.3767 4.98999 14.8267 4.37462C14.2667 3.77818 13.5267 3.46576 12.5967 3.46576C11.5367 3.46576 10.7267 3.85392 10.1767 4.63024L9.67673 5.46336L9.17673 4.63024C8.61673 3.85392 7.81673 3.46576 6.74673 3.46576C5.82668 3.46576 5.08668 3.77818 4.51668 4.37462C3.96668 4.98999 3.67668 5.77578 3.67668 6.79825V11.778H5.77668V6.94026C5.77668 5.93672 6.22668 5.40655 7.13673 5.40655C8.13673 5.40655 8.63673 6.02193 8.63673 7.23372V9.8751H10.7067V7.23372C10.7067 6.02193 11.2067 5.40655 12.2167 5.40655C13.1167 5.40655 13.5667 5.93672 13.5667 6.94026V11.778H15.6767V6.79825Z" fill="white"></path>
+              </svg>
+
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+</footer>
+
+
+  </body>
+</html>
