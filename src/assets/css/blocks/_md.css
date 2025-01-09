@@ -13,9 +13,8 @@
     position: relative;
     color: inherit;
     border-bottom: 1px solid var(--text);
-
-    &[href^='http']:after {
-      content: '↗';
+    
+    .external-icon {
       font-size: 0.8em;
       vertical-align: baseline;
       margin-left: 0.2rem;

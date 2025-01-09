@@ -9,9 +9,11 @@ eleventyNavigation:
 ---
 <h2>Liste des pages</h2>
 <ul>
-  {% for page in collections.all %}
-    <li>
-      <a href="{{ page.url | url }}">{{ page.data.title }}</a>
-    </li>
+  {% for page in collections.sitemap %}
+    {% if page.data.title %}
+      <li>
+        <a href="{{ page.url | url }}">{{ page.data.title }}</a>
+      </li>
+    {% endif %}
   {% endfor %}
 </ul>

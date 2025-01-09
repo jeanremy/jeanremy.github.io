@@ -17,6 +17,7 @@
     "@11ty/eleventy-navigation": "^0.3.5",
     "@11ty/eleventy-plugin-rss": "^2.0.1",
     "autoprefixer": "^10.4.19",
+    "eleventy-plugin-accessible-external-links": "^1.0.0",
     "markdown-it-attrs": "^4.1.6"
   },
   "dependencies": {

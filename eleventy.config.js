@@ -3,11 +3,12 @@ import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import faviconPlugin from "eleventy-favicon";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import EleventyPluginOgImage from 'eleventy-plugin-og-image';
+import accessibleExternalLinks from 'eleventy-plugin-accessible-external-links'
 
 import { cssmin, format, console } from "./src/_11ty/filters/index.js";
-import { feedPosts, posts } from "./src/_11ty/collections/index.js";
+import { feedPosts, posts, sitemap } from "./src/_11ty/collections/index.js";
 import { markdownit } from "./src/_11ty/libraries/index.js";
-import { rss, image, css, js, ogimage } from "./src/_11ty/plugins/index.js";
+import { rss, image, css, js, ogimage, externalLinks } from "./src/_11ty/plugins/index.js";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 
 export default async function (eleventyConfig) {
@@ -20,6 +21,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPlugin(EleventyPluginOgImage, await ogimage());
   eleventyConfig.addPlugin(css);
   eleventyConfig.addPlugin(js);
+  eleventyConfig.addPlugin(accessibleExternalLinks, externalLinks);
 
   // ---------- PASSTHROUGH --------------------
   eleventyConfig.addPassthroughCopy('src/assets/fonts')
@@ -37,6 +39,7 @@ export default async function (eleventyConfig) {
   eleventyConfig.ignores.add("**/_*.md");
   eleventyConfig.addCollection("posts", posts);
   eleventyConfig.addCollection("feedPosts", feedPosts);
+  eleventyConfig.addCollection("sitemap", sitemap);
 
   eleventyConfig.setLibrary("md", markdownit(eleventyConfig));
 
