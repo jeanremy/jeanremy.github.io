@@ -116,9 +116,9 @@ Pour essayer de comprendre ça, ressortons les vieux manuels de math.</p>
 <h2 id="calculer-le-coefficient" tabindex="-1">Calculer le coefficient <a class="title-anchor" href="#calculer-le-coefficient" aria-hidden="true">#</a></h2>
 <p>Pour comprendre le calcul nous prendrons une valeur de 16px à 320px et 24px à 1200px.</p>
 <p>On peut aisément représenter ces deux valeurs sur un graphique, x étant la largeur de l'écran et y la taille en pixel.</p>
-<p><img loading="lazy" decoding="async" src="/notes/calcul-taille-font-fluides/RZrmQVum-a-320.webp" alt="Une représentation graphique des deux points: le premier est à 320 d'abscisse et 16 d'ordonnée, et le second est à 1200 d'abscisse et 24 d'ordonnée" width="640" height="519" srcset="/notes/calcul-taille-font-fluides/RZrmQVum-a-320.webp 320w, /notes/calcul-taille-font-fluides/RZrmQVum-a-640.webp 640w" sizes="(max-width: 640px) 320px, 640px"></p>
+<p><img src="/notes/calcul-taille-font-fluides/RZrmQVum-a-320.webp" alt="Une représentation graphique des deux points: le premier est à 320 d'abscisse et 16 d'ordonnée, et le second est à 1200 d'abscisse et 24 d'ordonnée" loading="lazy" decoding="async" width="640" height="519" srcset="/notes/calcul-taille-font-fluides/RZrmQVum-a-320.webp 320w, /notes/calcul-taille-font-fluides/RZrmQVum-a-640.webp 640w" sizes="(max-width: 640px) 320px, 640px"></p>
 <p>Pour obtenir la taille à partir d'une largeur (soit y en ayant x), il faut calculer le coefficient (m) qui permet de passer de l'une à l'autre. Pour cela, il suffit de diviser la longueur de l'intervalle y divisé par l'intervalle x.</p>
-<p><img loading="lazy" decoding="async" src="/notes/calcul-taille-font-fluides/u8DDFDsUhG-320.webp" alt="Le graphique montre la distance entre chaque point: 8 en ordonnée et 880 en abscisse." width="640" height="519" srcset="/notes/calcul-taille-font-fluides/u8DDFDsUhG-320.webp 320w, /notes/calcul-taille-font-fluides/u8DDFDsUhG-640.webp 640w" sizes="(max-width: 640px) 320px, 640px"></p>
+<p><img src="/notes/calcul-taille-font-fluides/u8DDFDsUhG-320.webp" alt="Le graphique montre la distance entre chaque point: 8 en ordonnée et 880 en abscisse." loading="lazy" decoding="async" width="640" height="519" srcset="/notes/calcul-taille-font-fluides/u8DDFDsUhG-320.webp 320w, /notes/calcul-taille-font-fluides/u8DDFDsUhG-640.webp 640w" sizes="(max-width: 640px) 320px, 640px"></p>
 <p>Ce calcul va nous permettre de répondre à la question: entre ces deux hauteurs, combien y aura de marches, et quelle hauteur représentera une marche ?
 Le calcul est plus simple qu'il n'y parait:
 <code>coefficient = (y2 - y1) / (x2 - x1)</code>.
@@ -128,7 +128,7 @@ coefficient = 8 / 880
 coefficient = 0,009090909091
 </code></pre>
 <p>Pour 8 de hauteur, il y aura 880 marches, qui feront 0,00909 de haut.</p>
-<p><img loading="lazy" decoding="async" src="/notes/calcul-taille-font-fluides/pAl3gPLFQe-320.webp" alt="Un zoom sur le graphique montre que pour chaque point d'ordonnée, le droite rejoignant les deux points montent de 0,009px" width="640" height="460" srcset="/notes/calcul-taille-font-fluides/pAl3gPLFQe-320.webp 320w, /notes/calcul-taille-font-fluides/pAl3gPLFQe-640.webp 640w" sizes="(max-width: 640px) 320px, 640px"></p>
+<p><img src="/notes/calcul-taille-font-fluides/pAl3gPLFQe-320.webp" alt="Un zoom sur le graphique montre que pour chaque point d'ordonnée, le droite rejoignant les deux points montent de 0,009px" loading="lazy" decoding="async" width="640" height="460" srcset="/notes/calcul-taille-font-fluides/pAl3gPLFQe-320.webp 320w, /notes/calcul-taille-font-fluides/pAl3gPLFQe-640.webp 640w" sizes="(max-width: 640px) 320px, 640px"></p>
 <p>Ce coefficient est utilisé par Utopia en combinaison avec l'unité vi qui correspond à 1% de la taille de la zone d'affichage sur l'axe en ligne. Il s'agit de notre variable coefficient multipliée par 100. On pourrait tout à fait la remplacer par 0,00909vw.
 A 1200px, on aurait donc la calcul suivant:</p>
 <pre><code>1200px = 1vw = 100vi
@@ -145,7 +145,7 @@ y = 10,9090909092
 Si l'on reprend l'analogie, on a donc gravi 1200 marches de 0,09vi. Mais à quelle hauteur était l'escalier au tout début ?
 On serait tenté d'ajouter 16 pour avoir la bonne valeur mais pour que le calcul soit juste, il faut trouver la hauteur initiale lorsque x est à 0. Comment la calcule-t-on ?
 Si l'on multiplie 320px par le coefficient, on obtient 2,9. Ce qui veut dire qu'en avançant de 320px en largeur, on a gravit 2,9px en hauteur. Or, on sait qu'à 320px, on est à 16px. Donc à 0, on est à <code>16 - 320*0,00909</code>. Soit 13,1px.</p>
-<p><img loading="lazy" decoding="async" src="/notes/calcul-taille-font-fluides/saCSWxo5SN-320.webp" alt="Si la droite qui relie les deux points était infinie, elle aurait pour ordonnée 13,2 lorsqu'elle passerait par l'abscisse 0" width="640" height="519" srcset="/notes/calcul-taille-font-fluides/saCSWxo5SN-320.webp 320w, /notes/calcul-taille-font-fluides/saCSWxo5SN-640.webp 640w" sizes="(max-width: 640px) 320px, 640px"></p>
+<p><img src="/notes/calcul-taille-font-fluides/saCSWxo5SN-320.webp" alt="Si la droite qui relie les deux points était infinie, elle aurait pour ordonnée 13,2 lorsqu'elle passerait par l'abscisse 0" loading="lazy" decoding="async" width="640" height="519" srcset="/notes/calcul-taille-font-fluides/saCSWxo5SN-320.webp 320w, /notes/calcul-taille-font-fluides/saCSWxo5SN-640.webp 640w" sizes="(max-width: 640px) 320px, 640px"></p>
 <p>Converti en rem (divisé par 16), cela donne
 <code>y = 0.8182rem</code></p>
 <p>On a notre deuxième chiffre, youpi, le livre de math va pouvoir retourner dans son vieux placard.</p>
