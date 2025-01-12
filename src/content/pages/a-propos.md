@@ -15,8 +15,12 @@ Aujourd'hui, je continue d'aborder le développement à travers ces différents 
 
 ## Certifications
 
+### Écoconception de service numerique
+
 Le collectif Green IT créé par Frédéric Bordage a développé une [certification Éco-conception web](https://www.greenit.fr/certification-ecoconception-de-service-numerique/). Comme son contenu l'indique, <quote>elle atteste du niveau de maîtrise de la méthodologie, des bonnes pratiques, du vocabulaire et des connaissances fondamentales associées à cette pratique</quote>.
 Obtenue le 26/10/2022
+
+### Développer des sites web accessibles
 
 En février 2024, j'ai obtenu la [certification "Développer des sites web accessibles"](https://formations.access42.net/certifications/developper-des-sites-web-accessibles/) d'Access42. Elle permet de valider <quote>les bases théoriques et techniques nécessaires pour mettre en conformité et maintenir l’accessibilité numérique d’un site ou d’une application</quote>.
 
