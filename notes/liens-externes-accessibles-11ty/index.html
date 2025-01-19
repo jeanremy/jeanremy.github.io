@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     
-      <title>Un effet de surlignage sur plusieurs lignes - Jean-Rémy Praud</title>
+      <title>Des liens externes accessibles avec 11ty - Jean-Rémy Praud</title>
     
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="Developpeur fullstack, j’aime travailler sur des projets porteurs de sens. Je m’intéresse tout particulièrement à l’éco-conception et à l’accessibilité.">
@@ -15,12 +15,12 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     
 
-    <meta property="og:title" content="Un effet de surlignage sur plusieurs lignes">
+    <meta property="og:title" content="Des liens externes accessibles avec 11ty">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jeanremypraud.com/notes/surlignage-multiligne/">
+    <meta property="og:url" content="https://jeanremypraud.com/notes/liens-externes-accessibles-11ty/">
     <meta property="og:site_name" content="Jean-Rémy Praud">
-    <meta property="og:description" content="Une propriété CSS permet d&#39;avoir l&#39;effet recherché">
-    <meta property="og:image" content="/assets/og-images/8eb75ede.png">
+    <meta property="og:description" content="Pourquoi j&#39;ai changé ma façon de faire pour signaler les liens externes">
+    <meta property="og:image" content="/assets/og-images/62c7360f.png">
 
     <link rel="stylesheet" href="/assets/css/base.css">
     
@@ -84,7 +84,7 @@
       
     
       
-        Un effet de surlignage sur plusieurs lignes
+        Des liens externes accessibles avec 11ty
       
     
   </nav>
@@ -93,7 +93,7 @@
       
 
       <h1 class="article__title">
-        Un effet de surlignage sur plusieurs lignes
+        Des liens externes accessibles avec 11ty
       </h1>
     </div>
   </header>
@@ -102,30 +102,34 @@
       
         <p class="article__date">
         Posté le
-          <time datetime="2024-04-17">17/04/2024</time>
+          <time datetime="2025-01-19">19/01/2025</time>
         </p>
       
       
       <div class="md blog_content">
-        <p>Un récent cas d'intégration m'a posé question. Il s'agit de faire effet de surlignage sur un texte de plusieurs lignes.</p>
-<p><img src="/notes/surlignage-multiligne/2nbI_eJpBS-320.webp" alt="un aperçu d'un texte avec une partie surlignée sur plusieurs lignes" loading="lazy" decoding="async" width="640" height="313" srcset="/notes/surlignage-multiligne/2nbI_eJpBS-320.webp 320w, /notes/surlignage-multiligne/2nbI_eJpBS-640.webp 640w" sizes="(max-width: 640px) 320px, 640px"></p>
-<p>Parmi les contraintes:</p>
-<ul>
-<li>ce qui est surligné doit avoir des bords arrondis de chaque côté.</li>
-<li>si le texte se positionne sur plusieurs lignes, chaque tronçon de texte doit avoir des bords arrondis de chaque côté.</li>
-<li>le texte surligné peut passer à la ligne à différents endroits, de manière fluide selon les dimensions. Il n'est donc pas question d'encadrer chaque tronçon avec une balise.</li>
-</ul>
-<p>La base html est donc la suivante:</p>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><br>  Un texte <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>important surligné sur plusieurs lignes<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span> qui met en avant<br>  une idée dans un paragraphe plus long.<br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></code></pre>
-<p>La balise <code>span</code> représente la partie que l'on souhaite mettre en avant avec le surlignage.</p>
-<p>Par défaut, même si elle passe sur plusieurs lignes, la balise sera considérée comme un seul bloc. Si l'on ajoute un effet d'arrondi sur les bords, ceux-ci ne seront présents qu'au début et à la fin (devant le mot important et après le mot lignes).</p>
-<p>La solution pour éviter cela est d'utiliser la propriété <code>box-decoration-break</code> associée à la valeur <code>clone</code>. Cette propriété va avoir un impact sur quelques propriétés lorsqu'un effet de fragmentation apparait (un passage à la ligne par exemple). Chaque fragment aura alors un rendu propre.</p>
-<p>La <a href="https://developer.mozilla.org/fr/docs/Web/CSS/box-decoration-break">doc de MDN</a> le décrit très bien:</p>
-<blockquote>
-<p>Le rendu de chaque fragment de boîte est obtenu indépendamment avec la bordure, le remplissage, la marge indiqués pour chacun des fragments</p>
-</blockquote>
-<p>Bien qu'encore expérimentale actuellement, elle est relativement <a href="https://caniuse.com/css-boxdecorationbreak">bien supportée par les navigateurs</a> (97%).</p>
-<p>Voir la <a href="https://codepen.io/jr_/pen/ZEZvMeV">démo sur Codepen</a></p>
+        <p>Pour différencier les liens internes des liens externes sur ce blog, j’utilisais un caractère de flèche sortant vers le coin haut à droite: ↗.</p>
+<p>Ce caractère était inséré de la façon suivante en CSS <sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>:</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">&amp;[href^="http"]:after</span> <span class="token punctuation">{</span><br>  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">"↗"</span><span class="token punctuation">;</span><br>  <span class="token property">font-size</span><span class="token punctuation">:</span> 0.8em<span class="token punctuation">;</span><br>  <span class="token property">vertical-align</span><span class="token punctuation">:</span> baseline<span class="token punctuation">;</span><br>  <span class="token property">margin-left</span><span class="token punctuation">:</span> 0.2rem<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<p>Je ciblais tous les liens commençant par http. Les liens internes de mon blog utilisant une url relative (commençant par /), ils étaient donc bien ignorés.</p>
+<p>L’information ajoutée en CSS me semblait suffisamment anecdotique pour ne pas enfreindre la <a href="https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#10.2">règle 10.2 du RGAA</a> (sans en être tout à fait sûr).</p>
+<p>La lecture d’un <a href="https://eldritch.cafe/@juliemoynat/113792038893626015">échange sur Mastodon</a> m’a amené à m’interroger sur ma manière de faire.</p>
+<p>D’abord, l’affichage d’une flèche accolée aux liens signifie le plus souvent que l’on ouvre une nouvelle fenêtre.
+Or, je ne force pas les ouvertures de nouvelle fenêtre (avec <code>target=”_blank”</code>). Il existe des <a href="https://css-tricks.com/use-target_blank/">raisons valides de le faire</a>, mais aucune n'entre en jeu sur ce blog.
+La signification de ma flèche risquait donc d’être incomprise.</p>
+<p>Ensuite, ce contenu reste porteur d’information. À la réflexion, la règle du RGAA me parait bien enfreinte. Le contenu est ajouté en CSS, la désactivation des feuilles de styles conduira donc à sa perte.</p>
+<p>J’ai donc décidé de supprimer cette flèche sur tous les liens externes, mais de l’ajouter uniquement sur les liens ouvrant une nouvelle fenêtre. Bon, il n’y en a pas encore, mais peut-être un jour.<br>
+Pour ça, j'ai suivi la manière recommandée par Julie Moynat dans son post sur Mastodon, à savoir comme suit:</p>
+<pre class="language-css"><code class="language-css">&lt;a href=<span class="token string">"https://www.example.org"</span> target=<span class="token string">"_blank"</span> rel=<span class="token string">"noopener"</span>><br>  Example<br>  &lt;span class=<span class="token string">"sr-only"</span>> - nouvelle fenêtre&lt;/span><br>  &lt;span title=<span class="token string">"nouvelle fenêtre"</span> aria-hidden=<span class="token string">"true"</span>>↗&lt;/span><br>&lt;/a></code></pre>
+<p>L’auteure de ces lignes détaille clairement le pourquoi du comment dans <a href="https://www.lalutineduweb.fr/lien-ouverture-nouvelle-fenetre-accessible/">un article de blog</a> que je conseille vivement (l’article et le blog).</p>
+<p>J’en ai profité pour mettre tout ça dans un <a href="https://www.npmjs.com/package/eleventy-plugin-accessible-external-links">plugin 11ty</a>.</p>
+<p>Peut-être en aurais-je besoin un jour, qui sait ?</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>En relisant ce morceau de code, je m'aperçois que la technique n'était pas parfaite. D'une part, les liens peuvent aussi commencer par //, mais surtout mon contenu inséré ne comportait pas de texte alternatif (que j'aurais pu ajouter de cette manière content: &quot;↗&quot; / &quot;Nouvelle fenêtre&quot;;). <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
 
       </div>
 
