@@ -73,4 +73,16 @@
     height: auto;
     display: block;
   }
+
+  sup {
+    vertical-align: super;
+    font-size: var(--step--1);
+  }
+
+  .footnotes-sep {
+    border-bottom: 0;
+  }
+  .footnotes {
+    font-size: var(--step--1);
+  }
 }
