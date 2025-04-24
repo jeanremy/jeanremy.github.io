@@ -5,16 +5,62 @@
   <subtitle>Le flux RSS des dernieres notes</subtitle>
   <link href="https://www.jeanremypraud.com/notes/rss.xml" rel="self" />
   <link href="https://www.jeanremypraud.com/" />
-  <updated>2025-01-19T21:16:38Z</updated>
+  <updated>2025-04-24T20:44:07Z</updated>
   <id>https://www.jeanremypraud.com/</id>
   <author>
     <name>Jean-Rémy Praud</name>
     <email>hello@jeanremypraud.com</email>
   </author>
   <entry>
+    <title>Optimiser ses fontes avec Glyphhanger</title>
+    <link href="https://www.jeanremypraud.com/notes/optimiser-fonts-glyphhanger/" />
+    <updated>2025-04-24T20:44:07Z</updated>
+    <id>https://www.jeanremypraud.com/notes/optimiser-fonts-glyphhanger/</id>
+    <content type="html">&lt;p&gt;Lorsque l&#39;on utilise une police custom sur le web, il est rare que la totalité des glyphes soit utilisée.&lt;/p&gt;
+&lt;p&gt;Dans une optique d&#39;efficience, il peut être intéressant de vouloir supprimer ces signes typographiques inutiles. Et c&#39;est là que la &lt;a href=&quot;https://github.com/zachleat/glyphhanger&quot;&gt;librairie Glyphhanger&lt;/a&gt; entre en jeu.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://www.jeanremypraud.com/notes/optimiser-fonts-glyphhanger/TF3tZW0Xdp-320.webp&quot; alt=&quot;Une partie de la liste des glyphes utilisés dans la police Albert Sans. Chaque carré représente un glyphe.&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; width=&quot;640&quot; height=&quot;326&quot; srcset=&quot;https://www.jeanremypraud.com/notes/optimiser-fonts-glyphhanger/TF3tZW0Xdp-320.webp 320w, https://www.jeanremypraud.com/notes/optimiser-fonts-glyphhanger/TF3tZW0Xdp-640.webp 640w&quot; sizes=&quot;(max-width: 640px) 320px, 640px&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Glyphhanger permet de réduire le poids d&#39;une police, mais permet aussi de définir un sous-ensemble (subset) de caractères que l&#39;on souhaite garder dans un fichier séparé.&lt;/p&gt;
+&lt;p&gt;Avant toute chose, il faut s&#39;assurer que supprimer des glyphes est autorisé par la licence de distribution de la police. Une liste (partielle) de fontes l&#39;autorisant est disponible sur le site &lt;a href=&quot;https://subsetting.xyz/&quot;&gt;subsetting.xyz&lt;/a&gt;. A noter que les Google Fonts le permettent via la licence &lt;a href=&quot;https://en.wikipedia.org/wiki/SIL_Open_Font_License&quot;&gt;SIL Open Font License&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;reduire-la-poids&quot; tabindex=&quot;-1&quot;&gt;Réduire la poids &lt;a class=&quot;title-anchor&quot; href=&quot;https://www.jeanremypraud.com/notes/optimiser-fonts-glyphhanger/#reduire-la-poids&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Il est possible de simplement réduire le poids de sa fonte en une seule ligne de commande.&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;glyphhanger &lt;span class=&quot;token parameter variable&quot;&gt;--subset&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;AlbertSans.ttf&lt;br&gt;&lt;br&gt;Subsetting AlbertSans.ttf to AlbertSans-subset.ttf &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;was &lt;span class=&quot;token number&quot;&gt;125.41&lt;/span&gt; KB, now &lt;span class=&quot;token number&quot;&gt;122.57&lt;/span&gt; KB&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;Subsetting AlbertSans.ttf to AlbertSans-subset.zopfli.woff &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;was &lt;span class=&quot;token number&quot;&gt;125.41&lt;/span&gt; KB, now &lt;span class=&quot;token number&quot;&gt;59&lt;/span&gt; KB&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;br&gt;Subsetting AlbertSans.ttf to AlbertSans-subset.woff2 &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;was &lt;span class=&quot;token number&quot;&gt;125.41&lt;/span&gt; KB, now &lt;span class=&quot;token number&quot;&gt;49.78&lt;/span&gt; KB&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Quel format utiliser ?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;J&#39;utilise le format woff2 qui supporte les fontes variables et dont &lt;a href=&quot;https://caniuse.com/?search=woff&quot;&gt;le support est très élevé&lt;/a&gt;: 97.15%. Il est conseillé d&#39;ajouter woff en fallback.&lt;/p&gt;
+&lt;p&gt;La police a été réduite de 53% en woff et jusqu&#39;à 61% au format woff2. Elle contient néanmoins de nombreux glyphes qui ne seront pas utilisés, laissant une place à l&#39;optimisation.&lt;/p&gt;
+&lt;h2 id=&quot;definir-un-subset&quot; tabindex=&quot;-1&quot;&gt;Définir un subset &lt;a class=&quot;title-anchor&quot; href=&quot;https://www.jeanremypraud.com/notes/optimiser-fonts-glyphhanger/#definir-un-subset&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Pour choisir le sous-ensemble (subset) de caractères que l&#39;on souhaite conserver, plusieurs options s&#39;offre à nous.&lt;/p&gt;
+&lt;h3&gt;Passer une liste de caractères en &lt;em&gt;whitelist&lt;/em&gt;&lt;/h3&gt;
+&lt;p&gt;Si la liste de glyphes est relativement courte (dans le cas d&#39;une fonte d&#39;icônes complète par exemple), il est relativement aisé de passer directement les caractères que l&#39;on souhaite conserver.&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;glyphhanger &lt;span class=&quot;token parameter variable&quot;&gt;--subset&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;AlbertSans.ttf &lt;span class=&quot;token parameter variable&quot;&gt;--whitelist&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;abcdefgh&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;L&#39;application &lt;a href=&quot;https://character-table.netlify.app/&quot;&gt;Character table&lt;/a&gt; permet d&#39;obtenir la liste des glyphes à retenir par langue. Il suffit de copier la liste et la passer en whitelist.&lt;/p&gt;
+&lt;h3&gt;Passer un subset prédéfini&lt;/h3&gt;
+&lt;p&gt;Glyphhanger prédéfini des subsets, comme LATIN et --US_ASCII.&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;glyphhanger &lt;span class=&quot;token parameter variable&quot;&gt;--LATIN&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--subset&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;AlbertSans.ttf&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Ces deux options sont intéressantes, car l&#39;on garde qu&#39;une liste définie de caractères. Toutefois, il est possible d&#39;oublier certaines caractères utilisés dans les pages.&lt;/p&gt;
+&lt;h3&gt;Passer une URL&lt;/h3&gt;
+&lt;p&gt;Il est possible de passer à l&#39;outil une URL d&#39;où il tirera tous les glyphes nécéssaires. Il peut parcourir plusieurs pages grâce à l&#39;option &lt;code&gt;--spider&lt;/code&gt; ou &lt;code&gt;--spider-limit&lt;/code&gt;.&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;glyphhanger http://localhost:8080/notes --spider-limit&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;--subset&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;AlbertSans.ttf &lt;span class=&quot;token parameter variable&quot;&gt;--formats&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;woff2&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;L&#39;intérêt de cette méthode est de créer un subset qui contient tous les glyphes des pages.&lt;/p&gt;
+&lt;p&gt;Mais que se passe-t-il si un utilisateur traduit le contenu (via Google translate par exemple), et que des glyphes non prévus doivent être affichés ?&lt;/p&gt;
+&lt;h2 id=&quot;organiser-les-subsets&quot; tabindex=&quot;-1&quot;&gt;Organiser les subsets &lt;a class=&quot;title-anchor&quot; href=&quot;https://www.jeanremypraud.com/notes/optimiser-fonts-glyphhanger/#organiser-les-subsets&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Il existe une propriété CSS qui permet d&#39;associer une fonte à une liste de caractères: &lt;code&gt;unicode-range&lt;/code&gt;. On peut donc définir un subset avec tous les glyphes utilisés (via &lt;code&gt;spider&lt;/code&gt;) ou présents dans une langue et un autre subset avec tous les caractères manquants, puis associer les fichiers générés avec le bon interval unicode.&lt;/p&gt;
+&lt;p&gt;Quelques précisions sur la propriété &lt;code&gt;font-face&lt;/code&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Il est possible de déclarer plusieurs fichiers pour une même fonte. Les navigateurs se chargent ensuite de merger les déclarations, comme &lt;a href=&quot;https://jakearchibald.com/2017/combining-fonts/&quot;&gt;le présente Jake Archibald&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Si un ou des caractères sont présents dans plusieurs déclarations via unicode-range, c&#39;est la dernière qui sera effective.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;En résumé, on peut donc créer les subsets par langue (ici en français), puis par interval unicode:&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;glyphhanger &lt;span class=&quot;token parameter variable&quot;&gt;--subset&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;AlbertSans.ttf &lt;span class=&quot;token parameter variable&quot;&gt;--output&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;custom &lt;span class=&quot;token parameter variable&quot;&gt;--formats&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;woff2,woff &lt;span class=&quot;token parameter variable&quot;&gt;--whitelist&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;U+0000-00A0,U+00A2-00A9,U+00AC-00AE,U+00B0-00B7,U+00B9-00BA,U+00BC-00BE,U+00D7,U+00F7,U+2000-206F,U+2074,U+20AC,U+2122,U+2190-21BB,U+2212,U+2215,U+F8FF,U+FEFF,U+FFFD,U+00A1,U+00AA-00AB,U+00AF,U+00B8,U+00BB,U+00BF-00D6,U+00D8-00F6,U+00F8-00FF,U+0131,U+0152-0153,U+02B0-02FF&lt;br&gt;&lt;br&gt;glyphhanger &lt;span class=&quot;token parameter variable&quot;&gt;--subset&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;AlbertSans.ttf &lt;span class=&quot;token parameter variable&quot;&gt;--formats&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;woff2,woff&lt;br&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;/* la police générique qui contient tous les signes */&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token atrule&quot;&gt;&lt;span class=&quot;token rule&quot;&gt;@font-face&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br&gt;  &lt;span class=&quot;token property&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Albert Sans&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;  &lt;span class=&quot;token property&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token url&quot;&gt;&lt;span class=&quot;token function&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string url&quot;&gt;&quot;../fonts/AlbertSans.woff2&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;woff2&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token url&quot;&gt;&lt;span class=&quot;token function&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string url&quot;&gt;&quot;../fonts/AlbertSans.woff&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;      &lt;span class=&quot;token function&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;woff&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span class=&quot;token comment&quot;&gt;/* La police du subset, déclarée en dernière, qui sera donc préférée par les navigateurs lorsqu&#39;ils rencontreront les glyphes présents */&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token atrule&quot;&gt;&lt;span class=&quot;token rule&quot;&gt;@font-face&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;br&gt;  &lt;span class=&quot;token property&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Albert Sans&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;  &lt;span class=&quot;token property&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token url&quot;&gt;&lt;span class=&quot;token function&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string url&quot;&gt;&quot;../fonts/custom/AlbertSans.woff2&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;woff2&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token url&quot;&gt;&lt;span class=&quot;token function&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string url&quot;&gt;&quot;../fonts/custom/AlbertSans.woff&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;      &lt;span class=&quot;token function&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;woff&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;  &lt;span class=&quot;token comment&quot;&gt;/* French unicode range fetched from https://character-table.netlify.app/french/ */&lt;/span&gt;&lt;br&gt;  &lt;span class=&quot;token property&quot;&gt;unicode-range&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; U+20-5F&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; U+61-7A&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; U+7C&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; U+A0&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; U+A7&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; U+A9&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; U+AB&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; U+B2-B3&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; U+BB&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;br&gt;    U+C0&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; U+C2&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; U+C6-CB&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; U+CE-CF&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; U+D4&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; U+D9&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; U+DB-DC&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; U+E0&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; U+E2&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; U+E6-EB&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;br&gt;    U+EE-EF&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; U+F4&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; U+F9&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; U+FB-FC&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; U+FF&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; U+152-153&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; U+178&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; U+2B3&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; U+2E2&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;br&gt;    U+1D48-1D49&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; U+2010-2011&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; U+2013-2014&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; U+2019&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; U+201C-201D&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; U+2020-2021&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;br&gt;    U+2026&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; U+202F-2030&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; U+20AC&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; U+2212&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Attention à l&#39;unité de mesure &lt;code&gt;ch&lt;/code&gt;. Firefox charge indifférement les deux polices si l&#39;unité ch est utilisée quelque part dans le CSS. Un &lt;a href=&quot;https://webcompat.com/issues/153900&quot;&gt;ticket&lt;/a&gt; est ouvert à ce sujet.&lt;/p&gt;
+&lt;h2 id=&quot;credits&quot; tabindex=&quot;-1&quot;&gt;Crédits &lt;a class=&quot;title-anchor&quot; href=&quot;https://www.jeanremypraud.com/notes/optimiser-fonts-glyphhanger/#credits&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Pour rédiger ce billet, je me suis beaucoup aidé du blog de &lt;a href=&quot;https://markoskon.com/creating-font-subsets/&quot;&gt;Markos Konstantopoulos&lt;/a&gt;, de la &lt;a href=&quot;https://github.com/zachleat/glyphhanger&quot;&gt;documentation de Glyphhanger&lt;/a&gt; ainsi que de &lt;a href=&quot;https://mastodon.design/@carbontwelve@notacult.social/109882845407952893&quot;&gt;cet échange Mastodon qui m&#39;a mis sur la piste du unicode-range&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>Des liens externes accessibles avec 11ty</title>
     <link href="https://www.jeanremypraud.com/notes/liens-externes-accessibles-11ty/" />
-    <updated>2025-01-19T21:16:38Z</updated>
+    <updated>2025-04-24T20:44:07Z</updated>
     <id>https://www.jeanremypraud.com/notes/liens-externes-accessibles-11ty/</id>
     <content type="html">&lt;p&gt;Pour différencier les liens internes des liens externes sur ce blog, j’utilisais un caractère de flèche sortant vers le coin haut à droite: ↗.&lt;/p&gt;
 &lt;p&gt;Ce caractère était inséré de la façon suivante en CSS &lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://www.jeanremypraud.com/notes/liens-externes-accessibles-11ty/#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;:&lt;/p&gt;
@@ -29,7 +75,7 @@ La signification de ma flèche risquait donc d’être incomprise.&lt;/p&gt;
 &lt;p&gt;J’ai donc décidé de supprimer cette flèche sur tous les liens externes, mais de l’ajouter uniquement sur les liens ouvrant une nouvelle fenêtre. Bon, il n’y en a pas encore, mais peut-être un jour.&lt;br&gt;
 Pour ça, j&#39;ai suivi la manière recommandée par Julie Moynat dans son post sur Mastodon, à savoir comme suit:&lt;/p&gt;
 &lt;pre class=&quot;language-css&quot;&gt;&lt;code class=&quot;language-css&quot;&gt;&amp;lt;a href=&lt;span class=&quot;token string&quot;&gt;&quot;https://www.example.org&quot;&lt;/span&gt; target=&lt;span class=&quot;token string&quot;&gt;&quot;_blank&quot;&lt;/span&gt; rel=&lt;span class=&quot;token string&quot;&gt;&quot;noopener&quot;&lt;/span&gt;&gt;&lt;br&gt;  Example&lt;br&gt;  &amp;lt;span class=&lt;span class=&quot;token string&quot;&gt;&quot;sr-only&quot;&lt;/span&gt;&gt; - nouvelle fenêtre&amp;lt;/span&gt;&lt;br&gt;  &amp;lt;span title=&lt;span class=&quot;token string&quot;&gt;&quot;nouvelle fenêtre&quot;&lt;/span&gt; aria-hidden=&lt;span class=&quot;token string&quot;&gt;&quot;true&quot;&lt;/span&gt;&gt;↗&amp;lt;/span&gt;&lt;br&gt;&amp;lt;/a&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;L’auteure de ces lignes détaille clairement le pourquoi du comment dans &lt;a href=&quot;https://www.lalutineduweb.fr/lien-ouverture-nouvelle-fenetre-accessible/&quot;&gt;un article de blog&lt;/a&gt; que je conseille vivement (l’article et le blog).&lt;/p&gt;
+&lt;p&gt;L’autrice de ces lignes détaille clairement le pourquoi du comment dans &lt;a href=&quot;https://www.lalutineduweb.fr/lien-ouverture-nouvelle-fenetre-accessible/&quot;&gt;un article de blog&lt;/a&gt; que je conseille vivement (l’article et le blog).&lt;/p&gt;
 &lt;p&gt;J’en ai profité pour mettre tout ça dans un &lt;a href=&quot;https://www.npmjs.com/package/eleventy-plugin-accessible-external-links&quot;&gt;plugin 11ty&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Peut-être en aurais-je besoin un jour, qui sait ?&lt;/p&gt;
 &lt;hr class=&quot;footnotes-sep&quot;&gt;
@@ -44,7 +90,7 @@ Pour ça, j&#39;ai suivi la manière recommandée par Julie Moynat dans son post
   <entry>
     <title>Installer Windows sur Mac</title>
     <link href="https://www.jeanremypraud.com/notes/installer-windows-mac/" />
-    <updated>2025-01-19T21:16:38Z</updated>
+    <updated>2025-04-24T20:44:07Z</updated>
     <id>https://www.jeanremypraud.com/notes/installer-windows-mac/</id>
     <content type="html">&lt;p&gt;Auparavant, il était possible de télécharger de petites images disques de Windows avec une version d’essai d’IE. Plusieurs formats étaient disponibles (VirtualBox ou VMWare de mémoire), ce qui se révelait bien pratique pour tester le rendu navigateur ou les lecteurs d’écran. Malheureusement, ces images ne sont plus accessibles.&lt;/p&gt;
 &lt;p&gt;Voici donc une nouvelle façon de faire, avec VMWare Fusion, édité par Broadcom. C’est assez tentaculaire, d’où cette prise de notes.&lt;/p&gt;
@@ -85,7 +131,7 @@ Pour ça, j&#39;ai suivi la manière recommandée par Julie Moynat dans son post
   <entry>
     <title>Automatiser les mesures d&#39;ÉcoIndex</title>
     <link href="https://www.jeanremypraud.com/notes/automatiser-mesures-ecoindex/" />
-    <updated>2025-01-19T21:16:38Z</updated>
+    <updated>2025-04-24T20:44:07Z</updated>
     <id>https://www.jeanremypraud.com/notes/automatiser-mesures-ecoindex/</id>
     <content type="html">&lt;p&gt;&lt;a href=&quot;https://www.ecoindex.fr/&quot;&gt;EcoIndex&lt;/a&gt; permet d&#39;obtenir un instantané de l&#39;empreinte environnementale d&#39;un site ou service en ligne.
 Il est possible de réaliser ces mesures de deux façons: via une extension navigateur ou via le site ecoindex.
@@ -115,7 +161,7 @@ Cette dernière solution ne permet que 10 analyses par domaine par jour, et ne p
   <entry>
     <title>Comprendre les unités dynamiques des fontes fluides</title>
     <link href="https://www.jeanremypraud.com/notes/calcul-taille-font-fluides/" />
-    <updated>2025-01-19T21:16:38Z</updated>
+    <updated>2025-04-24T20:44:07Z</updated>
     <id>https://www.jeanremypraud.com/notes/calcul-taille-font-fluides/</id>
     <content type="html">&lt;p&gt;Depuis quelques temps, j&#39;ai pris l&#39;habitude d&#39;utiliser des tailles de texte fluides. On définit deux tailles: une pour une largeur minimale et l&#39;autre pour la largeur maximale. Dans l&#39;intervalle, le texte s&#39;agrandira en fonction de la largeur en cours, sans avoir à passer par de multiples media queries.&lt;/p&gt;
 &lt;p&gt;Pour ce faire, j&#39;utilise &lt;a href=&quot;https://utopia.fyi/&quot;&gt;Utopia&lt;/a&gt;, qui permet de générer le code CSS de chaque intervalle de taille. Cela ressemble à ça:&lt;/p&gt;
@@ -176,7 +222,7 @@ Attention cependant à préserver le zoom avec les unités fluides. &lt;a href=&
   <entry>
     <title>Un effet de surlignage sur plusieurs lignes</title>
     <link href="https://www.jeanremypraud.com/notes/surlignage-multiligne/" />
-    <updated>2025-01-19T21:16:38Z</updated>
+    <updated>2025-04-24T20:44:07Z</updated>
     <id>https://www.jeanremypraud.com/notes/surlignage-multiligne/</id>
     <content type="html">&lt;p&gt;Un récent cas d&#39;intégration m&#39;a posé question. Il s&#39;agit de faire effet de surlignage sur un texte de plusieurs lignes.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://www.jeanremypraud.com/notes/surlignage-multiligne/2nbI_eJpBS-320.webp&quot; alt=&quot;un aperçu d&#39;un texte avec une partie surlignée sur plusieurs lignes&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; width=&quot;640&quot; height=&quot;313&quot; srcset=&quot;https://www.jeanremypraud.com/notes/surlignage-multiligne/2nbI_eJpBS-320.webp 320w, https://www.jeanremypraud.com/notes/surlignage-multiligne/2nbI_eJpBS-640.webp 640w&quot; sizes=&quot;(max-width: 640px) 320px, 640px&quot;&gt;&lt;/p&gt;
@@ -202,7 +248,7 @@ Attention cependant à préserver le zoom avec les unités fluides. &lt;a href=&
   <entry>
     <title>Mise à jour de 11ty v3</title>
     <link href="https://www.jeanremypraud.com/notes/mise-a-jour-11ty-v3/" />
-    <updated>2025-01-19T21:16:38Z</updated>
+    <updated>2025-04-24T20:44:07Z</updated>
     <id>https://www.jeanremypraud.com/notes/mise-a-jour-11ty-v3/</id>
     <content type="html">&lt;p&gt;Le générateur de site statique 11ty vient de sortir en version 3 alpha. Le changement principal est sa compatibilité avec ESM. Bien que touchant aux fondements d’11ty, la mise à jour est assez simple:&lt;/p&gt;
 &lt;ul&gt;
@@ -223,7 +269,7 @@ Pour cela, il suffit de passer de cette façon d&#39;écrire&lt;/li&gt;
   <entry>
     <title>Landmarks et validation W3C</title>
     <link href="https://www.jeanremypraud.com/notes/landmarks-warning/" />
-    <updated>2025-01-19T21:16:38Z</updated>
+    <updated>2025-04-24T20:44:07Z</updated>
     <id>https://www.jeanremypraud.com/notes/landmarks-warning/</id>
     <content type="html">&lt;p&gt;Je tombe régulièrement sur un avertissement lors de la validation de mes pages au validateur W3C:&lt;/p&gt;
 &lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;The banner role is unnecessary for element header&lt;/code&gt;&lt;/pre&gt;
@@ -257,7 +303,7 @@ Pour cela, il suffit de passer de cette façon d&#39;écrire&lt;/li&gt;
   <entry>
     <title>Migrer ses contacts et agenda chez Infomaniak</title>
     <link href="https://www.jeanremypraud.com/notes/importer-contacts-infomaniak/" />
-    <updated>2025-01-19T21:16:38Z</updated>
+    <updated>2025-04-24T20:44:07Z</updated>
     <id>https://www.jeanremypraud.com/notes/importer-contacts-infomaniak/</id>
     <content type="html">&lt;p class=&quot;info&quot;&gt;Cet article est la deuxième partie d&#39;un article sur la migration de Sogo vers Infomaniak. On peut retrouver la première partie &lt;a href=&quot;https://www.jeanremypraud.com/notes/importer-domaine-infomaniak&quot;&gt;ici&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&quot;exporter-ses-contacts-agenda&quot; tabindex=&quot;-1&quot;&gt;Exporter ses contacts / agenda &lt;a class=&quot;title-anchor&quot; href=&quot;https://www.jeanremypraud.com/notes/importer-contacts-infomaniak/#exporter-ses-contacts-agenda&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
@@ -277,7 +323,7 @@ Pour cela, il suffit de passer de cette façon d&#39;écrire&lt;/li&gt;
   <entry>
     <title>Migrer ses données de Sogo à Infomaniak</title>
     <link href="https://www.jeanremypraud.com/notes/importer-domaine-infomaniak/" />
-    <updated>2025-01-19T21:16:38Z</updated>
+    <updated>2025-04-24T20:44:07Z</updated>
     <id>https://www.jeanremypraud.com/notes/importer-domaine-infomaniak/</id>
     <content type="html">&lt;p&gt;Le 13 juin 2023, Gandi a annoncé un changement dans les tarifs de ses boîtes emails, passant de 0 à plus de 4€ par mois. Bien que content du service de Gandi, le montant était trop élevé pour moi. Les changement d&#39;hébergeur de mes emails est une opération que je fais peu et que j&#39;évite autant que possible.
 Après quelques semaines d’hésitation, j’ai donc migré mon nom de domaine vers un autre service, Infomaniak.&lt;/p&gt;
@@ -316,7 +362,7 @@ Les sauvegardes précédemment effectuées ne seront donc pas utiles (en théori
   <entry>
     <title>Ma liste de flux RSS</title>
     <link href="https://www.jeanremypraud.com/notes/mes-flux-rss/" />
-    <updated>2025-01-19T21:16:38Z</updated>
+    <updated>2025-04-24T20:44:07Z</updated>
     <id>https://www.jeanremypraud.com/notes/mes-flux-rss/</id>
     <content type="html">&lt;p class=&quot;info&quot;&gt;Edit: Cette note n&#39;est plus d&#39;actualité. Ma liste de liens se trouve dans ma &lt;a href=&quot;https://www.jeanremypraud.com/blogroll&quot;&gt;blogroll&lt;/a&gt;&lt;/p&gt;
 </content>
@@ -324,7 +370,7 @@ Les sauvegardes précédemment effectuées ne seront donc pas utiles (en théori
   <entry>
     <title>Installer une ancienne version d&#39;Expo Go</title>
     <link href="https://www.jeanremypraud.com/notes/installer-ancienne-version-expo/" />
-    <updated>2025-01-19T21:16:38Z</updated>
+    <updated>2025-04-24T20:44:07Z</updated>
     <id>https://www.jeanremypraud.com/notes/installer-ancienne-version-expo/</id>
     <content type="html">&lt;p&gt;Lorsque l&#39;on jongle entre pluseurs projets mobile avec Expo, on peut être confronté à un problème de version entre le sdk d&#39;Expo utilisé dans le projet et la version du client installée sur le mobile.&lt;/p&gt;
 &lt;p&gt;Heureusement, il est possible d&#39;installer une version adaptée à son projet.&lt;/p&gt;
@@ -347,7 +393,7 @@ Les sauvegardes précédemment effectuées ne seront donc pas utiles (en théori
   <entry>
     <title>Installer Pi-Hole sur un Raspberry Pi et une box SFR</title>
     <link href="https://www.jeanremypraud.com/notes/pi-hole-box-sfr/" />
-    <updated>2025-01-19T21:16:38Z</updated>
+    <updated>2025-04-24T20:44:07Z</updated>
     <id>https://www.jeanremypraud.com/notes/pi-hole-box-sfr/</id>
     <content type="html">&lt;p&gt;En quelques minutes, il est possible d&#39;installer chez soi un bloqueur de pubs avec &lt;a href=&quot;https://pi-hole.net/&quot;&gt;Pi-Hole&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Pour cela, j&#39;ai utilisé:&lt;/p&gt;
