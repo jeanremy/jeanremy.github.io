@@ -138,4 +138,5 @@ a {
 *::before,
 *::after {
   box-sizing: border-box;
+  font-synthesis: none !important;
 }

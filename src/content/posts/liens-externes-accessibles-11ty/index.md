@@ -41,7 +41,7 @@ Pour ça, j'ai suivi la manière recommandée par Julie Moynat dans son post sur
 </a>
 ```
 
-L’auteure de ces lignes détaille clairement le pourquoi du comment dans [un article de blog](https://www.lalutineduweb.fr/lien-ouverture-nouvelle-fenetre-accessible/) que je conseille vivement (l’article et le blog).
+L’autrice de ces lignes détaille clairement le pourquoi du comment dans [un article de blog](https://www.lalutineduweb.fr/lien-ouverture-nouvelle-fenetre-accessible/) que je conseille vivement (l’article et le blog).
 
 J’en ai profité pour mettre tout ça dans un [plugin 11ty](https://www.npmjs.com/package/eleventy-plugin-accessible-external-links).
 

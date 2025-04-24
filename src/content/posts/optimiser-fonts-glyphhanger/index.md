@@ -1,7 +1,7 @@
 ---
 title: Optimiser ses fontes avec Glyphhanger
 description: Comment réduire la taille d'une fonte en ne gardant que les glyphes utiles grâce à Glyphhanger
-created_at: 2023-04-01
+created_at: 2025-04-24
 templateEngineOverride: md
 ---
 
@@ -11,9 +11,9 @@ Dans une optique d'efficience, il peut être intéressant de vouloir supprimer c
 
 ![Une partie de la liste des glyphes utilisés dans la police Albert Sans. Chaque carré représente un glyphe.](albert-sans-glyphs.png)
 
-Glyphhanger permet et de réduire son poids. Elle permet également de définir un sous-ensemble (subset) de caractères que l'on souhaite garder dans un fichier séparé.
+Glyphhanger permet de réduire le poids d'une police, mais permet aussi de définir un sous-ensemble (subset) de caractères que l'on souhaite garder dans un fichier séparé.
 
-⚠️ ⚠️ Attention, supprimer des glyphes n'est pas toujours autorisé par la licence de distribution de la police. Une liste (partielle) de fontes l'autorisant est disponible sur le site [subsetting.xyz](https://subsetting.xyz/). A noter que les Google Fonts le permettent via la licence [SIL Open Font License](https://en.wikipedia.org/wiki/SIL_Open_Font_License).
+Avant toute chose, il faut s'assurer que supprimer des glyphes est autorisé par la licence de distribution de la police. Une liste (partielle) de fontes l'autorisant est disponible sur le site [subsetting.xyz](https://subsetting.xyz/). A noter que les Google Fonts le permettent via la licence [SIL Open Font License](https://en.wikipedia.org/wiki/SIL_Open_Font_License).
 
 ## Réduire la poids
 
@@ -55,7 +55,7 @@ Glyphhanger prédéfini des subsets, comme LATIN et --US_ASCII.
 glyphhanger --LATIN --subset=AlbertSans.ttf
 ```
 
-Ces deux options sont intéressantes, car l'on garde qu'une liste définie de caractères. Toute fois, il est possible d'oublier certaines caractères utilisés dans les pages.
+Ces deux options sont intéressantes, car l'on garde qu'une liste définie de caractères. Toutefois, il est possible d'oublier certaines caractères utilisés dans les pages.
 
 ### Passer une URL
 
@@ -81,7 +81,7 @@ Quelques précisions sur la propriété `font-face`:
 En résumé, on peut donc créer les subsets par langue (ici en français), puis par interval unicode:
 
 ```bash
-glyphhanger --subset=AlbertSans.ttf --whitelist=U+0000-00A0,U+00A2-00A9,U+00AC-00AE,U+00B0-00B7,U+00B9-00BA,U+00BC-00BE,U+00D7,U+00F7,U+2000-206F,U+2074,U+20AC,U+2122,U+2190-21BB,U+2212,U+2215,U+F8FF,U+FEFF,U+FFFD,U+00A1,U+00AA-00AB,U+00AF,U+00B8,U+00BB,U+00BF-00D6,U+00D8-00F6,U+00F8-00FF,U+0131,U+0152-0153,U+02B0-02FF --output=custom --formats=woff2,woff
+glyphhanger --subset=AlbertSans.ttf --output=custom --formats=woff2,woff --whitelist=U+0000-00A0,U+00A2-00A9,U+00AC-00AE,U+00B0-00B7,U+00B9-00BA,U+00BC-00BE,U+00D7,U+00F7,U+2000-206F,U+2074,U+20AC,U+2122,U+2190-21BB,U+2212,U+2215,U+F8FF,U+FEFF,U+FFFD,U+00A1,U+00AA-00AB,U+00AF,U+00B8,U+00BB,U+00BF-00D6,U+00D8-00F6,U+00F8-00FF,U+0131,U+0152-0153,U+02B0-02FF
 
 glyphhanger --subset=AlbertSans.ttf --formats=woff2,woff
 
@@ -89,28 +89,28 @@ glyphhanger --subset=AlbertSans.ttf --formats=woff2,woff
 ```
 
 ```css
+/* la police générique qui contient tous les signes */
+@font-face {
+  font-family: "Albert Sans";
+  src: url("../fonts/AlbertSans.woff2") format("woff2"), url("../fonts/AlbertSans.woff")
+      format("woff");
+}
+
+/* La police du subset, déclarée en dernière, qui sera donc préférée par les navigateurs lorsqu'ils rencontreront les glyphes présents */
 @font-face {
   font-family: "Albert Sans";
   src: url("../fonts/custom/AlbertSans.woff2") format("woff2"), url("../fonts/custom/AlbertSans.woff")
       format("woff");
-  // French unicode range fetched from https://character-table.netlify.app/french/
+  /* French unicode range fetched from https://character-table.netlify.app/french/ */
   unicode-range: U+20-5F, U+61-7A, U+7C, U+A0, U+A7, U+A9, U+AB, U+B2-B3, U+BB,
     U+C0, U+C2, U+C6-CB, U+CE-CF, U+D4, U+D9, U+DB-DC, U+E0, U+E2, U+E6-EB,
     U+EE-EF, U+F4, U+F9, U+FB-FC, U+FF, U+152-153, U+178, U+2B3, U+2E2,
     U+1D48-1D49, U+2010-2011, U+2013-2014, U+2019, U+201C-201D, U+2020-2021,
     U+2026, U+202F-2030, U+20AC, U+2212;
 }
-
-@font-face {
-  font-family: "Albert Sans";
-  src: url("../fonts/AlbertSans.woff2") format("woff2"), url("../fonts/AlbertSans.woff")
-      format("woff");
-  // A wide range to contain all glyphs
-  unicode-range: U+0000-FFFFFF;
-}
 ```
 
-Attention à l'unité de mesure `ch`. Sur Firefox, ça plante, toutes les fontes sont téléchargées.
+Attention à l'unité de mesure `ch`. Firefox charge indifférement les deux polices si l'unité ch est utilisée quelque part dans le CSS. Un [ticket](https://webcompat.com/issues/153900) est ouvert à ce sujet.
 
 ## Crédits
 
