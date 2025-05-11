@@ -110,7 +110,7 @@ glyphhanger --subset=AlbertSans.ttf --formats=woff2,woff
 }
 ```
 
-Attention à l'unité de mesure `ch`. Firefox charge indifférement les deux polices si l'unité ch est utilisée quelque part dans le CSS. Un [ticket](https://webcompat.com/issues/153900) est ouvert à ce sujet.
+Attention à l'unité de mesure `ch`. Firefox charge indifférement les deux polices si l'unité ch est utilisée quelque part dans le CSS. ~~Un [ticket](https://bugzilla.mozilla.org/show_bug.cgi?id=1962602) est ouvert à ce sujet.~~ Edit, le bug a été [corrigé](https://bugzilla.mozilla.org/show_bug.cgi?id=1962602).
 
 ## Crédits
 
