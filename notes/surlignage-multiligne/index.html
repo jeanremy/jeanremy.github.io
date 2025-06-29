@@ -116,7 +116,10 @@
 <li>le texte surligné peut passer à la ligne à différents endroits, de manière fluide selon les dimensions. Il n'est donc pas question d'encadrer chaque tronçon avec une balise.</li>
 </ul>
 <p>La base html est donc la suivante:</p>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><br>  Un texte <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>important surligné sur plusieurs lignes<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span> qui met en avant<br>  une idée dans un paragraphe plus long.<br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></code></pre>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>
+  Un texte <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>important surligné sur plusieurs lignes<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span> qui met en avant
+  une idée dans un paragraphe plus long.
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></code></pre>
 <p>La balise <code>span</code> représente la partie que l'on souhaite mettre en avant avec le surlignage.</p>
 <p>Par défaut, même si elle passe sur plusieurs lignes, la balise sera considérée comme un seul bloc. Si l'on ajoute un effet d'arrondi sur les bords, ceux-ci ne seront présents qu'au début et à la fin (devant le mot important et après le mot lignes).</p>
 <p>La solution pour éviter cela est d'utiliser la propriété <code>box-decoration-break</code> associée à la valeur <code>clone</code>. Cette propriété va avoir un impact sur quelques propriétés lorsqu'un effet de fragmentation apparait (un passage à la ligne par exemple). Chaque fragment aura alors un rendu propre.</p>
@@ -155,7 +158,7 @@
         </li>
       </ul>
       <div>
-        <p>Dernière mise à jour le 11/05/2025</p>
+        <p>Dernière mise à jour le 29/06/2025</p>
         <ul class="page-footer__social">
           <li>
             <a rel="me" href="https://github.com/jeanremy" title="Lien vers le profil GitHub">

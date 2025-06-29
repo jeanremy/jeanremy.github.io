@@ -109,7 +109,12 @@
       <div class="md blog_content">
         <p>Pour différencier les liens internes des liens externes sur ce blog, j’utilisais un caractère de flèche sortant vers le coin haut à droite: ↗.</p>
 <p>Ce caractère était inséré de la façon suivante en CSS <sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>:</p>
-<pre class="language-css"><code class="language-css"><span class="token selector">&amp;[href^="http"]:after</span> <span class="token punctuation">{</span><br>  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">"↗"</span><span class="token punctuation">;</span><br>  <span class="token property">font-size</span><span class="token punctuation">:</span> 0.8em<span class="token punctuation">;</span><br>  <span class="token property">vertical-align</span><span class="token punctuation">:</span> baseline<span class="token punctuation">;</span><br>  <span class="token property">margin-left</span><span class="token punctuation">:</span> 0.2rem<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">&amp;[href^="http"]:after</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">"↗"</span><span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 0.8em<span class="token punctuation">;</span>
+  <span class="token property">vertical-align</span><span class="token punctuation">:</span> baseline<span class="token punctuation">;</span>
+  <span class="token property">margin-left</span><span class="token punctuation">:</span> 0.2rem<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p>Je ciblais tous les liens commençant par http. Les liens internes de mon blog utilisant une url relative (commençant par /), ils étaient donc bien ignorés.</p>
 <p>L’information ajoutée en CSS me semblait suffisamment anecdotique pour ne pas enfreindre la <a href="https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#10.2">règle 10.2 du RGAA</a> (sans en être tout à fait sûr).</p>
 <p>La lecture d’un <a href="https://eldritch.cafe/@juliemoynat/113792038893626015">échange sur Mastodon</a> m’a amené à m’interroger sur ma manière de faire.</p>
@@ -119,7 +124,11 @@ La signification de ma flèche risquait donc d’être incomprise.</p>
 <p>Ensuite, ce contenu reste porteur d’information. À la réflexion, la règle du RGAA me parait bien enfreinte. Le contenu est ajouté en CSS, la désactivation des feuilles de styles conduira donc à sa perte.</p>
 <p>J’ai donc décidé de supprimer cette flèche sur tous les liens externes, mais de l’ajouter uniquement sur les liens ouvrant une nouvelle fenêtre. Bon, il n’y en a pas encore, mais peut-être un jour.<br>
 Pour ça, j'ai suivi la manière recommandée par Julie Moynat dans son post sur Mastodon, à savoir comme suit:</p>
-<pre class="language-css"><code class="language-css">&lt;a href=<span class="token string">"https://www.example.org"</span> target=<span class="token string">"_blank"</span> rel=<span class="token string">"noopener"</span>><br>  Example<br>  &lt;span class=<span class="token string">"sr-only"</span>> - nouvelle fenêtre&lt;/span><br>  &lt;span title=<span class="token string">"nouvelle fenêtre"</span> aria-hidden=<span class="token string">"true"</span>>↗&lt;/span><br>&lt;/a></code></pre>
+<pre class="language-css"><code class="language-css">&lt;a href=<span class="token string">"https://www.example.org"</span> target=<span class="token string">"_blank"</span> rel=<span class="token string">"noopener"</span>>
+  Example
+  &lt;span class=<span class="token string">"sr-only"</span>> - nouvelle fenêtre&lt;/span>
+  &lt;span title=<span class="token string">"nouvelle fenêtre"</span> aria-hidden=<span class="token string">"true"</span>>↗&lt;/span>
+&lt;/a></code></pre>
 <p>L’autrice de ces lignes détaille clairement le pourquoi du comment dans <a href="https://www.lalutineduweb.fr/lien-ouverture-nouvelle-fenetre-accessible/">un article de blog</a> que je conseille vivement (l’article et le blog).</p>
 <p>J’en ai profité pour mettre tout ça dans un <a href="https://www.npmjs.com/package/eleventy-plugin-accessible-external-links">plugin 11ty</a>.</p>
 <p>Peut-être en aurais-je besoin un jour, qui sait ?</p>
@@ -159,7 +168,7 @@ Pour ça, j'ai suivi la manière recommandée par Julie Moynat dans son post sur
         </li>
       </ul>
       <div>
-        <p>Dernière mise à jour le 11/05/2025</p>
+        <p>Dernière mise à jour le 29/06/2025</p>
         <ul class="page-footer__social">
           <li>
             <a rel="me" href="https://github.com/jeanremy" title="Lien vers le profil GitHub">

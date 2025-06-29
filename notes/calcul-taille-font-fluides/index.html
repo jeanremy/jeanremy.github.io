@@ -109,7 +109,10 @@
       <div class="md blog_content">
         <p>Depuis quelques temps, j'ai pris l'habitude d'utiliser des tailles de texte fluides. On définit deux tailles: une pour une largeur minimale et l'autre pour la largeur maximale. Dans l'intervalle, le texte s'agrandira en fonction de la largeur en cours, sans avoir à passer par de multiples media queries.</p>
 <p>Pour ce faire, j'utilise <a href="https://utopia.fyi/">Utopia</a>, qui permet de générer le code CSS de chaque intervalle de taille. Cela ressemble à ça:</p>
-<pre class="language-css"><code class="language-css"><span class="token comment">/* Pour une taille de 16px à 320px et 24px à 1200px*/</span><br><span class="token selector">:root</span> <span class="token punctuation">{</span><br>  <span class="token property">--step-0</span><span class="token punctuation">:</span> <span class="token function">clamp</span><span class="token punctuation">(</span>1rem<span class="token punctuation">,</span> 0.8182rem + 0.9091vi<span class="token punctuation">,</span> 1.5rem<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token comment">/* Pour une taille de 16px à 320px et 24px à 1200px*/</span>
+<span class="token selector">:root</span> <span class="token punctuation">{</span>
+  <span class="token property">--step-0</span><span class="token punctuation">:</span> <span class="token function">clamp</span><span class="token punctuation">(</span>1rem<span class="token punctuation">,</span> 0.8182rem + 0.9091vi<span class="token punctuation">,</span> 1.5rem<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p>La fonction clamp permet de définir des valeurs minimales et maximales à ne pas dépasser (respectivement 1rem et 1.5rem).
 Depuis que je les utilise, les valeurs du deuxième paramètre restent un mystère pour moi (le <code>0.8182rem + 0.9091vi</code>).
 Pour essayer de comprendre ça, ressortons les vieux manuels de math.</p>
@@ -190,7 +193,7 @@ Attention cependant à préserver le zoom avec les unités fluides. <a href="htt
         </li>
       </ul>
       <div>
-        <p>Dernière mise à jour le 11/05/2025</p>
+        <p>Dernière mise à jour le 29/06/2025</p>
         <ul class="page-footer__social">
           <li>
             <a rel="me" href="https://github.com/jeanremy" title="Lien vers le profil GitHub">
