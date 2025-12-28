@@ -1,12 +1,5 @@
 # jeanremypraud.com
 
-Sources du site [jeanremypraud.com](https://www.jeanremypraud.com)
+Archivé.
 
-## Architecture
-
-La structure du projet Eleventy est inspirée de celle de [Jérôme Coupé](https://github.com/jeromecoupe/sample-11ty-blog)
-
-## Installation
-
-git clone
-`yarn start`
+Les sources de ce site sont désormais disponibles sur Codeberg: https://codeberg.org/jeanremy/jeanremypraud.com
